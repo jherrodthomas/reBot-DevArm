@@ -270,3 +270,45 @@ If you are interested in commercial collaboration or have related needs, please 
 ## ☎ Contact Us
 - **Open‑Source Progress & Technical Support**-Yaohui: yaohui.zhu@seeed.cc
 - **Future Collaboration & Customization**-Elaine: elaine.wu@seeed.cc
+
+
+---
+
+## Fork additions — concept-phase engineering package
+
+![reBot-DevArm Concept-Phase Engineering Package](./01_hero_banner.png)
+
+This fork (`jherrodthomas/reBot-DevArm`) adds an independent concept-phase engineering package — not produced or endorsed by upstream Seeed Studio. Provisional acceptance: OE-1 (lab/desk supervised, fixtured) only. Use is non-commercial only (CC BY-NC-SA 4.0).
+
+| File | Purpose |
+|---|---|
+| `reBot_DevArm_Safety_Case.xlsx` | 15-tab safety case (ISO 12100 / 10218 / TS 15066 / 13849 / 9001 / 60204-1) — 33 hazards, 31 SFs, 28 gaps |
+| `reBot_DevArm_Safety_Case_Report.docx` | Narrative safety case |
+| `reBot_DevArm_Safety_Case_Summary.pdf` | 2-page executive summary |
+| `reBot_DevArm_DFMEA.xlsx` | AIAG-VDA 2019 DFMEA — 27 failure modes (11 High-AP) |
+| `reBot_DevArm_Requirements.xlsx` | SyRS+SRS+HwRS, 104 requirements, fully traced |
+| `reBot_DevArm_Architecture.docx` | 5 architectural views with embedded diagrams |
+| `reBot_DevArm_TestPlan.xlsx` | V-model test plan — 127 cases, ISO 13849-2 + TS 15066 V&V matrices |
+| `reBot_DevArm_Trace_Memo.docx` | Cross-package traceability verification |
+| `reBot_DevArm_Engineering_Bundle.pdf` | Single-file stakeholder bundle |
+
+### Headline numbers
+
+![Engineering package KPIs](./02_kpi_infographic.png)
+
+### Provisional deployment guidance
+
+![Operating envelope acceptance](./03_op_envelope.png)
+
+### Architecture diagrams
+
+| # | Diagram | File |
+|---|---|---|
+| 1 | System boundary / context | `01_system_boundary.png` |
+| 2 | Functional block | `02_functional_block.png` |
+| 3 | Safety-function allocation | `03_sf_allocation.png` |
+| 4 | Motor-bus topology | `04_bus_topology.png` |
+| 5 | Mode FSM | `05_mode_fsm.png` |
+
+> **Important.** This is a *preliminary* analysis. Deployment to education, industrial cobot, or public-facing envelopes is blocked pending closure of the gaps tracked in the safety-case workbook.
+> 
