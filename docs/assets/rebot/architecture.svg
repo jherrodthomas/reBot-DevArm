@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="964" viewBox="0 0 1000 964" role="img" aria-labelledby="arch-t arch-d">
+  <title id="arch-t">reBot-DevArm platform architecture</title>
+  <desc id="arch-d">Architecture diagram. Host stack (Host PC · SDK, ROS 2, policies, UI · no Performance Level claim): motorbridge Python SDK, ROS 2 driver and MoveIt 2, Pinocchio kinematics, Authenticated command paths, Session lock, pinned builds, Motion-imminent warning, Camera default-off, LeRobot policy, outside every safety function. Controller safety layer (Dedicated controller or hardened SDK (DQ-020) · the first channel of the limit functions): Command validation: finite, bounded, fresh, Watchdog and heartbeat, Mode machine OFF · IDLE · TEACH · RUN · ESTOP, Per-joint position, torque, speed clamps, Contact detection by torque estimation, Encoder plausibility, bus-off reaction. Safety-related control system (PL d target · ISO 13849-1 · nothing in software can hold the contactor closed): Two-channel E-stop on the pendant, Safety relay with monitored reset, Contactor with mirror contact on the 24 V motor supply, Gripper and joints hold on power loss (TBC), Enabling device for teach mode, Fuse and lockable disconnect. A cross-cutting safety and assurance column of draft work products applies to every layer: Machine limits and risk assessment, Safety functions and required PL, SRP/CS architecture and PL calculation, Stopping, holding, separation and E-stop validation, Cybersecurity threat assessment, Safety case and technical file, Decision register and gates. Legend: Inherited, functional only; Hardened by the fork (proposed); To be built, PL d target; Proposed, not yet in any repository.</desc>
+  <defs>
+<linearGradient id="arch-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F3F7F8"/></linearGradient>
+<linearGradient id="arch-amber" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A8650F"/><stop offset="0.5" stop-color="#F2A33A"/><stop offset="1" stop-color="#A8650F"/></linearGradient>
+  </defs>
+<rect x="0.5" y="0.5" width="999" height="963" rx="22" fill="url(#arch-bg)" stroke="#D3DDE2"/>
+<rect x="40" y="0" width="920" height="3" fill="url(#arch-amber)"/>
+<text x="40" y="56" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#D4821A" text-anchor="start" letter-spacing="3">PLATFORM ARCHITECTURE</text>
+<text x="40" y="94" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#122026" text-anchor="start">Three layers, one checker of last resort</text>
+<rect x="40" y="124" width="640" height="264" rx="16" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="60" y="150" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#D4821A" text-anchor="start" letter-spacing="2">LAYER 1 · INHERITED FROM UPSTREAM, HARDENED AS DEFENCE IN DEPTH</text>
+<text x="60" y="174" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#122026" text-anchor="start">Host stack</text>
+<text x="60" y="194" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#4E6A73" text-anchor="start">Host PC · SDK, ROS 2, policies, UI · no Performance Level claim</text>
+<rect x="60" y="208" width="192" height="46" rx="9" fill="#0E8C83" stroke="#0E8C83" stroke-width="1" fill-opacity="0.12"/>
+<text x="156" y="237" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">motorbridge Python SDK</text>
+<rect x="264" y="208" width="192" height="46" rx="9" fill="#0E8C83" stroke="#0E8C83" stroke-width="1" fill-opacity="0.12"/>
+<text x="360" y="237" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">ROS 2 driver and MoveIt 2</text>
+<rect x="468" y="208" width="192" height="46" rx="9" fill="#0E8C83" stroke="#0E8C83" stroke-width="1" fill-opacity="0.12"/>
+<text x="564" y="237" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Pinocchio kinematics</text>
+<rect x="60" y="264" width="192" height="46" rx="9" fill="#D4821A" stroke="#D4821A" stroke-width="1" fill-opacity="0.14"/>
+<text x="156" y="293" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Authenticated command paths</text>
+<rect x="264" y="264" width="192" height="46" rx="9" fill="#D4821A" stroke="#D4821A" stroke-width="1" fill-opacity="0.14"/>
+<text x="360" y="293" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Session lock, pinned builds</text>
+<rect x="468" y="264" width="192" height="46" rx="9" fill="#D4821A" stroke="#D4821A" stroke-width="1" fill-opacity="0.14"/>
+<text x="564" y="293" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Motion-imminent warning</text>
+<rect x="60" y="320" width="192" height="46" rx="9" fill="#D4821A" stroke="#D4821A" stroke-width="1" fill-opacity="0.14"/>
+<text x="156" y="349" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Camera default-off</text>
+<rect x="264" y="320" width="192" height="46" rx="9" fill="#4E6A73" stroke="#4E6A73" stroke-width="1" fill-opacity="0.08" stroke-dasharray="5 4"/>
+<text x="360" y="341" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">LeRobot policy, outside</text>
+<text x="360" y="356" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">every safety function</text>
+<rect x="40" y="418" width="640" height="208" rx="16" fill="#EDF2F4" stroke="#D3DDE2" stroke-width="1"/>
+<text x="60" y="444" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#D4821A" text-anchor="start" letter-spacing="2">LAYER 2 · THE LAST SOFTWARE BEFORE THE MOTOR BUS</text>
+<text x="60" y="468" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#122026" text-anchor="start">Controller safety layer</text>
+<text x="60" y="488" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#4E6A73" text-anchor="start">Dedicated controller or hardened SDK (DQ-020) · the first channel of the limit functions</text>
+<rect x="60" y="502" width="192" height="46" rx="9" fill="#4E6A73" stroke="#4E6A73" stroke-width="1" fill-opacity="0.08" stroke-dasharray="5 4"/>
+<text x="156" y="523" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Command validation: finite,</text>
+<text x="156" y="538" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">bounded, fresh</text>
+<rect x="264" y="502" width="192" height="46" rx="9" fill="#4E6A73" stroke="#4E6A73" stroke-width="1" fill-opacity="0.08" stroke-dasharray="5 4"/>
+<text x="360" y="531" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Watchdog and heartbeat</text>
+<rect x="468" y="502" width="192" height="46" rx="9" fill="#4E6A73" stroke="#4E6A73" stroke-width="1" fill-opacity="0.08" stroke-dasharray="5 4"/>
+<text x="564" y="523" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Mode machine OFF · IDLE ·</text>
+<text x="564" y="538" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">TEACH · RUN · ESTOP</text>
+<rect x="60" y="558" width="192" height="46" rx="9" fill="#4E6A73" stroke="#4E6A73" stroke-width="1" fill-opacity="0.08" stroke-dasharray="5 4"/>
+<text x="156" y="579" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Per-joint position, torque,</text>
+<text x="156" y="594" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">speed clamps</text>
+<rect x="264" y="558" width="192" height="46" rx="9" fill="#4E6A73" stroke="#4E6A73" stroke-width="1" fill-opacity="0.08" stroke-dasharray="5 4"/>
+<text x="360" y="579" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Contact detection by torque</text>
+<text x="360" y="594" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">estimation</text>
+<rect x="468" y="558" width="192" height="46" rx="9" fill="#4E6A73" stroke="#4E6A73" stroke-width="1" fill-opacity="0.08" stroke-dasharray="5 4"/>
+<text x="564" y="579" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Encoder plausibility,</text>
+<text x="564" y="594" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">bus-off reaction</text>
+<rect x="40" y="656" width="640" height="208" rx="16" fill="#EDF2F4" stroke="#D4821A" stroke-width="1.6"/>
+<text x="60" y="682" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#D4821A" text-anchor="start" letter-spacing="2">LAYER 3 · HARDWIRED SAFETY CHAIN, THE CHECKER OF LAST RESORT</text>
+<text x="60" y="706" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#122026" text-anchor="start">Safety-related control system</text>
+<text x="60" y="726" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#4E6A73" text-anchor="start">PL d target · ISO 13849-1 · nothing in software can hold the contactor closed</text>
+<rect x="60" y="740" width="192" height="46" rx="9" fill="#D4821A" stroke="#F2A33A" stroke-width="1" fill-opacity="0.28"/>
+<text x="156" y="761" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Two-channel E-stop on the</text>
+<text x="156" y="776" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">pendant</text>
+<rect x="264" y="740" width="192" height="46" rx="9" fill="#D4821A" stroke="#F2A33A" stroke-width="1" fill-opacity="0.28"/>
+<text x="360" y="761" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Safety relay with monitored</text>
+<text x="360" y="776" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">reset</text>
+<rect x="468" y="740" width="192" height="46" rx="9" fill="#D4821A" stroke="#F2A33A" stroke-width="1" fill-opacity="0.28"/>
+<text x="564" y="761" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Contactor with mirror</text>
+<text x="564" y="776" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">contact on the 24 V motor</text>
+<rect x="60" y="796" width="192" height="46" rx="9" fill="#D4821A" stroke="#F2A33A" stroke-width="1" fill-opacity="0.28"/>
+<text x="156" y="817" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Gripper and joints hold on</text>
+<text x="156" y="832" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">power loss (TBC)</text>
+<rect x="264" y="796" width="192" height="46" rx="9" fill="#D4821A" stroke="#F2A33A" stroke-width="1" fill-opacity="0.28"/>
+<text x="360" y="817" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Enabling device for teach</text>
+<text x="360" y="832" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">mode</text>
+<rect x="468" y="796" width="192" height="46" rx="9" fill="#D4821A" stroke="#F2A33A" stroke-width="1" fill-opacity="0.28"/>
+<text x="564" y="825" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Fuse and lockable disconnect</text>
+<line x1="360.0" y1="388" x2="360.0" y2="416" stroke="#4E6A73" stroke-width="1.6"/>
+<polygon points="354.0,408 366.0,408 360.0,416" fill="#4E6A73"/>
+<text x="374" y="407" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="start">requests, never authority</text>
+<line x1="360.0" y1="626" x2="360.0" y2="654" stroke="#4E6A73" stroke-width="1.6"/>
+<polygon points="354.0,646 366.0,646 360.0,654" fill="#4E6A73"/>
+<text x="374" y="645" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="start">requests, never authority</text>
+<text x="360" y="890" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#F2A33A" text-anchor="middle">actuator power and brakes: removed by the chain, not by software</text>
+<rect x="704" y="124" width="256" height="740" rx="16" fill="#F7FAFB" stroke="#D3DDE2" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="722" y="150" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#D4821A" text-anchor="start" letter-spacing="1.5">CROSS-CUTTING · ALL DRAFTS</text>
+<text x="722" y="174" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#122026" text-anchor="start">Safety and assurance</text>
+<rect x="722" y="202" width="220" height="40" rx="8" fill="#D4821A" stroke="#D4821A" stroke-width="1" fill-opacity="0.08"/>
+<text x="832" y="220" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Machine limits and risk</text>
+<text x="832" y="234" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">assessment</text>
+<rect x="722" y="252" width="220" height="40" rx="8" fill="#D4821A" stroke="#D4821A" stroke-width="1" fill-opacity="0.08"/>
+<text x="832" y="277" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Safety functions and required PL</text>
+<rect x="722" y="302" width="220" height="40" rx="8" fill="#D4821A" stroke="#D4821A" stroke-width="1" fill-opacity="0.08"/>
+<text x="832" y="320" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">SRP/CS architecture and PL</text>
+<text x="832" y="334" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">calculation</text>
+<rect x="722" y="352" width="220" height="40" rx="8" fill="#D4821A" stroke="#D4821A" stroke-width="1" fill-opacity="0.08"/>
+<text x="832" y="370" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Stopping, holding, separation</text>
+<text x="832" y="384" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">and E-stop validation</text>
+<rect x="722" y="402" width="220" height="40" rx="8" fill="#D4821A" stroke="#D4821A" stroke-width="1" fill-opacity="0.08"/>
+<text x="832" y="427" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Cybersecurity threat assessment</text>
+<rect x="722" y="452" width="220" height="40" rx="8" fill="#D4821A" stroke="#D4821A" stroke-width="1" fill-opacity="0.08"/>
+<text x="832" y="477" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Safety case and technical file</text>
+<rect x="722" y="502" width="220" height="40" rx="8" fill="#D4821A" stroke="#D4821A" stroke-width="1" fill-opacity="0.08"/>
+<text x="832" y="527" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#122026" text-anchor="middle">Decision register and gates</text>
+<text x="832" y="850" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#7E949B" text-anchor="middle">applies to every layer</text>
+<rect x="40" y="924" width="16" height="16" rx="4" fill="#0E8C83" stroke="#0E8C83" stroke-width="1" fill-opacity="0.12"/>
+<text x="64" y="937" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#4E6A73" text-anchor="start">Inherited, functional only</text>
+<rect x="247.6" y="924" width="16" height="16" rx="4" fill="#D4821A" stroke="#D4821A" stroke-width="1" fill-opacity="0.14"/>
+<text x="271.6" y="937" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#4E6A73" text-anchor="start">Hardened by the fork (proposed)</text>
+<rect x="488.2" y="924" width="16" height="16" rx="4" fill="#D4821A" stroke="#F2A33A" stroke-width="1" fill-opacity="0.28"/>
+<text x="512.2" y="937" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#4E6A73" text-anchor="start">To be built, PL d target</text>
+<rect x="682.6" y="924" width="16" height="16" rx="4" fill="#4E6A73" stroke="#4E6A73" stroke-width="1" fill-opacity="0.08" stroke-dasharray="5 4"/>
+<text x="706.6" y="937" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#4E6A73" text-anchor="start">Proposed, not yet in any repository</text>
+</svg>

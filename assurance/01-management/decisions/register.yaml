@@ -1,0 +1,508 @@
+# Decision register: questions that wait on the project lead.
+# Format and lifecycle: README.md in this folder. Checked by check_decisions.py.
+# The decision inbox page is generated from this file (build_inbox.py); answers saved on the page
+# are copied back here, applied, and then recorded where the project keeps the decision.
+
+- id: DQ-001
+  ref: GAP-00
+  question: "Which arm do we assess first: the B601-DM that has a released BOM, or wait for the B601-RS?"
+  context: >-
+    The repository holds the **B601-DM v1.1** (Damiao DM4310 and DM4340P actuators) with its STEP assembly, BOM
+    and a thermal test. The **B601-RS** (RobStride actuators) shares the mechanical envelope but its BOM, assembly
+    and software were "in progress" at the baseline. A safety case can only be built on what can be read and
+    measured, and the two variants differ exactly where it matters: the actuator's own limits, fault behaviour
+    and bus protocol.
+  reversibility: revisit
+  decider: lead
+  blocks: "The reference configuration named in every work product; the scope of the risk assessment"
+  gate: G0
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "Assess the B601-DM v1.1 now; track the RS variant and add it as a second configuration when its BOM is released"
+      detail: "Findings are verifiable today and the mechanical, electrical and software findings carry over. Cost: every actuator-specific claim (limits, holding, thermal cut-off, reliability data) must be re-stated for the RS."
+    - key: B
+      title: "Wait for the RS release and assess both at once"
+      detail: "One assessment of both variants. Cost: nothing to do until Seeed publishes, and the DM arm that exists stays unassessed."
+    - key: C
+      title: "Assess the DM arm and exclude the RS variant from the fork entirely"
+      detail: "Smallest scope. Cost: the fork no longer covers the product line upstream sells, and anyone with an RS arm has no record to use."
+  sources: ["README roadmap (B601-RS: BOM, assembly, ROS 2 in progress)", "hardware/reBot_B601_DM/readme.md (v1.1 changelog)", "gap assessment GAP-34"]
+  status: open
+
+- id: DQ-002
+  ref: GAP-00
+  question: "Which regulatory frame do we build the safety case for: EU machinery, US industrial robots, or both?"
+  context: >-
+    The arm is machinery. In the EU it is placed on the market under Regulation (EU) 2023/1230 (applies from
+    20 January 2027) with ISO 10218-1/-2 and ISO 13849-1 as the harmonised route and ISO/TS 15066 for
+    collaborative operation. The US route is ANSI/A3 R15.06 with the same ISO 10218 text behind it. The choice fixes
+    which standards every requirement cites and which conformity file we build.
+  reversibility: hard
+  decider: lead
+  blocks: "Standard references in every work product; the structure of 10-safety-case; WP-M-13"
+  gate: G0
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "EU frame: Machinery Regulation, ISO 12100, ISO 10218-1/-2, ISO/TS 15066, ISO 13849-1, EN 60204-1"
+      detail: "One conformity file; the package already cites these standards. Cost: a US deployment later needs an R15.06 cross-reference, mostly a mapping because R15.06 adopts ISO 10218."
+    - key: B
+      title: "US frame: ANSI/A3 R15.06 and R15.806 (task-based risk assessment) with ISO 13849-1"
+      detail: "Right if the first deployment is in the US. Cost: no CE route; an EU deployment needs the technical file redone."
+    - key: C
+      title: "Both from the start"
+      detail: "Covers either market. Cost: two sets of clause references in every document and two conformity files to keep aligned."
+  sources: ["Regulation (EU) 2023/1230 Art. 54 (application date)", "ISO 10218-1:2025 scope", "ANSI/A3 R15.06-2025 scope", "package 04_StdMatrix"]
+  status: open
+
+- id: DQ-003
+  ref: GAP-06
+  question: "Which operating envelope does the first safety case cover: the supervised laboratory bench only, or the classroom as well?"
+  context: >-
+    The package defines four envelopes: OE-1 a supervised, fixtured lab bench with nobody but the operator in
+    reach; OE-2 a classroom with students in reach during teach; OE-3 an industrial cell with collaborative tasks;
+    OE-4 a public demo with bystanders. Every envelope beyond OE-1 puts an untrained person inside the 650 mm reach,
+    which turns every contact hazard into a required Performance Level d or e and needs force measurement that does
+    not exist (GAP-28). The envelope is a limit you accept, not an engineering result.
+  reversibility: revisit
+  decider: lead
+  blocks: "The people class of every risk-assessment row (WP-C-03); the scope of WP-C-02, WP-C-06 and WP-V-03"
+  gate: G1
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "OE-1 only: a trained operator, the arm fixtured, nobody else in reach, an emergency stop in the operator's hand"
+      detail: "A case that can close with the bench hardware and the software safety layer. Cost: no classroom, cell or demo use is inside the case; anyone doing it is outside the record."
+    - key: B
+      title: "OE-1 and OE-2 (classroom, instructor present, students in reach during teach)"
+      detail: "Covers the use the arm is sold for. Cost: students in reach need either a force-limited arm (a measurement campaign, DQ-005) or a separation rule that empties the reach envelope during motion, which is OE-1 with more people."
+    - key: C
+      title: "OE-1 to OE-3 (industrial collaborative cell)"
+      detail: "The full cobot claim. Cost: ISO/TS 15066 measurement, a category 3 chain on every contact function, and an integrator's cell design the fork does not control."
+  sources: ["package 05_OpEnv", "package 07_HARA (OE column)", "gap assessment GAP-06, GAP-28"]
+  status: open
+
+- id: DQ-004
+  ref: GAP-08
+  question: "What Performance Level do we set as the target for the stop functions: PL d, or PL c with the bench-only envelope?"
+  context: >-
+    ISO 10218-1 expects the emergency stop and the protective stop of an industrial robot to reach **PL d,
+    category 3** (ISO 13849-1), and the package's risk graph lands most contact hazards on d or e. The arm as
+    inherited reaches no PL at all: there is no E-stop and the only stop is a software command on the motor bus.
+    A lower target is defensible only on a bench where nobody but the operator is in reach and the operator holds
+    the button, which is OE-1 (DQ-003).
+  reversibility: hard
+  decider: lead
+  blocks: "The required PL of every safety function (WP-C-04); the chain hardware the fork must add (WP-S-03, WP-H-02)"
+  gate: G1
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "PL d for the emergency stop, the safe stop on watchdog and the manual reset; PL c for the limits and diagnostics"
+      detail: "Matches ISO 10218-1 and the package's targets, and keeps the case extendable to a classroom later. Cost: a safety relay, a contactor and two-channel devices on any arm the fork tests with, and a category 3 structure for the stop path."
+    - key: B
+      title: "PL c for every stop function, operation only on the supervised bench"
+      detail: "Cheaper hardware (a single-channel relay). Cost: the case can never cover a person in reach; a later extension re-does the chain."
+    - key: C
+      title: "Defer: set the PL after the risk assessment"
+      detail: "Methodologically clean (the PLr comes from the risk graph). Cost: the graph for a person in reach lands on d anyway, so the hardware gap stays open a phase longer."
+  sources: ["ISO 10218-1:2025 §5 (safety-related control, to be checked)", "ISO 13849-1:2023 Annex A", "package 09_FSC (PLr column)", "gap assessment GAP-08, GAP-31"]
+  status: open
+
+- id: DQ-005
+  ref: GAP-28
+  question: "Does the first safety case make a collaborative claim (contact with a person is permitted and limited), or none?"
+  context: >-
+    A power-and-force-limiting claim under ISO/TS 15066 means measuring the force and pressure the arm can exert
+    on every body region with a calibrated fixture, binding the results to joint torque caps, and validating them;
+    the package found no such measurement (GAP-28) and the arm has no joint torque sensors, only current-based
+    estimation. Without the claim, the arm may move only when nobody is in reach, and any contact is a hazard the
+    stop functions must prevent, not limit.
+  reversibility: revisit
+  decider: lead
+  blocks: "Whether SF-01 (PFL) exists in WP-C-04; the scope of WP-V-03; the detection concept of WP-C-10"
+  gate: G1
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "No collaborative claim in the first case: separation only; contact detection and the contact-force stop are defence in depth, not a PFL claim"
+      detail: "Closable with the hardware and software the fork can build. Cost: no mode in which a person touches or guides the arm is inside the case; teach by hand-guiding needs its own argument later."
+    - key: B
+      title: "A power-and-force-limiting claim, with a measurement campaign on a force and pressure fixture"
+      detail: "The arm the project wants. Cost: roughly €3,000 to €8,000 of measurement equipment or a test-house day, joint torque caps per body region, and a category 3 stop on the contact function."
+    - key: C
+      title: "A hand-guiding (teach) claim only, with an enabling device, no PFL"
+      detail: "Covers dataset collection by hand. Cost: a three-position enabling device and a safely-limited speed in teach mode, which is a smaller campaign than B but still new hardware."
+  sources: ["ISO/TS 15066:2016 §5, Annex A", "package GAP-15066-01, GAP-15066-02, SF-01, SF-02", "gap assessment GAP-28"]
+  status: open
+
+- id: DQ-006
+  ref: GAP-08
+  question: "What emergency-stop hardware do we fit to the bench arm before any powered test: a wired safety relay and contactor, upstream's wireless XIAO stop, or nothing (no test with a person in reach)?"
+  context: >-
+    The arm has no emergency stop (GAP-08) and no supply disconnect (GAP-09). Before any powered test with a person
+    in reach, the hold point WP-V-07 needs a stop that removes motor power without software. A wired two-channel
+    mushroom button into a safety relay driving a contactor on the 24 V motor supply is the textbook chain; the
+    XIAO ESP32 wireless stop upstream mentions is a radio link with no specification. This is a purchase.
+  reversibility: revisit
+  decider: lead
+  blocks: "WP-V-07 conditions C-1 to C-3; the bench build bill of materials; WP-H-02"
+  gate: G1
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "Wired chain: two-channel E-stop button on a pendant, a safety relay (e.g. Pilz PNOZ s3 or PNOZ X2.8P class), a contactor with mirror contact on the 24 V motor supply, a fuse and a lockable disconnect"
+      detail: "Removes motor power regardless of the host; carried forward as the first draft of the product chain. Cost: roughly €250 to €450 in parts and a day of wiring; the pendant cable on the bench."
+    - key: B
+      title: "Upstream's wireless XIAO ESP32 stop, specified by the fork (link surveillance, fail-safe on loss)"
+      detail: "No cable. Cost: a radio stop is a safety function in software and a battery; it cannot be the only stop at PL d, so A is still needed underneath."
+    - key: C
+      title: "No stop hardware; no powered test with anyone inside the 650 mm reach until the product chain exists"
+      detail: "No purchase. Cost: every test is run with the arm caged or the operator outside reach; nothing in WP-V-02…V-04 can run."
+  sources: ["gap assessment GAP-08, GAP-09", "package SYRS-005, SYRS-006, FM-16, FM-17, FM-25", "WP-V-07 §2"]
+  status: open
+
+- id: DQ-007
+  ref: GAP-16
+  question: "Do we fork the software that moves the arm into the fork's own repositories, or keep it upstream and record only?"
+  context: >-
+    The motorbridge SDK, the ROS 2 driver and the LeRobot and Pinocchio integrations live in upstream repositories
+    outside this fork (GAP-16). Every software safety measure the record needs (the watchdog, the mode state
+    machine, per-joint limits, a clamp on learned outputs, authentication) has to live in code the fork controls
+    and pins. Without a fork, the record can describe the software but not change or baseline it.
+  reversibility: revisit
+  decider: lead
+  blocks: "WP-W-01…W-11; WP-P-01 baselines; the safety-relevant file list"
+  gate: G0
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "Fork the SDK and the ROS 2 driver now; pin them in BL-001; build the safety layer there"
+      detail: "The record can change and baseline what it claims. Cost: two more repositories to keep mergeable with upstream, under the same CC BY-NC-SA licence."
+    - key: B
+      title: "Build the safety layer as a separate component (a dedicated controller between the host and the bus) and leave upstream's software untouched"
+      detail: "Clean separation and no software fork. Cost: a microcontroller board in the CAN path, firmware to write, and the host software still unpinned."
+    - key: C
+      title: "Keep everything upstream; record only"
+      detail: "No code to maintain. Cost: no software safety function can exist in the case; the arm stays bench-only with the chain as the only measure."
+  sources: ["gap assessment GAP-16, GAP-17, GAP-18, GAP-19, GAP-24", "README roadmap (Python SDK, ROS 2)"]
+  status: open
+
+- id: DQ-008
+  ref: GAP-24
+  question: "Are the learned policies (LeRobot, the grasping demo) inside the item, outside every safety function and clamped, or excluded from the first safety case?"
+  context: >-
+    The arm is sold as an embodied-AI platform: imitation policies drive it from camera images. A policy can output
+    an unsafe trajectory on a scene it has not seen (package FM-21, high action priority). The record's strategy is
+    that no safety function is allocated to a learned component and every policy output passes the same clamp as
+    any other command; whether policies are in the item at all is your call.
+  reversibility: hard
+  decider: lead
+  blocks: "WP-C-09 scope; WP-M-09; WP-W-10; whether the AI Act record WP-K-07 is ever triggered"
+  gate: G1
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "In the item, outside every safety function: policies run only in RUN mode behind the joint, torque and speed clamps and the watchdog, with the checkpoint recorded per test"
+      detail: "Matches the strategy and keeps the product the project is about. Cost: the clamp and the mode machine must exist first (DQ-007); every policy test needs a log."
+    - key: B
+      title: "Excluded from the first safety case: policies may run only with nobody in reach and no claim is made about them"
+      detail: "Smaller case. Cost: the main use of the arm is outside the case."
+    - key: C
+      title: "In the item with a safety function allocated to a learned component (a learned collision predictor, say)"
+      detail: "Not recommended: it triggers the Machinery Regulation's Annex I Part A and the AI Act conformity path, and no evidence route exists for it in ISO 13849."
+  sources: ["package HZ-C06, FM-21, GAP-LP-01, OI-06", "ISO/IEC TR 5469:2024", "WP-M-13 §5"]
+  status: open
+
+- id: DQ-009
+  ref: GAP-31
+  question: "Do we engage an independent functional safety assessor now, later at the concept gate, or not for now?"
+  context: >-
+    The confirmation measures plan (WP-M-06) needs an assessor independent of the project for every I3 review: the
+    impact analysis, the risk assessment, the safety functions and their PL, and the final assessment. The project
+    has one person. Without an assessor nothing leaves Draft through a confirmation measure, and that is recorded
+    as a limitation, not hidden.
+  reversibility: revisit
+  decider: lead
+  blocks: "CR-01…CR-12, FSA-I1, FSA-I2, FSA-F in WP-M-06; whether G0 can pass with its measures scheduled rather than performed"
+  gate: G0
+  asked: 2026-10-20
+  batch: 1
+  options:
+    - key: A
+      recommended: true
+      title: "Not for now; revisit at G1 when the risk assessment and the safety functions exist to review"
+      detail: "No cost today; the record says every I2 and I3 measure is unscheduled. Cost: no work product can pass a confirmation review until then, and G0 passes with CR-01 and CR-03 scheduled, not performed."
+    - key: B
+      title: "Engage an assessor now for the G0 and G1 reviews"
+      detail: "Independent eyes on the strategy and the risk assessment from the start. Cost: roughly €2,000 to €6,000 for the two gates, and an assessor to find."
+    - key: C
+      title: "Use a peer reviewer from the community at I1, no assessor"
+      detail: "Cheap and useful for verification reviews. Cost: I1 is not I3; confirmation measures stay unperformed."
+  sources: ["WP-M-06 §3, §4.1", "IEC 61508-1 §8 (independence)", "gap assessment GAP-31, GAP-32"]
+  status: open
+
+- id: DQ-010
+  ref: GAP-32
+  question: "While one person holds every role, may the safety manager approve work products they authored, recorded as self-approval at I0, or does everything stay Draft?"
+  context: >-
+    The safety plan (WP-M-02 §3.1) separates author, reviewer and approver. Today the maintainer is all three. The
+    choice is between an explicit interim rule, recorded in every header, and a record in which no work product
+    can ever reach Approved until someone else joins.
+  reversibility: easy
+  decider: lead
+  blocks: "The Approver field of every work product; WP-M-02 §3.1; WP-P-05"
+  gate: G0
+  asked: 2026-10-20
+  batch: 1
+  proceed_after: 2026-11-03
+  options:
+    - key: A
+      recommended: true
+      title: "Interim rule: the safety manager approves own-authored work at I0, recorded as such in the header; no confirmation measure exists until a second person or an assessor joins"
+      detail: "The record can move while stating its limitation. Cost: an assessor will re-review everything approved this way."
+    - key: B
+      title: "Everything stays Draft until a second person reviews it"
+      detail: "Cleaner independence. Cost: the status column never moves and the dashboard shows nothing approved for months."
+  sources: ["WP-M-02 §3.1", "WP-P-05 §3", "WP-M-06 §3"]
+  status: open
+
+- id: DQ-011
+  ref: GAP-00
+  question: "Do we buy the standards now (ISO 10218-1 and -2:2025, ISO/TS 15066, ISO 13849-1:2023, ISO 13849-2, EN 60204-1), or only when an assessor is engaged?"
+  context: >-
+    No standard is held. Every clause reference in the record is from memory of the text and is marked to be
+    checked. The 2025 editions of ISO 10218 changed the collaborative-operation text materially (ISO/TS 15066 is
+    being folded in), so the risk assessment and WP-C-06 are written against a moving target until the text is read.
+  reversibility: easy
+  decider: lead
+  blocks: "WP-M-06 OI-1 (clause check); the confidence of every clause reference"
+  options:
+    - key: A
+      recommended: true
+      title: "Buy ISO 10218-1:2025, ISO 10218-2:2025 and ISO 13849-1:2023 now (roughly €600); the rest when an assessor is engaged"
+      detail: "The three the risk assessment and the chain design rest on. Cost: the money."
+    - key: B
+      title: "Buy nothing until an assessor is engaged (DQ-009)"
+      detail: "No cost now. Cost: every clause reference stays unverified through G1."
+    - key: C
+      title: "Buy the full set now (roughly €1,500)"
+      detail: "Every reference checkable. Cost: the money, most of it for standards not needed before G2."
+  sources: ["WP-M-00 §3 note", "WP-M-06 OI-1"]
+  status: queued
+  after: [DQ-009]
+
+- id: DQ-012
+  ref: GAP-35
+  question: "Which route to conformity do we plan for under the Machinery Regulation: self-declaration (Module A) or a notified body?"
+  context: >-
+    An industrial robot that is not in Annex I may be self-declared if the harmonised standards covering every
+    essential requirement are applied in full; otherwise a notified body examines the type. The fork allocates no
+    safety function to a learned component (DQ-008 A), so the Annex I Part A trigger does not apply. The route
+    decides whether a notified body is a planned cost and who checks the technical file. The fork places nothing on
+    the market today and the licence forbids commercial use (GAP-35), so this is planning, not an obligation.
+  reversibility: revisit
+  decider: lead
+  blocks: "WP-M-13 §3; NB-1 in WP-M-06; WP-K-02 structure"
+  options:
+    - key: A
+      recommended: true
+      title: "Module A, internal control: apply the harmonised standards in full and plan no notified body"
+      detail: "No third-party cost; the technical file is the same either way. Cost: every essential requirement must be covered by a standard applied in full, which the gap assessment shows is far off."
+    - key: B
+      title: "Plan for EU type-examination (Modules B and C)"
+      detail: "A notified body checks the file. Cost: roughly €10,000 to €30,000 and a body to find; only sensible if a build is ever placed on the market."
+  sources: ["Regulation (EU) 2023/1230 Art. 25, Annex I, Annexes VI–X", "WP-M-13 §3", "gap assessment GAP-35"]
+  status: queued
+  after: [DQ-002, DQ-008]
+
+- id: DQ-013
+  ref: GAP-22
+  question: "Which security level target do we set for the arm under IEC 62443-4-2?"
+  context: >-
+    Anyone with the CAN-USB adapter open can move the arm (GAP-22) and tele-operation is unauthenticated
+    (GAP-23). SL 1 means protection against casual misuse, SL 2 against an intentional attacker with low resources.
+    The host and the bench network decide what is reachable.
+  reversibility: revisit
+  decider: lead
+  blocks: "WP-C-08 §2; WP-S-07; WP-W-11"
+  options:
+    - key: A
+      recommended: true
+      title: "SL 2 for identification and authentication, system integrity and data confidentiality (FR 1, 3, 4); SL 1 for the rest"
+      detail: "Authentication on every motion path and signed parameters; the rest proportionate to a bench. Cost: an authenticated SDK and bridge, which only exists after DQ-007."
+    - key: B
+      title: "SL 1 throughout"
+      detail: "Minimal. Cost: an unauthenticated network path to a moving arm stays inside the target."
+  sources: ["IEC 62443-4-2:2019 §4", "gap assessment GAP-22, GAP-23"]
+  status: queued
+  after: [DQ-007]
+
+- id: DQ-014
+  ref: GAP-25
+  question: "Is the wrist camera default-off with opt-in recording and local storage, or default-on as upstream ships it?"
+  context: >-
+    Upstream's camera mounts and the grasping demo assume a streaming camera. The package found no retention or
+    recording posture (GAP-25). Default-off with a visible indicator costs a configuration flag and a line in the
+    manual; default-on is what the demos expect.
+  reversibility: easy
+  decider: lead
+  blocks: "SF-31 in WP-C-04; WP-C-08 CSR on the camera; WP-O-03"
+  options:
+    - key: A
+      recommended: true
+      title: "Default-off; recording opt-in per session with a visible indicator; local storage only"
+      detail: "People at the bench are not recorded without a decision. Cost: the demo needs one extra step."
+    - key: B
+      title: "Default-on streaming, no recording; a manual note"
+      detail: "Demos work unchanged. Cost: a bystander is captured by default."
+  sources: ["package HZ-D01, FM-23, SYRS-026, GAP-PRIV-01"]
+  status: queued
+  after: [DQ-003]
+
+- id: DQ-015
+  ref: GAP-07
+  question: "Must the gripper hold its grasp on power loss (a requirement on the gripper design), or is a dropped payload accepted and limited by the payload rule?"
+  context: >-
+    The gripper actuator's behaviour on power loss is unknown (GAP-07). Requiring holding means a brake or a
+    non-back-drivable drive and a test; accepting the drop means a payload mass and height limit and a rule that
+    nobody is under the gripper.
+  reversibility: revisit
+  decider: lead
+  blocks: "SF-13 in WP-C-04; WP-H-01; WP-V-02 holding tests"
+  options:
+    - key: A
+      recommended: true
+      title: "Require holding on power loss for payloads above 0.5 kg; accept the drop below, with a payload and height limit"
+      detail: "A test and possibly a brake. Cost: the gripper may need a design change for heavy grasps."
+    - key: B
+      title: "Accept the drop; limit payload to 1.5 kg and forbid people under the gripper"
+      detail: "No hardware change. Cost: a dropped 1.5 kg object from 0.7 m is a hazard the manual must carry."
+  sources: ["package HZ-M07, FM-06, SYRS-014", "gap assessment GAP-07"]
+  status: queued
+  after: [DQ-003]
+
+- id: DQ-016
+  ref: GAP-19
+  question: "Joint speed and torque ceilings for the bench envelope: 50 % of the actuator maximum in RUN and 25 % in TEACH until the stopping tests set a budget"
+  context: >-
+    The package proposes 50 % demo speed for OE-1 and 25 % for teach; the record needs a ceiling before the first
+    powered test. These are reversible constants that WP-V-02 will replace with measured values.
+  reversibility: easy
+  decider: claude
+  blocks: "nothing; recorded so the first bench test knows what to check"
+  options:
+    - key: A
+      recommended: true
+      title: "50 % of maximum joint speed and rated torque in RUN, 25 % in TEACH, until WP-V-02"
+      detail: "Conservative and simple. Cost: slower demos until measured."
+    - key: B
+      title: "Actuator maximum in RUN"
+      detail: "No behaviour change. Cost: a 1.5 kg payload at full speed is the untested worst case."
+  sources: ["package 05_OpEnv (speed cap row)", "performance_testing/Performance_Testing.md"]
+  status: queued
+  after: [DQ-003]
+
+- id: DQ-017
+  ref: GAP-34
+  question: "How is the B601-RS variant handled in the record: a second configuration with its own actuator rows, or out of scope until released?"
+  context: >-
+    Depends on DQ-001. If the RS is tracked, every actuator-specific row (limits, holding, thermal, bus, reliability)
+    carries a second column; if excluded, the item definition says so and the fork's software refuses an RS arm.
+  reversibility: revisit
+  decider: lead
+  blocks: "WP-C-01 §1; WP-W-09 variant table"
+  options:
+    - key: A
+      recommended: true
+      title: "Second configuration CFG-002, tracked, every value marked unverified until the RS BOM is released"
+      detail: "Keeps the door open. Cost: a second column in the actuator rows."
+    - key: B
+      title: "Out of scope; the fork's software refuses an RS actuator at boot"
+      detail: "Smaller record. Cost: RS owners have nothing."
+  sources: ["gap assessment GAP-34", "package GAP-VAR-01, FM-26"]
+  status: queued
+  after: [DQ-001]
+
+- id: DQ-018
+  ref: GAP-09
+  question: "What is the supply disconnecting device: a lockable switch on the mains side of the PSU, a DC disconnect between the PSU and the arm, or both?"
+  context: >-
+    EN 60204-1 asks for a lockable supply disconnect. The PSU is open-frame (GAP-11), so a mains-side switch needs
+    an enclosure; a DC-side disconnect is a keyed connector or a switch rated for 15 A and is what the bench needs
+    for lock-out during maintenance.
+  reversibility: easy
+  decider: lead
+  blocks: "WP-H-05 §2; WP-H-02; the bench build BOM"
+  options:
+    - key: A
+      recommended: true
+      title: "Both: an enclosed PSU with a mains switch, and a lockable DC disconnect and fuse at the arm's input"
+      detail: "Lock-out at the arm, mains isolation at the supply. Cost: an enclosure and two parts, roughly €60."
+    - key: B
+      title: "A DC-side disconnect only"
+      detail: "Cheaper. Cost: the exposed mains terminals of the open-frame PSU stay (GAP-11)."
+  sources: ["EN 60204-1 §5.3", "gap assessment GAP-09, GAP-11"]
+  status: queued
+  after: [DQ-006]
+
+- id: DQ-019
+  ref: GAP-14
+  question: "Do we ask Damiao and RobStride for reliability data (MTTFD or B10D, fault behaviour) formally, or proceed with conservative generic values?"
+  context: >-
+    No actuator publishes reliability data (GAP-14). Without it the PL calculation uses ISO 13849-1's generic
+    values, which are conservative enough to fail PL d on a single actuator channel. A supplier request costs a
+    letter and may get nothing.
+  reversibility: easy
+  decider: lead
+  blocks: "WP-H-04; WP-H-07; WP-M-10 §2"
+  options:
+    - key: A
+      recommended: true
+      title: "Ask both suppliers now, through Seeed, and use generic values until an answer arrives"
+      detail: "Costs nothing. Cost: the answer may never come."
+    - key: B
+      title: "Generic values only; design the chain so the actuators are not a channel of any PL d function"
+      detail: "Independent of the suppliers. Cost: every stop function must remove power by contactor, which the recommended chain does anyway."
+  sources: ["gap assessment GAP-14", "package OI-05", "ISO 13849-1 Annex C"]
+  status: queued
+  after: [DQ-001]
+
+- id: DQ-020
+  ref: GAP-18
+  question: "Where does the software safety layer run: on the host PC inside the SDK, or on a dedicated controller between the host and the motor bus?"
+  context: >-
+    The watchdog, the mode state machine and the per-joint clamps must sit between every command source and the
+    drives. On the host they share a computer with the policy runtime and the UI; on a dedicated controller (a
+    microcontroller with two CAN interfaces) they are separate hardware and can also read the chain's diagnostics.
+  reversibility: revisit
+  decider: lead
+  blocks: "WP-S-03 allocation; WP-W-03; WP-A-05; the bench build BOM"
+  options:
+    - key: A
+      recommended: true
+      title: "A dedicated controller between the host and the bus, with the host software hardened as well"
+      detail: "Freedom from interference by construction. Cost: a board (roughly €30 to €80) and firmware to write and verify."
+    - key: B
+      title: "On the host, in the forked SDK, with process isolation"
+      detail: "No hardware. Cost: the interference argument (WP-A-05) must be made for a general-purpose computer."
+  sources: ["gap assessment GAP-17, GAP-18, GAP-19", "package architecture §4.2"]
+  status: queued
+  after: [DQ-007]

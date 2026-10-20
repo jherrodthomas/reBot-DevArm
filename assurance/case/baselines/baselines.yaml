@@ -1,0 +1,12 @@
+# Engineering baselines the assurance records refer to. A baseline is frozen only by a tagged
+# configuration baseline under WP-P-01; until then it is under development. Format: the restricted
+# YAML subset described in assurance/case/README.md, so one validator can read every record.
+
+- id: BL-001
+  kind: baseline
+  title: "Initial assurance baseline (the fork as inherited, with the concept-phase package)"
+  description: "jherrodthomas/reBot-DevArm 206ebda (2026-05-03): upstream Seeed-Projects/reBot-DevArm hardware record v1.1 (STEP of 2026-04-25, BOM, performance test) merged, plus the fork's concept-phase engineering package of 2026-05-04. No fork changes to hardware or software. The software the arm runs is upstream and unpinned until DQ-007 is answered."
+  lifecycle_status: under-development
+  tag: null
+  source: WP-P-01
+  source_revision: "206ebda"

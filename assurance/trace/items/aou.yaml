@@ -1,0 +1,50 @@
+# Assumptions of use AOU-01…AOU-08 from WP-C-01 §8 (the package's ASS-A-01…08 in order).
+# Format: case/tools/subsetyaml.py (restricted YAML subset).
+
+- id: AOU-01
+  kind: assumption
+  title: "The operator is trained and within reach of an emergency-stop device at all times in RUN"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-02
+  kind: assumption
+  title: "The PSU is a 24 V regulated supply rated for the full bus current with overcurrent protection"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-03
+  kind: assumption
+  title: "The structure is genuine sheet metal and declared printed materials; no substitution on load-bearing brackets"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-04
+  kind: assumption
+  title: "The motor harness is built per upstream's wiring guide with correct termination"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-05
+  kind: assumption
+  title: "The operating surface is level and dry and the arm is clamped to a workbench"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-06
+  kind: assumption
+  title: "No bystander is within the 650 mm reach while the arm is in RUN"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-07
+  kind: assumption
+  title: "The arm is not a medical device and is not used for patient care or restraint"
+  status: proposed
+  source: WP-C-01
+
+- id: AOU-08
+  kind: assumption
+  title: "The wrist camera does not capture or transmit personal data outside the local network without operator action"
+  status: proposed
+  source: WP-C-01

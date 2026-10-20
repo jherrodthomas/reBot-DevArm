@@ -1,0 +1,41 @@
+# Safety-relevant file list (WP-P-01 §3) — authoritative, machine-readable copy.
+#
+# Format: <class> <glob>   (comment after '#')
+#   SR-A  safety-related parts of the control system: the safety-chain design files, the controller safety
+#         layer, the safety parameter sets. Two human approvals; impact analysis; verification evidence.
+#   SR-Q  functional layers that feed hazards or configure limits: the forked SDK and ROS 2 driver, the policy
+#         runtime integration, the hardware record. Impact analysis.
+#   SR-T  build, test, CI, toolchain or dependency configuration that changes evidence or binaries.
+# Anything not matched is NSR (standard change route).
+#
+# Globs are relative to the fork workspace: this repository holds the hardware record and the assurance
+# record; the software forks (DQ-007) will sit beside it as rebot-motorbridge/ and rebot-ros2/ once they
+# exist, and the controller safety layer as rebot-safety-controller/ (DQ-020). '**' matches any number of
+# path segments, '*' matches within one segment. When several patterns match, the longest wins.
+# Change this file only through a change request (WP-P-02).
+
+# SR-A: the safety chain and the controller safety layer
+SR-A assurance/04-hardware/chain/**                  # safety-chain schematics, wiring, parts (WP-H-02; to be created)
+SR-A rebot-safety-controller/src/**                   # watchdog, mode machine, clamps, plausibility (to be created)
+SR-A rebot-safety-controller/config/**                # limits, timings, variant table (WP-W-09)
+SR-A rebot-motorbridge/motorbridge/safety/**          # the host-side safety layer, if DQ-020 puts it there (to be created)
+SR-A assurance/05-software/parameters/**              # WP-W-09 parameter sets
+
+# SR-Q: functional layers that feed hazards or configure limits
+SR-Q rebot-motorbridge/**                             # the forked Python SDK (DQ-007)
+SR-Q rebot-ros2/**                                    # the forked ROS 2 driver and MoveIt 2 configuration (DQ-007)
+SR-Q hardware/**                                      # upstream's hardware record: BOM, STEP, limit blocks, performance test (merged, never edited)
+
+# SR-T: build, CI, toolchain, pins
+SR-T rebot-motorbridge/.github/**
+SR-T rebot-ros2/.github/**
+SR-T rebot-safety-controller/.github/**
+SR-T rebot-motorbridge/pyproject.toml
+SR-T rebot-ros2/**/package.xml
+SR-T .github/**
+SR-T assurance/tools/**
+SR-T assurance/process/tools/**
+SR-T assurance/case/tools/**
+SR-T assurance/01-management/decisions/*.py
+SR-T docs/assets/rebot/*.py
+SR-T tools/**
