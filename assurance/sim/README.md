@@ -5,7 +5,7 @@
 | Work product | WP-P-12 |
 | Title | Hazard scenes and simulation pictures: the hazards of WP-C-03 drawn on upstream's CAD |
 | Standard reference | ISO 12100:2010 §5.4 (an aid to hazard identification and to the risk-graph inputs of ISO 13849-1 Annex A); ISO 21448 §6 as an informative method for scenario-based review. Clause numbers are to be checked against licensed copies |
-| Version | 0.1 (2026-10-21): the joint rig built from upstream's STEP, a catalogue of twelve hazard scenes, the kinematic exporter, the Blender renderer, the dashboard composer and the gallery |
+| Version | 0.2 (2026-10-21): the figure's hands open (rest pose with a relaxed curl) so the hand-guiding scenes show fingers in the gap; all twelve scenes re-rendered. 0.1 (2026-10-21): the joint rig built from upstream's STEP, a catalogue of twelve hazard scenes, the kinematic exporter, the Blender renderer, the dashboard composer and the gallery |
 | Status | Draft. AI-drafted (Claude, AI assistant; I0 under [WP-M-02 §3.3](../01-management/WP-M-02-safety-plan.md#33-ai-assisted-authoring)); not reviewed. **Pictures only: synthetic, no evidence credit** ([§4](#4-what-the-pictures-are-and-are-not)) |
 | Owner | Safety manager (role, WP-M-02 §3.1); drafted by the Claude session |
 | Configuration | CFG-001, reBot Arm B601-DM v1.1 (WP-C-01 §2); the STEP of BL-001 (`206ebda`) |
@@ -93,7 +93,7 @@ lowest point of a link group above the bench plane.
 | Geometry | Upstream's v1.1 CAD, tessellated and posed by the rig of §3 | A measurement of a built arm; the printed parts and covers as fitted |
 | Motion | One joint or the gripper moving at an assumed rate, nothing stopping it; the scene freezes at the first contact and says so | A run of the controller, the SDK or a policy; a plant; any dynamics |
 | Numbers | Gaps, heights, distances and finger-tip speeds from the kinematics, against the ISO 13854 gaps (25, 100, 120, 500 mm, to be checked) and the package's 250 mm/s reduced-speed value | Forces, pressures, currents, temperatures: every dashboard says "not modelled" where it would show one |
-| Person | A CC0 figure placed where WP-C-06 puts the person, hands posed by inverse kinematics; the head or hand *point* the distance is measured to is the scene's | A body model; a hand with fingers; a human response |
+| Person | A CC0 figure placed where WP-C-06 puts the person, hands posed by inverse kinematics with relaxed open fingers; the head or hand *point* the distance is measured to is the scene's | A body model; a hand whose fingers are measured (only the point is); a human response |
 | Rating | The package's S, F, P, PLr and category as WP-C-03 §5 carries them, with the note that OE-1 re-rating is open (OI-1) | A rating this record has accepted |
 | Stops | The stop functions WP-C-04 allocates, with their state at BL-001 (most do not exist) | A claim that any of them works |
 
@@ -120,6 +120,5 @@ the package's rates for TEACH and RUN are the numbers every outcome turns on (DQ
 | ID | Item | Owner | Gate |
 |---|---|---|---|
 | OI-1 | Replace the assumed joint limits, rates and gripper opening with upstream's declared values once they exist (GAP-10218-03) or the lead's (DQ-016); re-export every scene | Systems engineer | G1 |
-| OI-2 | Open-hand pose for the figure (a finger-bone edit of the CC0 rig) so the hand-guiding scenes show fingers in the gap | Claude session | G1 |
-| OI-3 | Condition variants per operating envelope (OE-2 classroom with a second person, OE-3 cell) once the envelopes are decided (DQ-003) | Safety manager | G1 |
-| OI-4 | When the controller safety layer exists (DQ-020), a plant layer that runs its stop functions against these motions, as LionDriver's layer 1 does; until then every scene is kinematic | Software safety engineer | G3 |
+| OI-2 | Condition variants per operating envelope (OE-2 classroom with a second person, OE-3 cell) once the envelopes are decided (DQ-003) | Safety manager | G1 |
+| OI-3 | When the controller safety layer exists (DQ-020), a plant layer that runs its stop functions against these motions, as LionDriver's layer 1 does; until then every scene is kinematic | Software safety engineer | G3 |

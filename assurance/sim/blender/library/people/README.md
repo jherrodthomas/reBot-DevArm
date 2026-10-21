@@ -18,7 +18,7 @@ their outfits are in the paid versions.
 - `render_scene.py` imports one figure per scene, stands it where the catalogue entry puts it, facing the bench, and
   poses the hands by inverse kinematics on the hand points the exporter computed (`reach`: one hand at a point;
   `lean`: both hands on the arm; `stand`: arms down, with a lean of the spine for a bystander looking in).
-- The pack's base pose has closed hands, so a figure shows where a hand is, not the fingers (WP-P-12 OI-2).
+- The import lands on a frame of the walk cycle (a fist); the renderer resets every bone to the rest pose and curls the fingers 12°, a relaxed open hand.
 - A scene picks the figure with `person: {figure: male | female}` in [`../../scenes.yaml`](../../scenes.yaml).
 
 **Sources** (downloaded 2026-10-19):

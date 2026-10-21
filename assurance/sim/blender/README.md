@@ -47,5 +47,5 @@ footer that says what the picture is and is not.
 
 The arm is upstream's CAD (`hardware/`, CC BY-NC-SA 4.0, never edited here; the OBJs are regenerated, not committed).
 The operator is one of the two CC0 Quaternius figures in [`library/people/`](library/people/README.md), copied from
-LionDriver's library; hands are closed in the pack's base pose, so a figure shows where the hand is, not the fingers.
+LionDriver's library, reset to the rig's rest pose with a relaxed curl of the fingers, so a hand in a gap shows its fingers there.
 The bench, clamps, floor and lights are procedural. No HDRI or texture is fetched.

@@ -28,6 +28,7 @@ sys.path.insert(0, str(HERE))
 import arm_model  # noqa: E402
 
 PEOPLE = HERE / "library" / "people"
+FINGER_SIGN = 1.0   # curl direction of the finger bones' local Z (checked by eye on the hand close-up)
 VIEWS = {   # camera location, target (m, scene frame = STEP frame / 1000), lens mm
   "hero": {"loc": (0.72, -0.92, 0.40), "target": (0.0, 0.0, 0.13), "lens": 62},
   "elbow": {"loc": (-0.42, -0.55, 0.36), "target": (-0.18, 0.0, 0.17), "lens": 85},
@@ -216,6 +217,9 @@ class Person:
       if o.name.startswith("Icosphere"):
         o.hide_render = True; o.hide_viewport = True
     self.rig.animation_data_clear()
+    for pb in self.rig.pose.bones:              # back to the rest pose: the import leaves the walk cycle's frame (a fist)
+      pb.rotation_mode = "XYZ"; pb.rotation_euler = (0, 0, 0); pb.location = (0, 0, 0); pb.scale = (1, 1, 1)
+    self.relax_fingers()
     self.rig.rotation_mode = "XYZ"
     bpy.ops.object.empty_add(location=(0, 0, 0)); self.target_r = bpy.context.active_object; self.target_r.name = "hand_r_target"
     bpy.ops.object.empty_add(location=(0, 0, 0)); self.target_l = bpy.context.active_object; self.target_l.name = "hand_l_target"
@@ -230,6 +234,13 @@ class Person:
     self.ik_l = pb["hand_l"].constraints.new("IK"); self.ik_l.target = self.target_l; self.ik_l.chain_count = 3
     self.ik_l.use_rotation = False; self.ik_l.mute = True
     bpy.ops.object.mode_set(mode="OBJECT")
+
+  def relax_fingers(self, curl_deg: float = 12.0):
+    """A relaxed open hand: the rest pose is straight, the walk cycle's is a fist; a little curl in between."""
+    for pb in self.rig.pose.bones:
+      n = pb.name
+      if any(n.startswith(f) for f in ("index_", "middle_", "ring_", "pinky_")) and "leaf" not in n:
+        pb.rotation_mode = "XYZ"; pb.rotation_euler = (0, 0, math.radians(FINGER_SIGN * curl_deg * (1.0 if n.endswith("_r") else -1.0)))
 
   def place(self, spec: dict):
     """spec: at [x,y,z] (feet, m), yaw (deg), pose: reach | stand | lean, hand_at [x,y,z], hand_l_at, lean (deg)."""
