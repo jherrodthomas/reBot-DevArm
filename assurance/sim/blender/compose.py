@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-W, H = 1600, 1100
+W, H = 1600, 1124
 CHROME_CANDIDATES = ["/opt/pw-browsers/chromium-1194/chrome-linux/chrome", "chromium", "chromium-browser", "google-chrome", "chrome"]
 
 
