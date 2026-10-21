@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-W, H = 1600, 1040
+W, H = 1600, 1072
 CHROME_CANDIDATES = ["/opt/pw-browsers/chromium-1194/chrome-linux/chrome", "chromium", "chromium-browser", "google-chrome", "chrome"]
 
 
@@ -95,8 +95,9 @@ def html(sc: dict, sd: Path, t_now: float) -> str:
   sp = [r["tcp_speed_mms"] for r in rows]
   if max(sp) > 0:
     plots.append(plot("Finger-tip speed", f"{now['tcp_speed_mms'] / 1000:.2f} m/s", ts, sp, 0, nice_max(max(sp) * 1.2), t_now, (x0, x1), [(250, "250 mm/s reduced-speed value (package OE-4)")]))
-  while len(plots) < 5:
-    plots.append(plot(["Actuator current", "Contact force", "Controller reaction"][len(plots) - 3 if len(plots) >= 3 else 0], "not modelled", [], [], 0, 1, t_now, (x0, x1), color="#8fd8d1", note="not modelled: kinematic scene"))
+  for name in ("Actuator current", "Contact force", "Controller reaction"):
+    if len(plots) < 5:
+      plots.append(plot(name, "not modelled", [], [], 0, 1, t_now, (x0, x1), color="#8fd8d1", note="not modelled: kinematic scene"))
   plots = plots[:5]
 
   thumbs = "".join(f'<div class="thumb{" now" if f is f_now else ""}">{img(still(f["i"], main_v))}<div class="tl"><b>{f["t"]:+.1f} s</b> {esc(f["label"])}</div></div>' for f in frames[:6])
@@ -115,7 +116,7 @@ def html(sc: dict, sd: Path, t_now: float) -> str:
   minval = f"{min(x['gap_mm'] for x in rows):.0f} mm" if "gap_mm" in rows[0] else f"{min(x['dist_mm'] for x in rows):.0f} mm" if "dist_mm" in rows[0] else "—"
   tiles = [("Time from trigger", f"{t_now:+.1f} s", ""), ("Minimum gap" if "gap_mm" in rows[0] else "Minimum distance", minval, "amb"),
            ("Limit crossed", f"{crossed['t']:+.1f} s" if crossed else "no", "amb" if crossed else ""),
-           ("Stop reaction", "none at BL-001" if all("does not exist" in s["state"] or "unknown" in s["state"] or "not" in s["state"] for s in sc["stops"]) else "see stops", ""),
+           ("Stop reaction", "none at BL-001" if not any(s["state"].startswith("exists") for s in sc["stops"]) else "see stops", ""),
            ("Contact", contact["label"].split(":")[0] if contact else "none", "red" if contact else "")]
   tiles_html = "".join(f'<div class="tile"><div class="l">{esc(l)}</div><div class="v {c}">{esc(v)}</div></div>' for l, v, c in tiles)
   callout = f"{sc['gap_label']} {now['gap_mm']:.0f} mm at {t_now:+.1f} s" if "gap_mm" in now else (f"{sc['track']['point']} at {now['dist_mm']:.0f} mm at {t_now:+.1f} s" if "dist_mm" in now else sc["motion_text"])
@@ -139,11 +140,11 @@ body{{margin:0;background:#0d1114;color:#e6edf0;font-family:Inter,"Segoe UI",Hel
 .card h2{{font-size:14px;margin:0 0 6px;color:#f05a4e}} .card h3{{font-size:12.5px;margin:0 0 6px}}
 .kv{{display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:5px;font-size:12px}} .kv b{{text-align:right}} .red{{color:#f05a4e}} .amb{{color:#F2A33A}}
 .main{{position:relative;width:900px;height:506px;border-radius:8px;overflow:hidden;background:#151c21}} .main img{{width:900px;height:506px;display:block;object-fit:cover}} .ov{{position:absolute;left:0;top:0}}
-.missing{{display:flex;align-items:center;justify-content:center;height:100%;color:#8a9aa2;font-size:12px;min-height:118px}}
+.missing{{display:flex;align-items:center;justify-content:center;height:100%;color:#8a9aa2;font-size:12px;min-height:147px}}
 .tiles{{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:8px}} .tile{{background:#151c21;border-radius:8px;padding:8px 12px}}
 .tile .l{{font-size:11px;color:#9fb0b8}} .tile .v{{font-size:22px;font-weight:700;margin-top:2px;white-space:nowrap;overflow:hidden}}
 .plots{{display:flex;gap:8px;padding:8px 10px 0}}
-.thumbs{{display:flex;gap:8px;padding:8px 10px 0}} .thumb{{background:#151c21;border-radius:8px;overflow:hidden;width:262px}} .thumb img{{width:262px;height:118px;object-fit:cover;object-position:50% 45%;display:block}}
+.thumbs{{display:flex;gap:8px;padding:8px 10px 0}} .thumb{{background:#151c21;border-radius:8px;overflow:hidden;width:262px}} .thumb img{{width:262px;height:147px;object-fit:contain;background:#0d1114;display:block}}
 .tl{{font-size:10.5px;padding:4px 8px;color:#cfd8dc;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}} .thumb.now{{outline:2px solid #4a9be8}}
 .foot{{font-size:10px;color:#7e949b;padding:6px 10px;display:flex;justify-content:space-between;gap:20px}}
 .note{{font-size:10px;color:#7e949b;margin-top:6px}}

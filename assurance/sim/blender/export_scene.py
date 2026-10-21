@@ -200,8 +200,9 @@ def build(scene: dict, cat: dict, items: dict, geo: Geometry, dt: float) -> dict
       events.append({"t": t, "label": label, "trigger": True})
     g = row.get("gap_mm")
     if g is not None and frozen_at is None:
+      g_prev = rows[-1]["gap_mm"] if rows else g
       for name in ("arm", "hand", "finger"):
-        if g <= lim[name] and name not in crossed and scene.get("gap_limits", ["finger", "hand", "arm"]).count(name):
+        if g <= lim[name] < g_prev and name not in crossed and name in scene.get("gap_limits", ["finger", "hand", "arm"]):
           crossed.add(name); events.append({"t": t, "label": f"gap {g:.0f} mm: ISO 13854 {name} gap ({lim[name]} mm) crossed"})
       if g <= lim["finger"] and kind in ("gripper_close", "joint_sweep") and (person or kind == "gripper_close") and "contact" not in crossed:
         crossed.add("contact"); frozen_at = t; frozen_q, frozen_opening = q, opening

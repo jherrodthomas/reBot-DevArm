@@ -88,6 +88,7 @@ scenes:
     pose: [0, 0, 0, 0, 0, 0]
     opening: 64
     motion: {kind: gripper_close, from: 64, to: 4, rate_mms: 30, t0: 0.0}
+    gap_limits: [finger]
     person: {figure: male, at: [-0.30, 0.50, -0.9], yaw: 0, pose: reach, hand: {at: tcp, offset: [0.0, 0.0, 0.03]}}
     views: [hand, scene, top]
     main: hand
