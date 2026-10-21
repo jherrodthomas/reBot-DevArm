@@ -1,0 +1,59 @@
+{
+ "outcome": "**contact**: finger caught in the gap at +1.60 s",
+ "events": [
+  {
+   "t": 0.0,
+   "label": "J3 starts: 100\u00b0 to 45\u00b0 at 30 \u00b0/s",
+   "trigger": true
+  },
+  {
+   "t": 0.7,
+   "label": "gap 107 mm: ISO 13854 arm gap (120 mm) crossed"
+  },
+  {
+   "t": 0.8,
+   "label": "gap 93 mm: ISO 13854 hand gap (100 mm) crossed"
+  },
+  {
+   "t": 1.6,
+   "label": "gap 20 mm: ISO 13854 finger gap (25 mm) crossed"
+  },
+  {
+   "t": 1.6,
+   "label": "finger caught in the gap: scene frozen (contact not modelled)",
+   "contact": true
+  }
+ ],
+ "frames": [
+  {
+   "i": 0,
+   "t": -1.0,
+   "label": "start"
+  },
+  {
+   "i": 1,
+   "t": 0.0,
+   "label": "J3 starts: 100\u00b0 to 45\u00b0 at 30 \u00b0/s"
+  },
+  {
+   "i": 2,
+   "t": 0.7,
+   "label": "gap 107 mm: ISO 13854 arm gap (120 mm) crossed"
+  },
+  {
+   "i": 3,
+   "t": 0.8,
+   "label": "gap 93 mm: ISO 13854 hand gap (100 mm) crossed"
+  },
+  {
+   "i": 4,
+   "t": 1.6,
+   "label": "gap 20 mm: ISO 13854 finger gap (25 mm) crossed"
+  },
+  {
+   "i": 5,
+   "t": 3.0,
+   "label": "end"
+  }
+ ]
+}

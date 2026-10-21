@@ -1,0 +1,51 @@
+{
+ "outcome": "**contact**: head struck at 0.26 m/s (finger-tip speed) at +0.90 s",
+ "events": [
+  {
+   "t": 0.0,
+   "label": "J2 starts: 60\u00b0 to 100\u00b0 at 45 \u00b0/s",
+   "trigger": true
+  },
+  {
+   "t": 0.6,
+   "label": "head within 100 mm of the finger tips"
+  },
+  {
+   "t": 0.9,
+   "label": "head struck at 0.26 m/s (finger-tip speed): scene frozen (contact not modelled)",
+   "contact": true
+  }
+ ],
+ "frames": [
+  {
+   "i": 0,
+   "t": -1.0,
+   "label": "start"
+  },
+  {
+   "i": 1,
+   "t": -0.4,
+   "label": "258.9 mm"
+  },
+  {
+   "i": 2,
+   "t": 0.0,
+   "label": "J2 starts: 60\u00b0 to 100\u00b0 at 45 \u00b0/s"
+  },
+  {
+   "i": 3,
+   "t": 0.6,
+   "label": "head within 100 mm of the finger tips"
+  },
+  {
+   "i": 4,
+   "t": 0.9,
+   "label": "head struck at 0.26 m/s (finger-tip speed): scene frozen (contact not modelled)"
+  },
+  {
+   "i": 5,
+   "t": 2.0,
+   "label": "end"
+  }
+ ]
+}

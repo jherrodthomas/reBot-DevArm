@@ -64,7 +64,7 @@ scenes:
     change: >-
       What would change it: an ISO 13854 finger gap by design at the elbow (DM-02, GAP-01), a current-based contact
       stop on the elbow actuator (SF-04), or a hand-guiding rule that keeps both hands on the forearm (WP-C-06 HR).
-    status: catalogued
+    status: rendered
 
   - id: hz-m02-gripper-finger-teach
     hz: HZ-M02
@@ -100,7 +100,7 @@ scenes:
       What would change it: a gripper force limit bound to the actuator current (SF-03 on the gripper), a TEACH rule
       that the gripper never closes on a trigger while hand-guiding (WP-C-06 HR), or a finger geometry that keeps a
       25 mm stop (DM-02).
-    status: catalogued
+    status: rendered
 
   - id: hz-p03-wrist-against-bench
     hz: HZ-P03
@@ -136,7 +136,7 @@ scenes:
     change: >-
       What would change it: a workspace floor in the controller (a software limit on the TCP height, SF-29 extended to
       Cartesian limits), SF-04, or the hand-guiding rule of WP-C-06.
-    status: catalogued
+    status: rendered
 
   # ----------------------------------------------------------------------------------- mechanical, RUN
   - id: hz-m04-sweep-strike-run
@@ -175,7 +175,7 @@ scenes:
     change: >-
       What would change it: a marked area and reduced speed when a person may be in reach (SF-06, WP-C-02 §6), the
       warning before motion (SF-15), and the emergency stop in the operator's hand (SF-32).
-    status: catalogued
+    status: rendered
 
   - id: hz-p02-hand-reach-in-run
     hz: HZ-P02
@@ -211,7 +211,7 @@ scenes:
     change: >-
       What would change it: a speed cap when a person is in reach (SF-06), a contact-force stop (SF-02, cat. 3), the
       training rule never to reach in (MU-01), and SF-32 in the operator's hand.
-    status: catalogued
+    status: rendered
 
   - id: hz-m06-tip-over-unfixtured
     hz: HZ-M06
@@ -245,7 +245,7 @@ scenes:
       payload cube is illustrative. The moment is the package's figure (4.5 kg arm, 1.5 kg at 650 mm, about 22 N·m);
       the tipping edge is the plate's -X edge at 70 mm from the J1 axis.
     change: "What would change it: DM-07 (fixing by design) and IFU-01 (fixing instruction), both proposed in WP-C-03 §6."
-    status: catalogued
+    status: rendered
 
   - id: hz-m07-payload-drop-power-loss
     hz: HZ-M07
@@ -279,7 +279,7 @@ scenes:
       Kinematic: power is removed at t = 0 and the payload cube (illustrative) falls freely from the gripper; the arm
       holds its pose (the actuators' holding behaviour without power is itself unknown, GAP-06).
     change: "What would change it: SF-13 shown by test (WP-V-02), or a holding brake on the gripper actuator."
-    status: catalogued
+    status: rendered
 
   # ----------------------------------------------------------------------------------- collaborative, restart, control
   - id: hz-p04-auto-restart-in-envelope
@@ -313,7 +313,7 @@ scenes:
       Kinematic: power returns at t = 0 and the base sweeps at 90 °/s (assumed) from +0.5 s; the hand point is where
       the operator is clearing the bench. The distance plotted is from the hand point to the finger tips.
     change: "What would change it: SF-24 (manual reset, cat. 3, PLr d) and SF-15 (warning before motion)."
-    status: catalogued
+    status: rendered
 
   - id: hz-c05-joint-limit-overshoot
     hz: HZ-C05
@@ -345,7 +345,7 @@ scenes:
       Kinematic: the elbow closes at 120 °/s (assumed RUN rate) from 60° to the modelled 0°; the assumed software limit
       is 5° and the end-stop 0° (upstream declares neither).
     change: "What would change it: SF-29 at the controller safety layer and the end-stop strength analysis (WP-H-10)."
-    status: catalogued
+    status: rendered
 
   - id: hz-c01-topic-stall-last-cmd-hold
     hz: HZ-C01
@@ -376,7 +376,7 @@ scenes:
       Kinematic: the topic stalls at t = 0 with the elbow closing at 60 °/s (assumed); the intended stop was 80°; with
       SF-08 the motion would end 250 ms after the stall (drawn as a marker), without it the elbow runs to the end-stop.
     change: "What would change it: SF-08 and SF-25 in the controller safety layer (DQ-020)."
-    status: catalogued
+    status: rendered
 
   - id: hz-m05-entanglement-joint-axis
     hz: HZ-M05
@@ -409,7 +409,7 @@ scenes:
       Kinematic: the tool roll turns one full turn at 120 °/s (assumed). The hair is not modelled; the distance plotted
       is from the head point to the wrist body.
     change: "What would change it: a guard over the roll joint's gap (DM-02) and the marked area of WP-C-02 §6."
-    status: catalogued
+    status: rendered
 
   - id: hz-p01-head-quasi-static
     hz: HZ-P01
@@ -442,4 +442,4 @@ scenes:
       Kinematic: the shoulder swings at 45 °/s (assumed) from 60° to 100°, bringing the finger tips down onto the head point; the distance plotted is from the head point
       to the finger tips. No force is modelled; ISO/TS 15066 gives 130 N for the forehead (to be checked, not claimed).
     change: "What would change it: a contact-force stop (SF-02) and, if PFL is ever claimed, SF-01 with its test campaign (DQ-005)."
-    status: catalogued
+    status: rendered

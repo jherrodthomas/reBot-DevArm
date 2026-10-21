@@ -192,9 +192,10 @@ def main(argv) -> int:
   sd = Path(a.scene_dir).resolve()
   sc = json.loads((sd / "scene.json").read_text(encoding="utf-8"))
   t_now = a.t
-  if t_now is None:
+  if t_now is None:                      # the frame the exporter flagged: the contact, else the closest approach
+    now = next((f for f in sc["frames"] if f.get("now")), None)
     contact = next((e for e in sc["events"] if e.get("contact")), None)
-    t_now = contact["t"] if contact else sc["frames"][-1]["t"]
+    t_now = now["t"] if now else contact["t"] if contact else sc["frames"][-1]["t"]
   page = sd / "dashboard.html"
   page.write_text(html(sc, sd, t_now), encoding="utf-8")
   c = chrome()

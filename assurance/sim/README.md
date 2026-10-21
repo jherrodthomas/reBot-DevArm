@@ -11,9 +11,10 @@
 | Configuration | CFG-001, reBot Arm B601-DM v1.1 (WP-C-01 §2); the STEP of BL-001 (`206ebda`) |
 | Feeds | Review of [WP-C-03](../02-concept/WP-C-03-risk-assessment.md) (the ratings, OI-1 re-rating for OE-1), [WP-C-04](../02-concept/WP-C-04-safety-functions-and-plr.md) (what each safety function would change), [WP-C-06](../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) (the interaction situations), the mechanical analysis of joint gaps (WP-H-10, GAP-01); figures for the wiki. Nothing in the safety case |
 
-> The first renders are in progress: the catalogue, the rig and the pipeline are committed, the dashboards follow in
-> the [gallery](blender/dashboards/README.md) as each scene is rendered. A red band on every picture says what it
-> is: synthetic, no evidence credit.
+![Dashboard of hz-m01-elbow-pinch-teach: the elbow closing on the operator's fingers while hand-guiding in TEACH; the large view shows the elbow gap at 25 mm with the operator's arm reaching in, the plots the gap against the ISO 13854 limits, the events and the stop functions that do not exist at BL-001](blender/dashboards/hz-m01-elbow-pinch-teach.jpg)
+
+*The elbow pinch of HZ-M01 at the moment the link gap passes the ISO 13854 finger gap; all twelve are in the
+[gallery](blender/dashboards/README.md). A red band on every picture says what it is: synthetic, no evidence credit.*
 
 ## 1. Purpose
 

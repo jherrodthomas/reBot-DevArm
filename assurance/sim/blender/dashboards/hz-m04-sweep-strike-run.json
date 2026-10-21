@@ -1,0 +1,50 @@
+{
+ "outcome": "no contact; minimum distance 17 mm",
+ "events": [
+  {
+   "t": 0.0,
+   "label": "J1 starts: -45\u00b0 to 60\u00b0 at 90 \u00b0/s",
+   "trigger": true
+  },
+  {
+   "t": 0.5,
+   "label": "head within 100 mm of the finger tips"
+  },
+  {
+   "t": 1.2,
+   "label": "J1 reaches 60\u00b0"
+  }
+ ],
+ "frames": [
+  {
+   "i": 0,
+   "t": -1.0,
+   "label": "start"
+  },
+  {
+   "i": 1,
+   "t": 0.0,
+   "label": "J1 starts: -45\u00b0 to 60\u00b0 at 90 \u00b0/s"
+  },
+  {
+   "i": 2,
+   "t": 0.5,
+   "label": "head within 100 mm of the finger tips"
+  },
+  {
+   "i": 3,
+   "t": 0.6,
+   "label": "16.9 mm"
+  },
+  {
+   "i": 4,
+   "t": 1.2,
+   "label": "J1 reaches 60\u00b0"
+  },
+  {
+   "i": 5,
+   "t": 2.5,
+   "label": "end"
+  }
+ ]
+}
