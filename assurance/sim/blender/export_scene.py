@@ -159,7 +159,7 @@ def build(scene: dict, cat: dict, items: dict, geo: Geometry, dt: float) -> dict
     hand_mm = np.asarray(resolve_point(person["hand"], scene["pose"], scene.get("opening", 0.0), scene)) * 1000
 
   rows, events, frozen_at = [], [], None
-  q_prev = opening_prev = None; tcp_prev = None
+  q_prev = opening_prev = None; tcp_prev = None; peak_speed = 0.0
   crossed = set()
   for t in ts:
     if frozen_at is not None:
@@ -170,6 +170,7 @@ def build(scene: dict, cat: dict, items: dict, geo: Geometry, dt: float) -> dict
     tcp = arm_model.tcp(q)
     row["tcp_mm"] = [round(float(v), 1) for v in tcp]
     row["tcp_speed_mms"] = round(float(np.linalg.norm(tcp - tcp_prev)) / dt, 1) if tcp_prev is not None else 0.0
+    peak_speed = max(peak_speed, row["tcp_speed_mms"])
     if q_prev is not None:
       ji = [j["id"] for j in arm_model.JOINTS].index(m["joint"]) if kind == "joint_sweep" else None
       row["joint_speed_dps"] = round(abs(q[ji] - q_prev[ji]) / dt, 1) if ji is not None else 0.0
@@ -213,7 +214,7 @@ def build(scene: dict, cat: dict, items: dict, geo: Geometry, dt: float) -> dict
         crossed.add("near"); events.append({"t": t, "label": f"{track['point']} within 100 mm of the {'finger tips' if track['to'] == 'tcp' else track['to']}"})
       if d <= 15 and "contact" not in crossed:
         crossed.add("contact"); frozen_at = t; frozen_q, frozen_opening = q, opening
-        events.append({"t": t, "label": f"{track['point']} struck at {row['tcp_speed_mms'] / 1000:.2f} m/s (finger-tip speed): scene frozen (contact not modelled)", "contact": True})
+        events.append({"t": t, "label": f"{track['point']} struck at {peak_speed / 1000:.2f} m/s (peak finger-tip speed): scene frozen (contact not modelled)", "contact": True})
     if m.get("intended_stop_deg") is not None and kind == "joint_sweep" and "intended" not in crossed:
       ji = [j["id"] for j in arm_model.JOINTS].index(m["joint"])
       if (m["to"] - m["from"]) * (q[ji] - m["intended_stop_deg"]) >= 0:
@@ -274,13 +275,13 @@ def build(scene: dict, cat: dict, items: dict, geo: Geometry, dt: float) -> dict
   contact = next((e for e in events if e.get("contact")), None)
   outcome = ("**contact**: " + contact["label"].split(":")[0] + f" at {contact['t']:+.2f} s") if contact else \
             (f"no contact; minimum gap {min(gaps):.0f} mm" if gaps else f"no contact; minimum distance {min(dists):.0f} mm" if dists else
-             next((e["label"] for e in events if "hits" in e["label"]), "static picture"))
+             next((e["label"] for e in events if "hits" in e["label"]), f"peak finger-tip speed {peak_speed / 1000:.2f} m/s" if peak_speed > 0 else "static picture"))
   return {
     "id": scene["id"], "hz": scene["hz"], "hz_title": hz["title"], "title": scene["title"], "related": scene.get("related", []),
     "situation": scene["situation"], "effect": scene["effect"], "rating": scene["rating"], "mode": scene.get("mode", ""),
     "envelope": scene.get("envelope", ""), "sf": scene.get("sf", []), "stops": scene.get("stops", []),
     "motion": m, "motion_text": motion_text(scene), "pose": scene["pose"], "opening": scene.get("opening", 0.0),
-    "fixtured": scene.get("fixtured", True), "payload": scene.get("payload"), "person": person, "head_mm": None if head_mm is None else head_mm.tolist(),
+    "fixtured": scene.get("fixtured", True), "payload": scene.get("payload"), "props": scene.get("props", {}), "person": person, "head_mm": None if head_mm is None else head_mm.tolist(),
     "views": scene["views"], "main": scene["main"], "cameras": cams, "window": scene["window"], "dt": dt,
     "limits_mm": lim, "gap_label": gap_label(scene), "track": track, "rows": rows, "events": events, "frames": frames,
     "outcome": outcome, "caption": scene["caption"], "change": scene.get("change", ""), "status": scene["status"],

@@ -1,5 +1,5 @@
 {
- "outcome": "**contact**: head struck at 0.26 m/s (finger-tip speed) at +0.90 s",
+ "outcome": "**contact**: head struck at 0.30 m/s (peak finger-tip speed) at +0.90 s",
  "events": [
   {
    "t": 0.0,
@@ -12,7 +12,7 @@
   },
   {
    "t": 0.9,
-   "label": "head struck at 0.26 m/s (finger-tip speed): scene frozen (contact not modelled)",
+   "label": "head struck at 0.30 m/s (peak finger-tip speed): scene frozen (contact not modelled)",
    "contact": true
   }
  ],
@@ -40,7 +40,7 @@
   {
    "i": 4,
    "t": 0.9,
-   "label": "head struck at 0.26 m/s (finger-tip speed): scene frozen (contact not modelled)"
+   "label": "head struck at 0.30 m/s (peak finger-tip speed): scene frozen (contact not modelled)"
   },
   {
    "i": 5,

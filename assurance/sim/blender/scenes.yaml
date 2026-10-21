@@ -22,6 +22,7 @@
 #   views       cameras to render (render_scene.VIEWS or `cameras` below); main: the dashboard's large view
 #   cameras     scene cameras: loc, target (m; or joint:J3 / tcp, resolved at export), lens
 #   window      seconds around the trigger (t = 0) to show; frames: extra times to render
+#   props       scene props: cable (an illustrative supply cable over the bench edge to a PSU on the floor)
 #   status      rendered (dashboard committed in dashboards/) or catalogued (scene file only; render pending)
 schema_version: 1
 iso_13854_mm: {finger: 25, hand: 100, arm: 120, body: 500}   # minimum gaps to avoid crushing, to be checked
@@ -443,3 +444,102 @@ scenes:
       to the finger tips. No force is modelled; ISO/TS 15066 gives 130 N for the forehead (to be checked, not claimed).
     change: "What would change it: a contact-force stop (SF-02) and, if PFL is ever claimed, SF-01 with its test campaign (DQ-005)."
     status: rendered
+
+  # ----------------------------------------------------------------------------------- second batch: policy, singularity, cable
+  - id: hz-c06-policy-ood-into-hand
+    hz: HZ-C06
+    related: [HZ-P02, HZ-C07]
+    title: "A policy on a scene it was not trained on drives the gripper into the operator's hand"
+    situation: >-
+      The operator places a new object on the bench while an imitation policy runs (MU-08, IS-04); the policy's
+      output on the unfamiliar scene is a trajectory toward the hand, at demo speed, clamped by nothing at BL-001.
+    effect: >-
+      The gripper reaches the hand at the arm's speed with no clamp on the policy output (WP-C-09) and no contact stop.
+    rating: {s: S2, f: F2, p: P2, plr: e, cat: 4, oe: All}
+    mode: "M-04 RUN, policy execution, demo speed (50 % cap, assumed)"
+    envelope: "OE-1"
+    sf: [SF-03, SF-04]
+    stops:
+      - {sf: SF-32, name: emergency stop (pendant), state: does not exist}
+      - {sf: SF-04, name: collision detection by torque estimation, state: does not exist}
+      - {sf: SF-03, name: joint torque and speed limit, state: firmware clamp, not verified}
+      - {sf: "WP-C-09", name: policy output clamp, state: does not exist}
+    pose: [20, 60, 110, -80, 0, 0]
+    opening: 40
+    motion: {kind: joint_sweep, joint: J2, from: 60, to: 100, rate_dps: 120, t0: 0.0}
+    track: {point: hand, to: tcp}
+    person: {figure: female, at: [-0.36, -0.80, -0.9], yaw: 180, pose: reach, hand: {at: [-0.359, -0.131, 0.252]}}
+    views: [scene, front, top]
+    main: scene
+    cameras:
+      scene: {loc: [1.2, -1.2, 0.65], target: [-0.25, -0.1, 0.25], lens: 40}
+    window: [-1.0, 1.5]
+    caption: >-
+      Kinematic: the shoulder swings at 120 °/s (assumed demo rate) from 60° to 100° toward the hand point; the
+      policy, the scene and the object are not modelled, only the trajectory the hazard describes.
+    change: "What would change it: the policy clamp of WP-C-09 (joint limits, speed and torque caps before the drive), SF-04, and the training rule never to reach in (MU-01)."
+    status: catalogued
+
+  - id: hz-c07-singularity-wrist-flip
+    hz: HZ-C07
+    related: [HZ-C05, HZ-M04]
+    title: "Inverse kinematics at the workspace boundary flips the wrist at full speed"
+    situation: >-
+      A Cartesian move at full reach passes near a wrist singularity; the solver's joint-space answer is a fast wrist
+      flip for a small tool motion (no damped least-squares at BL-001).
+    effect: >-
+      The finger tips sweep at several times the commanded tool speed with the arm at full reach over the bench end.
+    rating: {s: S1, f: F2, p: P2, plr: c, cat: 2, oe: All}
+    mode: "M-04 RUN"
+    envelope: "OE-1"
+    sf: [SF-30]
+    stops:
+      - {sf: SF-30, name: singularity avoidance in inverse kinematics, state: does not exist}
+      - {sf: SF-03, name: joint torque and speed limit, state: firmware clamp, not verified}
+    pose: [0, 10, 170, -60, 0, 0]
+    opening: 20
+    motion: {kind: joint_sweep, joint: J4, from: -60, to: 60, rate_dps: 300, t0: 0.0}
+    views: [scene, front, top]
+    main: scene
+    cameras:
+      scene: {loc: [1.6, -1.3, 0.75], target: [0.45, 0.0, 0.3], lens: 40}
+      front: {loc: [1.6, -0.3, 0.45], target: [0.45, 0.0, 0.3], lens: 50}
+    window: [-0.5, 1.0]
+    caption: >-
+      Kinematic: the wrist pitches 120° at 300 °/s (an assumed solver output; the actuator's no-load rating is
+      higher) with the arm at full reach; the finger-tip speed is from the CAD kinematics.
+    change: "What would change it: damped least-squares inverse kinematics (SF-30) and the joint speed cap of SF-03 ahead of the drive."
+    status: catalogued
+
+  - id: hz-m08-cable-trip-at-base
+    hz: HZ-M08
+    related: [HZ-E01]
+    title: "The PSU cable runs over the bench edge to the floor where the operator walks"
+    situation: >-
+      The 24 V supply sits on the floor; its cable goes up over the bench edge to the barrel jack at the base, across
+      the path the operator takes around the bench (OE-1 layout of WP-C-02 §6).
+    effect: >-
+      A foot catches the cable: the operator falls, or the cable pulls the barrel jack and the arm loses power
+      mid-motion (HZ-E01, HZ-M07).
+    rating: {s: S1, f: F2, p: P1, plr: b, cat: 1, oe: All}
+    mode: "any"
+    envelope: "OE-1"
+    sf: []
+    stops:
+      - {sf: IFU-02, name: cable routing in the information for use, state: does not exist}
+      - {sf: SF-13, name: gripper holding on power loss, state: unknown}
+    pose: [30, 40, 60, -20, 0, 0]
+    opening: 20
+    props: {cable: true}
+    motion: {kind: static}
+    person: {figure: male, at: [-0.55, -0.70, -0.9], yaw: 160, pose: stand}
+    views: [scene, front, top]
+    main: scene
+    cameras:
+      scene: {loc: [1.0, -1.6, 0.55], target: [-0.3, -0.3, -0.2], lens: 35}
+    window: [0.0, 1.0]
+    caption: >-
+      Static: the cable and supply are illustrative props drawn along the route a kit buyer would use; nothing about
+      the cable's length or the jack's retention is from upstream's record (GAP-02).
+    change: "What would change it: a cable route and strain relief in the installation requirements (WP-S-06) and the information for use (IFU-02)."
+    status: catalogued

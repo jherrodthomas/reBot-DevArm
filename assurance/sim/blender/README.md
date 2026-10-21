@@ -2,8 +2,8 @@
 
 | Field | Value |
 |---|---|
-| Scope | A 3D scene and a review dashboard for every hazard of [WP-C-03](../../02-concept/WP-C-03-risk-assessment.md) that a picture helps (twelve of 34 in the first catalogue), on upstream's CAD posed by the joint rig; part of [WP-P-12](../README.md) |
-| Version | 0.1 (2026-10-21): the pipeline, twelve scenes, the gallery |
+| Scope | A 3D scene and a review dashboard for every hazard of [WP-C-03](../../02-concept/WP-C-03-risk-assessment.md) that a picture helps (fifteen of 34 so far), on upstream's CAD posed by the joint rig; part of [WP-P-12](../README.md) |
+| Version | 0.2 (2026-10-21): fifteen scenes, open hands, a cable prop. 0.1 (2026-10-21): the pipeline, twelve scenes, the gallery |
 | Status | Draft. AI-drafted (Claude, AI assistant; I0 under WP-M-02 §3.3); not reviewed. **Pictures only: synthetic, no evidence credit** ([method §4](../README.md#4-what-the-pictures-are-and-are-not)) |
 
 **Gallery: [dashboards/README.md](dashboards/README.md)**, one dashboard per scene with its outcome.
@@ -32,7 +32,7 @@ python3 assurance/sim/blender/render_scene.py --pose 0,60,90,0,0,0 --opening 40 
 Every entry of [`scenes.yaml`](scenes.yaml) names the hazard, carries the package's rating and the stop functions at
 BL-001, and gives a pose, one kinematic motion (a joint sweep, the gripper closing, a payload falling, or a static
 pose), what to measure (a link gap, a height above the bench, or the distance from a head or hand point to the finger
-tips) and where the person stands. The exporter checks every reference against `trace/items/hazards.yaml`, moves the
+tips), where the person stands and any prop (the supply cable). The exporter checks every reference against `trace/items/hazards.yaml`, moves the
 geometry through the motion at an assumed rate, records when the measure crosses the ISO 13854 gaps or reaches the
 person, freezes the scene at the first contact (contact is not modelled) and picks the key frames: the start, the
 trigger, every event, the end.

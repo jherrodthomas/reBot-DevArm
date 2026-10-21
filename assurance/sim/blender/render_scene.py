@@ -284,6 +284,16 @@ def render(sc, out: Path):
 def props(spec: dict, mats):
   """Scene props: payload cube in the gripper, a hazard marker, an unfixtured base (no clamps) are in the scene spec."""
   obs = {}
+  if spec.get("props", {}).get("cable"):
+    # an illustrative supply cable: from the barrel jack at the base, over the near bench edge, down to a PSU on the floor
+    cable = principled("cable black", (0.02, 0.02, 0.02), rough=0.6)
+    pts = [(-0.06, -0.10, 0.015), (-0.06, -0.42, 0.015), (-0.06, -0.43, -0.05), (-0.06, -0.43, -0.60), (-0.06, -0.70, -0.86)]
+    for a, b in zip(pts, pts[1:]):
+      a, b = mathutils.Vector(a), mathutils.Vector(b); d = b - a
+      bpy.ops.mesh.primitive_cylinder_add(radius=0.004, depth=d.length, location=(a + b) / 2)
+      seg = bpy.context.active_object; seg.name = "cable"; seg.rotation_euler = d.to_track_quat("Z", "Y").to_euler()
+      seg.data.materials.append(cable)
+    cube("psu", (0.20, 0.10, 0.05), (-0.06, -0.76, -0.875), principled("psu", (0.75, 0.75, 0.76), metallic=0.8, rough=0.4))
   if spec.get("payload"):
     p = spec["payload"]
     obs["payload"] = cube("payload", p.get("size", (0.05, 0.05, 0.05)), p.get("at", (-0.29, 0, 0.195)), mats["payload"])

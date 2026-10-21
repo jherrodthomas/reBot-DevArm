@@ -5,7 +5,7 @@
 | Work product | WP-P-12 |
 | Title | Hazard scenes and simulation pictures: the hazards of WP-C-03 drawn on upstream's CAD |
 | Standard reference | ISO 12100:2010 §5.4 (an aid to hazard identification and to the risk-graph inputs of ISO 13849-1 Annex A); ISO 21448 §6 as an informative method for scenario-based review. Clause numbers are to be checked against licensed copies |
-| Version | 0.2 (2026-10-21): the figure's hands open (rest pose with a relaxed curl) so the hand-guiding scenes show fingers in the gap; all twelve scenes re-rendered. 0.1 (2026-10-21): the joint rig built from upstream's STEP, a catalogue of twelve hazard scenes, the kinematic exporter, the Blender renderer, the dashboard composer and the gallery |
+| Version | 0.3 (2026-10-21): three more scenes (a policy driving the gripper into the operator's hand, a wrist flip at a singularity at full reach, the supply cable over the bench edge), fifteen in all. 0.2 (2026-10-21): the figure's hands open (rest pose with a relaxed curl) so the hand-guiding scenes show fingers in the gap; all twelve scenes re-rendered. 0.1 (2026-10-21): the joint rig built from upstream's STEP, a catalogue of twelve hazard scenes, the kinematic exporter, the Blender renderer, the dashboard composer and the gallery |
 | Status | Draft. AI-drafted (Claude, AI assistant; I0 under [WP-M-02 §3.3](../01-management/WP-M-02-safety-plan.md#33-ai-assisted-authoring)); not reviewed. **Pictures only: synthetic, no evidence credit** ([§4](#4-what-the-pictures-are-and-are-not)) |
 | Owner | Safety manager (role, WP-M-02 §3.1); drafted by the Claude session |
 | Configuration | CFG-001, reBot Arm B601-DM v1.1 (WP-C-01 §2); the STEP of BL-001 (`206ebda`) |
@@ -102,14 +102,15 @@ record in `case/`, and `test_scenes.py` does not check anything about the arm, o
 
 ## 5. The scenes
 
-Twelve scenes, one per hazard of WP-C-03 that a picture helps ([gallery with the outcomes](blender/dashboards/README.md)):
+Fifteen scenes, one per hazard of WP-C-03 that a picture helps ([gallery with the outcomes](blender/dashboards/README.md)):
 the hand-guiding pinches (HZ-M01 at the elbow, HZ-M02 in the gripper, HZ-P03 against the bench), the RUN strikes and
 contacts (HZ-M04 sweep into a head, HZ-P02 a hand reaching in, HZ-P01 the forehead), tip-over (HZ-M06) and payload
 drop (HZ-M07), restart with the operator in reach (HZ-P04), the control hazards that end in the elbow gap (HZ-C05
-limit overshoot, HZ-C01 last-command hold) and entanglement at the tool roll (HZ-M05). Each dashboard says what would
-change the outcome, in WP-C-04 and WP-C-06 terms.
+limit overshoot, HZ-C01 last-command hold, HZ-C06 a policy on an unfamiliar scene, HZ-C07 a wrist flip at a
+singularity), entanglement at the tool roll (HZ-M05) and the supply cable over the bench edge (HZ-M08). Each dashboard
+says what would change the outcome, in WP-C-04 and WP-C-06 terms.
 
-What the first twelve already show the reviewer: the elbow and wrist gaps of the as-modelled covers close through the
+What the first fifteen already show the reviewer: the elbow and wrist gaps of the as-modelled covers close through the
 finger gap well before the modelled end-stop (HZ-M01, HZ-C05, HZ-C01: a joint-gap design measure, DM-02, is not
 optional, GAP-01); a person at the bench edge is inside the sweep of the gripper at every pose that reaches the near
 side (HZ-M04, HZ-P04: the marked area of WP-C-02 §6 has to be at the far side of the bench or the base turned); and
