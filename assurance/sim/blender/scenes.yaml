@@ -478,7 +478,7 @@ scenes:
       Kinematic: the shoulder swings at 120 °/s (assumed demo rate) from 60° to 100° toward the hand point; the
       policy, the scene and the object are not modelled, only the trajectory the hazard describes.
     change: "What would change it: the policy clamp of WP-C-09 (joint limits, speed and torque caps before the drive), SF-04, and the training rule never to reach in (MU-01)."
-    status: catalogued
+    status: rendered
 
   - id: hz-c07-singularity-wrist-flip
     hz: HZ-C07
@@ -509,7 +509,7 @@ scenes:
       Kinematic: the wrist pitches 120° at 300 °/s (an assumed solver output; the actuator's no-load rating is
       higher) with the arm at full reach; the finger-tip speed is from the CAD kinematics.
     change: "What would change it: damped least-squares inverse kinematics (SF-30) and the joint speed cap of SF-03 ahead of the drive."
-    status: catalogued
+    status: rendered
 
   - id: hz-m08-cable-trip-at-base
     hz: HZ-M08
@@ -542,4 +542,4 @@ scenes:
       Static: the cable and supply are illustrative props drawn along the route a kit buyer would use; nothing about
       the cable's length or the jack's retention is from upstream's record (GAP-02).
     change: "What would change it: a cable route and strain relief in the installation requirements (WP-S-06) and the information for use (IFU-02)."
-    status: catalogued
+    status: rendered

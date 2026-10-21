@@ -1,0 +1,36 @@
+{
+ "outcome": "static picture",
+ "events": [],
+ "frames": [
+  {
+   "i": 0,
+   "t": 0.0,
+   "label": "start"
+  },
+  {
+   "i": 1,
+   "t": 0.2,
+   "label": " mm"
+  },
+  {
+   "i": 2,
+   "t": 0.4,
+   "label": " mm"
+  },
+  {
+   "i": 3,
+   "t": 0.6,
+   "label": " mm"
+  },
+  {
+   "i": 4,
+   "t": 0.8,
+   "label": " mm"
+  },
+  {
+   "i": 5,
+   "t": 1.0,
+   "label": "end"
+  }
+ ]
+}

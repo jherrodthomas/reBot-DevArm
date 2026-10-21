@@ -1,0 +1,46 @@
+{
+ "outcome": "peak finger-tip speed 1.35 m/s",
+ "events": [
+  {
+   "t": 0.0,
+   "label": "J4 starts: -60\u00b0 to 60\u00b0 at 300 \u00b0/s",
+   "trigger": true
+  },
+  {
+   "t": 0.4,
+   "label": "J4 reaches 60\u00b0"
+  }
+ ],
+ "frames": [
+  {
+   "i": 0,
+   "t": -0.5,
+   "label": "start"
+  },
+  {
+   "i": 1,
+   "t": -0.2,
+   "label": " mm"
+  },
+  {
+   "i": 2,
+   "t": 0.0,
+   "label": "J4 starts: -60\u00b0 to 60\u00b0 at 300 \u00b0/s"
+  },
+  {
+   "i": 3,
+   "t": 0.4,
+   "label": "J4 reaches 60\u00b0"
+  },
+  {
+   "i": 4,
+   "t": 0.7,
+   "label": " mm"
+  },
+  {
+   "i": 5,
+   "t": 1.0,
+   "label": "end"
+  }
+ ]
+}

@@ -21,9 +21,9 @@ no actuator, controller, person or contact is modelled.
 | `hz-c01-topic-stall-last-cmd-hold` | HZ-C01: The ROS topic stalls in RUN and the joints hold the last velocity command | e (cat. 4) | J3 120° to 0° at 60 °/s (assumed) | no contact; minimum gap 3 mm | [dashboard](hz-c01-topic-stall-last-cmd-hold.jpg) |
 | `hz-m05-entanglement-joint-axis` | HZ-M05: Hair or a lanyard winds onto the wrist roll axis | d (cat. 3) | J6 0° to 360° at 120 °/s (assumed) | no contact; minimum distance 66 mm | [dashboard](hz-m05-entanglement-joint-axis.jpg) |
 | `hz-p01-head-quasi-static` | HZ-P01: The gripper presses the forehead against the bench edge | d (cat. 3) | J2 60° to 100° at 45 °/s (assumed) | **contact**: head struck at 0.30 m/s (peak finger-tip speed) at +0.90 s | [dashboard](hz-p01-head-quasi-static.jpg) |
-| `hz-c06-policy-ood-into-hand` | HZ-C06: A policy on a scene it was not trained on drives the gripper into the operator's hand | e (cat. 4) | J2 60° to 100° at 120 °/s (assumed) | **contact**: hand struck at 0.79 m/s (peak finger-tip speed) at +0.40 s | render pending |
-| `hz-c07-singularity-wrist-flip` | HZ-C07: Inverse kinematics at the workspace boundary flips the wrist at full speed | c (cat. 2) | J4 -60° to 60° at 300 °/s (assumed) | peak finger-tip speed 1.35 m/s | render pending |
-| `hz-m08-cable-trip-at-base` | HZ-M08: The PSU cable runs over the bench edge to the floor where the operator walks | b (cat. 1) | static pose (assumed) | static picture | render pending |
+| `hz-c06-policy-ood-into-hand` | HZ-C06: A policy on a scene it was not trained on drives the gripper into the operator's hand | e (cat. 4) | J2 60° to 100° at 120 °/s (assumed) | **contact**: hand struck at 0.79 m/s (peak finger-tip speed) at +0.40 s | [dashboard](hz-c06-policy-ood-into-hand.jpg) |
+| `hz-c07-singularity-wrist-flip` | HZ-C07: Inverse kinematics at the workspace boundary flips the wrist at full speed | c (cat. 2) | J4 -60° to 60° at 300 °/s (assumed) | peak finger-tip speed 1.35 m/s | [dashboard](hz-c07-singularity-wrist-flip.jpg) |
+| `hz-m08-cable-trip-at-base` | HZ-M08: The PSU cable runs over the bench edge to the floor where the operator walks | b (cat. 1) | static pose (assumed) | static picture | [dashboard](hz-m08-cable-trip-at-base.jpg) |
 
 ## hz-m01-elbow-pinch-teach
 
@@ -96,3 +96,21 @@ no actuator, controller, person or contact is modelled.
 ![Dashboard of hz-p01-head-quasi-static: The gripper presses the forehead against the bench edge](hz-p01-head-quasi-static.jpg)
 
 *Kinematic: the shoulder swings at 45 °/s (assumed) from 60° to 100°, bringing the finger tips down onto the head point; the distance plotted is from the head point to the finger tips. No force is modelled; ISO/TS 15066 gives 130 N for the forehead (to be checked, not claimed).*
+
+## hz-c06-policy-ood-into-hand
+
+![Dashboard of hz-c06-policy-ood-into-hand: A policy on a scene it was not trained on drives the gripper into the operator's hand](hz-c06-policy-ood-into-hand.jpg)
+
+*Kinematic: the shoulder swings at 120 °/s (assumed demo rate) from 60° to 100° toward the hand point; the policy, the scene and the object are not modelled, only the trajectory the hazard describes.*
+
+## hz-c07-singularity-wrist-flip
+
+![Dashboard of hz-c07-singularity-wrist-flip: Inverse kinematics at the workspace boundary flips the wrist at full speed](hz-c07-singularity-wrist-flip.jpg)
+
+*Kinematic: the wrist pitches 120° at 300 °/s (an assumed solver output; the actuator's no-load rating is higher) with the arm at full reach; the finger-tip speed is from the CAD kinematics.*
+
+## hz-m08-cable-trip-at-base
+
+![Dashboard of hz-m08-cable-trip-at-base: The PSU cable runs over the bench edge to the floor where the operator walks](hz-m08-cable-trip-at-base.jpg)
+
+*Static: the cable and supply are illustrative props drawn along the route a kit buyer would use; nothing about the cable's length or the jack's retention is from upstream's record (GAP-02).*
