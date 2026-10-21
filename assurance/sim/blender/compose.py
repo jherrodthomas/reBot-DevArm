@@ -119,6 +119,8 @@ def html(sc: dict, sd: Path, t_now: float) -> str:
     mintile = ("Minimum distance", f"{min(x['dist_mm'] for x in rows):.0f} mm", "amb")
   elif kind == "drop":
     mintile = ("Impact speed", f"{max(x['drop_speed_mms'] for x in rows) / 1000:.1f} m/s", "amb")
+  elif max(sp) > 0:
+    mintile = ("Peak finger-tip speed", f"{max(sp) / 1000:.2f} m/s", "amb")
   else:
     mintile = ("Measure", "static picture", "")
   tiles = [("Time from trigger", f"{t_now:+.1f} s", ""), mintile,
@@ -127,7 +129,7 @@ def html(sc: dict, sd: Path, t_now: float) -> str:
            ("Contact", contact["label"].split(":")[0].split(" (")[0] if contact else "none", "red" if contact else "")]
   tiles_html = "".join(f'<div class="tile"><div class="l">{esc(l)}</div><div class="v {c}">{esc(v)}</div></div>' for l, v, c in tiles)
   callout = f"{sc['gap_label']} {now['gap_mm']:.0f} mm at {t_now:+.1f} s" if "gap_mm" in now else (f"{sc['track']['point']} at {now['dist_mm']:.0f} mm at {t_now:+.1f} s" if "dist_mm" in now else sc["motion_text"])
-  band = "SYNTHETIC · UPSTREAM CAD POSED BY THE JOINT RIG · " + ("KINEMATIC MOTION" if kind != "static" else "STATIC POSE") + " · CC0 OPERATOR FIGURE · NO EVIDENCE CREDIT"
+  band = "SYNTHETIC · UPSTREAM CAD POSED BY THE JOINT RIG · " + ("KINEMATIC MOTION" if kind != "static" else "STATIC POSE") + (" · CC0 OPERATOR FIGURE" if sc.get("person") else "") + " · NO EVIDENCE CREDIT"
   overlay = f'''<svg class="ov" width="900" height="506" viewBox="0 0 900 506">
   <rect x="0" y="0" width="900" height="22" fill="#D64535"/><text x="450" y="15" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff" letter-spacing="1">{band}</text>
   <g font-family="Inter,Segoe UI,Helvetica,Arial" font-size="12.5" font-weight="600">

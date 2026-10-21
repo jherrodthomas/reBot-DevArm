@@ -249,7 +249,8 @@ def build(scene: dict, cat: dict, items: dict, geo: Geometry, dt: float) -> dict
   frames = []
   for i, t in enumerate(want):
     r = nearest(t)
-    label = next((e["label"] for e in events if abs(e["t"] - t) < dt / 2), None) or ("start" if i == 0 else "end" if t == want[-1] else f"{r.get('gap_mm', r.get('dist_mm', ''))} mm")
+    measured = r.get("gap_mm", r.get("dist_mm"))
+    label = next((e["label"] for e in events if abs(e["t"] - t) < dt / 2), None) or ("start" if i == 0 else "end" if t == want[-1] else f"{measured} mm" if measured is not None else f"{r['tcp_speed_mms'] / 1000:.2f} m/s" if r["tcp_speed_mms"] else "")
     f = {"i": i, "t": r["t"], "label": label, "q": r["q"], "opening": r["opening"], "key": True}
     if person:
       pp = {}
