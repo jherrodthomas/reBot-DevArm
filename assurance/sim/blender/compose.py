@@ -124,7 +124,7 @@ def html(sc: dict, sd: Path, t_now: float) -> str:
   tiles = [("Time from trigger", f"{t_now:+.1f} s", ""), mintile,
            ("Limit crossed", f"{crossed['t']:+.1f} s" if crossed else "no", "amb" if crossed else ""),
            ("Stop reaction", "none at BL-001" if not any(s["state"].startswith("exists") for s in sc["stops"]) else "see stops", ""),
-           ("Contact", contact["label"].split(":")[0] if contact else "none", "red" if contact else "")]
+           ("Contact", contact["label"].split(":")[0].split(" (")[0] if contact else "none", "red" if contact else "")]
   tiles_html = "".join(f'<div class="tile"><div class="l">{esc(l)}</div><div class="v {c}">{esc(v)}</div></div>' for l, v, c in tiles)
   callout = f"{sc['gap_label']} {now['gap_mm']:.0f} mm at {t_now:+.1f} s" if "gap_mm" in now else (f"{sc['track']['point']} at {now['dist_mm']:.0f} mm at {t_now:+.1f} s" if "dist_mm" in now else sc["motion_text"])
   band = "SYNTHETIC · UPSTREAM CAD POSED BY THE JOINT RIG · " + ("KINEMATIC MOTION" if kind != "static" else "STATIC POSE") + " · CC0 OPERATOR FIGURE · NO EVIDENCE CREDIT"
