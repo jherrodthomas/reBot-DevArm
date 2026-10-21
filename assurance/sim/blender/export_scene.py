@@ -229,8 +229,10 @@ def build(scene: dict, cat: dict, items: dict, geo: Geometry, dt: float) -> dict
     events.append({"t": round(tm + 0.25, 2), "label": "where SF-08 (250 ms watchdog) would have stopped it", "marker": True})
   events.sort(key=lambda e: e["t"])
 
-  # key frames: window start, trigger, events, end, filled to six
-  want = sorted({ts[0], ts[-1]} | {e["t"] for e in events if not e.get("marker")})
+  # key frames: window start, trigger, events, the closest approach, end, filled to six
+  measure = "gap_mm" if "gap_mm" in rows[0] else "dist_mm" if "dist_mm" in rows[0] else None
+  t_closest = min(rows, key=lambda r: (r[measure], r["t"]))["t"] if measure else None
+  want = sorted({ts[0], ts[-1]} | {e["t"] for e in events if not e.get("marker")} | ({t_closest} if t_closest is not None else set()))
   if len(want) < 6:
     extra = [round(t0 + k * (t1 - t0) / 5, 2) for k in range(6)]
     for e in extra:
@@ -260,7 +262,8 @@ def build(scene: dict, cat: dict, items: dict, geo: Geometry, dt: float) -> dict
     frames.append(f)
 
   contact_t = next((e["t"] for e in events if e.get("contact")), None)
-  f_now = min(frames, key=lambda f: abs(f["t"] - contact_t)) if contact_t is not None else frames[-1]
+  t_show = contact_t if contact_t is not None else t_closest if t_closest is not None else frames[-1]["t"]
+  f_now = min(frames, key=lambda f: abs(f["t"] - t_show))
   f_now["now"] = True                      # the frame the dashboard's large and side views show
   cams = {}
   for name, c in scene.get("cameras", {}).items():

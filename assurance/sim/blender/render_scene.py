@@ -32,7 +32,7 @@ VIEWS = {   # camera location, target (m, scene frame = STEP frame / 1000), lens
   "hero": {"loc": (0.72, -0.92, 0.40), "target": (0.0, 0.0, 0.13), "lens": 62},
   "elbow": {"loc": (-0.42, -0.55, 0.36), "target": (-0.18, 0.0, 0.17), "lens": 85},
   "top": {"loc": (-0.15, -0.2, 1.75), "target": (-0.15, -0.2, 0.1), "lens": 40},
-  "front": {"loc": (-0.1, -1.3, 0.35), "target": (-0.15, 0.0, 0.25), "lens": 55},
+  "front": {"loc": (-1.35, -0.45, 0.38), "target": (-0.1, -0.05, 0.22), "lens": 50},   # from the gripper's end of the bench
   "scene": {"loc": (1.15, -1.55, 0.75), "target": (-0.1, 0.1, 0.25), "lens": 40},
   "hand": {"loc": (-0.5, -0.85, 0.5), "target": (-0.27, 0.0, 0.22), "lens": 70},
 }
