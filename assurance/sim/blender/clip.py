@@ -34,7 +34,7 @@ def annotate(sc: dict, frames: list[Path], step: int, tmp: Path) -> list[Path]:
     im = Image.open(fp).convert("RGB"); d = ImageDraw.Draw(im); w, h = im.size
     d.rectangle([0, 0, w, 22], fill=(214, 69, 53)); d.text((w / 2, 11), band, fill="white", font=f_small, anchor="mm")
     r = sc["rows"][min(k * step, len(sc["rows"]) - 1)]
-    label = f"{sc['hz']} · {sc['id']} · t = {r['t']:+.1f} s"
+    label = f"{sc['hz']} · t = {r['t']:+.1f} s"
     m = r.get("gap_mm", r.get("dist_mm"))
     if m is not None:
       label += f" · {sc['gap_label'] or sc['track']['point'] + ' distance'}: {m:.0f} mm"
