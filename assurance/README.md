@@ -98,6 +98,7 @@ a claim on its own, and no figure here is a safety claim.
 | [`process/`](process/README.md) | Integrated process model: activities, lanes, cross-domain interfaces and gates as data; generated maps and gate skeletons | ISO 13849-1 §4, IEC 61508-1 §6, MAN.3 |
 | [`trace/`](trace/README.md) | Machine-readable hazards, safety functions and assumptions of use (`items/`), later requirements and trace matrices | ISO 13849-1 §5 |
 | [`case/`](case/README.md) | Living Safety Case records (claims, evidence, defeaters, actions, configurations, baselines, reviews), validator and dashboard generator | UL 4600 |
+| [`sim/`](sim/README.md) | Hazard scenes on upstream's CAD: the joint rig, the scene catalogue, the Blender renders and review dashboards (WP-P-12; pictures only, no evidence credit) | ISO 12100 §5.4 (aid) |
 | [`tools/`](tools/) | Folder index generator, link and table checkers | WP-P-04 |
 
 ## Conventions
@@ -173,6 +174,7 @@ output:
 | `python3 assurance/process/tools/process_model.py` | `process/maps/*.md`, `10-safety-case/gates/skeletons/*.md` | `process/model/*.yaml`, WP-M-00 §2–§3, WP-M-02 §3.1, WP-M-06 §9, the confirmation records |
 | `python3 assurance/01-management/decisions/fig_lifecycle.py` | `decisions/figures/fig-dr-1-lifecycle.svg` | The lifecycle table of the decisions README |
 | `python3 docs/assets/rebot/make_assets.py` | The README figures | The data at the top of the generator |
+| `python3 assurance/sim/blender/gallery.py` | `sim/blender/dashboards/README.md` and the dashboard JPEGs | `sim/blender/scenes.yaml`, `out/<scene>/scene.json`, `out/<scene>/dashboard.png` |
 
 ### Reference configuration
 

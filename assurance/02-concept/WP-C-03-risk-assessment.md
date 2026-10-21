@@ -256,6 +256,11 @@ The package's DFMEA failure modes FM-01…FM-27 are the seed of [WP-A-01](../08-
 [WP-H-03](../04-hardware/WP-H-03-hardware-failure-analysis.md); its requirements SYRS/SRS/HWRS seed [WP-S-01](../03-system/WP-S-01-system-requirements.md)
 and [WP-S-02](../03-system/WP-S-02-safety-requirements.md).
 
+Twelve of the hazards above are drawn on upstream's CAD in [WP-P-12](../sim/README.md): the pose at the moment the
+hazard occurs, a person where WP-C-06 puts them, the link gap or distance against the ISO 13854 gaps, and the stop
+functions at BL-001, one dashboard per scene ([gallery](../sim/blender/dashboards/README.md)). They are pictures
+for the reviewers of OI-1 and OI-2, synthetic and without evidence credit; the ratings there are this table's.
+
 ## 10. Open items
 
 | ID | Item | Owner | Due |

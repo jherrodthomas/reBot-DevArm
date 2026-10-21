@@ -21,6 +21,7 @@ Standard clauses: IEC 61508-1 §6–§7, IEC 61508-3 §7.4, ISO 13849-1 §12, IE
 | [WP-P-09](WP-P-09-proven-in-use.md) | Proven-in-use argument evaluation | G3 | Skeleton |
 | [WP-P-10](WP-P-10-release-management.md) | Release management and baseline procedure | G5 | Skeleton |
 | [WP-P-11](../process/README.md) | Integrated process model and generated process maps (all phases G0–G6 modelled) | G0 | Draft |
+| [WP-P-12](../sim/README.md) | Hazard scenes and simulation pictures: the hazards of WP-C-03 drawn on upstream's CAD with a joint rig and review dashboards (pictures only, no evidence credit) | G1 | Draft |
 
 ## Subfolders
 

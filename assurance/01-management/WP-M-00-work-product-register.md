@@ -163,6 +163,7 @@ Regulation (EU) 2023/1230 (Machinery Regulation), Regulation (EU) 2024/1689 (AI 
 | [WP-P-09](../07-supporting/WP-P-09-proven-in-use.md) | Proven-in-use argument evaluation |  | 61508-2 §7.4.10; 61508-3 §7.4.2.12 |  |  | — | G3 | S |
 | [WP-P-10](../07-supporting/WP-P-10-release-management.md) | Release management and baseline procedure |  | 61508-1 §6.2.3 | 62443-4-1 SUM-1…SUM-5 | Machinery Reg. Annex V | SUP.8 | G5 | S |
 | [WP-P-11](../process/README.md) | Integrated process model and generated process maps (all phases G0–G6 modelled) | 12100 §4 | 13849-1 §4; 61508-1 §6 | 62443-4-1 SM-1 | TR 5469 (AI lifecycle) | MAN.3 | G0 | D |
+| [WP-P-12](../sim/README.md) | Hazard scenes and simulation pictures: the hazards of WP-C-03 drawn on upstream's CAD with a joint rig and review dashboards (pictures only, no evidence credit) | 12100 §5.4 (aid to hazard identification) | 13849-1 Annex A (risk graph inputs, illustrated) |  | ISO 21448 §6 (informative method) | — | G1 | D |
 
 ### 3.8 Safety analyses (`08-analyses/`)
 

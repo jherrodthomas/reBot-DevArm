@@ -45,6 +45,7 @@ python3 docs/assets/rebot/make_assets.py --check
 python3 assurance/tools/check_links.py
 python3 assurance/tools/check_tables.py
 python3 tools/wiki/build_wiki.py
+python3 assurance/sim/blender/test_scenes.py     # needs numpy as well; no Blender
 ```
 
 CI runs the same checks on every pull request and fails if a generated file is out of date.

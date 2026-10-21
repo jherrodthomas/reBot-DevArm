@@ -1,0 +1,7 @@
+# The simulation track's Python packages (assurance/sim). The catalogue checks (test_scenes.py) need only PyYAML and
+# numpy; the renders need bpy (Blender as a module, Python 3.11) and the STEP tessellation needs OCP (OpenCascade).
+pyyaml==6.0.3
+numpy==1.26.4
+pillow==13.0.0
+bpy==5.0.1          # Blender 5.0 as a Python module; or run the scripts under a Blender 4.2+ install
+cadquery-ocp==8.0.1.1   # OpenCascade bindings for step_to_obj.py

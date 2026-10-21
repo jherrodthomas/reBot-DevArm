@@ -18,12 +18,12 @@
 
 | Input | Status at this baseline | Link |
 |---|---|---|
-| WP-M-00 status of the gate's work products | 7 Draft, 6 Skeleton of 13 (table below) | [WP-M-00](../../../01-management/WP-M-00-work-product-register.md) |
+| WP-M-00 status of the gate's work products | 8 Draft, 6 Skeleton of 14 (table below) | [WP-M-00](../../../01-management/WP-M-00-work-product-register.md) |
 | Open anomalies (`safety-anomaly`) | | GitHub issues labelled `safety-anomaly` |
 | Open risks (WP-M-07) | | [WP-M-07](../../../01-management/WP-M-07-risk-management.md) |
 | Confirmation measures assigned to this gate (WP-M-06) and their results | 0 of 6 performed: CR-02, CR-03@G1, CR-04, FSA-I1, CS-I1, ML-R1 | [WP-M-06](../../../01-management/WP-M-06-confirmation-measures-plan.md) |
 | QA findings (WP-M-05) | | [WP-M-05](../../../01-management/WP-M-05-quality-assurance-plan.md) |
-| Open items of the phase's work products | 46 open-item rows not marked closed, any due gate (table below) | |
+| Open items of the phase's work products | 50 open-item rows not marked closed, any due gate (table below) | |
 
 ### Work products of this gate
 
@@ -42,6 +42,7 @@
 | [WP-V-07](../../../06-validation/WP-V-07-test-operations.md) Test operations and safety procedures for powered testing (hold point) | CON-11 | Draft | 5 | |
 | [WP-T-01](../../../trace/README.md) Requirements and traceability data (machine-readable), consistency evidence | CON-12 | Skeleton | 1 | |
 | [WP-K-01](../../../10-safety-case/WP-K-01-safety-case.md) Safety case (claims, arguments, evidence, defeaters) | CON-12 | Draft | 10 | |
+| [WP-P-12](../../../sim/README.md) Hazard scenes and simulation pictures: the hazards of WP-C-03 drawn on upstream's CAD with a joint rig and review dashboards (pictures only, no evidence credit) | CON-13 | Draft | 4 | |
 
 ### Confirmation measures
 

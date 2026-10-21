@@ -20,6 +20,7 @@ flowchart LR
     CON_04["CON-04<br/>Hazard identification and risk assessment<br/>WP-C-03"]
     CON_06["CON-06<br/>Analyse functional insufficiencies of sensing and the learned policy<br/>WP-C-10"]
     CON_07["CON-07<br/>Risk reduction concept<br/>WP-C-05"]
+    CON_13["CON-13<br/>Draw the hazard scenes on the CAD (pictures for review, no evidence credit)<br/>WP-P-12"]
   end
   subgraph L_srpcs["Safety-related control system (ISO 13849-1)"]
     direction LR
@@ -60,8 +61,10 @@ flowchart LR
   CON_07 --> CON_12
   CON_09 --> CON_12
   CON_10 --> CON_12
+  CON_05 --> CON_13
   CON_11 --> GATE
   CON_12 --> GATE
+  CON_13 --> GATE
   L_assess --> GATE
   classDef joint fill:#dafbe1,stroke:#1a7f37,color:#0f3d1c
   class CON_01,CON_11,CON_12 joint
@@ -105,6 +108,7 @@ Clause references and status are read from the [register (WP-M-00)](../../01-man
 | CON-10 Define the ML components and their safety requirements | Machine learning (ISO/IEC TR 5469) | [WP-C-09](../../02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) | WP-C-04, WP-C-10 |  |  |  | TR 5469 §6–§8 (classes, usage levels, properties); AI Act Annex IV | MLE.1 | Skeleton |
 | CON-11 Test operations hold point | Joint (all disciplines) | [WP-V-07](../../06-validation/WP-V-07-test-operations.md) | WP-C-01, WP-C-02, WP-C-03 | 12100 §6.4; 10218-2 §5 |  |  |  | VAL.1 | Draft |
 | CON-12 Record the hazard log and the argument structure | Joint (all disciplines) | [WP-T-01](../../trace/README.md), [WP-K-01](../../10-safety-case/WP-K-01-safety-case.md) | WP-C-03, WP-C-04, WP-C-05, WP-C-08, WP-C-09 |  | 13849-1 §5; 61508-3 §7.2; 61508-1 §8 (assessment input) | 62443-4-1 SR-5 | UL 4600; Machinery Reg. Annex IV | consistency evidence (SYS.2–5, SWE.1–6) | Draft, Skeleton |
+| CON-13 Draw the hazard scenes on the CAD (pictures for review, no evidence credit) | Machinery risk assessment (ISO 12100, ISO 10218) | [WP-P-12](../../sim/README.md) | WP-C-03, WP-C-04, WP-C-06 | 12100 §5.4 (aid to hazard identification) | 13849-1 Annex A (risk graph inputs, illustrated) |  | ISO 21448 §6 (informative method) |  | Draft |
 
 ## 3. Cross-domain interfaces
 
@@ -121,17 +125,17 @@ Each interface is anchored to text in the work products; the checker fails if an
 
 Which activity answers each clause reference listed in the register. One activity can answer several standards; that is the point of the integrated lifecycle.
 
-- **Machinery:** 12100 §5.3; 10218-1 §4; 10218-2 §4 → CON-01; 10218-2 §5; 12100 §5.3 → CON-02; 10218-2 §5; TS 15066 §5; 12100 §5.3 → CON-03; 12100 §5.4–§5.6; 10218-1 Annex A; 10218-2 Annex A; TS 15066 §5 → CON-04; 10218-1 §5; 13850 §4 → CON-05; 10218-1 §5 (collision detection limits); 12100 §5.4 → CON-06; 12100 §6; 10218-1 §5; 10218-2 §5 → CON-07; 12100 §6.4; 10218-2 §5 → CON-11
-- **SRP/CS:** 13849-1 §5 (inputs) → CON-01; 13849-1 Annex A (risk graph inputs) → CON-04; 13849-1 §5, Annex A (PLr) → CON-05; 13849-1 §5 → CON-07; 13849-1 §5; 61508-3 §7.2 → CON-12; 61508-1 §8 (assessment input) → CON-12
+- **Machinery:** 12100 §5.3; 10218-1 §4; 10218-2 §4 → CON-01; 10218-2 §5; 12100 §5.3 → CON-02; 10218-2 §5; TS 15066 §5; 12100 §5.3 → CON-03; 12100 §5.4–§5.6; 10218-1 Annex A; 10218-2 Annex A; TS 15066 §5 → CON-04; 10218-1 §5; 13850 §4 → CON-05; 10218-1 §5 (collision detection limits); 12100 §5.4 → CON-06; 12100 §6; 10218-1 §5; 10218-2 §5 → CON-07; 12100 §6.4; 10218-2 §5 → CON-11; 12100 §5.4 (aid to hazard identification) → CON-13
+- **SRP/CS:** 13849-1 §5 (inputs) → CON-01; 13849-1 Annex A (risk graph inputs) → CON-04; 13849-1 §5, Annex A (PLr) → CON-05; 13849-1 §5 → CON-07; 13849-1 §5; 61508-3 §7.2 → CON-12; 61508-1 §8 (assessment input) → CON-12; 13849-1 Annex A (risk graph inputs, illustrated) → CON-13
 - **IEC 62443:** 62443-4-1 SR-1 → CON-01; 62443-4-1 SR-2; 62443-3-2 §5 → CON-08; 62443-4-1 SR-3…SR-5; 62443-4-2 CR 1–7, SL-T → CON-09; 62443-4-1 SR-5 → CON-12
-- **Other:** Machinery Reg. Annex III §1.1.2 → CON-01, CON-07; ISO 21448 §5 (informative method) → CON-02; ISO 13855 §5–§6; ISO 13854; ISO 13857 → CON-03; Machinery Reg. Annex III §1 → CON-04; 60204-1 §9.2 (stop categories) → CON-05; ISO 21448 §6–§7 (informative method); IEC 62998-1 → CON-06; TR 5469 §6–§8 (classes, usage levels, properties); AI Act Annex IV → CON-10; UL 4600; Machinery Reg. Annex IV → CON-12
+- **Other:** Machinery Reg. Annex III §1.1.2 → CON-01, CON-07; ISO 21448 §5 (informative method) → CON-02; ISO 13855 §5–§6; ISO 13854; ISO 13857 → CON-03; Machinery Reg. Annex III §1 → CON-04; 60204-1 §9.2 (stop categories) → CON-05; ISO 21448 §6–§7 (informative method); IEC 62998-1 → CON-06; TR 5469 §6–§8 (classes, usage levels, properties); AI Act Annex IV → CON-10; UL 4600; Machinery Reg. Annex IV → CON-12; ISO 21448 §6 (informative method) → CON-13
 - **ASPICE:** SYS.1 → CON-01, CON-02; SYS.2 → CON-05, CON-07; SEC.1 → CON-08, CON-09; MLE.1 → CON-10; VAL.1 → CON-11; consistency evidence (SYS.2–5, SWE.1–6) → CON-12
 
 ## 5. G1 readiness
 
 **Exit criterion (WP-M-00 §2):** Machine limits, risk assessment, safety functions with their required PL, risk reduction concept, cybersecurity and ML concepts approved; confirmation review of the risk assessment passed
 
-**Work products:** 7 Draft, 6 Skeleton of 13. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
+**Work products:** 8 Draft, 6 Skeleton of 14. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
 
 **Roles the lanes need (WP-M-02 §3.1):**
 
@@ -157,6 +161,6 @@ Which activity answers each clause reference listed in the register. One activit
 | CS-I1 Interim cybersecurity review (threat assessment, requirements, links to the hazard list) | WP-C-07, WP-C-08 | external | Not performed |
 | ML-R1 Review of the ML classification and the insufficiency analysis | WP-C-09, WP-C-10 | I3-equivalent | Not performed |
 
-**Work products with no confirmation measure at this gate** (verification review only): WP-C-02, WP-V-07, WP-T-01, WP-K-01.
+**Work products with no confirmation measure at this gate** (verification review only): WP-C-02, WP-V-07, WP-T-01, WP-K-01, WP-P-12.
 
 **Open interfaces due by this gate** (from this or an earlier phase): IX-02 (DQ-005 (collaborative claim) is open; no force or pressure measurement exists (GAP-28); WP-C-10 OI-1 has to bound the estimator's floor before SF-02 and SF-04 claim PL d).

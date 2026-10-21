@@ -8,7 +8,7 @@ Gate names and exit criteria come from [WP-M-00 §2](../../01-management/WP-M-00
 ```mermaid
 flowchart LR
   G0["G0 Governance<br/>21 activities modelled"]
-  G1["G1 Concept<br/>12 activities modelled"]
+  G1["G1 Concept<br/>13 activities modelled"]
   G2["G2 System design<br/>14 activities modelled"]
   G3["G3 HW/SW development<br/>19 activities modelled"]
   G4["G4 Integration and verification<br/>10 activities modelled"]
