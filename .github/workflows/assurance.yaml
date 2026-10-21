@@ -32,7 +32,7 @@ jobs:
       with:
         python-version: "3.12"
     - name: PyYAML for the decision register and numpy for the scene catalogue (every other tool is standard library only)
-      run: python3 -m pip install --quiet pyyaml numpy
+      run: python3 -m pip install --quiet pyyaml numpy pillow
     - name: Living Safety Case records are valid, the validator tests pass, the dashboard and README blocks are current
       run: |
         python3 assurance/case/tools/validate.py
@@ -58,7 +58,9 @@ jobs:
         python3 docs/assets/rebot/make_assets.py --check
         python3 docs/assets/rebot/test_make_assets.py
     - name: Hazard-scene catalogue, joint rig and gallery (WP-P-12; no Blender)
-      run: python3 assurance/sim/blender/test_scenes.py
+      run: |
+        python3 assurance/sim/blender/test_scenes.py
+        python3 assurance/sim/figures/fig_sim_hero.py --check
     - name: Relative links and Markdown tables (and the checker tests)
       run: |
         python3 assurance/tools/check_links.py

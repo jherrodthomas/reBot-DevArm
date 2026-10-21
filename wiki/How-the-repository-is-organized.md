@@ -56,7 +56,7 @@ register.
 | `09-production-operation/` | `WP-O` | Assembly and commissioning, operation, information for use, field monitoring, incident response |
 | `10-safety-case/` | `WP-K` | The safety case, the technical documentation index, the cybersecurity case, assessment reports, release record; gate and confirmation records |
 | `process/`, `trace/`, `case/` | `WP-P-11`, `WP-T-01` | The process model with its maps and swimlane figures, the trace items (hazards, safety functions, assumptions of use) and the Living Safety Case records with their validator and dashboard |
-| `sim/` | `WP-P-12` | The hazard scenes: upstream's CAD posed by a joint rig, one Blender scene and review dashboard per hazard that a picture helps; pictures only, no evidence credit |
+| `sim/` | `WP-P-12` | The hazard scenes: upstream's CAD posed by a joint rig, one Blender scene and review dashboard per hazard that a picture helps; pictures only, no evidence credit ([Hazard scenes](Hazard-scenes.md)) |
 
 ## What checks a change
 

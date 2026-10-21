@@ -43,6 +43,7 @@ anything, and the first safety case claims nothing from them (§4).
 | [`blender/test_scenes.py`](blender/test_scenes.py) | CI: every scene references a hazard and safety functions of `trace/items/hazards.yaml`, the poses are within the assumed limits, the rig's reference geometry holds, the gallery is current |
 | [`blender/library/people/`](blender/library/people/README.md) | The two CC0 Quaternius figures, copied from LionDriver's library |
 | [`requirements.txt`](requirements.txt) | Pinned packages; only PyYAML and numpy for the checks |
+| [`figures/fig_sim_hero.py`](figures/fig_sim_hero.py) | The hero strip of three dashboards for the README and the wiki (generated; CI checks it) |
 
 ```sh
 python3 assurance/sim/blender/step_to_obj.py hardware/reBot_B601_DM/reBot_B601_DM_v1.1_20260425.step assurance/sim/blender/mesh   # once, 25 s

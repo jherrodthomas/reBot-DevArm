@@ -79,6 +79,7 @@ and [Roadmap and status](Roadmap-and-status.md) lists what is drafted, skeleton 
 | See what is done, active and planned | [Roadmap and status](Roadmap-and-status.md) |
 | Know which arm the analysis is about | [Reference arm](Reference-robot.md) |
 | Review the safety argument | [Reading the safety case](Reading-the-safety-case.md) |
+| See the hazards drawn on the real CAD, with a person in reach | [Hazard scenes](Hazard-scenes.md) |
 | Review, audit or assess it independently | [For the assessor](For-the-assessor.md) |
 | Follow or take part in the decisions | [How decisions are made](How-decisions-are-made.md) |
 | Decode `WP-C-04`, `HZ-M01`, `SF-32`, `PLr d`, `DQ-006`, `OE-1` | [Glossary](Glossary.md) |

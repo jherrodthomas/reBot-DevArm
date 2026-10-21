@@ -225,6 +225,15 @@ def build(scene: dict, cat: dict, items: dict, geo: Geometry, dt: float) -> dict
         crossed.add("end"); events.append({"t": t, "label": f"{m['joint']} reaches {m['to']:g}°" + (" (modelled end-stop)" if m["to"] == 0 and m["joint"] == "J3" else "")})
     if kind == "gripper_close" and frozen_at is None and "end" not in crossed and t > tm and abs(opening - m["to"]) < 1e-6:
       crossed.add("end"); events.append({"t": t, "label": f"jaws at {m['to']:g} mm"})
+    if person and (person.get("hand") or person.get("hand_l")):   # per step, for the clips
+      pp = {}
+      if person.get("hand"):
+        pp["hand_at"] = resolve_point(person["hand"], q, opening, scene)
+      if person.get("hand_l"):
+        pp["hand_l_at"] = resolve_point(person["hand_l"], q, opening, scene)
+      row["person"] = pp
+    if kind == "drop":
+      row["payload_at"] = [round(v, 4) for v in (np.asarray(row["tcp_mm"]) * 0.001 - np.array([0.0, 0.0, (arm_model.tcp(scene["pose"])[2] - 25.0 - row["drop_mm"]) * 0.001]))]
     rows.append(row); q_prev, opening_prev, tcp_prev = q, opening, tcp
   if m.get("intended_stop_deg") is not None:
     events.append({"t": round(tm + 0.25, 2), "label": "where SF-08 (250 ms watchdog) would have stopped it", "marker": True})

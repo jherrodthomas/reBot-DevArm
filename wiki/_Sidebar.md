@@ -10,6 +10,7 @@
 - [How decisions are made](How-decisions-are-made.md)
 - [Glossary](Glossary.md)
 - [Reading the safety case](Reading-the-safety-case.md)
+- [Hazard scenes](Hazard-scenes.md)
 - [For the assessor](For-the-assessor.md)
 - [Reference arm](Reference-robot.md)
 - [Contributor guide](Contributor-guide.md)

@@ -468,6 +468,18 @@ findings that shape everything:
 Every finding becomes a defeater against a claim in the safety case and stays open until the work product that
 closes it is reviewed.
 
+### Hazard scenes on the real CAD
+
+<p align="center">
+  <img src="assurance/sim/figures/sim-hero-dashboards.jpg" width="100%" alt="Three hazard scenes rendered on upstream's CAD, each cropped to its 3D view with a red band reading synthetic, no evidence credit: the elbow closing on the operator's fingers while hand-guiding in TEACH, the gripper coming down on a hand against the bench, and the base sweeping the gripper past a bystander's head during RUN.">
+</p>
+
+Fifteen hazards of the risk assessment are drawn on upstream's v1.1 CAD, posed by a joint rig at the moment the hazard
+occurs, with a person where the interaction analysis puts them and the link gap or distance against the ISO 13854
+minimum gaps beside the package's rating and the stop functions that do not exist yet
+([WP-P-12](assurance/sim/README.md), [gallery](assurance/sim/blender/dashboards/README.md)). They are pictures for
+review: synthetic, no evidence credit, and nothing in the safety case rests on them.
+
 ### Getting started with the record
 
 Only Python 3 is needed (PyYAML for the decision register):

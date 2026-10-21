@@ -46,6 +46,11 @@ def render_readme(cat: dict) -> str:
     status = f"[dashboard]({sid}.jpg)" if img.exists() else "render pending"
     lines.append(f"| `{sid}` | {s['hz']}: {s['title']} | {s['rating']['plr']} (cat. {s['rating']['cat']}) | {motion} (assumed) | {outcome_of(sid)} | {status} |")
   lines.append("")
+  clips = sorted(p for p in (GAL / "clips").glob("*.mp4") if p.stem != "reel") if (GAL / "clips").exists() else []
+  if clips:
+    lines += ["Clips (mp4, open to play; every step of the main camera, cut by [`clip.py`](../clip.py)): " +
+              " · ".join(f"[{p.stem}](clips/{p.name})" for p in clips) +
+              (" · [all three in one reel](clips/reel.mp4)" if (GAL / "clips" / "reel.mp4").exists() else ""), ""]
   for s in cat["scenes"]:
     sid = s["id"]
     if (GAL / f"{sid}.jpg").exists():

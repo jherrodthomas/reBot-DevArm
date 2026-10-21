@@ -54,6 +54,8 @@ def parse_args(argv):
   ap.add_argument("--out", default="")
   ap.add_argument("--all-views", action="store_true", help="every camera at every key frame (default: side cameras only at the dashboard's frame)")
   ap.add_argument("--force", action="store_true", help="re-render stills that exist")
+  ap.add_argument("--video", action="store_true", help="render every step of the main camera to frames/ (then clip.py)")
+  ap.add_argument("--step", type=int, default=1, help="--video: render every n-th step")
   if "--" in argv:
     argv = argv[argv.index("--") + 1:]
   return ap.parse_args(argv)
@@ -318,6 +320,20 @@ def main(argv):
     frames = [f for f in spec["frames"] if f.get("key")] or spec["frames"]
     if a.frames:
       frames = frames[:a.frames]
+    if a.video:
+      main_v = spec.get("main", views[0])
+      for k, r in enumerate(spec["rows"][::a.step]):
+        out = sd / "frames" / f"{k:04d}.png"
+        if out.exists() and not a.force:
+          continue
+        set_pose(parts, obs, r["q"], r.get("opening", 0.0))
+        if person:
+          person.place({**spec["person"], **r.get("person", {})})
+        if "payload" in prop_obs and "payload_at" in r:
+          prop_obs["payload"].location = r["payload_at"]
+        camera(sc, cams[main_v])
+        render(sc, out)
+      return 0
     for f in frames:
       set_pose(parts, obs, f["q"], f.get("opening", 0.0))
       if person:
