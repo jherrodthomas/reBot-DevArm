@@ -17,7 +17,7 @@
 #   gap         a joint whose link-to-link gap is plotted against the ISO 13854 minimum gaps (clauses to be checked)
 #   track       a point on the person whose distance to the arm is plotted: {point: hand | head, to: tcp | <group>}
 #   person      figure (male | female, library/people/), at [x, y, z] feet (m, scene frame), yaw (deg, 0 faces -Y),
-#               pose (reach | lean | stand), hand / hand_l: {at: joint:J3 | tcp | [x, y, z], offset: [dx, dy, dz]}
+#               pose (reach | lean | stand), lean and head_tilt (deg), hand / hand_l: {at: joint:J3 | tcp | [x, y, z], offset: [dx, dy, dz]}
 #               head: {at: ...} the head position used by `track` (the figure's own head is drawn where the rig puts it)
 #   views       cameras to render (render_scene.VIEWS or `cameras` below); main: the dashboard's large view
 #   cameras     scene cameras: loc, target (m; or joint:J3 / tcp, resolved at export), lens
@@ -113,7 +113,7 @@ scenes:
       The height of the gripper above the bench passes the ISO 13854 hand and finger gaps with the hand under it.
     rating: {s: S2, f: F2, p: P2, plr: e, cat: 4, oe: OE-2..4}
     mode: "M-03 TEACH, 25 % torque and speed (SF-03)"
-    envelope: "OE-1 (the hazard is rated for OE-2 and above; the bench case is the same mechanism)"
+    envelope: "OE-1 shown; rated for OE-2 and above"
     sf: [SF-03, SF-04]
     stops:
       - {sf: SF-32, name: emergency stop (pendant), state: does not exist}
@@ -271,6 +271,7 @@ scenes:
     person: {figure: female, at: [-0.08, -0.78, -0.9], yaw: 180, pose: reach, hand: {at: tcp, offset: [0.0, -0.02, -0.33]}}
     cameras:
       scene: {loc: [1.1, -1.3, 0.6], target: [-0.1, -0.2, 0.2], lens: 45}
+      front: {loc: [-1.25, -0.55, 0.35], target: [-0.1, -0.2, 0.15], lens: 50}
     views: [scene, front, top]
     main: scene
     window: [-0.5, 1.0]

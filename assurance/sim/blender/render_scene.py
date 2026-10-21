@@ -238,7 +238,7 @@ class Person:
     pose = spec.get("pose", "reach")
     pb = self.rig.pose.bones
     pb["spine_02"].rotation_euler = (math.radians(spec.get("lean", 14 if pose != "stand" else 2)), 0, 0)
-    pb["Head"].rotation_euler = (math.radians(spec.get("head", 18 if pose != "stand" else 0)), 0, 0)
+    pb["Head"].rotation_euler = (math.radians(spec.get("head_tilt", 18 if pose != "stand" else 0)), 0, 0)
     self.pole.location = (px + 0.35, py + 0.30, pz + 1.05)
     if pose == "stand":
       self.ik_r.mute = True; self.ik_l.mute = True

@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-W, H = 1600, 1072
+W, H = 1600, 1100
 CHROME_CANDIDATES = ["/opt/pw-browsers/chromium-1194/chrome-linux/chrome", "chromium", "chromium-browser", "google-chrome", "chrome"]
 
 
@@ -113,8 +113,15 @@ def html(sc: dict, sd: Path, t_now: float) -> str:
   events = "".join(f'<span class="{"red" if e.get("contact") or e.get("trigger") else ""}">● {e["t"]:+.2f} s</span><b class="{"red" if e.get("contact") else ""}">{esc(e["label"])}</b>' for e in sc["events"])
   contact = next((e for e in sc["events"] if e.get("contact")), None)
   crossed = next((e for e in sc["events"] if "finger gap" in e["label"] or "within 100 mm" in e["label"]), None)
-  minval = f"{min(x['gap_mm'] for x in rows):.0f} mm" if "gap_mm" in rows[0] else f"{min(x['dist_mm'] for x in rows):.0f} mm" if "dist_mm" in rows[0] else "—"
-  tiles = [("Time from trigger", f"{t_now:+.1f} s", ""), ("Minimum gap" if "gap_mm" in rows[0] else "Minimum distance", minval, "amb"),
+  if "gap_mm" in rows[0]:
+    mintile = ("Minimum gap", f"{min(x['gap_mm'] for x in rows):.0f} mm", "amb")
+  elif "dist_mm" in rows[0]:
+    mintile = ("Minimum distance", f"{min(x['dist_mm'] for x in rows):.0f} mm", "amb")
+  elif kind == "drop":
+    mintile = ("Impact speed", f"{max(x['drop_speed_mms'] for x in rows) / 1000:.1f} m/s", "amb")
+  else:
+    mintile = ("Measure", "static picture", "")
+  tiles = [("Time from trigger", f"{t_now:+.1f} s", ""), mintile,
            ("Limit crossed", f"{crossed['t']:+.1f} s" if crossed else "no", "amb" if crossed else ""),
            ("Stop reaction", "none at BL-001" if not any(s["state"].startswith("exists") for s in sc["stops"]) else "see stops", ""),
            ("Contact", contact["label"].split(":")[0] if contact else "none", "red" if contact else "")]
