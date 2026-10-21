@@ -17,6 +17,7 @@
 | 2 | [`render_scene.py`](render_scene.py) | Blender 4.2+ (`blender -b -P render_scene.py -- out/<scene>`) or Python 3.11 with `bpy` | `out/<scene>/stills/<frame>-<camera>.png` |
 | 3 | [`compose.py`](compose.py) | Python; headless Chromium for the PNG (`CHROME=`) | `out/<scene>/dashboard.html` and `dashboard.png` |
 | 4 | [`gallery.py`](gallery.py) | Python with Pillow | [`dashboards/`](dashboards/README.md) (committed: the JPEG, a small JSON with the outcome and events, the README) |
+| 5 (some scenes) | [`render_scene.py --video`](render_scene.py), then [`clip.py`](clip.py) | Blender, then Python with Pillow and ffmpeg | `out/<scene>/frames/` (every step of the main camera, 640 by 360, 24 samples, about 9 s a frame), then `dashboards/clips/<scene>.mp4` at 10 frames a second with the band, the time and the measure on each frame; `clip.py --reel` joins clips |
 
 ```sh
 python3 assurance/sim/blender/export_scene.py --check     # the catalogue only (CI, with test_scenes.py)

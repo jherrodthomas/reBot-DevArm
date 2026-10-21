@@ -5,7 +5,7 @@
 | Work product | WP-P-12 |
 | Title | Hazard scenes and simulation pictures: the hazards of WP-C-03 drawn on upstream's CAD |
 | Standard reference | ISO 12100:2010 §5.4 (an aid to hazard identification and to the risk-graph inputs of ISO 13849-1 Annex A); ISO 21448 §6 as an informative method for scenario-based review. Clause numbers are to be checked against licensed copies |
-| Version | 0.3 (2026-10-21): three more scenes (a policy driving the gripper into the operator's hand, a wrist flip at a singularity at full reach, the supply cable over the bench edge), fifteen in all. 0.2 (2026-10-21): the figure's hands open (rest pose with a relaxed curl) so the hand-guiding scenes show fingers in the gap; all twelve scenes re-rendered. 0.1 (2026-10-21): the joint rig built from upstream's STEP, a catalogue of twelve hazard scenes, the kinematic exporter, the Blender renderer, the dashboard composer and the gallery |
+| Version | 0.4 (2026-10-21): clips of three scenes and a reel, the hero strip for the README and the wiki, a wiki page. 0.3 (2026-10-21): three more scenes (a policy driving the gripper into the operator's hand, a wrist flip at a singularity at full reach, the supply cable over the bench edge), fifteen in all. 0.2 (2026-10-21): the figure's hands open (rest pose with a relaxed curl) so the hand-guiding scenes show fingers in the gap; all twelve scenes re-rendered. 0.1 (2026-10-21): the joint rig built from upstream's STEP, a catalogue of twelve hazard scenes, the kinematic exporter, the Blender renderer, the dashboard composer and the gallery |
 | Status | Draft. AI-drafted (Claude, AI assistant; I0 under [WP-M-02 §3.3](../01-management/WP-M-02-safety-plan.md#33-ai-assisted-authoring)); not reviewed. **Pictures only: synthetic, no evidence credit** ([§4](#4-what-the-pictures-are-and-are-not)) |
 | Owner | Safety manager (role, WP-M-02 §3.1); drafted by the Claude session |
 | Configuration | CFG-001, reBot Arm B601-DM v1.1 (WP-C-01 §2); the STEP of BL-001 (`206ebda`) |
@@ -13,8 +13,13 @@
 
 ![Dashboard of hz-m01-elbow-pinch-teach: the elbow closing on the operator's fingers while hand-guiding in TEACH; the large view shows the elbow gap at 25 mm with the operator's arm reaching in, the plots the gap against the ISO 13854 limits, the events and the stop functions that do not exist at BL-001](blender/dashboards/hz-m01-elbow-pinch-teach.jpg)
 
-*The elbow pinch of HZ-M01 at the moment the link gap passes the ISO 13854 finger gap; all twelve are in the
+*The elbow pinch of HZ-M01 at the moment the link gap passes the ISO 13854 finger gap; all fifteen are in the
 [gallery](blender/dashboards/README.md). A red band on every picture says what it is: synthetic, no evidence credit.*
+
+Clips (mp4, open to play): [HZ-M01 elbow pinch](blender/dashboards/clips/hz-m01-elbow-pinch-teach.mp4) ·
+[HZ-M02 gripper on a finger](blender/dashboards/clips/hz-m02-gripper-finger-teach.mp4) ·
+[HZ-M04 sweep past a head](blender/dashboards/clips/hz-m04-sweep-strike-run.mp4) ·
+[the three in one reel](blender/dashboards/clips/reel.mp4), every step of the main camera at 10 frames a second.
 
 ## 1. Purpose
 
@@ -40,6 +45,7 @@ anything, and the first safety case claims nothing from them (§4).
 | [`blender/render_scene.py`](blender/render_scene.py) | Poses the CAD at each key frame and renders the cameras with Blender (bpy, Cycles on the CPU); places and IK-poses the CC0 operator figure |
 | [`blender/compose.py`](blender/compose.py) | The review dashboard of a scene (one HTML page, screenshot to PNG with headless Chromium) |
 | [`blender/gallery.py`](blender/gallery.py) | The gallery [`blender/dashboards/README.md`](blender/dashboards/README.md) and the committed JPEGs (generated; CI checks it) |
+| [`blender/clip.py`](blender/clip.py) | A clip of a scene from `render_scene.py --video` frames (ffmpeg), and the reel; three clips committed under `blender/dashboards/clips/` |
 | [`blender/test_scenes.py`](blender/test_scenes.py) | CI: every scene references a hazard and safety functions of `trace/items/hazards.yaml`, the poses are within the assumed limits, the rig's reference geometry holds, the gallery is current |
 | [`blender/library/people/`](blender/library/people/README.md) | The two CC0 Quaternius figures, copied from LionDriver's library |
 | [`requirements.txt`](requirements.txt) | Pinned packages; only PyYAML and numpy for the checks |

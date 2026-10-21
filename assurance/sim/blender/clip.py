@@ -38,10 +38,9 @@ def annotate(sc: dict, frames: list[Path], step: int, tmp: Path) -> list[Path]:
     m = r.get("gap_mm", r.get("dist_mm"))
     if m is not None:
       label += f" · {sc['gap_label'] or sc['track']['point'] + ' distance'}: {m:.0f} mm"
-    d.rectangle([0, h - 26, w, h], fill=(16, 24, 32)); d.text((10, h - 13), label, fill="white", font=f_big, anchor="lm")
+    d.rectangle([0, h - 44, w, h], fill=(16, 24, 32)); d.text((10, h - 32), label, fill="white", font=f_big, anchor="lm")
     ev = [e["label"] for e in sc["events"] if e["t"] <= r["t"] + 1e-6 and not e.get("marker")]
-    if ev:
-      d.text((w - 10, h - 13), ev[-1][:60], fill=(242, 163, 58), font=f_small, anchor="rm")
+    d.text((10, h - 12), ev[-1][:90] if ev else "", fill=(242, 163, 58), font=f_small, anchor="lm")
     p = tmp / f"{k:04d}.png"; im.save(p); out.append(p)
   return out
 

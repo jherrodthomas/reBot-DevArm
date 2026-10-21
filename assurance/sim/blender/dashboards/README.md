@@ -25,6 +25,8 @@ no actuator, controller, person or contact is modelled.
 | `hz-c07-singularity-wrist-flip` | HZ-C07: Inverse kinematics at the workspace boundary flips the wrist at full speed | c (cat. 2) | J4 -60° to 60° at 300 °/s (assumed) | peak finger-tip speed 1.35 m/s | [dashboard](hz-c07-singularity-wrist-flip.jpg) |
 | `hz-m08-cable-trip-at-base` | HZ-M08: The PSU cable runs over the bench edge to the floor where the operator walks | b (cat. 1) | static pose (assumed) | static picture | [dashboard](hz-m08-cable-trip-at-base.jpg) |
 
+Clips (mp4, open to play; every step of the main camera, cut by [`clip.py`](../clip.py)): [hz-m01-elbow-pinch-teach](clips/hz-m01-elbow-pinch-teach.mp4) · [hz-m02-gripper-finger-teach](clips/hz-m02-gripper-finger-teach.mp4) · [hz-m04-sweep-strike-run](clips/hz-m04-sweep-strike-run.mp4) · [all three in one reel](clips/reel.mp4)
+
 ## hz-m01-elbow-pinch-teach
 
 ![Dashboard of hz-m01-elbow-pinch-teach: Elbow closes on the operator's fingers while hand-guiding in TEACH](hz-m01-elbow-pinch-teach.jpg)
