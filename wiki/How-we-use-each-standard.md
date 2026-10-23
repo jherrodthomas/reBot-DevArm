@@ -5,6 +5,7 @@ truck. The standards are the machinery set, applied with one method: one hazard 
 generated figures, a safety case with its defeaters published. This page says, for each standard, what the fork
 takes from it, what it does not claim, and where it lands in the record. The authoritative version is
 [WP-M-01 §4 and §5](../assurance/01-management/WP-M-01-assurance-strategy.md#4-the-standards-and-how-each-one-is-used).
+The [standards tour](Standards-tour.md) gives each standard its own page with an animated figure.
 **No compliance is claimed** with any of them, because no assessment has been performed and the drafting
 environment has no licensed copy; every clause reference is marked to be checked.
 
@@ -14,13 +15,15 @@ environment has no licensed copy; every clause reference is marked to be checked
 
 ## ISO 12100:2010, risk assessment and risk reduction
 
+Full page on the tour: [ISO 12100](ISO-12100-risk-assessment.md).
+
 - **What we take:** the whole method. Machine limits (use, space, time), hazard identification per life phase,
   risk estimation and evaluation, then the three-step method in order: inherently safe design, safeguarding and
   complementary protective measures, information for use. The documentation of §7 becomes the heart of the
   technical file.
 - **How:** [WP-C-01](../assurance/02-concept/WP-C-01-item-definition.md) defines the arm and its
   limits, [WP-C-03](../assurance/02-concept/WP-C-03-risk-assessment.md) is the one hazard log of the project (the
-  package's 33 hazards, HZ-M01 to HZ-D01, re-rated per operating envelope), and
+  package's hazards, HZ-M01 to HZ-D01, re-rated per operating envelope), and
   [WP-C-05](../assurance/02-concept/WP-C-05-risk-reduction-concept.md) allocates every row to the three steps, which
   the package left undone for 18 of them (GAP-27).
 - **Position taken:** a limitation that is only documented is not a control for a hazard that can injure; the gap
@@ -28,6 +31,8 @@ environment has no licensed copy; every clause reference is marked to be checked
   by design or safeguarding, not by a warning.
 
 ## ISO 10218-1:2025 and ISO 10218-2:2025, industrial robots and robot applications
+
+Full page on the tour: [ISO 10218-1 and -2](ISO-10218-industrial-robots.md).
 
 - **What we take:** Part 1 for the arm: the safety functions a robot must provide (emergency stop, protective
   stop, safely limited speed and the axis, torque and space limits, enabling control in manual mode, prevention
@@ -45,6 +50,8 @@ environment has no licensed copy; every clause reference is marked to be checked
 
 ## ISO/TS 15066:2016, collaborative robots
 
+Full page on the tour: [ISO/TS 15066](ISO-TS-15066-collaborative-robots.md).
+
 - **What we take:** the four collaborative modes (safety-rated monitored stop, hand guiding, speed and separation
   monitoring, power and force limiting), the body-region force and pressure thresholds of Annex A, and the
   measurement method that turns them into joint torque and speed caps.
@@ -57,6 +64,8 @@ environment has no licensed copy; every clause reference is marked to be checked
   depth, bounded by what the estimator can sense ([WP-C-10](../assurance/02-concept/WP-C-10-functional-insufficiency-analysis.md)).
 
 ## ISO 13849-1:2023 and ISO 13849-2:2012, safety-related parts of control systems
+
+Full page on the tour: [ISO 13849-1 and -2](ISO-13849-control-system-reliability.md).
 
 - **What we take:** the Performance Level as the measure of a safety function, the risk graph for the required PL,
   the designated architectures (categories B to 4), MTTFD, DCavg and CCF, the software requirements of §7, the
@@ -76,6 +85,8 @@ environment has no licensed copy; every clause reference is marked to be checked
 
 ## IEC 62061:2021 and IEC 61508:2010, where ISO 13849 runs out
 
+Full pages on the tour: [IEC 62061](IEC-62061-machinery-SIL.md), [IEC 61508](IEC-61508-functional-safety.md).
+
 - **What we take:** management of functional safety (61508-1 §6), the functional safety assessment and its
   independence (61508-1 §8), software requirements beyond §7 of 13849-1 (61508-3) if the controller safety layer
   is ever promoted into the chain, and the tool classification T1 to T3.
@@ -85,6 +96,8 @@ environment has no licensed copy; every clause reference is marked to be checked
   management and assessment structure the machinery standards leave thin.
 
 ## EN 60204-1:2018 and ISO 13850:2015, electrical equipment and the emergency stop
+
+Full pages on the tour: [EN 60204-1](EN-60204-electrical-equipment.md), [ISO 13850](ISO-13850-emergency-stop.md).
 
 - **What we take:** the supply disconnecting device, overcurrent protection, protection against electric shock,
   protective bonding, control circuits and stop categories 0 and 1, the verification tests of §18; the emergency
@@ -99,6 +112,8 @@ environment has no licensed copy; every clause reference is marked to be checked
 
 ## ISO 13854:2019, ISO 13857:2019 and ISO 13855:2024, gaps, safety distances and safeguard positioning
 
+Full pages on the tour: [ISO 13854](ISO-13854-minimum-gaps.md), [ISO 13857](ISO-13857-reach-distances.md), [ISO 13855](ISO-13855-separation-distance.md).
+
 - **What we take:** the minimum gaps that avoid crushing a finger or a hand at a joint; the reach distances that
   keep a person out of a hazard zone; the approach-speed formula that turns a measured stopping time into a
   separation distance.
@@ -111,6 +126,8 @@ environment has no licensed copy; every clause reference is marked to be checked
   do, nobody is inside the reach envelope while the arm can move.
 
 ## IEC 62443-4-1:2018 and IEC 62443-4-2:2019, cybersecurity
+
+Full page on the tour: [IEC 62443](IEC-62443-cybersecurity.md).
 
 - **What we take:** the secure product development lifecycle practices (management, requirements, design,
   implementation, verification, defect management, update management, guidelines) and the component requirements
@@ -127,6 +144,8 @@ environment has no licensed copy; every clause reference is marked to be checked
 
 ## ISO/IEC TR 5469:2024 and the AI Act, machine learning in safety functions
 
+Full pages on the tour: [ISO/IEC TR 5469](ISO-IEC-TR-5469-AI-and-safety.md), [AI Act](AI-Act.md).
+
 - **What we take:** the classification of learned components by technology class and usage level, and the
   properties that would have to be shown if one ever implemented a safety function.
 - **How:** [WP-M-09](../assurance/01-management/WP-M-09-ml-safety-plan.md),
@@ -140,6 +159,8 @@ environment has no licensed copy; every clause reference is marked to be checked
 
 ## ISO 21448 (SOTIF), as a method only
 
+Full page on the tour: [ISO 21448](ISO-21448-performance-limits.md).
+
 - **What we take:** the vocabulary and method for hazards that happen without any fault: functional
   insufficiencies, triggering conditions, known and unknown scenarios. No machinery standard covers what a
   current-based torque estimator cannot sense or what a policy does on a scene outside its training set.
@@ -150,6 +171,8 @@ environment has no licensed copy; every clause reference is marked to be checked
 
 ## UL 4600, the safety case
 
+Full page on the tour: [UL 4600](UL-4600-safety-case.md).
+
 - **What we take:** the structure: claims, arguments, evidence with review state, defeaters published rather than
   hidden, assumptions stated, feedback from the field.
 - **How:** [WP-K-01](../assurance/10-safety-case/WP-K-01-safety-case.md) and the machine-readable records,
@@ -158,6 +181,8 @@ environment has no licensed copy; every clause reference is marked to be checked
 - **Position taken:** no UL 4600 conformance claim; guidance only.
 
 ## Regulation (EU) 2023/1230, the Machinery Regulation, and Regulation (EU) 2024/1689, the AI Act
+
+Full pages on the tour: [Machinery Regulation](Machinery-Regulation.md), [AI Act](AI-Act.md).
 
 - **What we take:** the essential health and safety requirements (Annex III), the technical documentation
   (Annex IV), the conformity assessment procedures (Art. 25 and the modules), the manufacturer's obligations
@@ -171,6 +196,8 @@ environment has no licensed copy; every clause reference is marked to be checked
   incurred (GAP-35).
 
 ## Automotive SPICE, process capability
+
+Full page on the tour: [Automotive SPICE](Automotive-SPICE-process-capability.md).
 
 - **What we take:** the process reference model for a self-assessment of process capability, because no
   machinery-specific process model exists and the package already found the ISO 9001 subset (design review,

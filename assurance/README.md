@@ -174,6 +174,7 @@ output:
 | `python3 assurance/process/tools/process_model.py` | `process/maps/*.md`, `10-safety-case/gates/skeletons/*.md` | `process/model/*.yaml`, WP-M-00 §2–§3, WP-M-02 §3.1, WP-M-06 §9, the confirmation records |
 | `python3 assurance/01-management/decisions/fig_lifecycle.py` | `decisions/figures/fig-dr-1-lifecycle.svg` | The lifecycle table of the decisions README |
 | `python3 docs/assets/rebot/make_assets.py` | The README figures | The data at the top of the generator |
+| `python3 tools/wiki/tour_figures.py` | The wiki's standards-tour figures, `docs/assets/rebot/tour/*.svg` | The tour order in the generator, WP-C-03 §5 ratings, the ISO 13854 gaps in `sim/blender/scenes.yaml` |
 | `python3 assurance/sim/blender/gallery.py` | `sim/blender/dashboards/README.md` and the dashboard JPEGs | `sim/blender/scenes.yaml`, `out/<scene>/scene.json`, `out/<scene>/dashboard.png` |
 
 ### Reference configuration

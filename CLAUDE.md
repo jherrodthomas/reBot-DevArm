@@ -37,9 +37,10 @@ Every question for the lead lives in the decision register,
   edited.
 - Generated files are never edited by hand: folder READMEs (`assurance/tools/folder_index.py`), process maps and
   gate skeletons (`assurance/process/tools/process_model.py`), process swimlane figures
-  (`assurance/process/tools/process_figures.py`), README and wiki figures (`docs/assets/rebot/make_assets.py`),
-  the safety-case dashboard (`assurance/case/tools/generate_dashboard.py`), the decision lifecycle figure. Run the
-  generator and commit its output.
+  (`assurance/process/tools/process_figures.py`), README and wiki figures (`docs/assets/rebot/make_assets.py`), the
+  standards-tour figures of the wiki (`tools/wiki/tour_figures.py`), the safety-case dashboard
+  (`assurance/case/tools/generate_dashboard.py`), the decision lifecycle figure. Run the generator and commit its
+  output.
 - A new work product goes into [WP-M-00](assurance/01-management/WP-M-00-work-product-register.md) first, with the
   document-control header of the [assurance README](assurance/README.md#document-control-header); then the process
   model gets an activity that produces it.

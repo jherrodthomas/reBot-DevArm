@@ -32,12 +32,18 @@ record under `hardware/`) is linked, never copied.
   becomes the list of merged pull requests read from the checkout's merge commits.
 - Do not type figures that the repository generates (work product counts, decision counts). Link to the generated
   source or embed an infographic.
-- Images: only figures that already exist in the repository (the README figures under `docs/assets/rebot/`,
+- Images: only figures that a generator in the repository writes (the README figures under `docs/assets/rebot/`,
   the process swimlanes under `docs/assets/rebot/process/`, the safety-case dashboard under
-  `docs/assets/assurance/`), embedded as `![alt](../path/to/figure.svg)`; the build
-  turns that into the raw file address on the synced branch. Never draw a figure for the wiki that touches safety
-  content; a flow that needs a drawing is written as a Mermaid block, which GitHub renders and reviewers read as
-  text. Caption each image with where it comes from and what generates it.
+  `docs/assets/assurance/`, the standards-tour figures under `docs/assets/rebot/tour/`), embedded as
+  `![alt](../path/to/figure.svg)`; the build turns that into the raw file address on the synced branch. Never draw
+  a figure for the wiki by hand; a flow that needs a drawing and has no generator is written as a Mermaid block,
+  which GitHub renders and reviewers read as text. Caption each image with where it comes from and what generates it.
+- The standards tour (`Standards-tour.md` and one page per standard) embeds animated figures written by
+  [`tools/wiki/tour_figures.py`](../tools/wiki/tour_figures.py). Each explains one idea of a standard in CSS
+  keyframes and is drawn in its finished state, so it reads without the animation. Any value about the arm in one
+  is read from the record when it is generated, and `tour_figures.py --check` fails in CI when a figure is stale.
+  The order of the tour is `TOUR` in that file; each page's previous and next links must follow it, which
+  `test_tour_figures.py` checks.
 - Three infographics are rendered from the records at every sync by
   [`tools/wiki/infographics.py`](../tools/wiki/infographics.py) and published next to the pages, so nothing is
   committed and nothing goes stale: `decision-register.svg`, `change-path.svg` and `register-status.svg`. A page

@@ -5,6 +5,7 @@
 - [Process maps](Process-maps.md)
 - [Standards at a glance](Standards-at-a-glance.md)
 - [How we use each standard](How-we-use-each-standard.md)
+- [Standards tour](Standards-tour.md)
 - [Roadmap and status](Roadmap-and-status.md)
 - [How the repository is organized](How-the-repository-is-organized.md)
 - [How decisions are made](How-decisions-are-made.md)
@@ -17,6 +18,30 @@
 - [Reporting a safety concern](Reporting-a-safety-concern.md)
 - [Session log](Session-log.md)
 - [FAQ](FAQ.md)
+
+**The standards tour**
+
+- [Start here](Standards-tour.md)
+- [ISO 12100](ISO-12100-risk-assessment.md)
+- [ISO 10218-1 and -2](ISO-10218-industrial-robots.md)
+- [ISO 13849-1 and -2](ISO-13849-control-system-reliability.md)
+- [IEC 62061](IEC-62061-machinery-SIL.md)
+- [IEC 61508](IEC-61508-functional-safety.md)
+- [EN 60204-1](EN-60204-electrical-equipment.md)
+- [ISO 13850](ISO-13850-emergency-stop.md)
+- [ISO 13854](ISO-13854-minimum-gaps.md)
+- [ISO 13857](ISO-13857-reach-distances.md)
+- [ISO 13855](ISO-13855-separation-distance.md)
+- [ISO/TS 15066](ISO-TS-15066-collaborative-robots.md)
+- [IEC 60812](IEC-60812-FMEA.md)
+- [IEC 61025](IEC-61025-fault-tree-analysis.md)
+- [ISO 21448](ISO-21448-performance-limits.md)
+- [IEC 62443](IEC-62443-cybersecurity.md)
+- [ISO/IEC TR 5469](ISO-IEC-TR-5469-AI-and-safety.md)
+- [UL 4600](UL-4600-safety-case.md)
+- [Automotive SPICE](Automotive-SPICE-process-capability.md)
+- [Machinery Regulation](Machinery-Regulation.md)
+- [AI Act](AI-Act.md)
 
 **Repository**
 

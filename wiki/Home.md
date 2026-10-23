@@ -47,7 +47,7 @@ phases, hold points and review levels; [Process maps](Process-maps.md) shows the
 *Counted from the clause columns of the [work product register](../assurance/01-management/WP-M-00-work-product-register.md),
 so it changes whenever the register does. [Standards at a glance](Standards-at-a-glance.md) gives the question each
 standard answers; [How we use each standard](How-we-use-each-standard.md) says what is taken from each and what
-is not claimed.*
+is not claimed; the [standards tour](Standards-tour.md) walks a newcomer through them one page at a time.*
 
 ## The safety argument in one picture
 
@@ -75,6 +75,7 @@ and [Roadmap and status](Roadmap-and-status.md) lists what is drafted, skeleton 
 |---|---|
 | See how the work is organised into phases, gates and activities | [Processes](Processes.md), then the swimlanes on [Process maps](Process-maps.md) |
 | See which standards apply and what each one is used for | [Standards at a glance](Standards-at-a-glance.md) and [How we use each standard](How-we-use-each-standard.md) |
+| Learn the standards end to end, one page and one animated figure each | [The standards tour](Standards-tour.md) |
 | Understand how upstream's record, the package and the assurance record fit together | [How the repository is organized](How-the-repository-is-organized.md) |
 | See what is done, active and planned | [Roadmap and status](Roadmap-and-status.md) |
 | Know which arm the analysis is about | [Reference arm](Reference-robot.md) |
