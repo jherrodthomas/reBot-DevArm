@@ -175,6 +175,7 @@ output:
 | `python3 assurance/01-management/decisions/fig_lifecycle.py` | `decisions/figures/fig-dr-1-lifecycle.svg` | The lifecycle table of the decisions README |
 | `python3 docs/assets/rebot/make_assets.py` | The README figures | The data at the top of the generator |
 | `python3 tools/wiki/tour_figures.py` | The wiki's standards-tour figures, `docs/assets/rebot/tour/*.svg` | The tour order in the generator, WP-C-03 §5 ratings, the ISO 13854 gaps in `sim/blender/scenes.yaml` |
+| `python3 tools/wiki/wiki_hero.py` (`--photo` to re-crop the image) | The wiki's Home banner, `docs/assets/rebot/wiki-hero.svg` and `wiki-hero-arm.jpg` | Upstream's image `media/v1.1_2.png` |
 | `python3 assurance/sim/blender/gallery.py` | `sim/blender/dashboards/README.md` and the dashboard JPEGs | `sim/blender/scenes.yaml`, `out/<scene>/scene.json`, `out/<scene>/dashboard.png` |
 
 ### Reference configuration

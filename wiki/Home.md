@@ -1,4 +1,7 @@
-![reBot-DevArm assurance. Open desktop manipulation. Engineered for safety. A geometric amber six-axis arm with a gripper on a fixtured bench, a red emergency stop in the operator's hand and a dashed reach envelope, beside the project name and the standards it follows.](../docs/assets/rebot/hero.svg)
+![reBot-DevArm assurance: the reBot Arm B601-DM v1.1, Seeed Studio's desktop robot arm, with its gripper raised, beside the project name and the standards it follows.](../docs/assets/rebot/wiki-hero.svg)
+
+*The arm is upstream's own image (`media/v1.1_2.png`, Seeed Studio, CC BY-NC-SA 4.0), set into the banner by
+[`tools/wiki/wiki_hero.py`](../tools/wiki/wiki_hero.py). The fork is not affiliated with or endorsed by Seeed Studio.*
 
 # reBot-DevArm assurance, explained
 

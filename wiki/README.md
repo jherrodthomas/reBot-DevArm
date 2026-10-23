@@ -34,7 +34,8 @@ record under `hardware/`) is linked, never copied.
   source or embed an infographic.
 - Images: only figures that a generator in the repository writes (the README figures under `docs/assets/rebot/`,
   the process swimlanes under `docs/assets/rebot/process/`, the safety-case dashboard under
-  `docs/assets/assurance/`, the standards-tour figures under `docs/assets/rebot/tour/`), embedded as
+  `docs/assets/assurance/`, the standards-tour figures under `docs/assets/rebot/tour/`, the Home banner
+  `docs/assets/rebot/wiki-hero.svg`), embedded as
   `![alt](../path/to/figure.svg)`; the build turns that into the raw file address on the synced branch. Never draw
   a figure for the wiki by hand; a flow that needs a drawing and has no generator is written as a Mermaid block,
   which GitHub renders and reviewers read as text. Caption each image with where it comes from and what generates it.
@@ -44,6 +45,9 @@ record under `hardware/`) is linked, never copied.
   is read from the record when it is generated, and `tour_figures.py --check` fails in CI when a figure is stale.
   The order of the tour is `TOUR` in that file; each page's previous and next links must follow it, which
   `test_tour_figures.py` checks.
+- The Home banner is written by [`tools/wiki/wiki_hero.py`](../tools/wiki/wiki_hero.py) from upstream's own image of
+  the arm (`media/v1.1_2.png`, Seeed Studio, CC BY-NC-SA 4.0), which it crops into `wiki-hero-arm.jpg` and embeds
+  with the credit. It is the only photograph in the wiki; `wiki_hero.py --check` fails in CI when the banner is stale.
 - Three infographics are rendered from the records at every sync by
   [`tools/wiki/infographics.py`](../tools/wiki/infographics.py) and published next to the pages, so nothing is
   committed and nothing goes stale: `decision-register.svg`, `change-path.svg` and `register-status.svg`. A page
