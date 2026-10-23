@@ -1,0 +1,59 @@
+{
+ "outcome": "no contact; minimum gap 3 mm",
+ "events": [
+  {
+   "t": 0.0,
+   "label": "J3 starts: 120\u00b0 to 0\u00b0 at 60 \u00b0/s",
+   "trigger": true
+  },
+  {
+   "t": 0.25,
+   "label": "where SF-08 (250 ms watchdog) would have stopped it",
+   "marker": true
+  },
+  {
+   "t": 0.7,
+   "label": "intended stop angle 80\u00b0 passed: no watchdog at BL-001"
+  },
+  {
+   "t": 1.9,
+   "label": "gap 21 mm: ISO 13854 finger gap (25 mm) crossed"
+  },
+  {
+   "t": 2.0,
+   "label": "J3 reaches 0\u00b0 (modelled end-stop)"
+  }
+ ],
+ "frames": [
+  {
+   "i": 0,
+   "t": -0.5,
+   "label": "start"
+  },
+  {
+   "i": 1,
+   "t": 0.0,
+   "label": "J3 starts: 120\u00b0 to 0\u00b0 at 60 \u00b0/s"
+  },
+  {
+   "i": 2,
+   "t": 0.7,
+   "label": "intended stop angle 80\u00b0 passed: no watchdog at BL-001"
+  },
+  {
+   "i": 3,
+   "t": 1.9,
+   "label": "gap 21 mm: ISO 13854 finger gap (25 mm) crossed"
+  },
+  {
+   "i": 4,
+   "t": 2.0,
+   "label": "J3 reaches 0\u00b0 (modelled end-stop)"
+  },
+  {
+   "i": 5,
+   "t": 2.5,
+   "label": "end"
+  }
+ ]
+}

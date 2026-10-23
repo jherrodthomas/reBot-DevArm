@@ -1,0 +1,117 @@
+# Cross-domain interfaces. Format: assurance/process/README.md §3.
+# An interface is a point where one discipline's analysis depends on another's. Each one is anchored to
+# text that already exists in the work products: an anchor `WP-x-nn:text` must occur verbatim in that
+# work product, so the model cannot claim a link the documents do not make.
+# status: documented = both sides reference each other, not yet reviewed;
+#         open = a recorded open item still has to settle it (named in open_item).
+
+- id: IX-01
+  kind: interface
+  phase: G1
+  between: [WP-C-03, WP-C-07]
+  pattern: "Safety-Security"
+  topic: "Threat scenarios that can cause a hazard are rated against the hazard list; cyber-induced hazards appear in the risk assessment"
+  anchors: ["WP-C-03:Cyber-induced hazards are analysed in WP-C-07", "WP-C-07:Safety impact is anchored to the hazard list of WP-C-03"]
+  status: documented
+  open_item: null
+  due: G1
+- id: IX-02
+  kind: interface
+  phase: G1
+  between: [WP-C-04, WP-C-10]
+  pattern: "Safety-Performance limits"
+  topic: "The contact-force stop SF-02 and the collision detection SF-04 rest on torque estimation without a sensor; what the estimator cannot sense bounds the claim they can make"
+  anchors: ["WP-C-04:The sensing limits of SF-02 and SF-04 are settled in WP-C-10", "WP-C-10:What the joint torque estimator cannot sense bounds the claim SF-02 and SF-04 can make"]
+  status: open
+  open_item: "DQ-005 (collaborative claim) is open; no force or pressure measurement exists (GAP-28); WP-C-10 OI-1 has to bound the estimator's floor before SF-02 and SF-04 claim PL d"
+  due: G1
+- id: IX-03
+  kind: interface
+  phase: G1
+  between: [WP-C-04, WP-C-09]
+  pattern: "Safety-ML"
+  topic: "No safety function is allocated to a learned component; the chain and the controller safety layer are the independent safeguard"
+  anchors: ["WP-C-04:learned components are outside every safety function", "WP-C-09:No safety function is allocated to a learned component"]
+  status: documented
+  open_item: null
+  due: G1
+- id: IX-04
+  kind: interface
+  phase: G1
+  between: [WP-C-02, WP-C-06]
+  pattern: "Environment-Interaction"
+  topic: "People presence per operating envelope drives the interaction and misuse scenarios and the separation-distance calculation"
+  anchors: ["WP-C-02:People presence per operating envelope is an input to the misuse analysis of WP-C-06", "WP-C-06:Operating envelopes and people presence are taken from WP-C-02"]
+  status: documented
+  open_item: null
+  due: G1
+- id: IX-05
+  kind: interface
+  phase: G2
+  between: [WP-S-03, WP-S-07]
+  pattern: "Safety-Security"
+  topic: "The safety chain is a zone with no conduit from the host network; no chain input is reachable from software or the network"
+  anchors: ["WP-S-03:no input of the safety chain is reachable from the network", "WP-S-07:The safety chain is a zone of its own with no conduit from the host network"]
+  status: documented
+  open_item: null
+  due: G2
+- id: IX-06
+  kind: interface
+  phase: G2
+  between: [WP-S-04, WP-H-08]
+  pattern: "Control-Mechanical"
+  topic: "The stopping angle the budget assumes must stay inside the end-stop and pinch-point margins"
+  anchors: ["WP-S-04:The stopping angle the budget assumes is bounded by the end-stop and pinch-point analysis of WP-H-08", "WP-H-08:The maximum stopping angle per joint is an input to the stopping budget of WP-S-04"]
+  status: documented
+  open_item: null
+  due: G2
+- id: IX-07
+  kind: interface
+  phase: G3
+  between: [WP-W-09, WP-W-11]
+  pattern: "Safety-Security"
+  topic: "Safety parameters are protected assets; their integrity is a cybersecurity requirement"
+  anchors: ["WP-W-09:Parameter integrity is a cybersecurity requirement verified in WP-W-11", "WP-W-11:Safety parameters of WP-W-09 are protected assets"]
+  status: documented
+  open_item: null
+  due: G3
+- id: IX-08
+  kind: interface
+  phase: G3
+  between: [WP-W-03, WP-H-02]
+  pattern: "Software-Hardware"
+  topic: "The controller reads chain diagnostics through the I/O of WP-S-05; those signals are informative and never a channel of a safety function"
+  anchors: ["WP-W-03:The I/O semantics of WP-S-05 are the controller's contract with the safety chain", "WP-H-02:Diagnostic signals from the chain to the controller are informative only"]
+  status: documented
+  open_item: null
+  due: G3
+- id: IX-09
+  kind: interface
+  phase: G4
+  between: [WP-V-02, WP-V-03]
+  pattern: "Test-Test"
+  topic: "The separation distances validated in WP-V-03 are derived from the stopping time and angle measured in WP-V-02"
+  anchors: ["WP-V-02:The measured stopping time and angle feed the separation distances validated in WP-V-03", "WP-V-03:Separation distances are those of WP-S-04 at the stopping performance measured in WP-V-02"]
+  status: documented
+  open_item: null
+  due: G4
+- id: IX-10
+  kind: interface
+  phase: G5
+  between: [WP-K-01, WP-K-03]
+  pattern: "Safety-Security"
+  topic: "The cybersecurity case is a branch of the safety case; claims that protect a safety function are referenced from the safety case"
+  anchors: ["WP-K-01:The cybersecurity branch of the argument is WP-K-03", "WP-K-03:Claims that protect a safety function are referenced from WP-K-01"]
+  status: documented
+  open_item: null
+  due: G5
+- id: IX-11
+  kind: interface
+  phase: G5
+  between: [WP-K-02, WP-K-07]
+  pattern: "Regulatory-ML"
+  topic: "One technical documentation serves the Machinery Regulation and, if ever needed, the AI Act"
+  anchors: ["WP-K-02:The AI Act record WP-K-07 shares this index", "WP-K-07:Technical documentation is held once"]
+  status: documented
+  open_item: null
+  due: G5

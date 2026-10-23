@@ -1,0 +1,20 @@
+# CFG-002: the RobStride variant, tracked and unverified (DQ-001, DQ-017).
+
+- id: CFG-002
+  kind: configuration
+  title: "reBot Arm B601-RS: the same mechanical envelope with RobStride actuators; BOM, assembly and software not released at BL-001"
+  description: "Tracked as a second configuration so the actuator-specific rows of the record can carry an RS column when the BOM is released (WP-C-01 §1.2). Nothing about it is assessed."
+  classification: upstream-compatible
+  evaluation_state: not-started
+  platform: "not in any repository at BL-001"
+  brand_safety_mode: "unknown"
+  item_definition: WP-C-01
+  related_assumptions: []
+  related_claims: []
+  baseline: BL-001
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-C-01
+  source_revision: "206ebda"

@@ -1,0 +1,347 @@
+# Hazards (HZ-) from WP-C-03 §4 (risk assessment) and safety functions (SF-) identified in WP-C-03 §7 and specified
+# in WP-C-04 §2. Identifiers are those of the concept-phase package (reBot_DevArm_Safety_Case.xlsx); SF-32 is new.
+# Ratings are WP-C-03 proposals, not approved. Format: case/tools/subsetyaml.py (restricted YAML subset).
+
+- id: HZ-M01
+  kind: hazard
+  title: "Joint pinch between adjacent links during motion; finger/hand caught"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-M02
+  kind: hazard
+  title: "Scissor action between gripper jaws and links"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-M03
+  kind: hazard
+  title: "Sharp edges on sheet-metal brackets; loose fastener projectile"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-M04
+  kind: hazard
+  title: "Arm sweep strikes operator/bystander head/torso during RUN"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-M05
+  kind: hazard
+  title: "Hair, jewellery, clothing entanglement at joint axes"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-M06
+  kind: hazard
+  title: "4.5 kg arm with 1.5 kg payload at 650 mm = ~22 N·m moment; unfixtured base tips"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-M07
+  kind: hazard
+  title: "Gripper releases payload during motion or on power loss"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-M08
+  kind: hazard
+  title: "PSU cable trip hazard at base"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-E01
+  kind: hazard
+  title: "24 V DC limited risk but poor isolation at barrel-jack input"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-E02
+  kind: hazard
+  title: "PSU short circuit; motor cable damage"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-E03
+  kind: hazard
+  title: "Static damage to motor controllers / Jetson during handling"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-E04
+  kind: hazard
+  title: "RF interference disrupts CAN bus or USB camera link"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-T01
+  kind: hazard
+  title: "Joint motor stator surface > 60 °C under sustained load (HT scenarios)"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-T02
+  kind: hazard
+  title: "Motor harness conductor undersized for sustained current"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-N01
+  kind: hazard
+  title: "Servo gear noise > 70 dBA in classroom — chronic exposure"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-V01
+  kind: hazard
+  title: "Hand-on-arm during teach mode — likely low"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-R01
+  kind: hazard
+  title: "Camera IR illuminator (D435i) — eye exposure if directed"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-X01
+  kind: hazard
+  title: "PLA/ABS dust during repair sanding"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-G01
+  kind: hazard
+  title: "4.5 kg arm + base manual handling injury"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-G02
+  kind: hazard
+  title: "Operator wrist strain during long demonstration sessions"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-V02
+  kind: hazard
+  title: "Outside +10..+35 °C: motor torque drift, bearing pre-load change"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-V03
+  kind: hazard
+  title: "No IP rating; coolant or beverage spill into joints"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-P01
+  kind: hazard
+  title: "Persistent contact between TCP and forehead exceeding TS 15066 thresholds"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-P02
+  kind: hazard
+  title: "Impact on hand exceeding 280 N transient threshold"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-P03
+  kind: hazard
+  title: "Joint motion traps finger between link and external surface"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-P04
+  kind: hazard
+  title: "Auto-restart whilst operator inside reach envelope"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-C01
+  kind: hazard
+  title: "ROS topic stall in RUN — joint last-cmd hold (NOT safe)"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-C02
+  kind: hazard
+  title: "Network-exposed ROS / Python SDK without auth"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-C03
+  kind: hazard
+  title: "Encoder fault — pose drift; balance unaffected (no IMU) but trajectory diverges"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-C04
+  kind: hazard
+  title: "Python GIL / async race in motorbridge holds last command"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-C05
+  kind: hazard
+  title: "Position cmd exceeds soft limit → mech end-stop or singularity"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-C06
+  kind: hazard
+  title: "Imitation policy outputs unsafe trajectory under OOD scene"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-C07
+  kind: hazard
+  title: "IK at workspace boundary causes joint speed spike"
+  status: proposed
+  source: WP-C-03
+
+- id: HZ-D01
+  kind: hazard
+  title: "Wrist camera records persons / private spaces inadvertently"
+  status: proposed
+  source: WP-C-03
+
+- id: SF-32
+  kind: safety-function
+  title: "Emergency stop"
+  plr: "d"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-08
+  kind: safety-function
+  title: "Safe stop on watchdog timeout"
+  plr: "d"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-24
+  kind: safety-function
+  title: "Manual reset after a stop (prevention of unexpected start-up)"
+  plr: "d"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-25
+  kind: safety-function
+  title: "Heartbeat and deadline monitor"
+  plr: "d"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-03
+  kind: safety-function
+  title: "Joint torque and speed limiting per joint"
+  plr: "d"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-02
+  kind: safety-function
+  title: "Contact-force stop"
+  plr: "d"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-04
+  kind: safety-function
+  title: "Collision detection by torque estimation"
+  plr: "d"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-23
+  kind: safety-function
+  title: "Trajectory jerk limit for transient contact"
+  plr: "d"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-01
+  kind: safety-function
+  title: "Power-and-force limiting (ISO/TS 15066)"
+  plr: "d"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-06
+  kind: safety-function
+  title: "Reduced speed in the shared workspace"
+  plr: "c"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-11
+  kind: safety-function
+  title: "Overcurrent cut-off per branch"
+  plr: "c"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-13
+  kind: safety-function
+  title: "Gripper holding on power loss"
+  plr: "c"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-14
+  kind: safety-function
+  title: "Stator over-temperature shutdown"
+  plr: "c"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-15
+  kind: safety-function
+  title: "Motion-imminent annunciation"
+  plr: "b"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-26
+  kind: safety-function
+  title: "Authenticated command channel"
+  plr: "c"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-27
+  kind: safety-function
+  title: "Operator session lock"
+  plr: "b"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-28
+  kind: safety-function
+  title: "Encoder plausibility cross-check"
+  plr: "c"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-29
+  kind: safety-function
+  title: "Software joint limits with mechanical end-stops"
+  plr: "c"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-30
+  kind: safety-function
+  title: "Singularity avoidance in inverse kinematics"
+  plr: "c"
+  status: proposed
+  source: WP-C-04
+
+- id: SF-31
+  kind: safety-function
+  title: "Camera default-off and opt-in recording"
+  plr: "b"
+  status: proposed
+  source: WP-C-04

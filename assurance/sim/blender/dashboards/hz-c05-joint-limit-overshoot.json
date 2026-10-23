@@ -1,0 +1,50 @@
+{
+ "outcome": "no contact; minimum gap 3 mm",
+ "events": [
+  {
+   "t": 0.0,
+   "label": "J3 starts: 60\u00b0 to 0\u00b0 at 120 \u00b0/s",
+   "trigger": true
+  },
+  {
+   "t": 0.5,
+   "label": "gap 3 mm: ISO 13854 finger gap (25 mm) crossed"
+  },
+  {
+   "t": 0.5,
+   "label": "J3 reaches 0\u00b0 (modelled end-stop)"
+  }
+ ],
+ "frames": [
+  {
+   "i": 0,
+   "t": -0.5,
+   "label": "start"
+  },
+  {
+   "i": 1,
+   "t": 0.0,
+   "label": "J3 starts: 60\u00b0 to 0\u00b0 at 120 \u00b0/s"
+  },
+  {
+   "i": 2,
+   "t": 0.3,
+   "label": "33.9 mm"
+  },
+  {
+   "i": 3,
+   "t": 0.5,
+   "label": "gap 3 mm: ISO 13854 finger gap (25 mm) crossed"
+  },
+  {
+   "i": 4,
+   "t": 0.7,
+   "label": "2.9 mm"
+  },
+  {
+   "i": 5,
+   "t": 1.5,
+   "label": "end"
+  }
+ ]
+}

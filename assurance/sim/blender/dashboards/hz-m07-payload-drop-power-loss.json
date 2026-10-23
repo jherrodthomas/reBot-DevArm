@@ -1,0 +1,46 @@
+{
+ "outcome": "payload hits the bench at 2.5 m/s",
+ "events": [
+  {
+   "t": 0.0,
+   "label": "motor power removed; gripper releases",
+   "trigger": true
+  },
+  {
+   "t": 0.3,
+   "label": "payload hits the bench at 2.5 m/s"
+  }
+ ],
+ "frames": [
+  {
+   "i": 0,
+   "t": -0.5,
+   "label": "start"
+  },
+  {
+   "i": 1,
+   "t": -0.2,
+   "label": ""
+  },
+  {
+   "i": 2,
+   "t": 0.0,
+   "label": "motor power removed; gripper releases"
+  },
+  {
+   "i": 3,
+   "t": 0.3,
+   "label": "payload hits the bench at 2.5 m/s"
+  },
+  {
+   "i": 4,
+   "t": 0.7,
+   "label": ""
+  },
+  {
+   "i": 5,
+   "t": 1.0,
+   "label": "end"
+  }
+ ]
+}

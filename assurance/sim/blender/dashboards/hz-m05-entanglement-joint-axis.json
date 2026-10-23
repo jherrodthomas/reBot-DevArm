@@ -1,0 +1,50 @@
+{
+ "outcome": "no contact; minimum distance 66 mm",
+ "events": [
+  {
+   "t": -0.5,
+   "label": "head within 100 mm of the Link6"
+  },
+  {
+   "t": 0.0,
+   "label": "J6 starts: 0\u00b0 to 360\u00b0 at 120 \u00b0/s",
+   "trigger": true
+  },
+  {
+   "t": 3.0,
+   "label": "J6 reaches 360\u00b0"
+  }
+ ],
+ "frames": [
+  {
+   "i": 0,
+   "t": -0.5,
+   "label": "head within 100 mm of the Link6"
+  },
+  {
+   "i": 1,
+   "t": 0.0,
+   "label": "J6 starts: 0\u00b0 to 360\u00b0 at 120 \u00b0/s"
+  },
+  {
+   "i": 2,
+   "t": 0.2,
+   "label": "66.2 mm"
+  },
+  {
+   "i": 3,
+   "t": 0.6,
+   "label": "66.1 mm"
+  },
+  {
+   "i": 4,
+   "t": 0.9,
+   "label": "67.9 mm"
+  },
+  {
+   "i": 5,
+   "t": 3.0,
+   "label": "J6 reaches 360\u00b0"
+  }
+ ]
+}

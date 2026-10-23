@@ -1,0 +1,443 @@
+# Source: WP-K-01 Safety Case (§3, claims). Machine-readable copy; WP-K-01 remains the reviewed document.
+# Format: README.md. Lifecycle and review fields are set only through recorded reviews.
+
+- id: G0
+  kind: claim
+  title: "The B601-DM arm on the supervised bench poses no unreasonable risk"
+  description: "The reBot Arm B601-DM v1.1 (CFG-001), fixtured on a bench and operated within the limits of WP-C-01 in operating envelope OE-1 by a trained operator with nobody else in reach, does not pose unreasonable risk. The risk of every hazard in WP-C-03 is reduced to an acceptable level by the safety functions, the design measures and the information for use."
+  parent: null
+  argument: null
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: []
+  related_requirements: []
+  related_assumptions: [AOU-01, AOU-02, AOU-03, AOU-04, AOU-05, AOU-06, AOU-07, AOU-08]
+  evidence_refs: [Sn-01, Sn-02, Sn-03, Sn-04, Sn-19, Sn-20]
+  defeaters: [DF-27, DF-29, DF-35]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G1
+  kind: claim
+  title: "The safety functions reach their required Performance Level"
+  description: "Each safety function of WP-C-03 §7, specified in WP-C-04, is broken into requirements (WP-S-02), implemented by a safety-related part of the control system at its PLr (WP-S-03, WP-H-04) and validated per ISO 13849-2."
+  parent: G0
+  argument: S0
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [HZ-M01, HZ-M04, HZ-P02, HZ-P03, HZ-P04, HZ-C01, HZ-C04]
+  related_requirements: [SF-32, SF-08, SF-24, SF-25, SF-03, SF-02, SF-04, SF-23, SF-06, SF-11, SF-13, SF-14, SF-15, SF-28, SF-29]
+  related_assumptions: []
+  evidence_refs: [Sn-05]
+  defeaters: []
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G1.1
+  kind: claim
+  title: "SF-32 emergency stop is implemented at PL d"
+  description: "A hardwired, dual-channel, monitored emergency stop removes the 24 V motor supply by contactor within 200 ms independently of software and latches until reset."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [HZ-M01, HZ-M04, HZ-P02, HZ-P04]
+  related_requirements: [SF-32]
+  related_assumptions: []
+  evidence_refs: [Sn-06, Sn-07]
+  defeaters: [DF-08, DF-09, DF-14, DF-31]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G1.2
+  kind: claim
+  title: "SF-08 safe stop on watchdog timeout and SF-25 heartbeat monitor are implemented at PL d"
+  description: "No valid command, a lost heartbeat, a missed deadline or a bus-off stops every joint within the budget, with power removed by the chain if standstill is not reached."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [HZ-C01, HZ-C04]
+  related_requirements: [SF-08, SF-25]
+  related_assumptions: []
+  evidence_refs: [Sn-08, Sn-09]
+  defeaters: [DF-16, DF-18]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G1.3
+  kind: claim
+  title: "SF-24 manual reset after a stop is implemented at PL d"
+  description: "No joint moves after an emergency stop, a safe stop or a power loss until a deliberate reset with every device released; release alone never restarts motion."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [HZ-P04]
+  related_requirements: [SF-24]
+  related_assumptions: []
+  evidence_refs: [Sn-06, Sn-07]
+  defeaters: [DF-08, DF-17]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G1.4
+  kind: claim
+  title: "SF-03 joint torque and speed limiting is implemented at PL d"
+  description: "Every command is clamped per joint to the limits of the active mode and envelope by the controller safety layer, and a measured exceedance stops the joint."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [HZ-M01, HZ-M04, HZ-P03]
+  related_requirements: [SF-03]
+  related_assumptions: []
+  evidence_refs: [Sn-08, Sn-09]
+  defeaters: [DF-16, DF-19]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G1.5
+  kind: claim
+  title: "SF-29 software joint limits with mechanical end-stops are implemented at PL c"
+  description: "Software limits sit at least 5° inboard of documented mechanical end-stops on every joint."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [HZ-C05, HZ-M01]
+  related_requirements: [SF-29]
+  related_assumptions: []
+  evidence_refs: [Sn-08, Sn-10]
+  defeaters: [DF-02, DF-20]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G1.6
+  kind: claim
+  title: "SF-02 contact-force stop and SF-04 collision detection are implemented at PL d within their sensing limits"
+  description: "A contact above the detection floor of the torque estimator stops every joint within the budget; the floor is bounded by WP-C-10 and no contact below it is claimed detected."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [HZ-M01, HZ-M02, HZ-P01, HZ-P02, HZ-P03]
+  related_requirements: [SF-02, SF-04]
+  related_assumptions: []
+  evidence_refs: [Sn-08, Sn-11]
+  defeaters: [DF-26, DF-28]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G1.7
+  kind: claim
+  title: "SF-13 gripper holding on power loss is implemented at PL c"
+  description: "The gripper keeps its grasp when motor power is removed, for payloads above the limit the lead sets (DQ-015)."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [HZ-M07, HZ-M02]
+  related_requirements: [SF-13]
+  related_assumptions: []
+  evidence_refs: [Sn-12]
+  defeaters: [DF-07]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G1.8
+  kind: claim
+  title: "SF-14 over-temperature shutdown and SF-11 overcurrent cut-off are implemented at PL c"
+  description: "A stator above its threshold is de-rated and stopped; a branch above its rating is opened by a device independent of the drive firmware."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [HZ-T01, HZ-T02, HZ-E02]
+  related_requirements: [SF-14, SF-11]
+  related_assumptions: []
+  evidence_refs: [Sn-13]
+  defeaters: [DF-10, DF-13]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G1.9
+  kind: claim
+  title: "SF-06 reduced speed, SF-15 annunciation and SF-23 jerk limiting are implemented at their PLr for the shared workspace"
+  description: "Whenever a mode or envelope allows a person in reach, speed is reduced, motion is announced and trajectories are shaped; in OE-1 this is TEACH only."
+  parent: G1
+  argument: S1
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [HZ-M04, HZ-P02]
+  related_requirements: [SF-06, SF-15, SF-23]
+  related_assumptions: []
+  evidence_refs: [Sn-08, Sn-20]
+  defeaters: [DF-06, DF-30]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G2
+  kind: claim
+  title: "The complementary electrical and mechanical measures are implemented"
+  description: "The design measures DM-01 to DM-07 of WP-C-03 §6 and the electrical installation requirements are implemented and verified."
+  parent: G0
+  argument: S0
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: []
+  related_requirements: []
+  related_assumptions: []
+  evidence_refs: []
+  defeaters: []
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G2.1
+  kind: claim
+  title: "The 24 V installation is protected and can be disconnected"
+  description: "A lockable disconnect, a fuse, per-branch overcurrent protection, a keyed input and an enclosed supply exist and are inspected."
+  parent: G2
+  argument: S2
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [HZ-E01, HZ-E02, HZ-T02]
+  related_requirements: []
+  related_assumptions: [AOU-02]
+  evidence_refs: [Sn-13]
+  defeaters: [DF-09, DF-10, DF-11, DF-12, DF-15]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G2.2
+  kind: claim
+  title: "Pinch points, end-stops, base fixing and part strength are within limits"
+  description: "Joint gaps meet ISO 13854, every joint has a documented end-stop, the base fixing and the payload moment are specified, and the printed and sheet-metal parts carry their load with margin."
+  parent: G2
+  argument: S2
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [HZ-M01, HZ-M03, HZ-M05, HZ-M06, HZ-P03]
+  related_requirements: []
+  related_assumptions: [AOU-03, AOU-05]
+  evidence_refs: [Sn-10]
+  defeaters: [DF-01, DF-02, DF-03, DF-04, DF-05]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G3
+  kind: claim
+  title: "The command path cannot defeat the safety functions"
+  description: "No client, network peer or learned component can move the arm outside the limits or hold a stop open."
+  parent: G0
+  argument: S0
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: []
+  related_requirements: []
+  related_assumptions: []
+  evidence_refs: []
+  defeaters: []
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G3.1
+  kind: claim
+  title: "Motion command paths are authenticated and bounded"
+  description: "Every path that can command motion (SDK, ROS 2, the leader arm, the web UI) is authenticated, and every command passes the safety layer's clamps."
+  parent: G3
+  argument: S3
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [HZ-C02]
+  related_requirements: [SF-26, SF-27]
+  related_assumptions: []
+  evidence_refs: [Sn-14, Sn-15]
+  defeaters: [DF-22, DF-23, DF-25]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G3.2
+  kind: claim
+  title: "Learned components are outside every safety function and their outputs are clamped"
+  description: "No safety function is allocated to a learned component; every policy output passes SF-03, SF-23, SF-29 and the watchdog before a drive sees it, and the checkpoint that ran is recorded."
+  parent: G3
+  argument: S3
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: [HZ-C06]
+  related_requirements: []
+  related_assumptions: []
+  evidence_refs: [Sn-16]
+  defeaters: [DF-24]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G4
+  kind: claim
+  title: "The evidence was produced under a controlled process"
+  description: "The records that support the claims above were produced under configuration control, from a complete hazard identification, with verification and review evidence."
+  parent: G0
+  argument: S0
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: []
+  related_requirements: []
+  related_assumptions: []
+  evidence_refs: []
+  defeaters: []
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G4.1
+  kind: claim
+  title: "A configuration baseline exists and the software is pinned to it"
+  description: "BL-001 names the hardware record and, once forked, the software; every test records the baseline it ran on."
+  parent: G4
+  argument: S4
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: []
+  related_requirements: []
+  related_assumptions: []
+  evidence_refs: [Sn-17]
+  defeaters: [DF-16, DF-34]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G4.2
+  kind: claim
+  title: "Hazards are identified completely and rated"
+  description: "The hazard list covers ISO 12100 Annex B, ISO 10218-1 Annex A and ISO/TS 15066; every row is rated per operating envelope by someone who has operated the arm."
+  parent: G4
+  argument: S4
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: []
+  related_requirements: []
+  related_assumptions: []
+  evidence_refs: [Sn-01, Sn-02, Sn-04]
+  defeaters: [DF-27, DF-36]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: G4.3
+  kind: claim
+  title: "Verification and review evidence exists for the motion-critical software and the record"
+  description: "The safety layer and the hardened host software have unit and integration tests, and every Draft work product has a verification review."
+  parent: G4
+  argument: S4
+  lifecycle_status: draft
+  baseline: BL-001
+  configuration: CFG-001
+  related_hazards: []
+  related_requirements: []
+  related_assumptions: []
+  evidence_refs: [Sn-09, Sn-18]
+  defeaters: [DF-21, DF-31, DF-32, DF-33]
+  review_state: not-reviewed
+  reviewer: null
+  review_date: null
+  review_ref: null
+  source: WP-K-01
+  source_revision: "206ebda"

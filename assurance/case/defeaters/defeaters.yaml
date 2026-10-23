@@ -1,0 +1,398 @@
+# Source: WP-K-01 Safety Case (§7, defeaters). One defeater per gap-assessment finding GAP-01 to GAP-36.
+# Machine-readable copy; WP-K-01 remains the reviewed document.
+
+- id: DF-01
+  kind: defeater
+  title: "Joint pinch-zone gaps are not analysed"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-01"
+  lifecycle_status: open
+  gaps: [GAP-01]
+  related_claims: [G2.2]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-02
+  kind: defeater
+  title: "Mechanical end-stops exist only where the BOM says so (the joint-1 yaw limit block and the upper- and lower-arm limit blocks, added in v1.1); joints 4 to 6 and the gripper rely on the actuator's own position limits, and no joint has a documented stop angle or a software limit inboard of it"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-02"
+  lifecycle_status: open
+  gaps: [GAP-02]
+  related_claims: [G1.5, G2.2]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-03
+  kind: defeater
+  title: "The mass, the payload moment at reach, the centre of gravity and the base fixing are not specified"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-03"
+  lifecycle_status: open
+  gaps: [GAP-03]
+  related_claims: [G2.2]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-04
+  kind: defeater
+  title: "Load-bearing machined parts are offered as 3D-printable substitutes ('can be 3D printed in ABS with high infill') with no strength analysis, and the printed covers and fingers have no declared material, load case or inspection interval; a cracked cover exposes the joint gap it guards"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-04"
+  lifecycle_status: open
+  gaps: [GAP-04]
+  related_claims: [G2.2]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-05
+  kind: defeater
+  title: "Sharp edges on the sheet-metal brackets and the fastener torque are not specified; the DFMEA rates a loosened fastener as a projectile risk"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-05"
+  lifecycle_status: open
+  gaps: [GAP-05]
+  related_claims: [G2.2]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-06
+  kind: defeater
+  title: "No separation-distance or reach-envelope safeguarding plan exists"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-06"
+  lifecycle_status: open
+  gaps: [GAP-06]
+  related_claims: [G1.9]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-07
+  kind: defeater
+  title: "Whether the gripper holds its grasp on power loss is unknown"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-07"
+  lifecycle_status: open
+  gaps: [GAP-07]
+  related_claims: [G1.7]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-08
+  kind: defeater
+  title: "No emergency stop exists in the documented design"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-08"
+  lifecycle_status: open
+  gaps: [GAP-08]
+  related_claims: [G1.1, G1.3]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-09
+  kind: defeater
+  title: "No supply disconnecting device: the 24 V, 14.6 A supply feeds the XT30 daisy chain directly; there is no lockable disconnect and no fuse between the supply and the harness"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-09"
+  lifecycle_status: open
+  gaps: [GAP-09]
+  related_claims: [G1.1, G2.1]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-10
+  kind: defeater
+  title: "No overcurrent protection per branch"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-10"
+  lifecycle_status: open
+  gaps: [GAP-10]
+  related_claims: [G1.8, G2.1]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-11
+  kind: defeater
+  title: "The mains side is undocumented: the LRS-350-24 is an open-frame supply with exposed mains terminals, and no enclosure, bonding, cord or inlet is specified"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-11"
+  lifecycle_status: open
+  gaps: [GAP-11]
+  related_claims: [G2.1]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-12
+  kind: defeater
+  title: "The arm's 24 V input is not keyed against reverse polarity and has no reverse-polarity protection; the package's own architecture notes a barrel-jack style input it recommends replacing"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-12"
+  lifecycle_status: open
+  gaps: [GAP-12]
+  related_claims: [G2.1]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-13
+  kind: defeater
+  title: "Motor over-temperature protection is the actuator's own closed firmware only"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-13"
+  lifecycle_status: open
+  gaps: [GAP-13]
+  related_claims: [G1.8]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-14
+  kind: defeater
+  title: "No reliability data exists for any part of a safety function"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-14"
+  lifecycle_status: open
+  gaps: [GAP-14]
+  related_claims: [G1.1]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-15
+  kind: defeater
+  title: "EMC immunity and emissions are not declared for the arm or the harness; a disturbed CAN bus is a loss-of-communication event (GAP-18)"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-15"
+  lifecycle_status: open
+  gaps: [GAP-15]
+  related_claims: [G2.1]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-16
+  kind: defeater
+  title: "The software that moves the arm is outside the fork"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-16"
+  lifecycle_status: open
+  gaps: [GAP-16]
+  related_claims: [G1.2, G1.4, G4.1]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-17
+  kind: defeater
+  title: "No operating-mode state machine exists"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-17"
+  lifecycle_status: open
+  gaps: [GAP-17]
+  related_claims: [G1.3]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-18
+  kind: defeater
+  title: "Loss of communication holds the last command"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-18"
+  lifecycle_status: open
+  gaps: [GAP-18]
+  related_claims: [G1.2]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-19
+  kind: defeater
+  title: "Joint speed, torque and momentum limits are not declared per joint and are enforced, where at all, only inside the client library; nothing between a command source and the drive bounds them"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-19"
+  lifecycle_status: open
+  gaps: [GAP-19]
+  related_claims: [G1.4]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-20
+  kind: defeater
+  title: "Software joint limits inboard of the mechanical end-stops are not defined, so a position command can run a joint into its stop or through a singularity"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-20"
+  lifecycle_status: open
+  gaps: [GAP-20]
+  related_claims: [G1.5]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-21
+  kind: defeater
+  title: "No verification evidence exists for any software component"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-21"
+  lifecycle_status: open
+  gaps: [GAP-21]
+  related_claims: [G4.3]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-22
+  kind: defeater
+  title: "Any process with the CAN-USB adapter open can command every joint"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-22"
+  lifecycle_status: open
+  gaps: [GAP-22]
+  related_claims: [G3.1]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-23
+  kind: defeater
+  title: "Tele-operation (the leader arm path, the web UI, the ROS bridge) is unauthenticated and unencrypted; an idle session never locks"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-23"
+  lifecycle_status: open
+  gaps: [GAP-23]
+  related_claims: [G3.1]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-24
+  kind: defeater
+  title: "Learned policies (LeRobot imitation policies, the YOLO grasping demo) run with no independent clamp on their output and no verification against the hazard list; the package's own FMEA rates an out-of-distribution scene as a high-priority failure"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-24"
+  lifecycle_status: open
+  gaps: [GAP-24]
+  related_claims: [G3.2]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-25
+  kind: defeater
+  title: "The wrist camera, where fitted, streams by default and nothing states a retention or recording posture; people at the bench are recorded without a decision"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-25"
+  lifecycle_status: open
+  gaps: [GAP-25]
+  related_claims: [G3.1]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-26
+  kind: defeater
+  title: "Inverse kinematics near the workspace boundary can spike joint speed; the damping is a property of the client library, not of a limit the arm enforces"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-26"
+  lifecycle_status: open
+  gaps: [GAP-26]
+  related_claims: [G1.6]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-27
+  kind: defeater
+  title: "Adequacy of risk reduction is not recorded for 18 of the package's hazards"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-27"
+  lifecycle_status: open
+  gaps: [GAP-27]
+  related_claims: [G0, G4.2]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-28
+  kind: defeater
+  title: "No power-and-force-limiting measurement exists and the body-region thresholds are not bound to joint torque or speed caps, so no collaborative claim (contact permitted) can be made for any envelope"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-28"
+  lifecycle_status: open
+  gaps: [GAP-28]
+  related_claims: [G1.6]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-29
+  kind: defeater
+  title: "No information for use: no operator manual, no limits and warnings, no power-on checklist, no E-stop test procedure, no lock-out, no residual-risk statement; the Seeed wiki covers assembly and software only"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-29"
+  lifecycle_status: open
+  gaps: [GAP-29]
+  related_claims: [G0]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-30
+  kind: defeater
+  title: "No motion-imminent warning exists before a commanded motion; the package asks for an audible or visible signal 500 ms ahead"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-30"
+  lifecycle_status: open
+  gaps: [GAP-30]
+  related_claims: [G1.9]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-31
+  kind: defeater
+  title: "No safety function has been validated"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-31"
+  lifecycle_status: open
+  gaps: [GAP-31]
+  related_claims: [G1.1, G4.3]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-32
+  kind: defeater
+  title: "Design-review, nonconformance and corrective-action records are absent, and test and calibration records are not kept; git history is the only document control"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-32"
+  lifecycle_status: open
+  gaps: [GAP-32]
+  related_claims: [G4.3]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-33
+  kind: defeater
+  title: "Kit assembly has no production controls"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-33"
+  lifecycle_status: open
+  gaps: [GAP-33]
+  related_claims: [G4.3]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-34
+  kind: defeater
+  title: "The B601-RS (RobStride) variant has no released BOM, firmware notes or software; the two variants share the envelope but not the control interface, and nothing detects which is fitted"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-34"
+  lifecycle_status: open
+  gaps: [GAP-34]
+  related_claims: [G4.1]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-35
+  kind: defeater
+  title: "The CC BY-NC-SA 4.0 licence forbids commercial use; a safety-assured build placed in a workplace (the package's OE-3) may be commercial use under upstream's statement, and the record does not yet say which envelopes the licence allows"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-35"
+  lifecycle_status: open
+  gaps: [GAP-35]
+  related_claims: [G0]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
+
+- id: DF-36
+  kind: defeater
+  title: "Repeatability (< 0.2 mm) is declared but no ISO 9283 test pack exists; not a safety gap, but the record's only performance evidence is the upstream thermal test"
+  description: "Closure route: gap assessment §9 priority actions; see GAP-36"
+  lifecycle_status: open
+  gaps: [GAP-36]
+  related_claims: [G4.2]
+  baseline: BL-001
+  source: WP-K-01
+  source_revision: "206ebda"
