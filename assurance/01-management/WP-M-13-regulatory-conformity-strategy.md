@@ -9,7 +9,7 @@
 | PL / scope | Regulatory (all) |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I1); legal review TBD |
-| Approver | Project maintainer (acting safety manager). Self-approval at I0 is proposed as a recorded interim limitation; it is decision DQ-010 (open, recommended A) |
+| Approver | Project maintainer (acting safety manager). Self-approval at I0 is a recorded interim limitation; it is decision DQ-010 (answered A) |
 | Baseline | `206ebda` |
 
 > [!NOTE]
@@ -23,7 +23,7 @@ reBot-DevArm is machinery, and in the EU machinery is placed on the market under
 applies from 20 January 2027 and replaces Directive 2006/42/EC. This document records which regulations apply to
 the fork, which route to conformity is recommended, what the technical documentation must contain, and how the
 assurance work products of [WP-M-00](WP-M-00-work-product-register.md) map onto it. The frame itself is decision
-DQ-002 (EU recommended, open); the route is decision DQ-012 (queued, Module A recommended).
+DQ-002 (answered A: the EU frame); the route is decision DQ-012 (open, Module A recommended).
 
 ## 2. What the fork is, in regulatory terms
 
@@ -33,7 +33,7 @@ DQ-002 (EU recommended, open); the route is decision DQ-012 (queued, Module A re
 | Is a bare arm "machinery" or "partly completed machinery"? | Arguably partly completed machinery (Art. 3): the kit as sold has no supply, no host and no safety function and cannot perform a specific application on its own. A fixtured arm with its supply, its host, its safety chain and a defined task put into service on a bench is machinery, and whoever puts it into service is its manufacturer | The fork plans the whole technical file for the arm as put into service, not a declaration of incorporation for the kit; the kit's own status is upstream's question |
 | Is adding a safety chain a substantial modification? | The inherited arm was never CE-marked, so there is no conforming machine to modify; the resulting arm is new machinery | The fork plans the whole technical file, not a delta |
 | Is any safety component a product in its own right? | The safety relay, the contactor, the E-stop devices and the enabling device are bought safety components with their own declarations; the fork integrates them. The actuators are not safety components (WP-M-01 T-05) | Their certificates are evidence in WP-H-07, not something the fork issues |
-| Does Annex I Part A apply (mandatory third-party assessment)? | Part A lists safety components and machinery with "fully or partially self-evolving behaviour using machine learning approaches ensuring safety functions". The fork's strategy (WP-M-01 T-03; DQ-008 recommended A) allocates no safety function to a learned component, so Part A is **not triggered**. Part B lists other high-risk categories; none applies to a desktop arm as such | The fork may choose Module A if harmonised standards are applied in full (§3); the threshold is monitored in §5 |
+| Does Annex I Part A apply (mandatory third-party assessment)? | Part A lists safety components and machinery with "fully or partially self-evolving behaviour using machine learning approaches ensuring safety functions". The fork's strategy (WP-M-01 T-03; DQ-008 answered A) allocates no safety function to a learned component, so Part A is **not triggered**. Part B lists other high-risk categories; none applies to a desktop arm as such | The fork may choose Module A if harmonised standards are applied in full (§3); the threshold is monitored in §5 |
 | Does the licence allow the use? | Upstream's CC BY-NC-SA 4.0 forbids commercial use and upstream states that selling a rebranded arm is prohibited. A safety-assured arm put into service in a workplace (the package's OE-3) may be commercial use (GAP-35); use on a research bench (OE-1) is not | The first case covers OE-1 only (DQ-003); any later envelope records the licence question before the regulatory one |
 
 ## 3. Route to conformity
@@ -49,9 +49,9 @@ verification (Module G, Annex X).
 | B: Module B + C, voluntary EU type-examination | A notified body examines the technical documentation and the type; gives an independent view the project otherwise lacks | Fee (indicative four to five figures); scheduling | Worth it only if a build is ever to leave the bench; the assessor engagement DQ-009 could be the same body |
 | C: Module H | A certified quality system covering design and production | Out of proportion for a one-person open-source record of a kit | Not recommended |
 
-The route is DQ-012 (queued behind DQ-002 and DQ-008). Until it is answered, NB-1 stays planned in WP-M-06 §8 and
+The route is DQ-012 (open in batch 2; the frame and the policy question it waited on are answered). Until it is answered, NB-1 stays planned in WP-M-06 §8 and
 the fork plans for self-declaration with the harmonised standards applied in full. The standards themselves are not
-bought (DQ-011, queued) and no assessor is engaged (DQ-009, open), so "applied in full" rests on references marked
+bought (DQ-011, open) and no assessor is engaged (DQ-009, answered A), so "applied in full" rests on references marked
 to be checked until that changes.
 
 Whichever module is chosen, the harmonised standards are listed in the Official Journal under the Regulation only
@@ -90,7 +90,7 @@ Regulation (EU) 2024/1689 Art. 6(1) makes an AI system high-risk when it is a sa
 by the Union harmonisation legislation listed in Annex I and that product must undergo third-party conformity
 assessment. The Machinery Regulation is in Annex I Section A. The fork keeps learned components (the LeRobot
 policies, the grasping demo, any vision-language-action model) outside every safety function (WP-M-01 T-03;
-DQ-008 recommended A; [WP-C-09](../02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md)), so no AI
+DQ-008 answered A; [WP-C-09](../02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md)), so no AI
 system is a safety component and the AI Act's high-risk obligations do not apply.
 [WP-K-07](../10-safety-case/WP-K-07-ai-act-conformity-record.md) records that position with its evidence, and is
 rewritten as a full Annex IV technical documentation if the position changes (for example, if a learned collision

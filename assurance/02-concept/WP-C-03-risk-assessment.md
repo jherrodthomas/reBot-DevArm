@@ -6,7 +6,7 @@
 | Standard reference | ISO 12100:2010 §5.4–§5.6, Annex B; ISO 13849-1:2023 §5, Annex A (risk graph); ISO 10218-1:2025 Annex A and ISO 10218-2:2025 Annex A (hazard lists, checked against the 2011 editions); ISO/TS 15066:2016 §5, Annex A; ISO 13850:2015; ISO 13854:2019; EN 60204-1:2018 §9.2.2 (stop categories); Regulation (EU) 2023/1230 Annex III §1.1.2 |
 | Version | 0.1 (2026-10-20): the 34 hazards and ratings of the concept-phase package carried into the record; the package's 31 "safety functions" split into 20 control functions, 7 design measures and 9 instructions; SF-32 emergency stop added; ratings per operating envelope kept, re-rating for OE-1 as an open item |
 | Status | Draft |
-| PL / scope | Highest PLr: **d** target (DQ-004, open, recommended A); five rows rate **e** in the package and are excluded from the first operating envelope rather than argued down; CFG-001 B601-DM v1.1 in OE-1 (DQ-003, open, recommended A); CFG-002 B601-RS tracked, unrated |
+| PL / scope | Highest PLr: **d** target (DQ-004, answered A); five rows rate **e** in the package and are excluded from the first operating envelope rather than argued down; CFG-001 B601-DM v1.1 in OE-1 (DQ-003, answered A); CFG-002 B601-RS tracked, unrated |
 | Author | Assurance team (AI-assisted draft, I0), from the package of J. Herrod-Thomas (2026-05-04) |
 | Reviewer(s) | TBD (I1); the ratings need a reviewer who has operated the arm |
 | Approver | Project lead |
@@ -213,7 +213,7 @@ plus the bench chain of [WP-V-07](../06-validation/WP-V-07-test-operations.md) d
 ## 7. Safety functions
 
 Identified here, specified in [WP-C-04](WP-C-04-safety-functions-and-plr.md). The PLr is the higher of the risk graph and the
-ISO 10218-1 type-C value; the adopted target for the stop functions is decision DQ-004 (open, recommended d).
+ISO 10218-1 type-C value; the adopted target for the stop functions is decision DQ-004 (answered A: d).
 
 | ID | Safety function | PLr | Cat. | Hazards addressed | Package source |
 |---|---|---|---|---|---|

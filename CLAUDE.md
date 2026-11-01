@@ -52,5 +52,5 @@ Every question for the lead lives in the decision register,
 The arm is designed by Seeed Studio (`Seeed-Projects/reBot-DevArm`, CC BY-NC-SA 4.0). `hardware/` is upstream's
 record and is only ever updated by merging from upstream, never edited here. The software the arm runs
 (the `motorbridge` SDK, the ROS 2 driver, the LeRobot and Pinocchio integrations) lives in other upstream
-repositories; until the lead decides to fork it (DQ-007) the record describes it and does not change it. The fork
-is not affiliated with or endorsed by Seeed Studio.
+repositories; until the fork the lead approved (DQ-007) is made, the record describes it and does not change it.
+The fork is not affiliated with or endorsed by Seeed Studio.

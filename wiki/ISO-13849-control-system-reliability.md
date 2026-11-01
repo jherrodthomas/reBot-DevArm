@@ -52,11 +52,11 @@ That is why the record puts the stop functions on a hardwired chain of certified
 |---|---|
 | The risk graph ratings and PLr of every hazard (the package's, to be re-rated) | [Risk assessment, WP-C-03 §5](../assurance/02-concept/WP-C-03-risk-assessment.md) |
 | The safety requirements specification | [WP-S-02](../assurance/03-system/WP-S-02-safety-requirements.md) |
-| The architecture: a two-channel E-stop, a safety relay and contactors with mirror contacts on the 24 V motor supply | [Technical safety concept, WP-S-03](../assurance/03-system/WP-S-03-technical-safety-concept.md); the bench stop question (DQ-006, open) |
+| The architecture: a two-channel E-stop, a safety relay and contactors with mirror contacts on the 24 V motor supply | [Technical safety concept, WP-S-03](../assurance/03-system/WP-S-03-technical-safety-concept.md); the bench stop question (DQ-006, answered) |
 | The PL calculation, with a SISTEMA project as the record | [WP-H-04](../assurance/04-hardware/WP-H-04-reliability-data-and-pl-calculation.md) |
 | Certified and well-tried components | [WP-H-07](../assurance/04-hardware/WP-H-07-safety-component-qualification.md) |
 | Validation, and fault injection with the fault lists of Part 2 | [WP-V-01](../assurance/06-validation/WP-V-01-safety-validation.md), [WP-V-05](../assurance/06-validation/WP-V-05-fault-injection.md) |
-| The PL target for the stop functions | The PL target question (DQ-004, open; recommended PL d for the stops) |
+| The PL target for the stop functions | The PL target question (DQ-004, answered: PL d for the stops) |
 
 ## What the project does not claim
 
@@ -77,7 +77,7 @@ hardwired chain does ([WP-M-01 §6](../assurance/01-management/WP-M-01-assurance
 
 ## Clauses to know
 
-No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is a queued question for the lead (DQ-011).
+No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is an open question for the lead (DQ-011).
 
 | Clause | What it covers |
 |---|---|

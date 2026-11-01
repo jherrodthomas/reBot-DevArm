@@ -49,7 +49,7 @@ An assessment: the baseline is a self-assessment, not one by a qualified assesso
 
 ## Clauses to know
 
-No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is a queued question for the lead (DQ-011). The record uses the model's process and capability definitions as a whole.
+No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is an open question for the lead (DQ-011). The record uses the model's process and capability definitions as a whole.
 
 ---
 

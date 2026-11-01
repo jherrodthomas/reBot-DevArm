@@ -8,8 +8,8 @@ this page decides nothing and claims nothing.
 
 > [!NOTE]
 > **No confirmation measure has been performed, and no assessor has been engaged.** The project has one
-> maintainer, so every review at independence level I2 or I3 is planned as external. Whether and when to engage an
-> assessor is an open question for the project lead (decision register DQ-009).
+> maintainer, so every review at independence level I2 or I3 is planned as external. The lead decided not to engage an
+> assessor for now and to revisit it at G1 (decision register DQ-009).
 
 ## Where things stand
 
@@ -17,7 +17,7 @@ this page decides nothing and claims nothing.
 |---|---|
 | No confirmation review, audit or assessment has taken place | [Confirmation records folder](../assurance/10-safety-case/confirmation/README.md), [WP-M-06 §1](../assurance/01-management/WP-M-06-confirmation-measures-plan.md#1-purpose) |
 | No gate review has been held | [Gate records folder](../assurance/10-safety-case/gates/README.md) |
-| The assessor role is open | [WP-M-02 §3.1](../assurance/01-management/WP-M-02-safety-plan.md#31-role-assignments); decision register entry DQ-009 in [`register.yaml`](../assurance/01-management/decisions/register.yaml) |
+| The assessor role is open until G1 | [WP-M-02 §3.1](../assurance/01-management/WP-M-02-safety-plan.md#31-role-assignments); decision register entry DQ-009 in [`register.yaml`](../assurance/01-management/decisions/register.yaml) |
 | Every role in the safety plan resolves to the maintainer; roles needing independence are TBD | [WP-M-02 §3.1](../assurance/01-management/WP-M-02-safety-plan.md#31-role-assignments) |
 | Much of the record is AI-assisted drafting, which counts at I0 and gives no review credit | [WP-M-02 §3.3](../assurance/01-management/WP-M-02-safety-plan.md#33-ai-assisted-authoring) |
 | Clause citations are marked "check against the licensed copy"; no standard is held | [WP-M-06 OI-1](../assurance/01-management/WP-M-06-confirmation-measures-plan.md#11-open-items); decision register DQ-011 |

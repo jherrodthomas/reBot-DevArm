@@ -40,7 +40,7 @@ clamp and no check against the hazard list (GAP-24).
 | The plan for machine-learning safety | [WP-M-09](../assurance/01-management/WP-M-09-ml-safety-plan.md) |
 | The definition of each learned component and its safety requirements | [WP-C-09](../assurance/02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) |
 | Engineering the learned components | [WP-W-10](../assurance/05-software/WP-W-10-ml-engineering.md) |
-| Where the policies sit | The policy question (DQ-008, open; recommended inside the item, outside every safety function, behind the clamps and the watchdog) |
+| Where the policies sit | The policy question (DQ-008, answered: inside the item, outside every safety function, behind the clamps and the watchdog) |
 
 ## What the project does not claim
 
@@ -54,7 +54,7 @@ That any learned component is safe, or carries a safety function.
 
 ## Clauses to know
 
-No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is a queued question for the lead (DQ-011).
+No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is an open question for the lead (DQ-011).
 
 | Clause | What it covers |
 |---|---|

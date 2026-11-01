@@ -44,8 +44,8 @@ Full page on the tour: [ISO 10218-1 and -2](ISO-10218-industrial-robots.md).
   rest with their required PL; [WP-C-02](../assurance/02-concept/WP-C-02-operating-environment-and-tasks.md) defines
   the operating envelopes; [WP-S-06](../assurance/03-system/WP-S-06-requirements-installation-operation.md) carries
   the Part 2 duties of whoever installs the arm; the validation work products test the functions.
-- **Position taken:** ISO 10218-1 expects PL d for the stop functions. That is the planning assumption
-  (decision DQ-004) and it drives the chain hardware the fork must add. The 2011 editions and ISO/TS 15066 are what
+- **Position taken:** ISO 10218-1 expects PL d for the stop functions. The lead set it as the target
+  (decision DQ-004), and it drives the chain hardware the fork must add. The 2011 editions and ISO/TS 15066 are what
   the package cited; the 2025 text is the target and is marked to be checked (DQ-011).
 
 ## ISO/TS 15066:2016, collaborative robots
@@ -58,7 +58,7 @@ Full page on the tour: [ISO/TS 15066](ISO-TS-15066-collaborative-robots.md).
 - **How:** [WP-C-06](../assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md) analyses every scene in
   which a person is in reach; [WP-V-03](../assurance/06-validation/WP-V-03-collaborative-operation-validation.md)
   validates whatever claim is made.
-- **Position taken:** the first safety case makes no power-and-force-limiting claim (DQ-005, recommended): the arm
+- **Position taken:** the first safety case makes no power-and-force-limiting claim (DQ-005, answered): the arm
   has no joint torque sensors, no force measurement exists (GAP-28), and the recommended envelope (OE-1) keeps
   everyone but the operator out of reach. Contact detection by torque estimation (SF-02, SF-04) is defence in
   depth, bounded by what the estimator can sense ([WP-C-10](../assurance/02-concept/WP-C-10-functional-insufficiency-analysis.md)).
@@ -153,7 +153,7 @@ Full pages on the tour: [ISO/IEC TR 5469](ISO-IEC-TR-5469-AI-and-safety.md), [AI
   [WP-W-10](../assurance/05-software/WP-W-10-ml-engineering.md),
   [WP-K-07](../assurance/10-safety-case/WP-K-07-ai-act-conformity-record.md).
 - **Position taken:** no safety function is allocated to a learned component; every LeRobot policy output passes
-  the same clamp as any other command (DQ-008, recommended). That keeps the fork out of the Machinery Regulation's
+  the same clamp as any other command (DQ-008, answered). That keeps the fork out of the Machinery Regulation's
   Annex I Part A (mandatory third-party assessment for self-evolving safety behaviour) and out of the AI Act's
   high-risk obligations; the threshold is monitored.
 
@@ -190,7 +190,7 @@ Full pages on the tour: [Machinery Regulation](Machinery-Regulation.md), [AI Act
 - **How:** [WP-M-13](../assurance/01-management/WP-M-13-regulatory-conformity-strategy.md) is the strategy,
   [WP-K-02](../assurance/10-safety-case/WP-K-02-technical-documentation-index.md) maps the register onto Annex IV,
   [WP-K-06](../assurance/10-safety-case/WP-K-06-release-record.md) holds the unsigned declaration draft.
-- **Position taken:** the EU frame is recommended (DQ-002) with internal control (Module A) as the planned route
+- **Position taken:** the lead chose the EU frame (DQ-002) with internal control (Module A) as the planned route
   (DQ-012); the US frame (ANSI/A3 R15.06) would be a cross-reference, not a second file. The fork places nothing
   on the market, and upstream's CC BY-NC-SA licence forbids commercial use, so the obligations are planned for, not
   incurred (GAP-35).

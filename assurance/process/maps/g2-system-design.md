@@ -136,7 +136,7 @@ Which activity answers each clause reference listed in the register. One activit
 | Safety-related control system (ISO 13849-1) | Safety-related control system engineer | Jherrod Thomas (acting); additional contributors TBD | G2 |
 | Electrical and mechanical (EN 60204-1) | Electrical and mechanical engineer | TBD (likely external) | G2 |
 | Cybersecurity (IEC 62443) | Cybersecurity manager | Jherrod Thomas (acting); permanent holder TBD | G1 |
-| Independent confirmation | External functional safety assessor | TBD; engaging one is DQ-009 (open, recommended: not for now, revisit at G1) | G1 (revisit) |
+| Independent confirmation | External functional safety assessor | TBD; engaging one is DQ-009 (answered A: not for now, revisit at G1) | G1 (revisit) |
 
 **Other roles WP-M-02 §3.1 needs by G2:** Firmware and software engineer(s) (Jherrod Thomas (acting); additional contributors TBD); Verification reviewer(s) (TBD (at least one person other than the author); needed by G0, still unassigned); Quality assurance (TBD (independent of the author); needed by G0, still unassigned); Test operator(s) (TBD (trained per WP-M-04); needed by G1, still unassigned).
 
@@ -151,4 +151,4 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Work products with no confirmation measure at this gate** (verification review only): WP-S-01, WP-S-06, WP-S-07, WP-T-01, WP-K-01.
 
-**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (DQ-005 (collaborative claim) is open; no force or pressure measurement exists (GAP-28); WP-C-10 OI-1 has to bound the estimator's floor before SF-02 and SF-04 claim PL d).
+**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (DQ-005 (collaborative claim) is answered: no claim in the first case; no force or pressure measurement exists (GAP-28); WP-C-10 OI-1 has to bound the estimator's floor before SF-02 and SF-04 claim PL d).

@@ -38,7 +38,7 @@ campaign and limits bound to the joint torque and speed caps.
 | Every situation with a person in reach, and the foreseeable misuse | [Human-robot interaction, WP-C-06](../assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md) |
 | Validating whatever collaborative claim is made | [WP-V-03](../assurance/06-validation/WP-V-03-collaborative-operation-validation.md) |
 | What a torque estimate cannot sense | [Insufficiency analysis, WP-C-10](../assurance/02-concept/WP-C-10-functional-insufficiency-analysis.md) |
-| Whether to make a collaborative claim at all | The collaborative claim question (DQ-005, open; recommended no claim, separation only, with contact detection as defence in depth) |
+| Whether to make a collaborative claim at all | The collaborative claim question (DQ-005, answered: no claim, separation only, with contact detection as defence in depth) |
 
 ## What the project does not claim
 
@@ -54,7 +54,7 @@ power and force limiting claim.
 
 ## Clauses to know
 
-No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is a queued question for the lead (DQ-011).
+No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is an open question for the lead (DQ-011).
 
 | Clause | What it covers |
 |---|---|

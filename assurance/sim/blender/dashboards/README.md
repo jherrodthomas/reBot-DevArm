@@ -31,7 +31,7 @@ Clips (mp4, open to play; every step of the main camera, cut by [`clip.py`](../c
 
 ![Dashboard of hz-m01-elbow-pinch-teach: Elbow closes on the operator's fingers while hand-guiding in TEACH](hz-m01-elbow-pinch-teach.jpg)
 
-*Kinematic: the elbow folds at 30 °/s (an assumed hand-guiding rate; DQ-016 is open) from 110° to 5° (the assumed software limit). The gap is the smallest distance between the upper-arm and forearm bodies away from the actuator, from the CAD; the fingers are not modelled, the figure only shows where they are.*
+*Kinematic: the elbow folds at 30 °/s (an assumed hand-guiding rate; DQ-016 is assumed) from 110° to 5° (the assumed software limit). The gap is the smallest distance between the upper-arm and forearm bodies away from the actuator, from the CAD; the fingers are not modelled, the figure only shows where they are.*
 
 ## hz-m02-gripper-finger-teach
 
@@ -49,7 +49,7 @@ Clips (mp4, open to play; every step of the main camera, cut by [`clip.py`](../c
 
 ![Dashboard of hz-m04-sweep-strike-run: Arm sweeps into a bystander's head during RUN](hz-m04-sweep-strike-run.jpg)
 
-*Kinematic: the base sweeps at 90 °/s (assumed demo speed: half of a 180 °/s joint cap; DQ-016 is open) through 105°. The distance plotted is from the head point to the finger tips, from the CAD kinematics. The head point is placed by the scene; the figure shows the posture.*
+*Kinematic: the base sweeps at 90 °/s (assumed demo speed: half of a 180 °/s joint cap; DQ-016 is assumed) through 105°. The distance plotted is from the head point to the finger tips, from the CAD kinematics. The head point is placed by the scene; the figure shows the posture.*
 
 ## hz-p02-hand-reach-in-run
 

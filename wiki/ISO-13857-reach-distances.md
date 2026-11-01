@@ -34,7 +34,7 @@ this standard, and so would any guard over a joint.
 |---|---|
 | Reach distances in the analysis of who can be where | [Human-robot interaction, WP-C-06](../assurance/02-concept/WP-C-06-human-robot-interaction-and-misuse.md) |
 | Guards over joints and openings, if they are added | [Mechanical analysis, WP-H-08](../assurance/04-hardware/WP-H-08-mechanical-analysis.md) |
-| Which envelope the first safety case covers, bench only or classroom too | The envelope question (DQ-003, open) |
+| Which envelope the first safety case covers, bench only or classroom too | The envelope question (DQ-003, answered) |
 
 ## What the project does not claim
 
@@ -49,7 +49,7 @@ arm can move (GAP-06).
 
 ## Clauses to know
 
-No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is a queued question for the lead (DQ-011).
+No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is an open question for the lead (DQ-011).
 
 | Clause | What it covers |
 |---|---|

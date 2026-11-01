@@ -6,7 +6,7 @@
 | Standard reference | Machinery: ISO 10218-1:2025 §5 (safety-related control functions, emergency stop, protective stop, limiting); ISO 13850:2015 §4; SRP/CS: ISO 13849-1:2023 §5, Annex A (PLr); Other: EN 60204-1:2018 §9.2 (stop categories); ISO/TS 15066:2016 §5 (collaborative modes); ASPICE: SYS.2 |
 | Version | 0.1 (2026-10-20): SF-32 and the 19 control functions of the package specified at concept level (demand, safe state, response target, stop category, PLr, allocation, modes); SF-01 reserved and not claimed; response targets are the package's and are budgets, not measurements |
 | Status | Draft |
-| PL / scope | PL d target for SF-32, SF-08, SF-24, SF-25, SF-03, SF-02, SF-04, SF-23 (DQ-004 open, recommended A); PL c and b for the rest; CFG-001 in OE-1 |
+| PL / scope | PL d target for SF-32, SF-08, SF-24, SF-25, SF-03, SF-02, SF-04, SF-23 (DQ-004 answered A); PL c and b for the rest; CFG-001 in OE-1 |
 | Author | Assurance team (AI-assisted draft, I0), from the package of J. Herrod-Thomas (2026-05-04) |
 | Reviewer(s) | TBD (I1) |
 | Approver | Safety manager |
@@ -45,7 +45,7 @@ with power removed when stopped. **Layers:** `chain` the hardwired safety chain;
 | SF-02 | Contact-force stop | The estimated external torque on any joint exceeds the contact threshold of the active mode | Controlled stop of every joint and hold; resumes only on operator command | d | 3 | 1 | ≤ 50 ms | layer |
 | SF-04 | Collision detection by torque estimation | The difference between commanded and measured joint torque, corrected for gravity and friction, exceeds the detection threshold | As SF-02 | d | 3 | 1 | ≤ 100 ms | layer |
 | SF-23 | Trajectory jerk limit for transient contact | A commanded trajectory exceeds the jerk or acceleration limit of the active mode | Command shaped or refused; never reaches the drive | d | 3 | — | ≤ 50 ms | layer |
-| SF-01 | Power-and-force limiting (ISO/TS 15066) | Not claimed in the first safety case (DQ-005, recommended A). If claimed: the predicted contact force or pressure for the active body region exceeds the ISO/TS 15066 threshold | Speed and torque caps per body region; contact stop (SF-02) | d | 3 | 1 | ≤ 100 ms | layer |
+| SF-01 | Power-and-force limiting (ISO/TS 15066) | Not claimed in the first safety case (DQ-005, answered A). If claimed: the predicted contact force or pressure for the active body region exceeds the ISO/TS 15066 threshold | Speed and torque caps per body region; contact stop (SF-02) | d | 3 | 1 | ≤ 100 ms | layer |
 | SF-06 | Reduced speed in the shared workspace | The envelope or mode declares a person may be in reach (OE-2 and above; TEACH) | Joint speed capped at the reduced-speed limit (DQ-016) | c | 2 | — | ≤ 200 ms | layer |
 | SF-11 | Overcurrent cut-off per branch | A branch current exceeds its rating | The fuse or electronic breaker opens that branch | c | 2 | 0 | ≤ 50 ms | chain |
 | SF-13 | Gripper holding on power loss | Motor power is removed (SF-32, SF-08) or lost | The gripper keeps its grasp (brake or non-back-drivable drive) for payloads above the limit of DQ-015 | c | 2 | — | static | hardware |
@@ -109,7 +109,7 @@ Commands are shaped to the jerk and acceleration limits of the mode before they 
 
 ### 3.8 SF-01 Power-and-force limiting
 
-Reserved. Not claimed in the first safety case (DQ-005, recommended A). If the lead chooses B, this section specifies the body-region
+Reserved. Not claimed in the first safety case (DQ-005, answered A). If the lead chooses B, this section specifies the body-region
 thresholds of ISO/TS 15066 Annex A, the joint torque and speed caps derived from the measurement, and the contact stop (SF-02) as the
 reaction.
 
@@ -136,8 +136,9 @@ reaction.
 | c | SF-06, SF-11, SF-13, SF-14, SF-26, SF-28, SF-29, SF-30 | Risk graph c for the rows they address; limiting and diagnostic functions whose failure is covered by a d-rated stop |
 | b | SF-15, SF-27, SF-31 | Risk graph b or below; warning, session and privacy functions |
 
-The adopted target is DQ-004 (open). Option B of that decision would lower every d above to c with the bench-only envelope as the
-condition; this document would then record the lowered value with the rationale, never silently.
+The adopted target is DQ-004 (answered A, 2026-11-01). Option B of that decision, not chosen, would have lowered every d
+above to c with the bench-only envelope as the condition; a later change to it is recorded here with the rationale,
+never silently.
 
 ## 5. Allocation
 

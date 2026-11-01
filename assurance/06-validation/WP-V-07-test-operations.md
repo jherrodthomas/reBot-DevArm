@@ -24,7 +24,7 @@ Performance Level: it relies on bench equipment and on the operator, and says so
 
 It applies to every powered test, from the first stopping-angle measurement to the validation runs of
 [WP-V-01](WP-V-01-safety-validation.md). Powering a single actuator on the bench, disconnected from the arm, is
-outside it. Buying the bench chain is decision DQ-006 (open, recommended A: a wired two-channel E-stop pendant,
+outside it. Buying the bench chain is decision DQ-006 (answered A: a wired two-channel E-stop pendant,
 a safety relay and a contactor on the 24 V motor supply, with a fuse and a lockable disconnect). Until it is fitted,
 no powered test with any person inside the reach envelope is run; the arm may be run only with the whole bench
 area empty and the operator at the supply's switch.
@@ -37,7 +37,7 @@ area empty and the operator at the supply's switch.
 | C-2 | A dual-channel emergency stop (two NC contacts, mushroom button, latching) on a pendant in the operator's hand, through a safety relay that drops the 24 V motor supply by a contactor with a mirror contact; a second button on the bench | Wiring sketch in the change record; a functional test before every session (§4) | GAP-08 (bench) |
 | C-3 | The arm's base is fixtured to a rigid bench with the bolts or clamps WP-H-08 specifies (until then: both G-clamps of the BOM, tightened, checked by hand) | Photo in the test log; the fixing recorded | GAP-03 (bench) |
 | C-4 | The host software is pinned to a recorded version, the watchdog and heartbeat are on, and the mode machine refuses RUN without a live heartbeat and an authenticated session; until that software exists (DQ-007), nobody is inside the reach envelope while any client is connected | Version read and logged before the test; until then the empty-bench rule in the log | GAP-16, GAP-17, GAP-18 (bench) |
-| C-5 | Joint speed and torque ceilings are set to the development limits of §3 (queued, DQ-016, decider: claude) in the client configuration and read back before the test | Configuration file and read-back in the log | GAP-19 (bench) |
+| C-5 | Joint speed and torque ceilings are set to the development limits of §3 (assumed, DQ-016, decider: claude) in the client configuration and read back before the test | Configuration file and read-back in the log | GAP-19 (bench) |
 | C-6 | The bench area of [WP-C-02 §6](../02-concept/WP-C-02-operating-environment-and-tasks.md#6-test-bench-during-development) is marked; nobody but the operator and one observer is present, both outside the reach envelope during motion | Area sketch in the test log | Operating-envelope limit (WP-C-02) |
 | C-7 | The payload is at most 1.5 kg, of known mass, recorded; no sharp, hot or liquid payload | Test log | WP-C-01 §4.1 |
 | C-8 | The operator has read this procedure, is trained per WP-M-04, and has run the pre-session checks of §4 | Signed line in the test log | WP-M-04 competence |
@@ -50,7 +50,7 @@ they are carried forward as the first draft of the product chain ([WP-S-03](../0
 
 | Limit | Value | Source |
 |---|---|---|
-| Joint speed and torque | 50 % of the actuator maximum in RUN, 25 % in TEACH, until WP-S-04 sets a budget from the measured stopping performance | DQ-016 (queued); package 05_OpEnv |
+| Joint speed and torque | 50 % of the actuator maximum in RUN, 25 % in TEACH, until WP-S-04 sets a budget from the measured stopping performance | DQ-016 (assumed); package 05_OpEnv |
 | Mode | RUN only with nobody in reach; TEACH only by the operator, both hands on the arm, nobody else in reach; no RUN command accepted while a person is in reach | WP-C-06 HR-01, HR-02 |
 | Payload | ≤ 1.5 kg; no continuous operation above 70 % reach beyond 30 min without a rest; stop at the first thermal warning from any actuator | README; thermal test (joint 2 at 90 °C) |
 | Reach-in | Nobody reaches into the envelope while any client is connected; objects are repositioned in IDLE after the arm is stopped and the mode is indicated | WP-C-06 IS-07, MU-01 |
@@ -93,7 +93,7 @@ understood.
 
 | ID | Item | Owner | Due |
 |---|---|---|---|
-| OI-1 | Buy and fit the bench safety hardware (DQ-006, open, recommended A); record it under `07-supporting/impact/` | Project lead | Before the first powered test with a person in reach |
+| OI-1 | Buy and fit the bench safety hardware (DQ-006, answered A); record it under `07-supporting/impact/` | Project lead | Before the first powered test with a person in reach |
 | OI-2 | Name and train the test operator(s) (WP-M-02 §3.1) | Project maintainer | Before the first powered test |
 | OI-3 | Replace the §3 ceilings with the budget of WP-S-04 once the stopping performance is measured (WP-V-02) | Safety-related control system engineer | G2 |
 | OI-4 | Specify the fixing (WP-H-08) and replace the G-clamp interim of C-3 | Electrical and mechanical engineer | G2 |

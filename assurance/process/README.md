@@ -138,10 +138,10 @@ skeleton. They are observations for the safety manager, not decisions.
 2. **One person holds almost every role.** Safety manager, maintainer, configuration manager, cybersecurity
    manager, ML safety lead, SRP/CS engineer and software engineer. The electrical and mechanical engineer is TBD and
    needed by G2. Independent checking rests entirely on the two G0 confirmation measures and the assessor, who is
-   not engaged (DQ-009, open).
-3. **Three decisions shape everything below G0 and are open:** the frame (DQ-002), the software fork (DQ-007) and
-   the first configuration (DQ-001). The regulatory strategy (WP-M-13) and the item definition (WP-C-01) carry the
-   recommended options until the lead answers.
+   not engaged (DQ-009, answered A).
+3. **Three decisions shape everything below G0:** the frame (DQ-002), the software fork (DQ-007) and the first
+   configuration (DQ-001). The lead answered all three on 2026-11-01 with the recommended options, which the regulatory
+   strategy (WP-M-13) and the item definition (WP-C-01) already carried; the fork itself is not made yet.
 4. **The process model is itself a G0 work product.** GOV-21 produces WP-P-11 from the register, the safety plan
    and the confirmation plan, so this model can only be as current as those three documents.
 

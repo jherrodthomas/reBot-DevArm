@@ -42,7 +42,7 @@ what the arm must do, and what the bench around it must provide.
 | The operating envelopes and tasks: the application | [Operating environment, WP-C-02](../assurance/02-concept/WP-C-02-operating-environment-and-tasks.md) |
 | What whoever installs the arm must do | [Installation and operation requirements, WP-S-06](../assurance/03-system/WP-S-06-requirements-installation-operation.md) |
 | Assembly, installation and commissioning | [WP-O-01](../assurance/09-production-operation/WP-O-01-assembly-installation-commissioning.md) |
-| The Performance Level the stop functions must reach | The question on the PL target (DQ-004, open; recommended PL d for the stops) |
+| The Performance Level the stop functions must reach | The question on the PL target (DQ-004, answered: PL d for the stops) |
 
 ## What the project does not claim
 
@@ -63,7 +63,7 @@ protective stop outside the client library (GAP-08, GAP-17).
 
 ## Clauses to know
 
-No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is a queued question for the lead (DQ-011). The 2025 editions renumbered much of the 2011 text; the clauses below are those the record cites.
+No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is an open question for the lead (DQ-011). The 2025 editions renumbered much of the 2011 text; the clauses below are those the record cites.
 
 | Clause | What it covers |
 |---|---|

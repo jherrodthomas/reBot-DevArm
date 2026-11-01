@@ -9,7 +9,7 @@
 | PL / scope | All. Planned to PL d until the risk assessment ([WP-C-03](../02-concept/WP-C-03-risk-assessment.md)) and the safety function specification ([WP-C-04](../02-concept/WP-C-04-safety-functions-and-plr.md)) are approved and DQ-004 is answered |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I1); confirmation review TBD (external assessor, I3 planned, see [WP-M-06](WP-M-06-confirmation-measures-plan.md)) |
-| Approver | Project maintainer (acting safety manager). Self-approval at I0 is proposed as a recorded interim limitation; it is decision DQ-010 (open, recommended A) |
+| Approver | Project maintainer (acting safety manager). Self-approval at I0 is a recorded interim limitation; it is decision DQ-010 (answered A) |
 | Baseline | `206ebda` |
 
 > [!NOTE]
@@ -72,14 +72,14 @@ measures, QA audits). Roles marked TBD must be filled before the gate shown.
 | Quality assurance | Process and work product audits per [WP-M-05](WP-M-05-quality-assurance-plan.md) | TBD (independent of the author) | G0 |
 | Test bench owner | Builds and maintains the bench with its chain and the hardware-in-the-loop rig (WP-W-08) | TBD | G3 |
 | Test operator(s) | Powered tests under [WP-V-07](../06-validation/WP-V-07-test-operations.md), hand on the bench E-stop | TBD (trained per WP-M-04) | G1 (before any powered test with a person in reach) |
-| External functional safety assessor | Confirmation reviews at I3, functional safety audits, functional safety assessment | TBD; engaging one is DQ-009 (open, recommended: not for now, revisit at G1) | G1 (revisit) |
+| External functional safety assessor | Confirmation reviews at I3, functional safety audits, functional safety assessment | TBD; engaging one is DQ-009 (answered A: not for now, revisit at G1) | G1 (revisit) |
 | External cybersecurity assessor | Cybersecurity assessment ([WP-K-05](../10-safety-case/WP-K-05-cybersecurity-assessment.md)) | TBD | G5 (interim earlier, see WP-M-06) |
 | Notified body | Only if DQ-012 selects a module other than Module A | TBD (none planned if Module A) | G5 |
 
-**Proposed interim limitation (DQ-010, open, recommended A):** while the project has one person, the safety manager
+**Interim limitation (DQ-010, answered A, 2026-11-01):** while the project has one person, the safety manager
 approves the work products they author. Every such approval is self-approval at independence I0 and is recorded
 as that in the Approver field of the work product's header; no verification review above I0 and no confirmation
-measure exists until a second person or an assessor joins. Until the lead answers, every work product stays Draft.
+measure exists until a second person or an assessor joins.
 
 Competence requirements and evidence for each role are in [WP-M-04](WP-M-04-organization-competence-safety-culture.md).
 
@@ -156,7 +156,7 @@ bench hardware that makes the next months of testing defensible. It is implement
 3. Its design is carried forward, not thrown away: the bench chain becomes the first draft of WP-H-02 and the
    purchase of a certified safety relay and contactor is made with the product chain in mind.
 
-The purchase itself is decision DQ-006 for the lead (open, recommended A: the wired chain). Until it is answered,
+The purchase itself is decision DQ-006 (answered A, 2026-11-01: the wired chain). Until that hardware is fitted,
 no powered test with a person inside the 650 mm reach is run under the fork.
 
 ## 5. Tailoring of the standards
@@ -190,7 +190,7 @@ at the repository root is an input and is never edited.
 
 Confirmation reviews, functional safety audits, the functional safety assessment, the cybersecurity and ML reviews
 and the conformity assessment are planned in [WP-M-06](WP-M-06-confirmation-measures-plan.md), with the gate at which
-each is due in its §9. No measure has been performed and no assessor is engaged (DQ-009 open).
+each is due in its §9. No measure has been performed and no assessor is engaged (DQ-009 answered A).
 
 ## 9. Safety anomaly handling
 

@@ -15,8 +15,8 @@ person in reach. [For the assessor](For-the-assessor.md) says what an assessment
 
 Not yet, and the project does not claim it is. The fork has changed no hardware and no code; what it adds today is
 the record: the concept-phase package, the gap assessment, the strategy, the plans, the register and the process
-model. The first engineering change will be bench safety hardware on any arm the fork powers, and it waits on a
-decision by the lead (DQ-006).
+model. The first engineering change will be bench safety hardware on any arm the fork powers: the lead chose a wired
+stop chain (DQ-006), and its design is the next piece of work.
 
 ## Why machinery standards and not ISO 26262?
 
@@ -28,8 +28,8 @@ IEC 62443 and ISO/IEC TR 5469. [How we use each standard](How-we-use-each-standa
 
 ISO 13849-1's measure of how reliably a safety function performs, PL a to PL e. ISO 10218-1 expects PL d, category
 3, for the emergency stop and the protective stop of an industrial robot, and the package's risk graph lands most
-contact hazards on d or e. That is the planning assumption; whether the lead accepts it, or restricts the arm to a
-supervised bench at a lower level, is an open decision (DQ-004). See the [glossary](Glossary.md).
+contact hazards on d or e. The lead set PL d as the target for the stop functions and PL c for the limits and diagnostics
+(DQ-004). See the [glossary](Glossary.md).
 
 ## Where are the safety functions implemented?
 
@@ -42,7 +42,7 @@ depth and carries no Performance Level claim in the first safety case. The argum
 
 ## Can a person be inside the reach while the arm moves?
 
-Not inside the first safety case. The recommended envelope (DQ-003) is a supervised, fixtured bench with nobody but
+Not inside the first safety case. The envelope the lead chose (DQ-003) is a supervised, fixtured bench with nobody but
 the operator in reach, and no power-and-force-limiting claim is made (DQ-005): the arm has no joint torque sensors
 and no force or pressure measurement exists (GAP-28). Contact detection by torque estimation is defence in depth,
 not permission to touch.
@@ -52,8 +52,8 @@ not permission to touch.
 The assurance work needs a record that moves at its own pace, with its own baselines, gates and decision
 authority, and must be free to say what the evidence does not support. Upstream's hardware record is merged, never
 edited, and the fork is not affiliated with or endorsed by Seeed Studio
-([WP-M-10](../assurance/01-management/WP-M-10-upstream-and-supplier-management.md)). Whether the software that moves
-the arm is forked too is an open decision (DQ-007).
+([WP-M-10](../assurance/01-management/WP-M-10-upstream-and-supplier-management.md)). The lead decided to fork the software
+that moves the arm, the SDK and the ROS 2 driver (DQ-007); the forks are not made yet.
 
 ## What does the non-commercial licence mean for the record?
 

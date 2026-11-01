@@ -36,7 +36,7 @@ unauthenticated and unencrypted (GAP-23). An attack on the arm is a hazard, not 
 |---|---|
 | The cybersecurity plan | [WP-M-08](../assurance/01-management/WP-M-08-cybersecurity-plan.md) |
 | The threat and risk assessment, with threats rated against the hazard list | [WP-C-07](../assurance/02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md) |
-| The requirements and the security level target | [WP-C-08](../assurance/02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md); the security level question (DQ-013, queued; recommended SL 2 for authentication, integrity and confidentiality, SL 1 for the rest) |
+| The requirements and the security level target | [WP-C-08](../assurance/02-concept/WP-C-08-cybersecurity-requirements-and-sl-target.md); the security level question (DQ-013, open; recommended SL 2 for authentication, integrity and confidentiality, SL 1 for the rest) |
 | The architecture: the safety chain as a zone with no conduit from any network | [WP-S-07](../assurance/03-system/WP-S-07-cybersecurity-architecture.md) |
 | Implementation, testing, incident response and updates | [WP-W-11](../assurance/05-software/WP-W-11-cybersecurity-implementation-verification.md), [WP-V-06](../assurance/06-validation/WP-V-06-cybersecurity-validation.md), [WP-O-05](../assurance/09-production-operation/WP-O-05-cybersecurity-incident-response-updates.md) |
 | The cybersecurity case and its assessment | [WP-K-03](../assurance/10-safety-case/WP-K-03-cybersecurity-case.md), [WP-K-05](../assurance/10-safety-case/WP-K-05-cybersecurity-assessment.md) |
@@ -54,7 +54,7 @@ Any security level. The zones and conduits are the target architecture, not toda
 
 ## Clauses to know
 
-No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is a queued question for the lead (DQ-011).
+No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is an open question for the lead (DQ-011).
 
 | Part | What it covers |
 |---|---|
