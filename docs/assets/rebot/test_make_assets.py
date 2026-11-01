@@ -22,8 +22,6 @@ class RenderTests(unittest.TestCase):
 
   def test_data_lands_in_the_figures(self):
     figs = ma.render_all()
-    for chip in ma.CHIPS:
-      self.assertIn(chip, figs["hero.svg"])
     for name, _, question, _ in ma.STANDARDS:
       self.assertIn(question, figs["standards.svg"])
       self.assertIn(name.split(" ")[0], figs["standards.svg"])
@@ -96,9 +94,9 @@ class RenderTests(unittest.TestCase):
       figs = ma.render_all()
       for n in ma.NAMES:
         self.assertEqual((out / n).read_text(encoding="utf-8"), figs[n])
-      (out / "hero.svg").write_text("stale", encoding="utf-8")
+      (out / "standards.svg").write_text("stale", encoding="utf-8")
       stale = [n for n in ma.NAMES if (out / n).read_text(encoding="utf-8") != figs[n]]
-      self.assertEqual(stale, ["hero.svg"])
+      self.assertEqual(stale, ["standards.svg"])
 
   def test_committed_figures_are_current(self):
     self.assertEqual(ma.main(["--check"]), 0)

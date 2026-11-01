@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""The wiki's header banner: upstream's own image of the reBot Arm B601-DM v1.1 beside the project's title.
+"""The banner of the README's assurance section and of the wiki's Home page: upstream's own image of the reBot Arm
+B601-DM v1.1 beside the project's title.
 
 The image is Seeed Studio's render of the arm, media/v1.1_2.png in upstream's record (CC BY-NC-SA 4.0), credited on
 the banner. It is cut to the arm and saved once as a web-sized JPEG next to the banner; the banner is an SVG that

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Checks of the wiki's Home banner: it is current, well formed, embeds upstream's image of the arm, and credits it."""
+"""Checks of the README and wiki banner: it is current, well formed, embeds upstream's image of the arm, and credits it."""
 from __future__ import annotations
 
 import sys
@@ -28,6 +28,12 @@ class TestWikiHero(unittest.TestCase):
   def test_home_page_uses_the_banner(self):
     home = (HERE.parents[1] / "wiki" / "Home.md").read_text(encoding="utf-8")
     self.assertTrue(home.startswith("![") and "docs/assets/rebot/wiki-hero.svg" in home.splitlines()[0])
+
+  def test_readme_assurance_section_opens_with_the_banner(self):
+    readme = (HERE.parents[1] / "README.md").read_text(encoding="utf-8")
+    section = readme.split("## The assurance record", 1)[1]
+    first_image = section[section.index("<img"):].split(">", 1)[0]
+    self.assertIn("docs/assets/rebot/wiki-hero.svg", first_image)
 
 
 if __name__ == "__main__":
