@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-C-02 Operating environment and task specification (operating envelopes, workstation, people, fixturing) |
 | Standard reference | Machinery: ISO 10218-2:2025 §5 (robot application, layout, safeguarding); ISO 12100:2010 §5.3; Other: ISO 21448 §5 (informative method); ASPICE: SYS.1. Clause numbers are to be checked against licensed copies |
-| Version | 0.1 (2026-10-20): operating envelopes OE-1…OE-4 from the package's 05_OpEnv, tasks T-01…T-08, environmental limits, exclusions, the development bench. 0.0: skeleton |
+| Version | 0.2 (2026-11-01): §2 written to the lead's answer, OE-1 the only envelope of the first case (DQ-003). 0.1 (2026-10-20): operating envelopes OE-1…OE-4 from the package's 05_OpEnv, tasks T-01…T-08, environmental limits, exclusions, the development bench. 0.0: skeleton |
 | Status | Draft |
 | PL / scope | PL d target (answered A, DQ-004); CFG-001 B601-DM v1.1; the first safety case covers OE-1 only (answered A, DQ-003) |
 | Author | Assurance team (AI-assisted draft, I0) |
@@ -37,8 +37,8 @@ people who may be in reach only while the arm is stopped or in TEACH), **public*
 
 | Envelope | Name | Who is present | Where the E-stop is | Fixturing | Speed cap | Contact possible | Allowed in the first case |
 |---|---|---|---|---|---|---|---|
-| OE-1 | Laboratory or desk, supervised | operator only; one observer outside reach | pendant in the operator's hand and a bench-mounted button (DQ-006) | clamped or bolted to a bench (§6) | 50 % in RUN, 25 % in TEACH **(TBC, DQ-016)** | no: nobody in reach during motion; in TEACH only the operator's hands on the arm | **provisionally yes** (answered A, DQ-003), under WP-V-07 |
-| OE-2 | Classroom | instructor present; students operating and in reach during teach | instructor-held and bench-mounted | clamped to a desk | 25 % teach speed **(TBC)** | yes: students within reach during teach | no: needs a hand-guiding or separation claim (DQ-005) and the gaps of §5 closed |
+| OE-1 | Laboratory or desk, supervised | operator only; one observer outside reach | pendant in the operator's hand and a bench-mounted button (DQ-006) | clamped or bolted to a bench (§6) | 50 % in RUN, 25 % in TEACH (assumed, DQ-016; replaced by WP-V-02's measured budget) | no: nobody in reach during motion; in TEACH only the operator's hands on the arm | **yes**, the only envelope of the first case (DQ-003, answered A), under WP-V-07 |
+| OE-2 | Classroom | instructor present; students operating and in reach during teach | instructor-held and bench-mounted | clamped to a desk | 25 % teach speed **(TBC)** | yes: students within reach during teach | no (DQ-003): would need a hand-guiding or separation claim, which the first case does not make (DQ-005), and the gaps of §5 closed |
 | OE-3 | Industrial collaborative cell | trained cell operator; personnel during collaborative tasks | cell E-stop with guards | mounted in a defined cell | ISO/TS 15066 bounded | yes, by design | no: needs power-and-force limiting measured (GAP-28) and an integrator's cell |
 | OE-4 | Public-facing demonstration | demonstrator and bystanders, including children | present, but bystanders may reach in | plinth with a barrier | ≤ 250 mm/s at the tool **(package)** | yes, uncontrolled | **excluded** (§5) |
 
@@ -121,7 +121,7 @@ arm runs under the fork until OE-1 is formally entered:
 
 | ID | Item | Owner | Due |
 |---|---|---|---|
-| OI-1 | Lead decision on the first envelope (DQ-003, answered A: OE-1 only); rewrite §2 to the answer | Project lead | G1 |
+| OI-1 | Done in v0.2: §2 is written to the lead's answer (DQ-003, answered A: OE-1 only) | Safety manager | G1 |
 | OI-2 | Set every **(TBC)** value: speed caps (DQ-016), bench fixing and mass (WP-H-08), marked-area margin from the measured stopping angle (WP-V-02), temperature and humidity | Safety manager | G1 |
 | OI-3 | Decide whether hand-guiding in TEACH needs an enabling device in OE-1 (WP-C-06 §4) and what T-01 may run until it exists | Safety manager | G1 |
 | OI-4 | A site record template for the bench (fixing, area, supply, network) under `06-validation/test-sites/` | Safety manager | G1 |

@@ -4,7 +4,7 @@
 |---|---|
 | Work product | WP-C-04 Safety functions specification with required Performance Level, stop category and response time |
 | Standard reference | Machinery: ISO 10218-1:2025 §5 (safety-related control functions, emergency stop, protective stop, limiting); ISO 13850:2015 §4; SRP/CS: ISO 13849-1:2023 §5, Annex A (PLr); Other: EN 60204-1:2018 §9.2 (stop categories); ISO/TS 15066:2016 §5 (collaborative modes); ASPICE: SYS.2 |
-| Version | 0.1 (2026-10-20): SF-32 and the 19 control functions of the package specified at concept level (demand, safe state, response target, stop category, PLr, allocation, modes); SF-01 reserved and not claimed; response targets are the package's and are budgets, not measurements |
+| Version | 0.2 (2026-11-01): the lead's answers on gripper holding (DQ-015) and the camera default (DQ-014) written into SF-13 and SF-31; SF-32 drops two contactors (WP-H-02). 0.1 (2026-10-20): SF-32 and the 19 control functions of the package specified at concept level (demand, safe state, response target, stop category, PLr, allocation, modes); SF-01 reserved and not claimed; response targets are the package's and are budgets, not measurements |
 | Status | Draft |
 | PL / scope | PL d target for SF-32, SF-08, SF-24, SF-25, SF-03, SF-02, SF-04, SF-23 (DQ-004 answered A); PL c and b for the rest; CFG-001 in OE-1 |
 | Author | Assurance team (AI-assisted draft, I0), from the package of J. Herrod-Thomas (2026-05-04) |
@@ -37,7 +37,7 @@ with power removed when stopped. **Layers:** `chain` the hardwired safety chain;
 
 | ID | Safety function | Demand | Safe state | PLr | Cat. | Stop cat. | Response target | Layer |
 |---|---|---|---|---|---|---|---|---|
-| SF-32 | Emergency stop | A person actuates the pendant or bench emergency-stop device | Motor supply removed by the contactor; every joint unpowered; the gripper holds (SF-13); latched until a deliberate reset (SF-24) | d | 3 | 0 | ≤ 200 ms to power removal | chain |
+| SF-32 | Emergency stop | A person actuates the pendant or bench emergency-stop device | Motor supply removed by the two contactors (WP-H-02); every joint unpowered; the gripper holds a payload above 0.5 kg (SF-13); latched until a deliberate reset (SF-24) | d | 3 | 0 | ≤ 200 ms to power removal | chain |
 | SF-08 | Safe stop on watchdog timeout | The controller safety layer sees no valid command for 250 ms, the host heartbeat is lost (SF-25), the control loop misses its deadline, or the motor bus goes bus-off twice within 1 s | Controlled stop of every joint, then motor supply removed by the chain if standstill is not reached within 300 ms; latched | d | 3 | 1 then 0 | ≤ 100 ms after the timeout | layer+chain |
 | SF-24 | Manual reset after a stop (prevention of unexpected start-up) | An emergency stop or a safe stop has latched, or power returns after a loss | No joint moves until a deliberate reset on the pendant with every E-stop released and the host in IDLE; release of the E-stop alone does not restart | d | 3 | — | n/a (a state, not a reaction) | chain |
 | SF-25 | Heartbeat and deadline monitor | The host does not send its heartbeat within 250 ms, or the safety layer's own loop overruns | As SF-08 | d | 3 | 1 then 0 | ≤ 50 ms to detection | layer |
@@ -48,7 +48,7 @@ with power removed when stopped. **Layers:** `chain` the hardwired safety chain;
 | SF-01 | Power-and-force limiting (ISO/TS 15066) | Not claimed in the first safety case (DQ-005, answered A). If claimed: the predicted contact force or pressure for the active body region exceeds the ISO/TS 15066 threshold | Speed and torque caps per body region; contact stop (SF-02) | d | 3 | 1 | ≤ 100 ms | layer |
 | SF-06 | Reduced speed in the shared workspace | The envelope or mode declares a person may be in reach (OE-2 and above; TEACH) | Joint speed capped at the reduced-speed limit (DQ-016) | c | 2 | — | ≤ 200 ms | layer |
 | SF-11 | Overcurrent cut-off per branch | A branch current exceeds its rating | The fuse or electronic breaker opens that branch | c | 2 | 0 | ≤ 50 ms | chain |
-| SF-13 | Gripper holding on power loss | Motor power is removed (SF-32, SF-08) or lost | The gripper keeps its grasp (brake or non-back-drivable drive) for payloads above the limit of DQ-015 | c | 2 | — | static | hardware |
+| SF-13 | Gripper holding on power loss | Motor power is removed (SF-32, SF-08) or lost | The gripper keeps its grasp (brake or non-back-drivable drive) for payloads above 0.5 kg (DQ-015, answered A); below that, the payload and height limit of WP-C-01 applies | c | 2 | — | static | hardware |
 | SF-14 | Stator over-temperature shutdown | An actuator reports stator temperature above the warning threshold (75 °C proposed) or the shutdown threshold (90 °C, upstream's protection) | Torque reduced at the warning threshold; controlled stop and hold at the shutdown threshold | c | 2 | 1 | ≤ 200 ms | layer |
 | SF-15 | Motion-imminent annunciation | A transition into RUN or a motion start after a stop | Audible or visible signal at least 500 ms before motion | b | 1 | — | continuous | host |
 | SF-26 | Authenticated command channel | A motion command arrives over the network or from a client | Unauthenticated or unsigned commands are discarded | c | 2 | — | ≤ 100 ms | host |
@@ -56,7 +56,7 @@ with power removed when stopped. **Layers:** `chain` the hardwired safety chain;
 | SF-28 | Encoder plausibility cross-check | A joint's reported position disagrees with its commanded motion or with the integrated velocity beyond the plausibility window | Joint stopped (SF-08 path) and the fault latched | c | 2 | 1 | ≤ 50 ms | layer |
 | SF-29 | Software joint limits with mechanical end-stops | A position command or a measured position passes the software limit, set at least 5° inboard of the mechanical end-stop | Command clamped; a measured exceedance stops the joint | c | 2 | 1 | ≤ 10 ms | layer |
 | SF-30 | Singularity avoidance in inverse kinematics | The planned trajectory approaches a kinematic singularity | Damped least-squares solution; joint speed stays within SF-03 | c | 2 | — | ≤ 10 ms | host |
-| SF-31 | Camera default-off and opt-in recording | The arm powers up with a camera fitted | Stream off; recording opt-in with a visible indicator; local storage (DQ-014) | b | 1 | — | n/a | host |
+| SF-31 | Camera default-off and opt-in recording | The arm powers up with a camera fitted | Stream off; recording opt-in with a visible indicator; local storage (DQ-014, answered A) | b | 1 | — | n/a | host |
 
 ## 3. Specification per function
 
@@ -119,14 +119,14 @@ reaction.
 |---|---|
 | SF-06 | The reduced-speed cap of DQ-016 whenever the mode or envelope allows a person in reach; in OE-1 that is TEACH only |
 | SF-11 | A fuse or electronic breaker per branch sized at or below 1.5 × the branch's steady-state current (package SYRS-013) |
-| SF-13 | Holding on power loss for payloads above the DQ-015 limit; a hardware property tested in WP-V-02 |
+| SF-13 | Holding on power loss for payloads above 0.5 kg (DQ-015, answered A); a hardware property tested in WP-V-02 |
 | SF-14 | Torque de-rating at 75 °C stator temperature, controlled stop at 90 °C (upstream's own protection is the backstop, GAP-13) |
 | SF-15 | Audible or visible signal 500 ms before motion starts (package SYRS-035) |
 | SF-26, SF-27 | Authentication and session lock on every network and client command path (package SYRS-015, SYRS-016; WP-C-08) |
 | SF-28 | Plausibility of each joint's reported position against the commanded motion (package SRS rows on encoders) |
 | SF-29 | Software limits at least 5° inboard of the mechanical end-stops (package SYRS-017), with DM-06 providing the stops |
 | SF-30 | Damped least-squares inverse kinematics near singularities (package SYRS-024) |
-| SF-31 | Camera default-off, opt-in recording, local storage (DQ-014) |
+| SF-31 | Camera default-off, opt-in recording, local storage (DQ-014, answered A) |
 
 ## 4. Required Performance Level
 

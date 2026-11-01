@@ -150,7 +150,7 @@ with untrained people), **L** (needs effort or bad luck). Consequence uses the W
 
 | ID | Item | Owner | Due |
 |---|---|---|---|
-| OI-1 | Lead decision on the collaborative claim (DQ-005, answered A); rewrite §4 to the answer | Project lead | G1 |
+| OI-1 | Done: §4 states the lead's answer, no collaborative claim in the first case (DQ-005, answered A) | Safety manager | G1 |
 | OI-2 | Decide whether an enabling device is required for TEACH in OE-1 and specify it (HR-03); the package's hand-guiding scenario has none | Safety manager | G1 |
 | OI-3 | Measure the stopping time per joint (WP-V-02) and compute S of §3 with the confirmed K and C from a licensed ISO 13855 | Safety-related control system engineer | G2 |
 | OI-4 | Observe one session of people around a running arm and correct the likelihood ratings of §5 | Reviewer | G1 |
