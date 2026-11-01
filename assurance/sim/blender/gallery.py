@@ -34,7 +34,8 @@ def render_readme(cat: dict) -> str:
   lines = [NOTE, "", "# Hazard-scene dashboards", "",
            "One dashboard per scene of [`scenes.yaml`](../scenes.yaml), composed by [`compose.py`](../compose.py) from the",
            "posed CAD renders. **Pictures only: synthetic, no evidence credit** ([method](../../README.md#4-what-the-pictures-are-and-are-not)).",
-           "The ratings are the package's (WP-C-03 §5), not yet re-rated for OE-1. Every motion is kinematic at an assumed rate;",
+           "The ratings here and on the dashboards are the package's (WP-C-03 §5); the re-rating for OE-1 is WP-C-03 §5.3.",
+           "Every motion is kinematic at an assumed rate;",
            "no actuator, controller, person or contact is modelled.", "",
            "| Scene | Hazard | PLr (package) | Motion | Outcome | Status |", "|---|---|---|---|---|---|"]
   for s in cat["scenes"]:

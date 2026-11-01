@@ -4,9 +4,9 @@
 |---|---|
 | Work product | WP-C-03 Hazard identification and risk assessment (ISO 12100) and determination of the required Performance Level per safety function (ISO 13849-1) |
 | Standard reference | ISO 12100:2010 §5.4–§5.6, Annex B; ISO 13849-1:2023 §5, Annex A (risk graph); ISO 10218-1:2025 Annex A and ISO 10218-2:2025 Annex A (hazard lists, checked against the 2011 editions); ISO/TS 15066:2016 §5, Annex A; ISO 13850:2015; ISO 13854:2019; EN 60204-1:2018 §9.2.2 (stop categories); Regulation (EU) 2023/1230 Annex III §1.1.2 |
-| Version | 0.1 (2026-10-20): the 34 hazards and ratings of the concept-phase package carried into the record; the package's 31 "safety functions" split into 20 control functions, 7 design measures and 9 instructions; SF-32 emergency stop added; ratings per operating envelope kept, re-rating for OE-1 as an open item |
+| Version | 0.2 (2026-11-01): every row re-rated for OE-1 (§5.3; highest PLr d, no row at e, HZ-P01 and HZ-P02 excluded by IFU-08). 0.1 (2026-10-20): the 34 hazards and ratings of the concept-phase package carried into the record; the package's 31 "safety functions" split into 20 control functions, 7 design measures and 9 instructions; SF-32 emergency stop added; ratings per operating envelope kept, re-rating for OE-1 as an open item |
 | Status | Draft |
-| PL / scope | Highest PLr: **d** target (DQ-004, answered A); five rows rate **e** in the package and are excluded from the first operating envelope rather than argued down; CFG-001 B601-DM v1.1 in OE-1 (DQ-003, answered A); CFG-002 B601-RS tracked, unrated |
+| PL / scope | Highest PLr in OE-1: **d** (§5.3), the target for the stop functions (DQ-004, answered A); seven rows rate **e** in the package for envelopes with a person in reach during RUN; CFG-001 B601-DM v1.1 in OE-1 (DQ-003, answered A); CFG-002 B601-RS tracked, unrated |
 | Author | Assurance team (AI-assisted draft, I0), from the package of J. Herrod-Thomas (2026-05-04) |
 | Reviewer(s) | TBD (I1); the ratings need a reviewer who has operated the arm |
 | Approver | Project lead |
@@ -16,8 +16,8 @@
 > Draft. The severity and probability ratings are the engineering judgement of the concept-phase package
 > (`reBot_DevArm_Safety_Case.xlsx`, 07_HARA), not measurement: the arm's mass, stopping time, joint gaps and contact forces
 > are unknown (WP-C-01 §10). Each row is rated for the envelopes the package named; the first safety case covers OE-1 only
-> (DQ-003), so every row whose exposure comes from a person in reach is to be re-rated for OE-1 (OI-1). Nothing here lowers
-> a rating to fit the existing hardware. Clause references are to be checked against licensed copies (DQ-011).
+> (DQ-003, answered A); §5.3 re-rates every row for OE-1, changing exposure and avoidance only where the envelope's rules
+> change them. Nothing here lowers a rating to fit the existing hardware. Clause references are to be checked against licensed copies (DQ-011).
 
 ## 1. Scope and inputs
 
@@ -46,7 +46,7 @@
 4. **Type-C check.** ISO 10218-1 assigns PL d, category 3 to the safety-related control functions of an industrial robot (emergency
    stop, protective stop, the limiting functions; **to be checked against a licensed copy**). Where the type-C value and the graph
    differ, the higher is adopted unless the row says why not; where the graph gives **e**, the situation is excluded from the operating
-   envelope rather than argued down (the five rows below).
+   envelope rather than argued down (the seven rows below).
 5. **Risk evaluation** (§6): per ISO 12100 §6, inherently safe design first (DM-nn), then safeguarding and complementary measures
    (the safety functions SF-nn with their PLr), then information for use (IFU-nn).
 6. **Safety functions** (§7): each SF-nn with its adopted PLr and the hazards it addresses; the package's "safety functions" that
@@ -161,9 +161,9 @@ Where the package named a design measure or an instruction as the "safety functi
 | d | 5 |
 | e | 7 |
 
-The five rows that reach **e** (HZ-M01, HZ-M04, HZ-P02, HZ-P03, HZ-C01, HZ-C04, HZ-C06 as the package rates them) all have a person
+The seven rows that reach **e** (HZ-M01, HZ-M04, HZ-P02, HZ-P03, HZ-C01, HZ-C04, HZ-C06 as the package rates them) all have a person
 inside the reach during RUN or a last-command hold with a person in reach. In OE-1 nobody but the operator is in reach and the
-operator holds the pendant, so the exposure term changes; the re-rating for OE-1 is OI-1 and is not done here by assumption.
+operator holds the pendant, so the exposure term changes; the re-rating for OE-1 is §5.3.
 
 ### 5.2 What this record changes against the package
 
@@ -174,6 +174,67 @@ operator holds the pendant, so the exposure term changes; the re-rating for OE-1
 | SF-01 (power-and-force limiting) kept but not claimed | No measurement exists (GAP-28); whether the fork makes the claim at all is DQ-005 |
 | Every row carries its envelope; the first case covers OE-1 only | The package rated OE-2 to OE-4 rows as if all were in scope; DQ-003 limits the scope |
 | HZ-M06 (tip-over) raised in priority | The package rated it PLr a with a procedure; the gap assessment (GAP-03) shows the fixing is undocumented, so DM-07 and IFU-01 are both required and the rating is to be re-checked |
+
+### 5.3 Re-rating for OE-1
+
+The first safety case covers OE-1 only (DQ-003, answered A): a supervised bench, the arm fixtured, a trained operator
+with the pendant, one observer, nobody in reach while the arm moves in RUN, and in TEACH only the operator's hands on
+the arm (WP-C-02 §2). Each row is rated again for that envelope with the same risk graph. Severity is never lowered:
+only the exposure (F) and the possibility of avoiding (P) change, and only where the envelope's rules change them.
+Foreseeable misuse stays in: reaching into the envelope during RUN is rated, not ruled out (WP-C-06). No collaborative
+claim is made (DQ-005, answered A), so the contact rows HZ-P01 and HZ-P02 are excluded from OE-1 by IFU-08 rather
+than reduced.
+
+| ID | Situation in OE-1 | S | F | P | PLr OE-1 | PLr package | What changes, and why | Measures |
+|---|---|---|---|---|---|---|---|---|
+| HZ-M01 | TEACH: the operator's fingers between links while hand-guiding at the 25 % torque ceiling | S2 | F2 | P1 | d | e | P1: the operator moves the arm and controls its speed; in RUN nobody is in reach (HZ-M04 covers reach-in) | SF-03, SF-04, SF-32, DM-02, DM-06 |
+| HZ-M02 | TEACH or object placement: hand at the gripper jaws when they close | S2 | F1 | P2 | d | d | same | SF-04, SF-13, SF-32 |
+| HZ-M03 | Assembly, repair and teach: sharp edge or loose fastener | S1 | F2 | P1 | b | b | same | DM-01 |
+| HZ-M04 | RUN: foreseeable reach-in by the operator or the observer (WP-C-06 MU-01) and the arm sweeps into the head or torso | S2 | F1 | P2 | d | e | F1: nobody is in reach in RUN by rule (IFU-08); a reach-in is the misuse case, seldom and short | SF-03, SF-15, SF-32, IFU-08 |
+| HZ-M05 | TEACH and maintenance: hair, a sleeve or jewellery at a joint axis | S2 | F1 | P1 | c | d | P1: the arm moves only under the operator's hand or at the TEACH ceiling while anyone is close | DM-02, IFU-06 |
+| HZ-M06 | Any mode: the base tips under the payload moment if the fixing fails | S1 | F1 | P1 | a | a | same; the fixing of DM-07 and IFU-01 is a condition of OE-1 (WP-V-07 C-3) | DM-07, IFU-01 |
+| HZ-M07 | Power removed by the E-stop or lost: the gripper drops its payload | S1 | F2 | P1 | b | b | same; DQ-015 requires holding above 0.5 kg | SF-13, SF-08 |
+| HZ-M08 | Bench: trip on the supply or pendant cable | S1 | F2 | P1 | b | b | same | DM-03 |
+| HZ-E01 | 24 V input touched during assembly or repair | S1 | F1 | P1 | a | a | same | DM-04 |
+| HZ-E02 | Harness short or arc at the 24 V supply | S2 | F1 | P1 | c | c | same; the fuse F1 and disconnect Q1 of WP-H-02 are bench conditions | DM-04, SF-11, WP-H-02 F1 |
+| HZ-E03 | ESD during assembly or repair | S1 | F2 | P1 | b | b | same | IFU-02 |
+| HZ-E04 | EMI on the CAN bus or the camera link | S1 | F1 | P1 | a | a | same | DM-05 |
+| HZ-T01 | TEACH or repair: touching a hot actuator | S1 | F2 | P1 | b | b | same | SF-14 |
+| HZ-T02 | Sustained load overheats the harness | S2 | F1 | P1 | c | c | same | SF-11, SF-14 |
+| HZ-N01 | Lab: gear noise near the bench | S1 | F1 | P1 | a | b | F1: one operator, sessions of limited length; the classroom exposure of the package does not arise | IFU-03 |
+| HZ-V01 | TEACH: hand-arm vibration | S1 | F1 | P1 | a | a | same | IFU-06 |
+| HZ-R01 | Depth camera IR illuminator pointed at an eye | S1 | F1 | P1 | a | a | same | — |
+| HZ-X01 | Repair: dust from sanding printed parts | S1 | F1 | P1 | a | a | same | IFU-04 |
+| HZ-G01 | Moving the arm and base | S1 | F2 | P1 | b | b | same | IFU-05 |
+| HZ-G02 | TEACH: wrist strain in long sessions | S1 | F1 | P1 | a | b | F1: one operator, sessions of limited length (IFU-06) | IFU-06 |
+| HZ-V02 | Lab ambient outside +10 to +35 °C | S1 | F1 | P1 | a | a | same; a lab bench is inside the envelope of IFU-07 | IFU-07 |
+| HZ-V03 | A drink spilled on the bench into a joint | S1 | F1 | P1 | a | a | same | IFU-07 |
+| HZ-P01 | Quasi-static contact with the head | — | — | — | — | d | not in OE-1: no contact during motion is permitted (DQ-005, no collaborative claim); reach-in is rated under HZ-M04 | excluded by IFU-08 |
+| HZ-P02 | Transient contact with a hand | — | — | — | — | e | not in OE-1: as HZ-P01; hand contact in TEACH is rated under HZ-M01 and HZ-P03 | excluded by IFU-08 |
+| HZ-P03 | TEACH: a finger trapped between a link and the bench or a fixture | S2 | F2 | P1 | d | e | P1: the operator guides the arm and controls the closing motion | SF-03, SF-04, SF-32, DM-02 |
+| HZ-P04 | After an E-stop the operator reaches in to clear a part; the arm restarts unexpectedly | S2 | F1 | P2 | d | d | F1: reaching in after a stop is occasional in OE-1 | SF-24, SF-32, IFU-09 |
+| HZ-C01 | RUN: the command stream stalls and the drives hold the last command; harm only if someone is in reach | S2 | F1 | P2 | d | e | F1: nobody is in reach in RUN except by misuse (HZ-M04) | SF-08, SF-25, SF-32 |
+| HZ-C02 | An unauthenticated command starts motion while the operator is in TEACH with hands on the arm | S2 | F1 | P2 | d | d | F1: one client, a private network or none (WP-V-07 §3) | SF-26, SF-27, SF-32 |
+| HZ-C03 | Encoder fault: the pose drifts and the trajectory diverges | S1 | F2 | P2 | c | c | same | SF-28 |
+| HZ-C04 | RUN: an SDK race holds the last command; harm only if someone is in reach | S2 | F1 | P2 | d | e | F1: as HZ-C01 | SF-25, SF-08, SF-32 |
+| HZ-C05 | A position command beyond the soft limit drives a joint into its end-stop | S1 | F2 | P2 | c | c | same | SF-29, DM-06 |
+| HZ-C06 | RUN: a learned policy outputs an unsafe trajectory on an unfamiliar scene; harm only if someone is in reach | S2 | F1 | P2 | d | e | F1: the policy runs only with nobody in reach (WP-V-07 §3); the clamps of WP-C-09 bound it | SF-03, SF-04, SF-08, SF-32, WP-C-09 clamp |
+| HZ-C07 | IK near a singularity spikes a joint speed | S1 | F2 | P2 | c | c | same | SF-30, SF-03 |
+| HZ-D01 | The wrist camera records the operator | S1 | F1 | P1 | a | a | not a safety hazard; default-off with opt-in recording (DQ-014) | SF-31 |
+
+| PLr in OE-1 | Rows |
+|---|---|
+| a | 11 |
+| b | 6 |
+| c | 6 |
+| d | 9 |
+| e | 0 |
+| excluded | 2 |
+
+No row reaches **e** in OE-1: the seven package rows at **e** all assumed a person in reach during RUN or a
+classroom's exposure, and in OE-1 they rate **d** with the reason in the table. The highest PLr is **d**, which is the
+target the lead set for the stop functions (DQ-004). These ratings are a draft for the reviewer of OI-2; they hold only
+while the conditions of WP-V-07 hold.
 
 ## 6. Risk evaluation and reduction
 
@@ -265,8 +326,8 @@ for the reviewers of OI-1 and OI-2, synthetic and without evidence credit; the r
 
 | ID | Item | Owner | Due |
 |---|---|---|---|
-| OI-1 | Re-rate every row for OE-1 (exposure with nobody but the operator in reach) once DQ-003 is answered; keep the package ratings as the OE-2…OE-4 columns | Safety manager | G1 |
+| OI-1 | Done in v0.2: §5.3 re-rates every row for OE-1; the package ratings stay in §5 for OE-2…OE-4. Closes when the reviewer of OI-2 confirms §5.3 | Safety manager | G1 |
 | OI-2 | A reviewer who has operated the arm confirms the severity ratings, in particular HZ-M04, HZ-P02 and HZ-M06 | Verification reviewer | G1 |
-| OI-3 | Decide SF-01 (DQ-005) and, if not claimed, mark HZ-P01 and HZ-P02 as excluded by IFU-08 rather than reduced | Project lead | G1 |
+| OI-3 | Done in v0.2: SF-01 is not claimed (DQ-005, answered A); HZ-P01 and HZ-P02 are excluded from OE-1 by IFU-08 in §5.3 | Safety manager | G1 |
 | OI-4 | Rate the threat scenarios of WP-C-07 that reach a hazard and add the resulting rows | Cybersecurity manager | G1 |
-| OI-5 | Add the CFG-002 (RobStride) rows once DQ-001 and DQ-017 are answered and the RS BOM is released | Safety manager | G1 |
+| OI-5 | Add the CFG-002 (RobStride) rows once the RS BOM is released (DQ-001 and DQ-017, answered A: tracked, unverified) | Safety manager | G1 |
