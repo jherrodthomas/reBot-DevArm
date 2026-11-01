@@ -285,8 +285,10 @@ If you are interested in commercial collaboration or have related needs, please 
 ## The assurance record
 
 <p align="center">
-  <img src="docs/assets/rebot/hero.svg" width="100%" alt="reBot-DevArm assurance. Open desktop manipulation. Engineered for safety. A geometric six-axis desktop arm in amber on a clamped bench with a wrist camera, a red pendant emergency stop and a dashed reach envelope on a perspective floor grid, beside the project name and the standards it follows.">
+  <img src="docs/assets/rebot/banner.svg" width="100%" alt="reBot-DevArm assurance: the reBot Arm B601-DM v1.1, Seeed Studio's desktop robot arm, with its gripper raised, beside the project name and the standards it follows.">
 </p>
+
+<p align="center"><sub>The arm is upstream's own image (<code>media/v1.1_2.png</code>, Seeed Studio, CC BY-NC-SA 4.0), set into the banner by <a href="docs/assets/rebot/banner.py"><code>docs/assets/rebot/banner.py</code></a>. This fork is not affiliated with or endorsed by Seeed Studio.</sub></p>
 
 <p align="center">
   <b>The engineering assurance record for a safety-assured fork of the reBot-DevArm desktop robot arm: machinery risk assessment under ISO 12100 and ISO 10218, a hardwired safety chain with a Performance Level target, collaborative-operation limits, cybersecurity and machine-learning safety, and a safety case published as it is built.</b>

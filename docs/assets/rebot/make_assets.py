@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Render the README and wiki figures of the reBot-DevArm assurance record as SVG.
 
-Eight figures, one style: hero.svg (banner), standards.svg (one question per standard), architecture.svg
+Seven figures, one style: standards.svg (one question per standard), architecture.svg
 (three layers and the assurance column), roadmap.svg (four phases, status from repository evidence),
 lifecycle.svg (the seven gates and where the project stands), status.svg (the record-status card),
 standards-map.svg (which standard shapes which phase, counted from the register) and repo-map.svg (how the
-code, the record and what is generated from it fit together). The first five and the repository map are drawn
+code, the record and what is generated from it fit together). The first four and the repository map are drawn
 from the data at the top of this file; status.svg, the standards map and the README headline block between
 the `record-headline` markers are computed from the records themselves (the work product register, the gap
 assessment, the decision register, the process model, the gate and confirmation records). Nothing is typed by
@@ -29,7 +29,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 ASSURANCE = ROOT / "assurance"
 README = ROOT / "README.md"
-NAMES = ("hero.svg", "standards.svg", "architecture.svg", "roadmap.svg", "lifecycle.svg", "status.svg", "standards-map.svg", "repo-map.svg")
+NAMES = ("standards.svg", "architecture.svg", "roadmap.svg", "lifecycle.svg", "status.svg", "standards-map.svg", "repo-map.svg")
 HEADLINE_BEGIN = "<!-- BEGIN GENERATED: record-headline (docs/assets/rebot/make_assets.py) -->"
 HEADLINE_END = "<!-- END GENERATED: record-headline -->"
 
@@ -45,8 +45,6 @@ C = {
 
 # ------------------------------------------------------------------ data
 
-TAGLINE = "Open desktop manipulation. Engineered for safety."
-CHIPS = ["ISO 12100", "ISO 10218-1/-2", "ISO/TS 15066", "ISO 13849-1", "EN 60204-1", "IEC 62443", "Machinery Reg. (EU) 2023/1230"]
 
 STANDARDS = [
   ("ISO 12100", "Risk assessment and reduction", "What could hurt someone, and how much risk reduction does it need?", "Machine limits, hazard identification, risk estimation, the three-step method"),
@@ -177,85 +175,6 @@ def heading(x, label, title, right=""):
   if right:
     out.append(text(960, 56, right, 12, C["muted"], anchor="end"))
   return "\n".join(out)
-
-
-# ------------------------------------------------------------------ hero
-
-def robot_emblem(cx, cy, s=1.0):
-  """A geometric six-axis desktop arm: a clamped base, three links, a gripper, a pendant E-stop and a dashed reach envelope."""
-  g = []
-  # reach envelope on the bench
-  g.append(f'<ellipse cx="{cx:g}" cy="{cy + 128 * s:g}" rx="{230 * s:g}" ry="{50 * s:g}" fill="{C["cyan"]}" fill-opacity="0.06" stroke="{C["cyan"]}" stroke-opacity="0.55" stroke-width="1.6" stroke-dasharray="8 6"/>')
-  g.append(f'<path d="M{cx - 230 * s:g},{cy + 128 * s:g} A{230 * s:g},{230 * s:g} 0 0 1 {cx + 230 * s:g},{cy + 128 * s:g}" fill="{C["cyan"]}" fill-opacity="0.04" stroke="{C["cyan"]}" stroke-opacity="0.35" stroke-width="1.2" stroke-dasharray="6 5"/>')
-  # bench and clamps
-  g.append(f'<rect x="{cx - 150 * s:g}" y="{cy + 118 * s:g}" width="{300 * s:g}" height="{14 * s:g}" rx="4" fill="#36515B"/>')
-  for dx in (-62, 62):
-    g.append(f'<rect x="{cx + dx * s - 10 * s:g}" y="{cy + 104 * s:g}" width="{20 * s:g}" height="{16 * s:g}" rx="3" fill="{C["muted"]}"/>')
-  # base plate and joint 1
-  g.append(f'<rect x="{cx - 48 * s:g}" y="{cy + 94 * s:g}" width="{96 * s:g}" height="{24 * s:g}" rx="{8 * s:g}" fill="url(#hero-body)" stroke="{C["amber_lo"]}" stroke-width="1.5"/>')
-  g.append(f'<circle cx="{cx:g}" cy="{cy + 84 * s:g}" r="{22 * s:g}" fill="#2B4A54" stroke="{C["cyan"]}" stroke-width="1.5"/>')
-  # links: shoulder -> elbow -> wrist
-  pts = [(cx, cy + 84 * s), (cx - 70 * s, cy - 10 * s), (cx + 40 * s, cy - 92 * s), (cx + 118 * s, cy - 60 * s)]
-  for (x1, y1), (x2, y2) in zip(pts, pts[1:]):
-    g.append(f'<line x1="{x1:g}" y1="{y1:g}" x2="{x2:g}" y2="{y2:g}" stroke="{C["amber_lo"]}" stroke-width="{24 * s:g}" stroke-linecap="round"/>')
-    g.append(f'<line x1="{x1:g}" y1="{y1:g}" x2="{x2:g}" y2="{y2:g}" stroke="url(#hero-body)" stroke-width="{18 * s:g}" stroke-linecap="round"/>')
-  for (x, y) in pts[1:3]:
-    g.append(f'<circle cx="{x:g}" cy="{y:g}" r="{15 * s:g}" fill="#2B4A54" stroke="{C["cyan"]}" stroke-width="1.5"/>')
-    g.append(f'<circle cx="{x:g}" cy="{y:g}" r="{5 * s:g}" fill="{C["cyan"]}"/>')
-  # wrist, camera and gripper
-  wx, wy = pts[3]
-  g.append(f'<circle cx="{wx:g}" cy="{wy:g}" r="{13 * s:g}" fill="#2B4A54" stroke="{C["cyan"]}" stroke-width="1.5"/>')
-  g.append(f'<rect x="{wx - 6 * s:g}" y="{wy - 30 * s:g}" width="{22 * s:g}" height="{12 * s:g}" rx="4" fill="#2B4A54" stroke="{C["cyan"]}"/>')
-  g.append(f'<circle cx="{wx + 5 * s:g}" cy="{wy - 24 * s:g}" r="{3.5 * s:g}" fill="{C["cyan"]}"/>')
-  for dy in (-12, 12):
-    g.append(f'<path d="M{wx + 12 * s:g},{wy:g} L{wx + 40 * s:g},{wy + dy * s:g} L{wx + 56 * s:g},{wy + dy * 0.6 * s:g}" fill="none" stroke="#A9C4CB" stroke-width="{7 * s:g}" stroke-linecap="round" stroke-linejoin="round"/>')
-  # pendant E-stop beside the bench
-  g.append(f'<rect x="{cx - 212 * s:g}" y="{cy + 56 * s:g}" width="{44 * s:g}" height="{62 * s:g}" rx="{10 * s:g}" fill="#36515B" stroke="{C["stroke"]}"/>')
-  g.append(f'<circle cx="{cx - 190 * s:g}" cy="{cy + 78 * s:g}" r="{13 * s:g}" fill="{C["red"]}" stroke="#7A2A22" stroke-width="2"/>')
-  g.append(f'<circle cx="{cx - 190 * s:g}" cy="{cy + 78 * s:g}" r="{18 * s:g}" fill="none" stroke="{C["amber_hi"]}" stroke-width="1.2"/>')
-  g.append(f'<path d="M{cx - 168 * s:g},{cy + 100 * s:g} Q{cx - 120 * s:g},{cy + 100 * s:g} {cx - 60 * s:g},{cy + 118 * s:g}" fill="none" stroke="{C["muted"]}" stroke-width="2"/>')
-  return "\n".join(g)
-
-
-def hero_svg():
-  w, h = 1280, 520
-  defs = "\n".join([
-    f'<radialGradient id="hero-bg" cx="0.72" cy="0.45" r="0.95"><stop offset="0" stop-color="#D9EEF0"/><stop offset="0.55" stop-color="{C["bg1"]}"/><stop offset="1" stop-color="{C["bg2"]}"/></radialGradient>',
-    f'<linearGradient id="hero-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{C["amber_hi"]}"/><stop offset="1" stop-color="{C["amber_lo"]}"/></linearGradient>',
-    f'<linearGradient id="hero-amber" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{C["amber_lo"]}"/><stop offset="0.5" stop-color="{C["amber_hi"]}"/><stop offset="1" stop-color="{C["amber_lo"]}"/></linearGradient>',
-    f'<linearGradient id="hero-fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{C["cyan"]}" stop-opacity="0"/><stop offset="1" stop-color="{C["cyan"]}" stop-opacity="0.3"/></linearGradient>',
-    '<clipPath id="hero-frame"><rect width="1280" height="520" rx="24"/></clipPath>',
-  ])
-  body = ['<g clip-path="url(#hero-frame)">', f'<rect width="{w}" height="{h}" fill="url(#hero-bg)"/>']
-  # floor grid in perspective, vanishing point right of centre
-  vx, vy = 980, 300
-  for i in range(-9, 13):
-    body.append(f'<line x1="{vx}" y1="{vy}" x2="{vx + i * 170}" y2="{h}" stroke="url(#hero-fade)" stroke-width="1"/>')
-  for k in range(1, 9):
-    y = vy + (h - vy) * (k / 8) ** 1.9
-    half = (y - vy) * 7.5
-    body.append(f'<line x1="{vx - half:g}" y1="{y:g}" x2="{vx + half:g}" y2="{y:g}" stroke="{C["cyan"]}" stroke-opacity="{0.05 + 0.03 * k:.2f}" stroke-width="1"/>')
-  body.append(f'<line x1="660" y1="{vy}" x2="{w}" y2="{vy}" stroke="{C["cyan"]}" stroke-opacity="0.25"/>')
-  # emblem
-  body.append(robot_emblem(990, 250, 1.0))
-  # title block
-  body.append(text(72, 150, "REBOT-DEVARM ASSURANCE", 18, C["amber"], 700, extra=' letter-spacing="6"'))
-  body.append(text(72, 218, "Open desktop manipulation.", 52, C["text"], 800, extra=' letter-spacing="-1"'))
-  body.append(text(72, 278, "Engineered for safety.", 52, C["amber"], 800, extra=' letter-spacing="-1"'))
-  lines = wrap("The engineering assurance record for a safety-assured fork of the reBot-DevArm desktop robot arm: machinery risk assessment, a hardwired safety chain with a Performance Level target, and a safety case published as it is built.", 560, 17)
-  for i, ln in enumerate(lines):
-    body.append(text(72, 320 + i * 25, ln, 17, C["muted"]))
-  x = 72
-  for chip in CHIPS:
-    cw = 11 + len(chip) * 8.2
-    body.append(rect(x, 404, cw, 30, C["panel"], r=15, stroke=C["stroke"]))
-    body.append(text(x + cw / 2, 424, chip, 13, C["text"], 600, anchor="middle", family=MONO))
-    x += cw + 10
-  body.append(text(72, 474, "Standards-informed engineering · no compliance claimed · nothing approved for operation with a person in reach", 13, C["dim"]))
-  body.append("</g>")
-  desc = ("reBot-DevArm assurance banner: a geometric six-axis desktop arm in amber on a clamped bench with a wrist camera, a red pendant emergency stop and a dashed reach envelope on a "
-          "perspective floor grid, beside the project name and the tagline " + TAGLINE + " Chips name the standards: " + ", ".join(CHIPS) + ".")
-  return svg(w, h, "hero", "reBot-DevArm assurance: " + TAGLINE, desc, defs, "\n".join(body))
 
 
 # ------------------------------------------------------------------ standards
@@ -720,7 +639,7 @@ def repo_map_svg() -> str:
 
 def render_all(root: Path = ROOT) -> dict[str, str]:
   r = load_records(root)
-  return {"hero.svg": hero_svg(), "standards.svg": standards_svg(), "architecture.svg": architecture_svg(),
+  return {"standards.svg": standards_svg(), "architecture.svg": architecture_svg(),
           "roadmap.svg": roadmap_svg(), "lifecycle.svg": lifecycle_svg(), "status.svg": status_svg(r),
           "standards-map.svg": standards_map_svg(r), "repo-map.svg": repo_map_svg()}
 
