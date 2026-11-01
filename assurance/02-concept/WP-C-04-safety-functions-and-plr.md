@@ -63,8 +63,8 @@ with power removed when stopped. **Layers:** `chain` the hardwired safety chain;
 ### 3.1 SF-32 Emergency stop
 
 - **Devices:** a mushroom-head latching button on the operator's pendant and one on the bench, each with two NC contacts.
-- **Chain:** both channels into a safety relay with monitored manual reset; the relay drops a contactor with a mirror contact on the
-  24 V motor supply. No software is in the path; the host and the safety layer are informed through the diagnostic signals of
+- **Chain:** both channels into a safety relay with monitored manual reset; the relay drops two contactors in series, each with a
+  mirror contact, on the 24 V motor supply (designed in [WP-H-02](../04-hardware/WP-H-02-electrical-and-safety-chain-design.md)). No software is in the path; the host and the safety layer are informed through the diagnostic signals of
   [WP-S-05](../03-system/WP-S-05-safety-chain-io-interface.md) and may not override it.
 - **Stop category 0** (DQ-004 context): power is removed immediately. The consequence for a loaded arm is that every joint without a
   brake falls under gravity; whether the Damiao actuators hold is unknown (GAP-07) and is measured in WP-V-02. If they do not, a

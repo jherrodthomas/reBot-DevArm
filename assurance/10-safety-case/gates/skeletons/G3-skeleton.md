@@ -18,12 +18,12 @@
 
 | Input | Status at this baseline | Link |
 |---|---|---|
-| WP-M-00 status of the gate's work products | 1 Draft, 19 Skeleton of 20 (table below) | [WP-M-00](../../../01-management/WP-M-00-work-product-register.md) |
+| WP-M-00 status of the gate's work products | 2 Draft, 18 Skeleton of 20 (table below) | [WP-M-00](../../../01-management/WP-M-00-work-product-register.md) |
 | Open anomalies (`safety-anomaly`) | | GitHub issues labelled `safety-anomaly` |
 | Open risks (WP-M-07) | | [WP-M-07](../../../01-management/WP-M-07-risk-management.md) |
 | Confirmation measures assigned to this gate (WP-M-06) and their results | 0 of 6 performed: CR-06@G3, CR-07, CR-08, CR-09, CR-10, ML-R2 | [WP-M-06](../../../01-management/WP-M-06-confirmation-measures-plan.md) |
 | QA findings (WP-M-05) | | [WP-M-05](../../../01-management/WP-M-05-quality-assurance-plan.md) |
-| Open items of the phase's work products | 29 open-item rows not marked closed, any due gate (table below) | |
+| Open items of the phase's work products | 36 open-item rows not marked closed, any due gate (table below) | |
 
 ### Work products of this gate
 
@@ -32,7 +32,7 @@
 | [WP-W-01](../../../05-software/WP-W-01-software-development-environment-guidelines.md) SW development environment, languages and coding guidelines | DEV-01 | Skeleton | 1 | |
 | [WP-P-07](../../../07-supporting/WP-P-07-tool-classification-qualification.md) Software tool classification and qualification | DEV-02 | Skeleton | 1 | |
 | [WP-H-01](../../../04-hardware/WP-H-01-hardware-safety-requirements.md) Hardware safety requirements (safety chain, supply, holding and braking, sensing hardware) | DEV-03 | Skeleton | 1 | |
-| [WP-H-02](../../../04-hardware/WP-H-02-electrical-and-safety-chain-design.md) Electrical and safety-chain design (schematics, wiring, enclosure) | DEV-04 | Skeleton | 1 | |
+| [WP-H-02](../../../04-hardware/WP-H-02-electrical-and-safety-chain-design.md) Electrical and safety-chain design (schematics, wiring, enclosure) | DEV-04 | Draft | 8 | |
 | [WP-H-05](../../../04-hardware/WP-H-05-electrical-safety.md) Electrical safety: supply disconnection, overcurrent protection, bonding, the 24 V PSU and connectors | DEV-05 | Skeleton | 1 | |
 | [WP-H-07](../../../04-hardware/WP-H-07-safety-component-qualification.md) Qualification of safety components (safety relay, contactor, E-stop devices, enabling device, actuators, well-tried components) | DEV-06 | Skeleton | 1 | |
 | [WP-H-03](../../../04-hardware/WP-H-03-hardware-failure-analysis.md) Hardware failure analysis (FMEA, fault lists, fault exclusions) | DEV-07 | Skeleton | 1 | |
