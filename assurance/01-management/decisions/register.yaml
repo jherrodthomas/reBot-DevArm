@@ -685,3 +685,32 @@
       detail: "Simplest. Cost: a serious anomaly could be closed by the person who caused it, with no independent check."
   sources: ["safety-relevant-paths.txt (SR-A: two human approvals)", "WP-P-01 OI-7", "WP-P-03 §5", "DQ-010"]
   status: open
+
+- id: DQ-023
+  ref: GAP-00
+  question: "Does the governance gate G0 pass, and on what terms?"
+  context: >-
+    All 21 G0 work products are Drafts, but G0's exit criteria are not met: no plan is approved, the verification
+    reviewer and QA roles have nobody but you, and the two independent confirmation reviews due at G0 cannot be done
+    without an assessor, whom the safety plan also needs to agree any deferral. Passing G0 moves the project formally
+    into the concept phase, where most of the work already is; it says nothing about the arm, and the hold point on
+    powered tests with a person in reach stays. The prepared review is G0-2026-11-01.md.
+  reversibility: revisit
+  decider: lead
+  blocks: "The G0 outcome; the README's gate count; formal entry to P1 Concept"
+  gate: G0
+  asked: 2026-11-01
+  batch: 3
+  options:
+    - key: A
+      recommended: true
+      title: "Pass with conditions once three things are done: you self-approve the six core plans at I0, branch protection is on, and the confirmation reviews are deferred to G1 by exception"
+      detail: "Six documents to read (WP-M-01, M-02, M-06, M-11, WP-P-01, WP-P-02, about 700 lines) and one GitHub setting; the roles, the other plans and the forks become conditions due at G1. Cost: the gate rests on your own review at I0, which an assessor will re-check."
+    - key: B
+      title: "Pass with conditions now, with everything above as conditions due at G1"
+      detail: "The counter moves today. Cost: a gate passed with no plan approved, which an assessor would not accept."
+    - key: C
+      title: "Not yet: hold G0 until a second person or an assessor can do the reviews"
+      detail: "Clean independence. Cost: the record shows no gate passed for as long as you work alone; concept work continues regardless."
+  sources: ["assurance/10-safety-case/gates/G0-2026-11-01.md", "WP-M-00 §2 (G0 exit criteria)", "WP-M-02 §10 (deferrals)", "DQ-009, DQ-010"]
+  status: open

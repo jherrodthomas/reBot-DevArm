@@ -87,6 +87,20 @@ class RenderTests(unittest.TestCase):
     self.assertIn(ma.HEADLINE_BEGIN, readme)
     self.assertEqual(ma.with_headline(readme, r), readme)
 
+  def test_only_a_ticked_pass_counts_as_a_passed_gate(self):
+    import shutil
+    with tempfile.TemporaryDirectory() as d:
+      root = Path(d)
+      shutil.copytree(ma.ASSURANCE, root / "assurance")
+      gates = root / "assurance" / "10-safety-case" / "gates"
+      record = gates / "G0-2099-01-01.md"
+      record.write_text("- [ ] Pass  - [ ] Pass with conditions  - [ ] Fail\n", encoding="utf-8")
+      before = ma.load_records(root)["gates_passed"]
+      record.write_text("- [ ] Pass  - [x] Pass with conditions  - [ ] Fail\n", encoding="utf-8")
+      self.assertEqual(ma.load_records(root)["gates_passed"], before + 1)
+      record.write_text("- [ ] Pass  - [ ] Pass with conditions  - [x] Fail\n", encoding="utf-8")
+      self.assertEqual(ma.load_records(root)["gates_passed"], before)
+
   def test_check_detects_staleness(self):
     with tempfile.TemporaryDirectory() as d:
       out = Path(d)

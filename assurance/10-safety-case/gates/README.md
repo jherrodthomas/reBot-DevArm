@@ -3,7 +3,8 @@
 Gate review records for gates G0…G6, as required by [WP-M-02 §10](../../01-management/WP-M-02-safety-plan.md#10-progress-tracking-and-gate-reviews).
 Gates and their exit criteria are defined in [WP-M-00 §2](../../01-management/WP-M-00-work-product-register.md#2-gates).
 
-No gate review has been held yet.
+No gate has passed. The G0 review is prepared in [G0-2026-11-01.md](G0-2026-11-01.md); its outcome is the lead's
+(DQ-023) and is pending.
 
 ## File naming
 
