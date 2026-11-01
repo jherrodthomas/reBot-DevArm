@@ -29,10 +29,9 @@ class TestWikiHero(unittest.TestCase):
     home = (HERE.parents[2] / "wiki" / "Home.md").read_text(encoding="utf-8")
     self.assertTrue(home.startswith("![") and "docs/assets/rebot/banner.svg" in home.splitlines()[0])
 
-  def test_readme_assurance_section_opens_with_the_banner(self):
+  def test_readme_opens_with_the_banner(self):
     readme = (HERE.parents[2] / "README.md").read_text(encoding="utf-8")
-    section = readme.split("## The assurance record", 1)[1]
-    first_image = section[section.index("<img"):].split(">", 1)[0]
+    first_image = readme[readme.index("<img"):].split(">", 1)[0]
     self.assertIn("docs/assets/rebot/banner.svg", first_image)
 
 

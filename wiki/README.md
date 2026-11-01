@@ -45,7 +45,7 @@ record under `hardware/`) is linked, never copied.
   is read from the record when it is generated, and `tour_figures.py --check` fails in CI when a figure is stale.
   The order of the tour is `TOUR` in that file; each page's previous and next links must follow it, which
   `test_tour_figures.py` checks.
-- The banner of Home, the same one the README's assurance section opens with, is written by
+- The banner of Home, the same one the README opens with, is written by
   [`docs/assets/rebot/banner.py`](../docs/assets/rebot/banner.py) from upstream's own image of the arm
   (`media/v1.1_2.png`, Seeed Studio, CC BY-NC-SA 4.0), which it crops into `banner-arm.jpg` and embeds with the
   credit. It is the only photograph in the wiki; `banner.py --check` fails in CI when the banner is stale.

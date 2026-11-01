@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The banner of the README's assurance section and of the wiki's Home page: upstream's own image of the reBot Arm
+"""The banner at the top of the README and of the wiki's Home page: upstream's own image of the reBot Arm
 B601-DM v1.1 beside the project's title.
 
 The image is Seeed Studio's render of the arm, media/v1.1_2.png in upstream's record (CC BY-NC-SA 4.0), credited on
