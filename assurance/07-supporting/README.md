@@ -10,12 +10,12 @@ Standard clauses: IEC 61508-1 §6–§7, IEC 61508-3 §7.4, ISO 13849-1 §12, IE
 
 | ID | Work product | Gate | Status |
 |---|---|---|---|
-| [WP-P-01](WP-P-01-configuration-management-plan.md) | Configuration management plan (safety-relevant file list, baselines across the fork repositories) | G0 | Skeleton |
-| [WP-P-02](WP-P-02-change-management.md) | Change management plan | G0 | Skeleton |
-| [WP-P-03](WP-P-03-problem-resolution.md) | Problem resolution management | G0 | Skeleton |
-| [WP-P-04](WP-P-04-documentation-management.md) | Documentation management | G0 | Skeleton |
-| [WP-P-05](WP-P-05-verification-review-procedure.md) | Verification and review procedure | G0 | Skeleton |
-| [WP-P-06](WP-P-06-requirements-management-traceability.md) | Requirements management and traceability procedure | G0 | Skeleton |
+| [WP-P-01](WP-P-01-configuration-management-plan.md) | Configuration management plan (safety-relevant file list, baselines across the fork repositories) | G0 | Draft |
+| [WP-P-02](WP-P-02-change-management.md) | Change management plan | G0 | Draft |
+| [WP-P-03](WP-P-03-problem-resolution.md) | Problem resolution management | G0 | Draft |
+| [WP-P-04](WP-P-04-documentation-management.md) | Documentation management | G0 | Draft |
+| [WP-P-05](WP-P-05-verification-review-procedure.md) | Verification and review procedure | G0 | Draft |
+| [WP-P-06](WP-P-06-requirements-management-traceability.md) | Requirements management and traceability procedure | G0 | Draft |
 | [WP-P-07](WP-P-07-tool-classification-qualification.md) | Software tool classification and qualification | G3 | Skeleton |
 | [WP-P-08](WP-P-08-software-component-qualification.md) | Qualification of software components (motorbridge SDK, ROS 2, MoveIt 2, Pinocchio, LeRobot, third-party) | G3 | Skeleton |
 | [WP-P-09](WP-P-09-proven-in-use.md) | Proven-in-use argument evaluation | G3 | Skeleton |

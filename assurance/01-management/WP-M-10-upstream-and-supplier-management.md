@@ -1,4 +1,4 @@
-# WP-M-10 Upstream
+# WP-M-10 Upstream and Supplier Management
 
 | Field | Value |
 |---|---|
