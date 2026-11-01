@@ -6,9 +6,9 @@ The image is Seeed Studio's render of the arm, media/v1.1_2.png in upstream's re
 the banner. It is cut to the arm and saved once as a web-sized JPEG next to the banner; the banner is an SVG that
 embeds that JPEG, so it renders as one image on GitHub and in the wiki.
 
-  python3 tools/wiki/wiki_hero.py --photo   # re-cut docs/assets/rebot/wiki-hero-arm.jpg from media/v1.1_2.png (needs Pillow)
-  python3 tools/wiki/wiki_hero.py           # write docs/assets/rebot/wiki-hero.svg from the committed JPEG
-  python3 tools/wiki/wiki_hero.py --check   # CI: fail if the banner differs from a fresh render
+  python3 docs/assets/rebot/banner.py --photo   # re-cut docs/assets/rebot/banner-arm.jpg from media/v1.1_2.png (needs Pillow)
+  python3 docs/assets/rebot/banner.py           # write docs/assets/rebot/banner.svg from the committed JPEG
+  python3 docs/assets/rebot/banner.py --check   # CI: fail if the banner differs from a fresh render
 """
 from __future__ import annotations
 
@@ -18,10 +18,10 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[1]
+ROOT = HERE.parents[2]
 SOURCE = ROOT / "media" / "v1.1_2.png"
-PHOTO = ROOT / "docs" / "assets" / "rebot" / "wiki-hero-arm.jpg"
-OUT = ROOT / "docs" / "assets" / "rebot" / "wiki-hero.svg"
+PHOTO = ROOT / "docs" / "assets" / "rebot" / "banner-arm.jpg"
+OUT = ROOT / "docs" / "assets" / "rebot" / "banner.svg"
 FONT = "'Source Sans 3', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 W, H = 1280, 520
 PHOTO_H = 470
@@ -94,7 +94,7 @@ def main(argv: list[str]) -> int:
   svg = render()
   if "--check" in argv:
     if not OUT.exists() or OUT.read_text(encoding="utf-8") != svg:
-      print("docs/assets/rebot/wiki-hero.svg is stale; run tools/wiki/wiki_hero.py")
+      print("docs/assets/rebot/banner.svg is stale; run docs/assets/rebot/banner.py")
       return 1
     print("wiki banner current")
     return 0
