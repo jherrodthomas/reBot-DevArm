@@ -60,7 +60,7 @@ Nothing is marked complete before its review, and every number below is computed
 
 <!-- BEGIN GENERATED: record-headline (docs/assets/rebot/make_assets.py) -->
 
-**P0 Governance** · no gate passed · 90 work products (30 draft, 60 skeleton, 0 approved) · 36 gap findings (19 high) · 2 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest `2714a93d0fcc`
+**P0 Governance** · no gate passed · 90 work products (30 draft, 60 skeleton, 0 approved) · 36 gap findings (19 high) · 3 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest `5bd183fe53cb`
 
 <!-- END GENERATED: record-headline -->
 

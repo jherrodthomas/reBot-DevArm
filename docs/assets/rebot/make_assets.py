@@ -405,6 +405,12 @@ def load_records(root: Path = ROOT) -> dict:
       measures.update(re.findall(r"\b(CR-\d\d|FSA-[A-Z0-9]+|AUD-\d|CS-[AI]\d|ML-R\d|NB-\d)\b", m.group(2)))
   gates_dir = a / "10-safety-case" / "gates"
   gate_records = sorted(p.name for p in gates_dir.glob("G[0-6]-[0-9]*.md")) if gates_dir.exists() else []
+  passed = set()
+  for name in gate_records:
+    # a record counts only once its outcome is ticked Pass or Pass with conditions (the rule of case/tools/caselib.py)
+    ticked = re.findall(r"-\s*\[[xX]\]\s*(Pass with conditions|Pass|Fail)", (gates_dir / name).read_text(encoding="utf-8"))
+    if len(ticked) == 1 and ticked[0].startswith("Pass"):
+      passed.add(name[:2])
   conf_dir = a / "10-safety-case" / "confirmation"
   conf_records = sorted(p.name for p in conf_dir.glob("*.md") if p.name != "README.md") if conf_dir.exists() else []
   h = hashlib.sha256()
@@ -419,7 +425,7 @@ def load_records(root: Path = ROOT) -> dict:
     "dq": dict(dq), "dq_total": sum(dq.values()),
     "ix_total": ix_total, "ix_open": ix_open,
     "measures_planned": len(measures), "measures_performed": len(conf_records),
-    "gates_passed": len(gate_records), "phase": "P0 Governance",
+    "gates_passed": len(passed), "phase": "P0 Governance",
     "digest": h.hexdigest()[:12],
   }
 
