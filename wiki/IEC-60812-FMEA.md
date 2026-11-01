@@ -48,7 +48,7 @@ and is not a row of the record.
 
 ## Clauses to know
 
-No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is an open question for the lead (DQ-011). The record cites the standard for the method as a whole rather than by clause.
+No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. The lead decided to buy them only when an assessor is engaged (DQ-011). The record cites the standard for the method as a whole rather than by clause.
 
 ---
 

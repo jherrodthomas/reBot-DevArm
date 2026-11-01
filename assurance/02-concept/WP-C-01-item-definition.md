@@ -51,7 +51,7 @@ The B601-RS shares the mechanical envelope and assembly with the DM arm and repl
 RobStride units (models **(unknown)**) on a bus whose protocol and termination are **(unknown)**. Its BOM, assembly
 video, ROS 2 driver and LeRobot integration were "in progress" at the baseline. Every actuator-specific row of this
 record (limits, holding, thermal behaviour, fault reactions, reliability data) carries a CFG-002 placeholder until
-the BOM is released; the lead chose to track the RS (DQ-001, answered A); how is open (DQ-017).
+the BOM is released; the lead chose to track the RS (DQ-001, answered A); as a second configuration, CFG-002, every value unverified until its BOM is released (DQ-017, answered A).
 
 ## 2. Intended use and functions
 
@@ -100,7 +100,7 @@ path. The record says so (gap assessment §4 and §5) and WP-C-04 specifies each
 | E-04 | Harness and bus: XT30 2+2 CAN daisy chain, cable restraints, termination (unknown) | power and command distribution to every joint |
 | E-05 | CAN-USB adapter | the single command path from the host to the bus |
 | E-06 | Host software as it touches the arm: the SDK, the ROS 2 driver, the policy runtime, the UI, assessed at their interface to the bus | command sources; functional only; no PL claim |
-| E-07 | Controller safety layer (to be built): watchdog and heartbeat, mode state machine, per-joint clamps, encoder plausibility, clamp on every learned output; where it runs is open (DQ-020) | the checker between every command source and the bus |
+| E-07 | Controller safety layer (to be built): watchdog and heartbeat, mode state machine, per-joint clamps, encoder plausibility, clamp on every learned output; on a dedicated controller between the host and the bus (DQ-020, answered A) | the checker between every command source and the bus |
 | E-08 | Bench safety chain (to be built): two-channel E-stop pendant, safety relay, contactor with mirror contact on the 24 V motor supply, fuse, lockable disconnect (answered A, DQ-006) | the checker of last resort; removes motor power without software |
 | E-09 | 24 V supply as installed: the LRS-350-24 and its DC output pigtail; the mains side only as far as the supply's terminals | motor and logic power |
 | E-10 | Optional wrist camera and its mount; the leader arm's interface at the SDK | sensing and tele-operation inputs inside the boundary at their interface only |
@@ -139,7 +139,7 @@ The chain's I/O (E-08 → E-07) will be IF-09 once WP-S-05 defines it.
 | Stopping time and angle per joint | **(unknown)**; never measured | none | WP-V-02 |
 | Users | trained operator, builder; students and bystanders outside the first case | assumed | AOU-01, AOU-06 |
 | Reasonably foreseeable misuse | operation by untrained users; payload above 1.5 kg; operation outside the declared workspace; operation with damaged printed parts; operation without a fixtured base; operation with bystanders in reach and no enclosure; modifying torque limits in software; a non-rated supply; a non-OEM gripper without re-validation; running a policy on an unseen scene; two clients commanding at once; leaving the arm powered unattended | analysed in WP-C-06 §5 | package 03_ItemDef |
-| Variant | CFG-001 only; an RS actuator on the bus is outside the case until DQ-017 | none | GAP-34 |
+| Variant | CFG-001 only; an RS actuator on the bus is outside the first case; CFG-002 is tracked, unverified (DQ-017, answered A) | none | GAP-34 |
 
 ### 4.2 Space limits
 
@@ -230,7 +230,7 @@ any state → ESTOP on an E-stop demand or power loss; ESTOP → IDLE on a manua
 
 ## 9. Out of scope for this item
 
-The B601-RS variant until DQ-001 and DQ-017 settle it; any mobile base the arm is mounted on (a second item);
+The B601-RS variant beyond its tracking as CFG-002 (DQ-001, DQ-017); any mobile base the arm is mounted on (a second item);
 the leader arm as a machine of its own; the Isaac Sim model and any simulation result as evidence; a learned
 component as a safety function (answered A, DQ-008: inside the item, outside every safety function);
 OE-2 to OE-4 (answered A, DQ-003); medical, patient-care or public-facing use; outdoor use.
@@ -241,6 +241,6 @@ OE-2 to OE-4 (answered A, DQ-003); medical, patient-care or public-facing use; o
 |---|---|---|---|
 | OI-1 | Weigh a built arm, record its centre of gravity at full reach with 1.5 kg, and record the base fixing (bolt pattern, torque, the bench it was fixed to) | Electrical and mechanical engineer | G1 |
 | OI-2 | Measure the joint gaps against ISO 13854 and record the mechanical end-stop angle of every joint and the gripper | Electrical and mechanical engineer | G1 |
-| OI-3 | Determine whether the gripper holds its grasp on power loss, by test; feeds DQ-015 | Test bench owner | G2 |
+| OI-3 | Determine whether the gripper holds its grasp on power loss, by test; the lead requires holding above 0.5 kg (DQ-015, answered A) | Test bench owner | G2 |
 | OI-4 | Confirm the actuator model fitted to each joint on a built arm and quote the DM4310 and DM4340P datasheet limits | Safety-related control system engineer | G1 |
-| OI-5 | Lead decisions on the RS variant (DQ-001, answered A; DQ-017, open); until DQ-017 is answered §1.2 stays a placeholder | Project lead | G0 |
+| OI-5 | Lead decisions on the RS variant (DQ-001 and DQ-017, answered A): write §1.2 as CFG-002, every value unverified | Project lead | G0 |

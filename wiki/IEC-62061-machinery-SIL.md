@@ -51,7 +51,7 @@ Any SIL. The target measure is the Performance Level; the target for the stop fu
 
 ## Clauses to know
 
-No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is an open question for the lead (DQ-011).
+No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. The lead decided to buy them only when an assessor is engaged (DQ-011).
 
 | Clause | What it covers |
 |---|---|

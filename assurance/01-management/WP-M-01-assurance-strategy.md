@@ -141,7 +141,7 @@ records each tailoring decision. Each one needs confirmation review by an indepe
 | T-10 | Performance limits of sensing | ISO 21448 is used as a method, not a standard to comply with, inside WP-C-10 and WP-V-08 | No machinery standard covers what a current-based torque estimator or a learned policy cannot sense, and the worst contact hazards (GAP-28, GAP-24) are performance limits, not faults |
 | T-11 | Cybersecurity scope | IEC 62443-4-1 practices are applied to the fork's software repositories; IEC 62443-4-2 component requirements to the arm with its host as one component at the security level target of DQ-013. The site network, the operator's other computers and the cloud behind the web UI are external zones | The fork controls the arm's software and configuration, not the network it is deployed on |
 | T-12 | Process capability | ASPICE 4.0 is used for a self-assessment of process capability ([WP-M-12](WP-M-12-process-capability-baseline.md)), target CL2 for management, support, system and software processes, CL1 for hardware and ML. No ASPICE assessment is claimed | Gives the fork a process model the robotics standards lack |
-| T-13 | Regulatory | EU frame chosen (DQ-002, answered A): Machinery Regulation and the harmonised route through ISO 10218-1/-2 and ISO 13849-1. The conformity module is DQ-012 (Module A recommended). The AI Act applies only if a learned component becomes a safety component, which T-03 avoids | Where the arm is sold; one technical file |
+| T-13 | Regulatory | EU frame chosen (DQ-002, answered A): Machinery Regulation and the harmonised route through ISO 10218-1/-2 and ISO 13849-1. The conformity module is Module A (DQ-012, answered A). The AI Act applies only if a learned component becomes a safety component, which T-03 avoids | Where the arm is sold; one technical file |
 | T-14 | Variants and other items | The B601-RS is a second **configuration** (CFG-002) of the same item, tracked and unverified until its BOM is released (DQ-001, DQ-017). An arm on a mobile base, a dual-arm set-up or a non-upstream end effector is a separate **item** with its own risk assessment | The RS shares the envelope but not the actuator limits or bus protocol; a base changes every hazard |
 
 ## 6. Safety architecture argument: the central strategy
@@ -172,7 +172,7 @@ records each tailoring decision. Each one needs confirmation review by an indepe
   bounded, fresh), clamps it to the per-joint position, torque and speed limits of the active mode, checks the
   encoders for plausibility, times out the host, and holds the mode state machine. The limit and monitoring
   functions (SF-03, SF-25, SF-28, SF-29, SF-02, SF-04) live here at PL c or d; whether it runs on a dedicated
-  controller between the host and the bus or inside the forked SDK is DQ-020 (dedicated controller recommended).
+  controller between the host and the bus or inside the forked SDK is DQ-020 (answered A: a dedicated controller).
 - **Checker of last resort (SRP/CS):** the hardwired safety chain. Two-channel E-stop and enabling inputs feed a
   safety relay whose output drops a contactor with a mirror contact on the 24 V motor supply, behind a fuse and a
   lockable disconnect. Nothing in software can hold the contactor closed. This is where the PL d argument for the
@@ -235,16 +235,16 @@ index, the register entry is the question. None of batch 1 is answered at this v
 | D-08 | Learned policies in the item, outside every safety function | DQ-008 | Answered A, 2026-11-01 |
 | D-09 | Independent assessor: when | DQ-009 | Answered A (not for now), 2026-11-01 |
 | D-10 | Roles and self-approval while the project has one person | DQ-010 | Answered A, 2026-11-01 |
-| D-11 | Buying the standards | DQ-011 | Open, batch 2 |
-| D-12 | Conformity assessment route and module | DQ-012 | Open, batch 2 (Module A recommended) |
-| D-13 | Cybersecurity security level target | DQ-013 | Open, batch 2 |
-| D-14 | Camera privacy default | DQ-014 | Open, batch 2 |
-| D-15 | Gripper holding on power loss | DQ-015 | Open, batch 2 |
+| D-11 | Buying the standards | DQ-011 | Answered B (buy when an assessor is engaged), 2026-11-01 |
+| D-12 | Conformity assessment route and module | DQ-012 | Answered A, 2026-11-01 |
+| D-13 | Cybersecurity security level target | DQ-013 | Answered A, 2026-11-01 |
+| D-14 | Camera privacy default | DQ-014 | Answered A, 2026-11-01 |
+| D-15 | Gripper holding on power loss | DQ-015 | Answered A, 2026-11-01 |
 | D-16 | Torque and speed ceilings for the bench envelope | DQ-016 | Assumed A (decider: claude), 2026-11-01 |
-| D-17 | The RS variant as a second configuration | DQ-017 | Open, batch 2 |
-| D-18 | Supply disconnecting means | DQ-018 | Open, batch 2 |
-| D-19 | Supplier reliability data request | DQ-019 | Open, batch 2 |
-| D-20 | Where the controller safety layer runs | DQ-020 | Open, batch 2 |
+| D-17 | The RS variant as a second configuration | DQ-017 | Answered A, 2026-11-01 |
+| D-18 | Supply disconnecting means | DQ-018 | Answered A, 2026-11-01 |
+| D-19 | Supplier reliability data request | DQ-019 | Answered B (generic values; actuators in no PL d channel), 2026-11-01 |
+| D-20 | Where the controller safety layer runs | DQ-020 | Answered A, 2026-11-01 |
 
 ## 9. Risks to the plan
 

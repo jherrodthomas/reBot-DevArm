@@ -63,7 +63,7 @@ protective stop outside the client library (GAP-08, GAP-17).
 
 ## Clauses to know
 
-No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is an open question for the lead (DQ-011). The 2025 editions renumbered much of the 2011 text; the clauses below are those the record cites.
+No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. The lead decided to buy them only when an assessor is engaged (DQ-011). The 2025 editions renumbered much of the 2011 text; the clauses below are those the record cites.
 
 | Clause | What it covers |
 |---|---|

@@ -18,7 +18,7 @@
 
 ## 1. Purpose
 
-The PL calculation per safety function: MTTFD per channel from supplier data (the relay and contactor from their certificates; the actuators from Damiao or RobStride, not yet published, DQ-019), DCavg from the diagnostics of WP-S-03, the CCF score per Annex F, the SISTEMA project.
+The PL calculation per safety function: MTTFD per channel from supplier data (the relay and contactor from their certificates; the actuators are a channel of no PL d function, so only ISO 13849-1's generic values are used for them where they appear at all, DQ-019 answered B), DCavg from the diagnostics of WP-S-03, the CCF score per Annex F, the SISTEMA project.
 
 ## 2. Reliability data
 

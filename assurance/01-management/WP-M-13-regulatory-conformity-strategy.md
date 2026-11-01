@@ -23,7 +23,7 @@ reBot-DevArm is machinery, and in the EU machinery is placed on the market under
 applies from 20 January 2027 and replaces Directive 2006/42/EC. This document records which regulations apply to
 the fork, which route to conformity is recommended, what the technical documentation must contain, and how the
 assurance work products of [WP-M-00](WP-M-00-work-product-register.md) map onto it. The frame itself is decision
-DQ-002 (answered A: the EU frame); the route is decision DQ-012 (open, Module A recommended).
+DQ-002 (answered A: the EU frame); the route is decision DQ-012 (answered A: Module A, internal control).
 
 ## 2. What the fork is, in regulatory terms
 
@@ -49,9 +49,9 @@ verification (Module G, Annex X).
 | B: Module B + C, voluntary EU type-examination | A notified body examines the technical documentation and the type; gives an independent view the project otherwise lacks | Fee (indicative four to five figures); scheduling | Worth it only if a build is ever to leave the bench; the assessor engagement DQ-009 could be the same body |
 | C: Module H | A certified quality system covering design and production | Out of proportion for a one-person open-source record of a kit | Not recommended |
 
-The route is DQ-012 (open in batch 2; the frame and the policy question it waited on are answered). Until it is answered, NB-1 stays planned in WP-M-06 §8 and
+The route is DQ-012 (answered A, 2026-11-01: Module A). Until it is answered, NB-1 stays planned in WP-M-06 §8 and
 the fork plans for self-declaration with the harmonised standards applied in full. The standards themselves are not
-bought (DQ-011, open) and no assessor is engaged (DQ-009, answered A), so "applied in full" rests on references marked
+bought until an assessor is engaged (DQ-011, answered B) and no assessor is engaged (DQ-009, answered A), so "applied in full" rests on references marked
 to be checked until that changes.
 
 Whichever module is chosen, the harmonised standards are listed in the Official Journal under the Regulation only
