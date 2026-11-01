@@ -628,3 +628,60 @@
     at: 2026-11-01
   status: answered
   after: [DQ-007]
+
+- id: DQ-021
+  ref: GAP-08
+  question: "The bench E-stop chain now comes to about €500 to €800, not the €250 to €450 estimated when you chose it. Do you approve buying it as designed?"
+  context: >-
+    You chose the wired chain on 2026-11-01 (DQ-006). Designing it (WP-H-02) added what the PL d target and your
+    supply-disconnect answer need: a second contactor so a welded one cannot leave the arm powered (category 3), a
+    relay that also has delayed outputs so the stop can become a controlled stop if the arm does not hold under
+    gravity (GAP-07), and an enclosure for the open-frame supply (DQ-018). Nothing is bought yet, and two
+    measurements come first (WP-H-02 OI-1, OI-2).
+  reversibility: easy
+  decider: lead
+  blocks: "The bench chain purchase; WP-V-07 conditions C-1 and C-2; the first powered test"
+  gate: G1
+  asked: 2026-11-01
+  batch: 3
+  options:
+    - key: A
+      recommended: true
+      title: "Approve the chain as designed in WP-H-02, roughly €500 to €800, bought once the two measurements are done"
+      detail: "Category 3 from button to contactor, a stop category that can change without a second purchase, the supply enclosed. Cost: the money."
+    - key: B
+      title: "Approve a reduced chain, roughly €400 to €600: a relay with instantaneous outputs only"
+      detail: "Saves about €80 to €120. Cost: if the arm does not hold under gravity, a controlled stop needs a second relay bought later."
+    - key: C
+      title: "Hold the purchase until the bench measurements and the holding test are done, then decide on a firm quote"
+      detail: "Spends nothing yet. Cost: no powered test with anyone in reach until then, which is already the rule until the chain is fitted."
+  sources: ["WP-H-02 §2 (E-01, E-04, E-09) and §4", "DQ-006 option A estimate", "WP-M-03 OI-4"]
+  status: open
+
+- id: DQ-022
+  ref: GAP-00
+  question: "While you are the only person on the project, may your own approval stand in for the second approval a change to the safety chain or safety layer needs, and for closing a serious safety anomaly?"
+  context: >-
+    You allowed self-approval at I0 for work products (DQ-010). Two rules go further: a change to a safety-related
+    path (the chain design, the controller safety layer, the safety parameters; SR-A in WP-P-01) needs two human
+    approvals, and a class A or B safety anomaly is closed by someone other than the person who fixed it (WP-P-03).
+    With one person, neither can happen, so every SR-A change and every serious anomaly would wait for a second person.
+  reversibility: revisit
+  decider: lead
+  blocks: "Merging the first SR-A change (the chain design files, the controller); closing class A and B anomalies; WP-P-01 OI-7"
+  gate: G0
+  asked: 2026-11-01
+  batch: 3
+  options:
+    - key: A
+      recommended: true
+      title: "Until G3, one approval by you stands for SR-A changes, recorded as a single approval at I0, and every one is re-reviewed by the second person or the assessor before G3; serious anomalies stay open as resolved but not independently closed"
+      detail: "Design work moves; nothing is closed that should be checked by someone else. Cost: a re-review backlog before G3."
+    - key: B
+      title: "No exception: SR-A changes wait on branches until a second person can approve"
+      detail: "Two approvals from the start. Cost: the chain design files and the controller cannot be merged until someone joins."
+    - key: C
+      title: "Self-approval counts for both until an assessor is engaged at G1"
+      detail: "Simplest. Cost: a serious anomaly could be closed by the person who caused it, with no independent check."
+  sources: ["safety-relevant-paths.txt (SR-A: two human approvals)", "WP-P-01 OI-7", "WP-P-03 §5", "DQ-010"]
+  status: open

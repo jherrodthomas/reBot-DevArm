@@ -99,25 +99,25 @@ Clause references and status are read from the [register (WP-M-00)](../../01-man
 
 | Activity | Lane | Produces | Inputs | Machinery | SRP/CS | IEC 62443 | Other | ASPICE | Status |
 |---|---|---|---|---|---|---|---|---|---|
-| GOV-01 Impact analysis of the inherited reBot-DevArm baseline | Joint (all disciplines) | [WP-M-11](../../01-management/WP-M-11-impact-analysis.md) |  | 12100 §4 | 61508-1 §7.16 (modification) | 62443-4-1 SM-3 | Machinery Reg. Art. 3 (substantial modification) | SUP.10 | Skeleton |
+| GOV-01 Impact analysis of the inherited reBot-DevArm baseline | Joint (all disciplines) | [WP-M-11](../../01-management/WP-M-11-impact-analysis.md) |  | 12100 §4 | 61508-1 §7.16 (modification) | 62443-4-1 SM-3 | Machinery Reg. Art. 3 (substantial modification) | SUP.10 | Draft |
 | GOV-02 Assurance strategy and lifecycle tailoring | Joint (all disciplines) | [WP-M-01](../../01-management/WP-M-01-assurance-strategy.md) | WP-M-11 | 12100 §4; 10218-1 §4 | 13849-1 §4; 61508-1 §6 | 62443-4-1 SM-1 | TR 5469 (AI lifecycle), UL 4600 (safety case), Machinery Reg. Art. 25 | MAN.3 | Draft |
 | GOV-03 Regulatory conformity strategy | Joint (all disciplines) | [WP-M-13](../../01-management/WP-M-13-regulatory-conformity-strategy.md) | WP-M-01 |  |  |  | Machinery Reg. Art. 25, Annex I, Annexes VI–X; AI Act Art. 6, Art. 43, Annex I |  | Draft |
 | GOV-04 Functional safety plan | Machinery risk assessment (ISO 12100, ISO 10218) | [WP-M-02](../../01-management/WP-M-02-safety-plan.md) | WP-M-01, WP-M-13 | 12100 §4 | 13849-1 §4; 62061 §5; 61508-1 §6 |  |  | MAN.3 | Draft |
-| GOV-05 Organisation rules, safety culture and competence | Joint (all disciplines) | [WP-M-04](../../01-management/WP-M-04-organization-competence-safety-culture.md) | WP-M-02 |  | 61508-1 §6.2 (competence); 13849-1 §4 | 62443-4-1 SM-4 |  |  | Skeleton |
-| GOV-06 Quality management and QA plan | Joint (all disciplines) | [WP-M-05](../../01-management/WP-M-05-quality-assurance-plan.md) | WP-M-02, WP-M-04 |  | 61508-1 §6.2 | 62443-4-1 SM-5 | ISO 9001 (informative) | SUP.1 | Skeleton |
+| GOV-05 Organisation rules, safety culture and competence | Joint (all disciplines) | [WP-M-04](../../01-management/WP-M-04-organization-competence-safety-culture.md) | WP-M-02 |  | 61508-1 §6.2 (competence); 13849-1 §4 | 62443-4-1 SM-4 |  |  | Draft |
+| GOV-06 Quality management and QA plan | Joint (all disciplines) | [WP-M-05](../../01-management/WP-M-05-quality-assurance-plan.md) | WP-M-02, WP-M-04 |  | 61508-1 §6.2 | 62443-4-1 SM-5 | ISO 9001 (informative) | SUP.1 | Draft |
 | GOV-07 Confirmation measures plan | Machinery risk assessment (ISO 12100, ISO 10218) | [WP-M-06](../../01-management/WP-M-06-confirmation-measures-plan.md) | WP-M-01, WP-M-02, WP-M-05, WP-M-13 |  | 13849-1 §8, §10; 61508-1 §8 | 62443-4-1 SM-13 | Machinery Reg. Art. 25, Annexes VI–X |  | Draft |
-| GOV-08 Cybersecurity plan | Cybersecurity (IEC 62443) | [WP-M-08](../../01-management/WP-M-08-cybersecurity-plan.md) | WP-M-01, WP-M-04, WP-M-11 |  |  | 62443-4-1 §5 (SM-1…SM-13); 62443-4-2 §4 |  | MAN.7 (CS) | Skeleton |
-| GOV-09 Machine-learning safety plan | Machine learning (ISO/IEC TR 5469) | [WP-M-09](../../01-management/WP-M-09-ml-safety-plan.md) | WP-M-01, WP-M-08, WP-M-11, WP-M-13 |  |  |  | TR 5469 (AI technology classes, usage levels); AI Act Art. 9 | MLE.1–4 | Skeleton |
-| GOV-10 Upstream and supplier management | Joint (all disciplines) | [WP-M-10](../../01-management/WP-M-10-upstream-and-supplier-management.md) | WP-M-01, WP-M-11 |  | 61508-1 §6.2 (subcontracted activities) | 62443-4-1 SM-9, SM-10 |  | ACQ.4 | Skeleton |
-| GOV-11 Configuration management plan and safety-relevant file list | Joint (all disciplines) | [WP-P-01](../../07-supporting/WP-P-01-configuration-management-plan.md) | WP-M-02, WP-M-10 |  | 61508-1 §6.2.3; 13849-1 §12 | 62443-4-1 SM-6, SM-7 |  | SUP.8 | Skeleton |
-| GOV-12 Change management | Joint (all disciplines) | [WP-P-02](../../07-supporting/WP-P-02-change-management.md) | WP-P-01, WP-M-11 |  | 61508-1 §7.16 | 62443-4-1 SM-3 |  | SUP.10 | Skeleton |
-| GOV-13 Problem resolution | Joint (all disciplines) | [WP-P-03](../../07-supporting/WP-P-03-problem-resolution.md) | WP-M-02, WP-P-02 |  | 61508-1 §6.2 (anomaly handling) | 62443-4-1 DM-1…DM-6 |  | SUP.9 | Skeleton |
-| GOV-14 Documentation management | Joint (all disciplines) | [WP-P-04](../../07-supporting/WP-P-04-documentation-management.md) | WP-M-13, WP-P-01 | 12100 §7 | 13849-1 §12 | 62443-4-1 SG-1 | Machinery Reg. Annex IV | SUP.7 | Skeleton |
-| GOV-15 Verification and review procedure | Joint (all disciplines) | [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md) | WP-M-06, WP-P-04 |  | 13849-1 §8; 61508-1 §7.18 | 62443-4-1 SVV-1 |  | SUP.2 | Skeleton |
-| GOV-16 Requirements management and traceability procedure | Joint (all disciplines) | [WP-P-06](../../07-supporting/WP-P-06-requirements-management-traceability.md) | WP-P-04, WP-P-05 |  | 13849-1 §5; 61508-3 §7.2 | 62443-4-1 SR-5 |  | SYS.2, SWE.1 | Skeleton |
-| GOV-17 Project risk management | Joint (all disciplines) | [WP-M-07](../../01-management/WP-M-07-risk-management.md) | WP-M-01, WP-M-02 |  |  |  |  | MAN.5 | Skeleton |
-| GOV-18 Project plan | Joint (all disciplines) | [WP-M-03](../../01-management/WP-M-03-project-plan.md) | WP-M-02, WP-M-06, WP-M-07 |  |  |  |  | MAN.3 | Skeleton |
-| GOV-19 Process capability baseline | Joint (all disciplines) | [WP-M-12](../../01-management/WP-M-12-process-capability-baseline.md) | WP-M-02, WP-P-01, WP-P-02, WP-P-03, WP-P-05 |  |  |  |  | All in scope | Skeleton |
+| GOV-08 Cybersecurity plan | Cybersecurity (IEC 62443) | [WP-M-08](../../01-management/WP-M-08-cybersecurity-plan.md) | WP-M-01, WP-M-04, WP-M-11 |  |  | 62443-4-1 §5 (SM-1…SM-13); 62443-4-2 §4 |  | MAN.7 (CS) | Draft |
+| GOV-09 Machine-learning safety plan | Machine learning (ISO/IEC TR 5469) | [WP-M-09](../../01-management/WP-M-09-ml-safety-plan.md) | WP-M-01, WP-M-08, WP-M-11, WP-M-13 |  |  |  | TR 5469 (AI technology classes, usage levels); AI Act Art. 9 | MLE.1–4 | Draft |
+| GOV-10 Upstream and supplier management | Joint (all disciplines) | [WP-M-10](../../01-management/WP-M-10-upstream-and-supplier-management.md) | WP-M-01, WP-M-11 |  | 61508-1 §6.2 (subcontracted activities) | 62443-4-1 SM-9, SM-10 |  | ACQ.4 | Draft |
+| GOV-11 Configuration management plan and safety-relevant file list | Joint (all disciplines) | [WP-P-01](../../07-supporting/WP-P-01-configuration-management-plan.md) | WP-M-02, WP-M-10 |  | 61508-1 §6.2.3; 13849-1 §12 | 62443-4-1 SM-6, SM-7 |  | SUP.8 | Draft |
+| GOV-12 Change management | Joint (all disciplines) | [WP-P-02](../../07-supporting/WP-P-02-change-management.md) | WP-P-01, WP-M-11 |  | 61508-1 §7.16 | 62443-4-1 SM-3 |  | SUP.10 | Draft |
+| GOV-13 Problem resolution | Joint (all disciplines) | [WP-P-03](../../07-supporting/WP-P-03-problem-resolution.md) | WP-M-02, WP-P-02 |  | 61508-1 §6.2 (anomaly handling) | 62443-4-1 DM-1…DM-6 |  | SUP.9 | Draft |
+| GOV-14 Documentation management | Joint (all disciplines) | [WP-P-04](../../07-supporting/WP-P-04-documentation-management.md) | WP-M-13, WP-P-01 | 12100 §7 | 13849-1 §12 | 62443-4-1 SG-1 | Machinery Reg. Annex IV | SUP.7 | Draft |
+| GOV-15 Verification and review procedure | Joint (all disciplines) | [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md) | WP-M-06, WP-P-04 |  | 13849-1 §8; 61508-1 §7.18 | 62443-4-1 SVV-1 |  | SUP.2 | Draft |
+| GOV-16 Requirements management and traceability procedure | Joint (all disciplines) | [WP-P-06](../../07-supporting/WP-P-06-requirements-management-traceability.md) | WP-P-04, WP-P-05 |  | 13849-1 §5; 61508-3 §7.2 | 62443-4-1 SR-5 |  | SYS.2, SWE.1 | Draft |
+| GOV-17 Project risk management | Joint (all disciplines) | [WP-M-07](../../01-management/WP-M-07-risk-management.md) | WP-M-01, WP-M-02 |  |  |  |  | MAN.5 | Draft |
+| GOV-18 Project plan | Joint (all disciplines) | [WP-M-03](../../01-management/WP-M-03-project-plan.md) | WP-M-02, WP-M-06, WP-M-07 |  |  |  |  | MAN.3 | Draft |
+| GOV-19 Process capability baseline | Joint (all disciplines) | [WP-M-12](../../01-management/WP-M-12-process-capability-baseline.md) | WP-M-02, WP-P-01, WP-P-02, WP-P-03, WP-P-05 |  |  |  |  | All in scope | Draft |
 | GOV-20 Work product register | Joint (all disciplines) | [WP-M-00](../../01-management/WP-M-00-work-product-register.md) | WP-M-01, WP-M-02, WP-M-06, WP-M-13 |  | 13849-1 §4; 62061 §5 |  | Machinery Reg. Annex IV (index) | MAN.3 | Draft |
 | GOV-21 Integrated process model and maps | Joint (all disciplines) | [WP-P-11](../../process/README.md) | WP-M-00, WP-M-02, WP-M-06 | 12100 §4 | 13849-1 §4; 61508-1 §6 | 62443-4-1 SM-1 | TR 5469 (AI lifecycle) | MAN.3 | Draft |
 
@@ -143,7 +143,7 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Exit criterion (WP-M-00 §2):** Plans approved; roles assigned; configuration and change control running
 
-**Work products:** 6 Draft, 15 Skeleton of 21. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
+**Work products:** 21 Draft of 21. Approval needs the verification review of [WP-P-05](../../07-supporting/WP-P-05-verification-review-procedure.md).
 
 **Roles the lanes need (WP-M-02 §3.1):**
 

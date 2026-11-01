@@ -56,9 +56,11 @@ CI runs the same checks on every pull request and fails if a generated file is o
 ## What can and cannot change a review state
 
 - A work product leaves `Draft` only through a verification review by someone other than its author
-  ([WP-P-05](assurance/07-supporting/WP-P-05-verification-review-procedure.md)), and a claim is accepted only through
-  a confirmation review at the independence [WP-M-06](assurance/01-management/WP-M-06-confirmation-measures-plan.md)
-  requires.
+  ([WP-P-05](assurance/07-supporting/WP-P-05-verification-review-procedure.md)). While the project has one person, the
+  safety manager may approve work they authored instead, recorded as self-approval at I0 (DQ-010;
+  [WP-P-05 §3.1](assurance/07-supporting/WP-P-05-verification-review-procedure.md#31-how-reviews-are-recorded-today-dq-010)).
+  A claim is accepted only through a confirmation review at the independence
+  [WP-M-06](assurance/01-management/WP-M-06-confirmation-measures-plan.md) requires.
 - A passing CI run, a passing test or an existing file does not accept anything. It can be evidence that a reviewer
   accepts.
 - An AI-generated review is not a substitute for the required independent confirmation. AI-drafted work is the

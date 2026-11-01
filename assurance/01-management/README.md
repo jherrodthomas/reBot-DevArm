@@ -13,16 +13,16 @@ Standard clauses: ISO 13849-1 §4, IEC 62061 §5, IEC 61508-1 §6 and §8, IEC 6
 | [WP-M-00](WP-M-00-work-product-register.md) | Work product register | G0 | Draft |
 | [WP-M-01](WP-M-01-assurance-strategy.md) | Assurance strategy and lifecycle tailoring | G0 | Draft |
 | [WP-M-02](WP-M-02-safety-plan.md) | Functional safety plan | G0 | Draft |
-| [WP-M-03](WP-M-03-project-plan.md) | Project plan (scope, WBS, schedule, resources) | G0 | Skeleton |
-| [WP-M-04](WP-M-04-organization-competence-safety-culture.md) | Organization-specific rules, safety culture, competence management | G0 | Skeleton |
-| [WP-M-05](WP-M-05-quality-assurance-plan.md) | Quality management and quality assurance plan | G0 | Skeleton |
+| [WP-M-03](WP-M-03-project-plan.md) | Project plan (scope, WBS, schedule, resources) | G0 | Draft |
+| [WP-M-04](WP-M-04-organization-competence-safety-culture.md) | Organization-specific rules, safety culture, competence management | G0 | Draft |
+| [WP-M-05](WP-M-05-quality-assurance-plan.md) | Quality management and quality assurance plan | G0 | Draft |
 | [WP-M-06](WP-M-06-confirmation-measures-plan.md) | Confirmation measures plan (reviews, validation independence, functional safety assessment, conformity assessment) | G0 | Draft |
-| [WP-M-07](WP-M-07-risk-management.md) | Project risk management plan and register | G0 | Skeleton |
-| [WP-M-08](WP-M-08-cybersecurity-plan.md) | Cybersecurity plan | G0 | Skeleton |
-| [WP-M-09](WP-M-09-ml-safety-plan.md) | Machine-learning safety plan | G0 | Skeleton |
-| [WP-M-10](WP-M-10-upstream-and-supplier-management.md) | Upstream (Seeed Studio) and supplier (Damiao, RobStride) management | G0 | Skeleton |
-| [WP-M-11](WP-M-11-impact-analysis.md) | Impact analysis of the inherited reBot-DevArm baseline (modification of existing machinery) | G0 | Skeleton |
-| [WP-M-12](WP-M-12-process-capability-baseline.md) | Process capability baseline (ASPICE self-assessment) | G0 | Skeleton |
+| [WP-M-07](WP-M-07-risk-management.md) | Project risk management plan and register | G0 | Draft |
+| [WP-M-08](WP-M-08-cybersecurity-plan.md) | Cybersecurity plan | G0 | Draft |
+| [WP-M-09](WP-M-09-ml-safety-plan.md) | Machine-learning safety plan | G0 | Draft |
+| [WP-M-10](WP-M-10-upstream-and-supplier-management.md) | Upstream (Seeed Studio) and supplier (Damiao, RobStride) management | G0 | Draft |
+| [WP-M-11](WP-M-11-impact-analysis.md) | Impact analysis of the inherited reBot-DevArm baseline (modification of existing machinery) | G0 | Draft |
+| [WP-M-12](WP-M-12-process-capability-baseline.md) | Process capability baseline (ASPICE self-assessment) | G0 | Draft |
 | [WP-M-13](WP-M-13-regulatory-conformity-strategy.md) | Regulatory conformity strategy (Machinery Regulation, AI Act) | G0 | Draft |
 
 ## Subfolders

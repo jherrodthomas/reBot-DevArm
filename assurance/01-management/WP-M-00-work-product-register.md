@@ -65,16 +65,16 @@ Regulation (EU) 2023/1230 (Machinery Regulation), Regulation (EU) 2024/1689 (AI 
 | [WP-M-00](WP-M-00-work-product-register.md) | Work product register |  | 13849-1 §4; 62061 §5 |  | Machinery Reg. Annex IV (index) | MAN.3 | G0 | D |
 | [WP-M-01](WP-M-01-assurance-strategy.md) | Assurance strategy and lifecycle tailoring | 12100 §4; 10218-1 §4 | 13849-1 §4; 61508-1 §6 | 62443-4-1 SM-1 | TR 5469 (AI lifecycle), UL 4600 (safety case), Machinery Reg. Art. 25 | MAN.3 | G0 | D |
 | [WP-M-02](WP-M-02-safety-plan.md) | Functional safety plan | 12100 §4 | 13849-1 §4; 62061 §5; 61508-1 §6 |  |  | MAN.3 | G0 | D |
-| [WP-M-03](WP-M-03-project-plan.md) | Project plan (scope, WBS, schedule, resources) |  |  |  |  | MAN.3 | G0 | S |
-| [WP-M-04](WP-M-04-organization-competence-safety-culture.md) | Organization-specific rules, safety culture, competence management |  | 61508-1 §6.2 (competence); 13849-1 §4 | 62443-4-1 SM-4 |  | — | G0 | S |
-| [WP-M-05](WP-M-05-quality-assurance-plan.md) | Quality management and quality assurance plan |  | 61508-1 §6.2 | 62443-4-1 SM-5 | ISO 9001 (informative) | SUP.1 | G0 | S |
+| [WP-M-03](WP-M-03-project-plan.md) | Project plan (scope, WBS, schedule, resources) |  |  |  |  | MAN.3 | G0 | D |
+| [WP-M-04](WP-M-04-organization-competence-safety-culture.md) | Organization-specific rules, safety culture, competence management |  | 61508-1 §6.2 (competence); 13849-1 §4 | 62443-4-1 SM-4 |  | — | G0 | D |
+| [WP-M-05](WP-M-05-quality-assurance-plan.md) | Quality management and quality assurance plan |  | 61508-1 §6.2 | 62443-4-1 SM-5 | ISO 9001 (informative) | SUP.1 | G0 | D |
 | [WP-M-06](WP-M-06-confirmation-measures-plan.md) | Confirmation measures plan (reviews, validation independence, functional safety assessment, conformity assessment) |  | 13849-1 §8, §10; 61508-1 §8 | 62443-4-1 SM-13 | Machinery Reg. Art. 25, Annexes VI–X | — | G0 | D |
-| [WP-M-07](WP-M-07-risk-management.md) | Project risk management plan and register |  |  |  |  | MAN.5 | G0 | S |
-| [WP-M-08](WP-M-08-cybersecurity-plan.md) | Cybersecurity plan |  |  | 62443-4-1 §5 (SM-1…SM-13); 62443-4-2 §4 |  | MAN.7 (CS) | G0 | S |
-| [WP-M-09](WP-M-09-ml-safety-plan.md) | Machine-learning safety plan |  |  |  | TR 5469 (AI technology classes, usage levels); AI Act Art. 9 | MLE.1–4 | G0 | S |
-| [WP-M-10](WP-M-10-upstream-and-supplier-management.md) | Upstream (Seeed Studio) and supplier (Damiao, RobStride) management |  | 61508-1 §6.2 (subcontracted activities) | 62443-4-1 SM-9, SM-10 |  | ACQ.4 | G0 | S |
-| [WP-M-11](WP-M-11-impact-analysis.md) | Impact analysis of the inherited reBot-DevArm baseline (modification of existing machinery) | 12100 §4 | 61508-1 §7.16 (modification) | 62443-4-1 SM-3 | Machinery Reg. Art. 3 (substantial modification) | SUP.10 | G0 | S |
-| [WP-M-12](WP-M-12-process-capability-baseline.md) | Process capability baseline (ASPICE self-assessment) |  |  |  |  | All in scope | G0 | S |
+| [WP-M-07](WP-M-07-risk-management.md) | Project risk management plan and register |  |  |  |  | MAN.5 | G0 | D |
+| [WP-M-08](WP-M-08-cybersecurity-plan.md) | Cybersecurity plan |  |  | 62443-4-1 §5 (SM-1…SM-13); 62443-4-2 §4 |  | MAN.7 (CS) | G0 | D |
+| [WP-M-09](WP-M-09-ml-safety-plan.md) | Machine-learning safety plan |  |  |  | TR 5469 (AI technology classes, usage levels); AI Act Art. 9 | MLE.1–4 | G0 | D |
+| [WP-M-10](WP-M-10-upstream-and-supplier-management.md) | Upstream (Seeed Studio) and supplier (Damiao, RobStride) management |  | 61508-1 §6.2 (subcontracted activities) | 62443-4-1 SM-9, SM-10 |  | ACQ.4 | G0 | D |
+| [WP-M-11](WP-M-11-impact-analysis.md) | Impact analysis of the inherited reBot-DevArm baseline (modification of existing machinery) | 12100 §4 | 61508-1 §7.16 (modification) | 62443-4-1 SM-3 | Machinery Reg. Art. 3 (substantial modification) | SUP.10 | G0 | D |
+| [WP-M-12](WP-M-12-process-capability-baseline.md) | Process capability baseline (ASPICE self-assessment) |  |  |  |  | All in scope | G0 | D |
 | [WP-M-13](WP-M-13-regulatory-conformity-strategy.md) | Regulatory conformity strategy (Machinery Regulation, AI Act) |  |  |  | Machinery Reg. Art. 25, Annex I, Annexes VI–X; AI Act Art. 6, Art. 43, Annex I | — | G0 | D |
 
 ### 3.2 Concept phase (`02-concept/`)
@@ -152,12 +152,12 @@ Regulation (EU) 2023/1230 (Machinery Regulation), Regulation (EU) 2024/1689 (AI 
 
 | ID | Work product | Machinery | SRP/CS | IEC 62443 | Other | ASPICE | Gate | Status |
 |---|---|---|---|---|---|---|---|---|
-| [WP-P-01](../07-supporting/WP-P-01-configuration-management-plan.md) | Configuration management plan (safety-relevant file list, baselines across the fork repositories) |  | 61508-1 §6.2.3; 13849-1 §12 | 62443-4-1 SM-6, SM-7 |  | SUP.8 | G0 | S |
-| [WP-P-02](../07-supporting/WP-P-02-change-management.md) | Change management plan |  | 61508-1 §7.16 | 62443-4-1 SM-3 |  | SUP.10 | G0 | S |
-| [WP-P-03](../07-supporting/WP-P-03-problem-resolution.md) | Problem resolution management |  | 61508-1 §6.2 (anomaly handling) | 62443-4-1 DM-1…DM-6 |  | SUP.9 | G0 | S |
-| [WP-P-04](../07-supporting/WP-P-04-documentation-management.md) | Documentation management | 12100 §7 | 13849-1 §12 | 62443-4-1 SG-1 | Machinery Reg. Annex IV | SUP.7 | G0 | S |
-| [WP-P-05](../07-supporting/WP-P-05-verification-review-procedure.md) | Verification and review procedure |  | 13849-1 §8; 61508-1 §7.18 | 62443-4-1 SVV-1 |  | SUP.2 | G0 | S |
-| [WP-P-06](../07-supporting/WP-P-06-requirements-management-traceability.md) | Requirements management and traceability procedure |  | 13849-1 §5; 61508-3 §7.2 | 62443-4-1 SR-5 |  | SYS.2, SWE.1 | G0 | S |
+| [WP-P-01](../07-supporting/WP-P-01-configuration-management-plan.md) | Configuration management plan (safety-relevant file list, baselines across the fork repositories) |  | 61508-1 §6.2.3; 13849-1 §12 | 62443-4-1 SM-6, SM-7 |  | SUP.8 | G0 | D |
+| [WP-P-02](../07-supporting/WP-P-02-change-management.md) | Change management plan |  | 61508-1 §7.16 | 62443-4-1 SM-3 |  | SUP.10 | G0 | D |
+| [WP-P-03](../07-supporting/WP-P-03-problem-resolution.md) | Problem resolution management |  | 61508-1 §6.2 (anomaly handling) | 62443-4-1 DM-1…DM-6 |  | SUP.9 | G0 | D |
+| [WP-P-04](../07-supporting/WP-P-04-documentation-management.md) | Documentation management | 12100 §7 | 13849-1 §12 | 62443-4-1 SG-1 | Machinery Reg. Annex IV | SUP.7 | G0 | D |
+| [WP-P-05](../07-supporting/WP-P-05-verification-review-procedure.md) | Verification and review procedure |  | 13849-1 §8; 61508-1 §7.18 | 62443-4-1 SVV-1 |  | SUP.2 | G0 | D |
+| [WP-P-06](../07-supporting/WP-P-06-requirements-management-traceability.md) | Requirements management and traceability procedure |  | 13849-1 §5; 61508-3 §7.2 | 62443-4-1 SR-5 |  | SYS.2, SWE.1 | G0 | D |
 | [WP-P-07](../07-supporting/WP-P-07-tool-classification-qualification.md) | Software tool classification and qualification |  | 61508-3 §7.4.4 (T1–T3); 13849-1 §7 | 62443-4-1 SM-7 |  | — | G3 | S |
 | [WP-P-08](../07-supporting/WP-P-08-software-component-qualification.md) | Qualification of software components (motorbridge SDK, ROS 2, MoveIt 2, Pinocchio, LeRobot, third-party) |  | 61508-3 §7.4.2.12 | 62443-4-1 SM-9, SM-10 |  | — | G3 | S |
 | [WP-P-09](../07-supporting/WP-P-09-proven-in-use.md) | Proven-in-use argument evaluation |  | 61508-2 §7.4.10; 61508-3 §7.4.2.12 |  |  | — | G3 | S |
