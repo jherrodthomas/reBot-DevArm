@@ -359,7 +359,11 @@
       title: "Buy the full set now (roughly €1,500)"
       detail: "Every reference checkable. Cost: the money, most of it for standards not needed before G2."
   sources: ["WP-M-00 §3 note", "WP-M-06 OI-1"]
-  status: open
+  answer:
+    choice: B
+    via: inbox
+    at: 2026-11-01
+  status: answered
   after: [DQ-009]
 
 - id: DQ-012
@@ -386,7 +390,11 @@
       title: "Plan for EU type-examination (Modules B and C)"
       detail: "A notified body checks the file. Cost: roughly €10,000 to €30,000 and a body to find; only sensible if a build is ever placed on the market."
   sources: ["Regulation (EU) 2023/1230 Art. 25, Annex I, Annexes VI–X (to be checked)", "WP-M-13 §3", "gap assessment GAP-35"]
-  status: open
+  answer:
+    choice: A
+    via: inbox
+    at: 2026-11-01
+  status: answered
   after: [DQ-002, DQ-008]
 
 - id: DQ-013
@@ -411,7 +419,11 @@
       title: "SL 1 throughout"
       detail: "Minimal. Cost: an unauthenticated network path to a moving arm stays inside the target."
   sources: ["IEC 62443-4-2:2019 §4 (to be checked)", "gap assessment GAP-22, GAP-23"]
-  status: open
+  answer:
+    choice: A
+    via: inbox
+    at: 2026-11-01
+  status: answered
   after: [DQ-007]
 
 - id: DQ-014
@@ -436,7 +448,11 @@
       title: "Default-on streaming, no recording; a manual note"
       detail: "Demos work unchanged. Cost: a bystander is captured by default."
   sources: ["package HZ-D01, FM-23, SYRS-026, GAP-PRIV-01"]
-  status: open
+  answer:
+    choice: A
+    via: inbox
+    at: 2026-11-01
+  status: answered
   after: [DQ-003]
 
 - id: DQ-015
@@ -461,7 +477,11 @@
       title: "Accept the drop; limit payload to 1.5 kg and forbid people under the gripper"
       detail: "No hardware change. Cost: a dropped 1.5 kg object from 0.7 m is a hazard the manual must carry."
   sources: ["package HZ-M07, FM-06, SYRS-014", "gap assessment GAP-07"]
-  status: open
+  answer:
+    choice: A
+    via: inbox
+    at: 2026-11-01
+  status: answered
   after: [DQ-003]
 
 - id: DQ-016
@@ -515,7 +535,11 @@
       title: "Out of scope; the fork's software refuses an RS actuator at boot"
       detail: "Smaller record. Cost: RS owners have nothing."
   sources: ["gap assessment GAP-34", "package GAP-VAR-01, FM-26"]
-  status: open
+  answer:
+    choice: A
+    via: inbox
+    at: 2026-11-01
+  status: answered
   after: [DQ-001]
 
 - id: DQ-018
@@ -540,7 +564,11 @@
       title: "A DC-side disconnect only"
       detail: "Cheaper. Cost: the exposed mains terminals of the open-frame PSU stay (GAP-11)."
   sources: ["EN 60204-1 §5.3 (to be checked)", "gap assessment GAP-09, GAP-11"]
-  status: open
+  answer:
+    choice: A
+    via: inbox
+    at: 2026-11-01
+  status: answered
   after: [DQ-006]
 
 - id: DQ-019
@@ -565,7 +593,11 @@
       title: "Generic values only; design the chain so the actuators are not a channel of any PL d function"
       detail: "Independent of the suppliers. Cost: every stop function must remove power by contactor, which the recommended chain does anyway."
   sources: ["gap assessment GAP-14", "package OI-05", "ISO 13849-1 Annex C (to be checked)"]
-  status: open
+  answer:
+    choice: B
+    via: inbox
+    at: 2026-11-01
+  status: answered
   after: [DQ-001]
 
 - id: DQ-020
@@ -590,5 +622,9 @@
       title: "On the host, in the forked SDK, with process isolation"
       detail: "No hardware. Cost: the interference argument (WP-A-05) must be made for a general-purpose computer."
   sources: ["gap assessment GAP-17, GAP-18, GAP-19", "package architecture §4.2"]
-  status: open
+  answer:
+    choice: A
+    via: inbox
+    at: 2026-11-01
+  status: answered
   after: [DQ-007]

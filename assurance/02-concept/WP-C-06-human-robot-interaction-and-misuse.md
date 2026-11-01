@@ -45,7 +45,7 @@ contact if nothing stops the arm.
 | IS-06 | technician | OE-1 | T-07 | adjusts a fastener or a cover with the arm powered and holding in IDLE; a stale command or a client restart moves a joint | 0 m | HZ-C01, HZ-C04, HZ-M01 | disconnect locked or the chain open for any work inside reach (WP-S-06); SF-24 |
 | IS-07 | operator | OE-1 | T-04 | reaches into the envelope between motions to reposition an object, assuming the script is paused | 0 m | HZ-M04, HZ-P02 | IDLE indicated at the arm (HR-05); motion only from IDLE after a warning (SF-15); SF-24 |
 | IS-08 | student | OE-2 (excluded) | T-01 | a student hand-guides while another student types at the host; a command arrives in TEACH | 0 m | HZ-C02, HZ-M01 | TEACH refuses motion commands (HR-02); authenticated session (SF-26); the envelope is outside the first case |
-| IS-09 | anyone | OE-1 | any | stands under or beside the gripper while it holds a payload; power is cut by the E-stop or a fault | 0 m | HZ-M07 | SF-13 holding on power loss (open, DQ-015); payload under 1.5 kg; nobody under the gripper |
+| IS-09 | anyone | OE-1 | any | stands under or beside the gripper while it holds a payload; power is cut by the E-stop or a fault | 0 m | HZ-M07 | SF-13 holding on power loss above 0.5 kg (DQ-015, answered A); payload under 1.5 kg; nobody under the gripper |
 | IS-10 | operator | OE-1 | any | presses the on-screen stop in the UI expecting the arm to stop; the host is the thing that has frozen | none | HZ-C01, HZ-C04 | SF-08 and SF-25 stop the arm when the host falls silent; SF-32 is the stop the operator uses; labelling (HR-06) |
 
 ## 3. Approach speeds and separation distances
@@ -129,7 +129,7 @@ with untrained people), **L** (needs effort or bad luck). Consequence uses the W
 | Tele-operation | Motion only while the operator holds a control; release stops the arm through the watchdog; the leader arm path runs through the same safety layer as every other source | no deadman; no watchdog (GAP-18) |
 | Motion from IDLE | A warning of **(TBC: 1 s)** before the first motion after IDLE (SF-15) | none (GAP-30) |
 | Reset | At the arm, deliberate, impossible while a stop demand is present; the UI shows "reset required" | none |
-| Camera | An indicator when the camera streams or records; default-off (open, DQ-014) | default-on (GAP-25) |
+| Camera | An indicator when the camera streams or records; default-off, recording opt-in per session, local storage only (DQ-014, answered A) | default-on (GAP-25) |
 
 ## 7. Requirements derived here (to WP-C-04, WP-S-02 and WP-O-03)
 

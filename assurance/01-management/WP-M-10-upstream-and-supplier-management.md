@@ -26,7 +26,7 @@ Read-only use of `Seeed-Projects/reBot-DevArm` and the software repositories it 
 
 ## 3. Suppliers
 
-Damiao DM4310 and DM4340P (V4) and the RobStride equivalents: datasheets, firmware versions, the fault behaviour on over-temperature and bus loss, and the reliability data (MTTFD or B10D) that WP-H-04 needs (DQ-019).
+Damiao DM4310 and DM4340P (V4) and the RobStride equivalents: datasheets, firmware versions, the fault behaviour on over-temperature and bus loss, and the fault behaviour the chain relies on. No reliability data (MTTFD or B10D) is requested: the lead chose generic values with the actuators a channel of no PL d function (DQ-019, answered B).
 
 ## 4. Supplier evidence
 

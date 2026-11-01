@@ -13,7 +13,7 @@
 #   motion      kind: joint_sweep (joint, from, to, rate_dps), gripper_close (from, to, rate_mms), drop (height from
 #               the bench, the payload falls from t = 0), static (one pose; the frames repeat it)
 #               All rates are assumptions named in the caption: upstream declares no joint speeds (GAP-10218-03) and
-#               DQ-016 (speed caps per mode) is open.
+#               DQ-016 (speed caps per mode) is assumed at 50 % RUN, 25 % TEACH.
 #   gap         a joint whose link-to-link gap is plotted against the ISO 13854 minimum gaps (clauses to be checked)
 #   track       a point on the person whose distance to the arm is plotted: {point: hand | head, to: tcp | <group>}
 #   person      figure (male | female, library/people/), at [x, y, z] feet (m, scene frame), yaw (deg, 0 faces -Y),

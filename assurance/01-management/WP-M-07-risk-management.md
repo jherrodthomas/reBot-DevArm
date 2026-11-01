@@ -36,8 +36,9 @@ R-nn rows: description, P, I, exposure, treatment, owner, trigger, status. Seede
 
 D-01…D-nn of WP-M-01 §8 with the register entry, the answer and where it was applied. The decision register is the place a question is asked; this log is where a strategic decision is recorded once applied.
 
-The lead answered batch 1 of the register on 2026-11-01, in chat, with the recommended option of each. The answers
-are copied into the register (`status: answered`); each moves to `applied` when the change below is made.
+The lead answered batch 1 of the register on 2026-11-01, in chat, with the recommended option of each, and batch 2 the
+same day on the inbox page, choosing option B for D-11 and D-19. The answers are copied into the register
+(`status: answered`); each moves to `applied` when the change below is made.
 
 | ID | Decision | Register | Answer (2026-11-01) | What applying it takes |
 |---|---|---|---|---|
@@ -52,6 +53,15 @@ are copied into the register (`status: answered`); each moves to `applied` when 
 | D-09 | Independent assessor | DQ-009 | A: not for now; revisit at G1 | Recorded in WP-M-02 §3.1 and WP-M-06 |
 | D-10 | Roles while one person holds them | DQ-010 | A: self-approval at I0, recorded as such | Recorded in WP-M-02 §3.1 |
 | D-16 | Bench speed and torque ceilings | DQ-016 | A, assumed (decider: claude): 50 % in RUN, 25 % in TEACH until WP-V-02 | Configured and read back before the first powered test (WP-V-07) |
+| D-11 | Buying the standards | DQ-011 | B (inbox): buy nothing until an assessor is engaged | Every clause reference stays marked to be checked through G1; revisited with the assessor at G1 |
+| D-12 | Conformity route | DQ-012 | A (inbox): Module A, internal control | NB-1 withdrawn in WP-M-06; WP-M-13 §3 to be written to it |
+| D-13 | Security level target | DQ-013 | A (inbox): SL 2 for FR 1, 3, 4; SL 1 for the rest | WP-C-08 §2 to be written to it |
+| D-14 | Camera privacy default | DQ-014 | A (inbox): default-off, opt-in recording, local storage | SF-31 in WP-C-04; WP-C-08 |
+| D-15 | Gripper holding on power loss | DQ-015 | A (inbox): holding required above 0.5 kg; below, a payload and height limit | SF-13 in WP-C-04; the holding test in WP-V-02 |
+| D-17 | The RS variant | DQ-017 | A (inbox): CFG-002, tracked, every value unverified | WP-C-01 §1.2 |
+| D-18 | Supply disconnect | DQ-018 | A (inbox): enclosed PSU with a mains switch, and a lockable DC disconnect and fuse | WP-H-02 E-09 and OI-4; WP-H-05 |
+| D-19 | Supplier reliability data | DQ-019 | B (inbox): generic values only; the actuators are a channel of no PL d function | WP-H-02 already removes power by contactor; WP-H-04 and WP-M-10 to say no request is made |
+| D-20 | Where the safety layer runs | DQ-020 | A (inbox): a dedicated controller between the host and the bus | WP-S-03 allocation; WP-A-05; the bench BOM |
 
 ## 6. Open items
 
