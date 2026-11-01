@@ -39,7 +39,7 @@ with anyone in reach of the arm ([WP-V-07](../assurance/06-validation/WP-V-07-te
 | The emergency stop as a safety function: motor supply removed by the contactor, latched until a deliberate reset | SF-32 in [Safety functions and PLr, WP-C-04](../assurance/02-concept/WP-C-04-safety-functions-and-plr.md) |
 | The manual reset that does not restart | SF-24 in the same work product |
 | Its validation | [WP-V-04](../assurance/06-validation/WP-V-04-emergency-stop-and-safety-chain-validation.md) |
-| The hardware on the bench before any powered test | The bench stop question (DQ-006, open; recommended a wired two-channel stop with a safety relay and contactor) |
+| The hardware on the bench before any powered test | The bench stop question (DQ-006, answered: a wired two-channel stop with a safety relay and contactor) |
 
 ## What the project does not claim
 
@@ -55,7 +55,7 @@ the open bench stop question.
 
 ## Clauses to know
 
-No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is a queued question for the lead (DQ-011).
+No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is an open question for the lead (DQ-011).
 
 | Clause | What it covers |
 |---|---|

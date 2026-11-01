@@ -36,8 +36,8 @@ require a notified body.
 
 | What the record takes | Where |
 |---|---|
-| The regulatory strategy | [WP-M-13](../assurance/01-management/WP-M-13-regulatory-conformity-strategy.md); the frame question (DQ-002, open; recommended the EU frame) |
-| The route to conformity | The conformity route question (DQ-012, queued; recommended internal control, Module A) |
+| The regulatory strategy | [WP-M-13](../assurance/01-management/WP-M-13-regulatory-conformity-strategy.md); the frame question (DQ-002, answered: the EU frame) |
+| The route to conformity | The conformity route question (DQ-012, open; recommended internal control, Module A) |
 | The register mapped onto Annex IV | [Technical documentation index, WP-K-02](../assurance/10-safety-case/WP-K-02-technical-documentation-index.md) |
 | The unsigned declaration draft | [Release record, WP-K-06](../assurance/10-safety-case/WP-K-06-release-record.md) |
 

@@ -6,7 +6,7 @@
 | Standard reference | Machinery: ISO 10218-2:2025 §5 (collaborative applications); ISO/TS 15066:2016 §5; ISO 12100:2010 §5.3; Other: ISO 13855 §5–§6 (approach speeds, minimum distances); ISO 13854 (minimum gaps); ISO 13857 (safety distances). Clause numbers are to be checked against licensed copies |
 | Version | 0.1 (2026-10-20): interaction scenarios IS-01…IS-10, separation-distance derivation with placeholders, the four collaborative modes and what each needs, misuse MU-01…MU-12, operator interface and modes, requirements HR-01…HR-10. 0.0: skeleton |
 | Status | Draft |
-| PL / scope | PL d target (open, DQ-004); CFG-001 B601-DM v1.1 in OE-1 (open, DQ-003); no collaborative mode claimed in the first case (open, DQ-005, recommended A) |
+| PL / scope | PL d target (answered A, DQ-004); CFG-001 B601-DM v1.1 in OE-1 (answered A, DQ-003); no collaborative mode claimed in the first case (answered A, DQ-005) |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I1; someone who has watched people around a desktop arm) |
 | Approver | Project lead |
@@ -45,7 +45,7 @@ contact if nothing stops the arm.
 | IS-06 | technician | OE-1 | T-07 | adjusts a fastener or a cover with the arm powered and holding in IDLE; a stale command or a client restart moves a joint | 0 m | HZ-C01, HZ-C04, HZ-M01 | disconnect locked or the chain open for any work inside reach (WP-S-06); SF-24 |
 | IS-07 | operator | OE-1 | T-04 | reaches into the envelope between motions to reposition an object, assuming the script is paused | 0 m | HZ-M04, HZ-P02 | IDLE indicated at the arm (HR-05); motion only from IDLE after a warning (SF-15); SF-24 |
 | IS-08 | student | OE-2 (excluded) | T-01 | a student hand-guides while another student types at the host; a command arrives in TEACH | 0 m | HZ-C02, HZ-M01 | TEACH refuses motion commands (HR-02); authenticated session (SF-26); the envelope is outside the first case |
-| IS-09 | anyone | OE-1 | any | stands under or beside the gripper while it holds a payload; power is cut by the E-stop or a fault | 0 m | HZ-M07 | SF-13 holding on power loss (queued, DQ-015); payload under 1.5 kg; nobody under the gripper |
+| IS-09 | anyone | OE-1 | any | stands under or beside the gripper while it holds a payload; power is cut by the E-stop or a fault | 0 m | HZ-M07 | SF-13 holding on power loss (open, DQ-015); payload under 1.5 kg; nobody under the gripper |
 | IS-10 | operator | OE-1 | any | presses the on-screen stop in the UI expecting the arm to stop; the host is the thing that has frozen | none | HZ-C01, HZ-C04 | SF-08 and SF-25 stop the arm when the host falls silent; SF-32 is the stop the operator uses; labelling (HR-06) |
 
 ## 3. Approach speeds and separation distances
@@ -84,7 +84,7 @@ Consequences for the design:
 ## 4. Collaborative operation
 
 ISO 10218-2 and ISO/TS 15066 define four collaborative modes (clauses to be checked). None is claimed in the first
-case (open, DQ-005, recommended A); the table says what each would need before it could be.
+case (answered A, DQ-005); the table says what each would need before it could be.
 
 | Mode | What it means for this arm | Claimed? | What a claim would need |
 |---|---|---|---|
@@ -129,7 +129,7 @@ with untrained people), **L** (needs effort or bad luck). Consequence uses the W
 | Tele-operation | Motion only while the operator holds a control; release stops the arm through the watchdog; the leader arm path runs through the same safety layer as every other source | no deadman; no watchdog (GAP-18) |
 | Motion from IDLE | A warning of **(TBC: 1 s)** before the first motion after IDLE (SF-15) | none (GAP-30) |
 | Reset | At the arm, deliberate, impossible while a stop demand is present; the UI shows "reset required" | none |
-| Camera | An indicator when the camera streams or records; default-off (queued, DQ-014) | default-on (GAP-25) |
+| Camera | An indicator when the camera streams or records; default-off (open, DQ-014) | default-on (GAP-25) |
 
 ## 7. Requirements derived here (to WP-C-04, WP-S-02 and WP-O-03)
 
@@ -150,7 +150,7 @@ with untrained people), **L** (needs effort or bad luck). Consequence uses the W
 
 | ID | Item | Owner | Due |
 |---|---|---|---|
-| OI-1 | Lead decision on the collaborative claim (DQ-005, open, recommended A); rewrite §4 to the answer | Project lead | G1 |
+| OI-1 | Lead decision on the collaborative claim (DQ-005, answered A); rewrite §4 to the answer | Project lead | G1 |
 | OI-2 | Decide whether an enabling device is required for TEACH in OE-1 and specify it (HR-03); the package's hand-guiding scenario has none | Safety manager | G1 |
 | OI-3 | Measure the stopping time per joint (WP-V-02) and compute S of §3 with the confirmed K and C from a licensed ISO 13855 | Safety-related control system engineer | G2 |
 | OI-4 | Observe one session of people around a running arm and correct the likelihood ratings of §5 | Reviewer | G1 |

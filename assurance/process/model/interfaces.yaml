@@ -23,7 +23,7 @@
   topic: "The contact-force stop SF-02 and the collision detection SF-04 rest on torque estimation without a sensor; what the estimator cannot sense bounds the claim they can make"
   anchors: ["WP-C-04:The sensing limits of SF-02 and SF-04 are settled in WP-C-10", "WP-C-10:What the joint torque estimator cannot sense bounds the claim SF-02 and SF-04 can make"]
   status: open
-  open_item: "DQ-005 (collaborative claim) is open; no force or pressure measurement exists (GAP-28); WP-C-10 OI-1 has to bound the estimator's floor before SF-02 and SF-04 claim PL d"
+  open_item: "DQ-005 (collaborative claim) is answered: no claim in the first case; no force or pressure measurement exists (GAP-28); WP-C-10 OI-1 has to bound the estimator's floor before SF-02 and SF-04 claim PL d"
   due: G1
 - id: IX-03
   kind: interface

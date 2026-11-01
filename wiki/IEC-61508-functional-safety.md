@@ -40,7 +40,7 @@ would govern the software of the controller safety layer if that layer ever carr
 |---|---|
 | Management of functional safety: roles, competence, independence | [Safety plan, WP-M-02](../assurance/01-management/WP-M-02-safety-plan.md) |
 | Confirmation measures and their independence | [Confirmation measures plan, WP-M-06](../assurance/01-management/WP-M-06-confirmation-measures-plan.md) |
-| The functional safety assessment | [WP-K-04](../assurance/10-safety-case/WP-K-04-functional-safety-assessment.md); the question on engaging an independent assessor (DQ-009, open) |
+| The functional safety assessment | [WP-K-04](../assurance/10-safety-case/WP-K-04-functional-safety-assessment.md); the question on engaging an independent assessor (DQ-009, answered) |
 | Software tool classification T1 to T3 | [WP-P-07](../assurance/07-supporting/WP-P-07-tool-classification-qualification.md) |
 
 ## What the project does not claim
@@ -56,7 +56,7 @@ Any SIL. IEC 61508 supplies the management and assessment structure; the measure
 
 ## Clauses to know
 
-No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is a queued question for the lead (DQ-011).
+No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is an open question for the lead (DQ-011).
 
 | Clause | What it covers |
 |---|---|

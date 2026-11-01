@@ -9,7 +9,7 @@
 | PL / scope | All (machinery safety, SRP/CS, cybersecurity, ML, process) |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I1); confirmation review of the tailoring rationale by an independent assessor (I3, CR-03) |
-| Approver | Project maintainer (acting safety manager). Self-approval at I0 is proposed as a recorded interim limitation until a second person takes the safety manager or reviewer role; it is decision DQ-010 (open, recommended A) |
+| Approver | Project maintainer (acting safety manager). Self-approval at I0 is a recorded interim limitation until a second person takes the safety manager or reviewer role; it is decision DQ-010 (answered A) |
 | Baseline | `206ebda` |
 
 > [!NOTE]
@@ -66,12 +66,12 @@ From the [baseline gap assessment](../00-assessment/gap-assessment.md), at the c
 | Element | Reference configuration |
 |---|---|
 | Arm | **CFG-001, the reBot Arm B601-DM v1.1**: six Damiao V4 actuators (4 × DM4310, 3 × DM4340P; joint 1 a DM4340P since v1.1), one gripper actuator, sheet-metal and CNC aluminium links, 3D-printed covers and fingers, one CAN daisy chain on XT30 2+2 cables, a DM CAN-USB adapter, a MEAN WELL LRS-350-24 supply, **plus the bench safety chain the fork adds before any powered test with a person in reach** (§6.2, [WP-V-07](../06-validation/WP-V-07-test-operations.md)). Recorded as `CFG-001` in the Living Safety Case |
-| Function | Position, velocity and torque control of the six joints and the gripper from a host PC in modes M-01 OFF, M-02 IDLE, M-03 TEACH, M-04 RUN, M-05 ESTOP; tele-operation from a leader arm; execution of learned policies in RUN behind the clamps (DQ-008, recommended A) |
-| Software | Once forked (DQ-007, recommended A): a tagged fork release that pins the SDK, the ROS 2 driver, the policy runtime and every dependency by commit; until then the upstream software at a recorded version, hardened by nothing |
-| Operating environment | **OE-1 only** (DQ-003, recommended A): a supervised laboratory bench, the arm fixtured, nobody but the operator inside the 650 mm reach while the arm is enabled, defined in [WP-C-02](../02-concept/WP-C-02-operating-environment-and-tasks.md) |
+| Function | Position, velocity and torque control of the six joints and the gripper from a host PC in modes M-01 OFF, M-02 IDLE, M-03 TEACH, M-04 RUN, M-05 ESTOP; tele-operation from a leader arm; execution of learned policies in RUN behind the clamps (DQ-008, answered A) |
+| Software | Once forked (DQ-007, answered A): a tagged fork release that pins the SDK, the ROS 2 driver, the policy runtime and every dependency by commit; until then the upstream software at a recorded version, hardened by nothing |
+| Operating environment | **OE-1 only** (DQ-003, answered A): a supervised laboratory bench, the arm fixtured, nobody but the operator inside the 650 mm reach while the arm is enabled, defined in [WP-C-02](../02-concept/WP-C-02-operating-environment-and-tasks.md) |
 | Operator | A trained operator with a hand on the bench E-stop during development ([WP-V-07](../06-validation/WP-V-07-test-operations.md)); after release, personnel briefed per [WP-O-03](../09-production-operation/WP-O-03-information-for-use.md) |
 
-The choice of the B601-DM over the B601-RS is decision DQ-001 (recommended A, open). The RS variant is tracked as
+The choice of the B601-DM over the B601-RS is decision DQ-001 (answered A). The RS variant is tracked as
 `CFG-002`, every value unverified, and joins the claimed scope through an impact analysis
 ([WP-M-11](WP-M-11-impact-analysis.md)) when its BOM is released (DQ-017). Any other configuration, including an arm on a
 mobile base, a second arm, or a non-upstream gripper, needs the same.
@@ -105,7 +105,7 @@ generated figures and a Living Safety Case; the standards that feed it are these
 |---|---|---|
 | What are the hazards and how much risk reduction does each need? | **ISO 12100** risk assessment (three-step method); **ISO 10218-1 Annex A** and **ISO 10218-2 Annex A** lists of significant hazards for robots and robot applications; required **Performance Level** from the ISO 13849-1 Annex A risk graph | WP-C-01, C-03, C-04, C-05 |
 | Which safety functions must the arm have? | **ISO 10218-1 §5**: emergency stop, protective stop, safety-rated monitored stop, speed and force limiting, axis limiting, enabling device in manual mode, operational modes; **ISO 13850** for the emergency stop; **EN 60204-1 §9** for stop categories | WP-C-04 |
-| May a person touch or share space with the arm? | **ISO 10218-2:2025 §5** and **ISO/TS 15066** (where the 2025 text is not held): safety-rated monitored stop, speed and separation monitoring, hand guiding, power and force limiting with body-region thresholds. The first case claims **separation only** (DQ-005, recommended A) | WP-C-06, S-04, V-03 |
+| May a person touch or share space with the arm? | **ISO 10218-2:2025 §5** and **ISO/TS 15066** (where the 2025 text is not held): safety-rated monitored stop, speed and separation monitoring, hand guiding, power and force limiting with body-region thresholds. The first case claims **separation only** (DQ-005, answered A) | WP-C-06, S-04, V-03 |
 | How good must the control system be, and how is that shown? | **ISO 13849-1** categories B to 4, MTTFD, DCavg, CCF, PL a to e; **ISO 13849-2** validation and fault lists; **IEC 62061 / IEC 61508** where 13849 runs out (software beyond 13849-1 §7, management, assessment) | WP-S-02…S-05, WP-H-01…H-07, WP-W-01…W-09, WP-V-01…V-05 |
 | Is the electrical installation safe? | **EN 60204-1**: supply disconnecting device, overcurrent protection, protection against electric shock, control circuits, verification; the 24 V bus as SELV | WP-H-02, H-05 |
 | Where may a person be, and how small must a gap be? | **ISO 13855** approach speeds and separation distances; **ISO 13857** reach distances; **ISO 13854** minimum gaps to avoid crushing | WP-C-06, S-04, H-08, V-03 |
@@ -141,7 +141,7 @@ records each tailoring decision. Each one needs confirmation review by an indepe
 | T-10 | Performance limits of sensing | ISO 21448 is used as a method, not a standard to comply with, inside WP-C-10 and WP-V-08 | No machinery standard covers what a current-based torque estimator or a learned policy cannot sense, and the worst contact hazards (GAP-28, GAP-24) are performance limits, not faults |
 | T-11 | Cybersecurity scope | IEC 62443-4-1 practices are applied to the fork's software repositories; IEC 62443-4-2 component requirements to the arm with its host as one component at the security level target of DQ-013. The site network, the operator's other computers and the cloud behind the web UI are external zones | The fork controls the arm's software and configuration, not the network it is deployed on |
 | T-12 | Process capability | ASPICE 4.0 is used for a self-assessment of process capability ([WP-M-12](WP-M-12-process-capability-baseline.md)), target CL2 for management, support, system and software processes, CL1 for hardware and ML. No ASPICE assessment is claimed | Gives the fork a process model the robotics standards lack |
-| T-13 | Regulatory | EU frame recommended (DQ-002): Machinery Regulation and the harmonised route through ISO 10218-1/-2 and ISO 13849-1. The conformity module is DQ-012 (Module A recommended). The AI Act applies only if a learned component becomes a safety component, which T-03 avoids | Where the arm is sold; one technical file |
+| T-13 | Regulatory | EU frame chosen (DQ-002, answered A): Machinery Regulation and the harmonised route through ISO 10218-1/-2 and ISO 13849-1. The conformity module is DQ-012 (Module A recommended). The AI Act applies only if a learned component becomes a safety component, which T-03 avoids | Where the arm is sold; one technical file |
 | T-14 | Variants and other items | The B601-RS is a second **configuration** (CFG-002) of the same item, tracked and unverified until its BOM is released (DQ-001, DQ-017). An arm on a mobile base, a dual-arm set-up or a non-upstream end effector is a separate **item** with its own risk assessment | The RS shares the envelope but not the actuator limits or bus protocol; a base changes every hazard |
 
 ## 6. Safety architecture argument: the central strategy
@@ -225,26 +225,26 @@ index, the register entry is the question. None of batch 1 is answered at this v
 
 | # | Decision | Register | Status |
 |---|---|---|---|
-| D-01 | Reference configuration: the B601-DM now, the RS tracked | DQ-001 | Open, batch 1 (recommended A) |
-| D-02 | Regulatory frame: EU machinery | DQ-002 | Open, batch 1 (recommended A) |
-| D-03 | First operating envelope: the supervised bench only | DQ-003 | Open, batch 1 (recommended A) |
-| D-04 | Required PL for the stop functions: PL d | DQ-004 | Open, batch 1 (recommended A) |
-| D-05 | Collaborative claim: separation only, no PFL | DQ-005 | Open, batch 1 (recommended A) |
-| D-06 | Bench safety chain before any powered test with a person in reach | DQ-006 | Open, batch 1 (recommended A) |
-| D-07 | Fork the software that moves the arm | DQ-007 | Open, batch 1 (recommended A) |
-| D-08 | Learned policies in the item, outside every safety function | DQ-008 | Open, batch 1 (recommended A) |
-| D-09 | Independent assessor: when | DQ-009 | Open, batch 1 (recommended A, not for now) |
-| D-10 | Roles and self-approval while the project has one person | DQ-010 | Open, batch 1 (recommended A) |
-| D-11 | Buying the standards | DQ-011 | Queued |
-| D-12 | Conformity assessment route and module | DQ-012 | Queued (Module A recommended) |
-| D-13 | Cybersecurity security level target | DQ-013 | Queued |
-| D-14 | Camera privacy default | DQ-014 | Queued |
-| D-15 | Gripper holding on power loss | DQ-015 | Queued |
-| D-16 | Torque and speed ceilings for the bench envelope | DQ-016 | Queued (decider: claude) |
-| D-17 | The RS variant as a second configuration | DQ-017 | Queued |
-| D-18 | Supply disconnecting means | DQ-018 | Queued |
-| D-19 | Supplier reliability data request | DQ-019 | Queued |
-| D-20 | Where the controller safety layer runs | DQ-020 | Queued |
+| D-01 | Reference configuration: the B601-DM now, the RS tracked | DQ-001 | Answered A, 2026-11-01 |
+| D-02 | Regulatory frame: EU machinery | DQ-002 | Answered A, 2026-11-01 |
+| D-03 | First operating envelope: the supervised bench only | DQ-003 | Answered A, 2026-11-01 |
+| D-04 | Required PL for the stop functions: PL d | DQ-004 | Answered A, 2026-11-01 |
+| D-05 | Collaborative claim: separation only, no PFL | DQ-005 | Answered A, 2026-11-01 |
+| D-06 | Bench safety chain before any powered test with a person in reach | DQ-006 | Answered A, 2026-11-01 |
+| D-07 | Fork the software that moves the arm | DQ-007 | Answered A, 2026-11-01 |
+| D-08 | Learned policies in the item, outside every safety function | DQ-008 | Answered A, 2026-11-01 |
+| D-09 | Independent assessor: when | DQ-009 | Answered A (not for now), 2026-11-01 |
+| D-10 | Roles and self-approval while the project has one person | DQ-010 | Answered A, 2026-11-01 |
+| D-11 | Buying the standards | DQ-011 | Open, batch 2 |
+| D-12 | Conformity assessment route and module | DQ-012 | Open, batch 2 (Module A recommended) |
+| D-13 | Cybersecurity security level target | DQ-013 | Open, batch 2 |
+| D-14 | Camera privacy default | DQ-014 | Open, batch 2 |
+| D-15 | Gripper holding on power loss | DQ-015 | Open, batch 2 |
+| D-16 | Torque and speed ceilings for the bench envelope | DQ-016 | Assumed A (decider: claude), 2026-11-01 |
+| D-17 | The RS variant as a second configuration | DQ-017 | Open, batch 2 |
+| D-18 | Supply disconnecting means | DQ-018 | Open, batch 2 |
+| D-19 | Supplier reliability data request | DQ-019 | Open, batch 2 |
+| D-20 | Where the controller safety layer runs | DQ-020 | Open, batch 2 |
 
 ## 9. Risks to the plan
 

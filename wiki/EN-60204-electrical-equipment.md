@@ -39,8 +39,8 @@ no fuse per branch (GAP-10), an open-frame mains supply with exposed terminals (
 | The electrical safety design: disconnect, fusing, shock protection, bonding, the 24 V bus as SELV | [Electrical safety, WP-H-05](../assurance/04-hardware/WP-H-05-electrical-safety.md) |
 | The safety chain's wiring and stop category | [Chain design, WP-H-02](../assurance/04-hardware/WP-H-02-electrical-and-safety-chain-design.md) |
 | The verification of the chain and the emergency stop | [WP-V-04](../assurance/06-validation/WP-V-04-emergency-stop-and-safety-chain-validation.md) |
-| The supply disconnecting device | The disconnect question (DQ-018, queued) |
-| The emergency-stop hardware on the bench before any powered test | The bench stop question (DQ-006, open) |
+| The supply disconnecting device | The disconnect question (DQ-018, open) |
+| The emergency-stop hardware on the bench before any powered test | The bench stop question (DQ-006, answered) |
 
 ## What the project does not claim
 
@@ -57,7 +57,7 @@ That any arm is wired to the standard today. The bench chain is a planned engine
 
 ## Clauses to know
 
-No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is a queued question for the lead (DQ-011).
+No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is an open question for the lead (DQ-011).
 
 | Clause | What it covers |
 |---|---|

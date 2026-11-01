@@ -117,7 +117,7 @@ Each interface is anchored to text in the work products; the checker fails if an
 | ID | Pattern | Between | Topic | Status | Open item | Due |
 |---|---|---|---|---|---|---|
 | IX-01 | Safety-Security | [WP-C-03](../../02-concept/WP-C-03-risk-assessment.md), [WP-C-07](../../02-concept/WP-C-07-cybersecurity-threat-and-risk-assessment.md) (Machinery risk assessment / Cybersecurity) | Threat scenarios that can cause a hazard are rated against the hazard list; cyber-induced hazards appear in the risk assessment | Documented | — | G1 |
-| IX-02 | Safety-Performance limits | [WP-C-04](../../02-concept/WP-C-04-safety-functions-and-plr.md), [WP-C-10](../../02-concept/WP-C-10-functional-insufficiency-analysis.md) (Safety-related control system / Machinery risk assessment) | The contact-force stop SF-02 and the collision detection SF-04 rest on torque estimation without a sensor; what the estimator cannot sense bounds the claim they can make | Open | DQ-005 (collaborative claim) is open; no force or pressure measurement exists (GAP-28); WP-C-10 OI-1 has to bound the estimator's floor before SF-02 and SF-04 claim PL d | G1 |
+| IX-02 | Safety-Performance limits | [WP-C-04](../../02-concept/WP-C-04-safety-functions-and-plr.md), [WP-C-10](../../02-concept/WP-C-10-functional-insufficiency-analysis.md) (Safety-related control system / Machinery risk assessment) | The contact-force stop SF-02 and the collision detection SF-04 rest on torque estimation without a sensor; what the estimator cannot sense bounds the claim they can make | Open | DQ-005 (collaborative claim) is answered: no claim in the first case; no force or pressure measurement exists (GAP-28); WP-C-10 OI-1 has to bound the estimator's floor before SF-02 and SF-04 claim PL d | G1 |
 | IX-03 | Safety-ML | [WP-C-04](../../02-concept/WP-C-04-safety-functions-and-plr.md), [WP-C-09](../../02-concept/WP-C-09-ml-component-definition-and-safety-requirements.md) (Safety-related control system / Machine learning) | No safety function is allocated to a learned component; the chain and the controller safety layer are the independent safeguard | Documented | — | G1 |
 | IX-04 | Environment-Interaction | [WP-C-02](../../02-concept/WP-C-02-operating-environment-and-tasks.md), [WP-C-06](../../02-concept/WP-C-06-human-robot-interaction-and-misuse.md) (Machinery risk assessment / Machinery risk assessment) | People presence per operating envelope drives the interaction and misuse scenarios and the separation-distance calculation | Documented | — | G1 |
 
@@ -146,7 +146,7 @@ Which activity answers each clause reference listed in the register. One activit
 | Safety-related control system (ISO 13849-1) | Safety-related control system engineer | Jherrod Thomas (acting); additional contributors TBD | G2 |
 | Cybersecurity (IEC 62443) | Cybersecurity manager | Jherrod Thomas (acting); permanent holder TBD | G1 |
 | Machine learning (ISO/IEC TR 5469) | ML safety lead | Jherrod Thomas (acting); permanent holder TBD | G1 |
-| Independent confirmation | External functional safety assessor | TBD; engaging one is DQ-009 (open, recommended: not for now, revisit at G1) | G1 (revisit) |
+| Independent confirmation | External functional safety assessor | TBD; engaging one is DQ-009 (answered A: not for now, revisit at G1) | G1 (revisit) |
 
 **Other roles WP-M-02 §3.1 needs by G1:** Verification reviewer(s) (TBD (at least one person other than the author); needed by G0, still unassigned); Quality assurance (TBD (independent of the author); needed by G0, still unassigned); Test operator(s) (TBD (trained per WP-M-04)).
 
@@ -163,4 +163,4 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Work products with no confirmation measure at this gate** (verification review only): WP-C-02, WP-V-07, WP-T-01, WP-K-01, WP-P-12.
 
-**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (DQ-005 (collaborative claim) is open; no force or pressure measurement exists (GAP-28); WP-C-10 OI-1 has to bound the estimator's floor before SF-02 and SF-04 claim PL d).
+**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (DQ-005 (collaborative claim) is answered: no claim in the first case; no force or pressure measurement exists (GAP-28); WP-C-10 OI-1 has to bound the estimator's floor before SF-02 and SF-04 claim PL d).

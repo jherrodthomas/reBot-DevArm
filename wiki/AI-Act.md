@@ -32,7 +32,7 @@ component outside the safety functions keeps both thresholds uncrossed, and the 
 | What the record takes | Where |
 |---|---|
 | The AI Act conformity record | [WP-K-07](../assurance/10-safety-case/WP-K-07-ai-act-conformity-record.md) |
-| Where the learned policies sit | The policy question (DQ-008, open; recommended outside every safety function, clamped) |
+| Where the learned policies sit | The policy question (DQ-008, answered: outside every safety function, clamped) |
 | The machine-learning safety plan | [WP-M-09](../assurance/01-management/WP-M-09-ml-safety-plan.md) |
 
 ## What the project does not claim

@@ -11,7 +11,7 @@
 | Date | YYYY-MM-DD |
 | Baseline | <commit SHA or tag> |
 | Chair | Safety manager (Jherrod Thomas (acting)) |
-| Participants | Safety manager (Jherrod Thomas (acting)); Cybersecurity manager (Jherrod Thomas (acting); permanent holder TBD); ML safety lead (Jherrod Thomas (acting); permanent holder TBD); External functional safety assessor (TBD; engaging one is DQ-009 (open, recommended: not for now, revisit at G1)) |
+| Participants | Safety manager (Jherrod Thomas (acting)); Cybersecurity manager (Jherrod Thomas (acting); permanent holder TBD); ML safety lead (Jherrod Thomas (acting); permanent holder TBD); External functional safety assessor (TBD; engaging one is DQ-009 (answered A: not for now, revisit at G1)) |
 | Assessor informed | Yes / No (name) |
 
 ## Inputs (WP-M-02 §10)

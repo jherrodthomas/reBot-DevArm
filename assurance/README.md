@@ -44,7 +44,7 @@ below. CI fails if any of them is stale. The document form of the same argument 
 | Open defeaters (known counter-evidence) | 36 |
 | Evaluated configurations | 1 |
 | Assurance-supported configurations | 0 |
-| Records digest | `70cc4d1dd1dc` |
+| Records digest | `b6ab708350b6` |
 
 | Lifecycle area | Status | Evidence (drafted / missing / accepted) |
 |---|---|---|
@@ -185,7 +185,7 @@ pre-assembled (six Damiao V4 actuators and a gripper on one CAN chain, a DM CAN-
 24 V supply), fixtured on a bench in the supervised laboratory envelope OE-1, plus the bench safety chain the fork
 adds before any powered test with a person in reach ([WP-V-07](06-validation/WP-V-07-test-operations.md)). The
 B601-RS (RobStride) variant is **CFG-002**, tracked and unverified until its BOM is released. The software the arm
-runs is upstream and unpinned until the lead decides to fork it (DQ-007).
+runs is upstream and unpinned until the fork the lead approved (DQ-007) is made.
 
 ### Standards text
 

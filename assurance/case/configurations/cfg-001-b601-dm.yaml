@@ -6,7 +6,7 @@
 - id: CFG-001
   kind: configuration
   title: "reBot Arm B601-DM v1.1: six Damiao V4 actuators (4 x DM4310, 3 x DM4340P) and a gripper on one CAN chain, DM CAN-USB adapter, host PC, MEAN WELL LRS-350-24 supply; the reference configuration"
-  description: "The arm upstream sells as a kit and pre-assembled, as defined in WP-C-01 §1.1, fixtured on a bench in operating envelope OE-1 (DQ-003 open, recommended). No safety function exists on it at BL-001: no emergency stop, no disconnect, no watchdog, no enforced limits."
+  description: "The arm upstream sells as a kit and pre-assembled, as defined in WP-C-01 §1.1, fixtured on a bench in operating envelope OE-1 (DQ-003 answered A). No safety function exists on it at BL-001: no emergency stop, no disconnect, no watchdog, no enforced limits."
   classification: fork-evaluated
   evaluation_state: in-progress
   platform: "hardware/reBot_B601_DM at BL-001; software upstream, unpinned"

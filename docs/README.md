@@ -2,7 +2,7 @@
 
 This repository holds upstream Seeed Studio's hardware record for the reBot Arm B601-DM, the fork's concept-phase
 engineering package, and the engineering assurance record the fork adds around them. The software that moves the
-arm lives in upstream repositories until the lead decides to fork it (DQ-007); upstream's documentation stays
+arm lives in upstream repositories until the fork the lead approved (DQ-007) is made; upstream's documentation stays
 where upstream keeps it.
 
 | If you want to | Read |

@@ -28,8 +28,8 @@ says what the reference configuration is, why it was chosen, and what the fork a
 The hold point [WP-V-07](../assurance/06-validation/WP-V-07-test-operations.md) requires bench safety hardware on any
 arm the fork powers with a person in reach: a lockable disconnect and a fuse on the 24 V supply, a dual-channel
 emergency stop on a pendant through a safety relay that drops the motor supply by contactor, the arm bolted to the
-bench, a pinned software build, and a bench clear of everyone but the operator, whose hand is on the button. Buying
-that hardware is a decision for the lead (DQ-006). The bench chain is carried forward as the first draft of the
+bench, a pinned software build, and a bench clear of everyone but the operator, whose hand is on the button. The lead chose
+that hardware (DQ-006). The bench chain is carried forward as the first draft of the
 product chain, not thrown away.
 
 ## What the reference configuration fixes
@@ -50,7 +50,7 @@ makes the reference configuration the only scope the claims apply to:
 The B601-RS (RobStride actuators) shares the mechanical envelope but its BOM, assembly guide and software were
 "in progress" at the baseline, and the two variants differ exactly where the safety case looks: the actuator's own
 limits, its fault and over-temperature behaviour, and the bus protocol. A safety case can only be built on what can
-be read and measured. The recommendation (decision DQ-001) is to assess the DM arm now and track the RS as a second
+be read and measured. The lead chose (decision DQ-001) to assess the DM arm now and track the RS as a second
 configuration, CFG-002, every value unverified until its BOM is released (DQ-017).
 
 ## Adding the RS variant or a second configuration

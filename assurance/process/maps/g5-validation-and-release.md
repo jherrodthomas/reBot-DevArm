@@ -139,7 +139,7 @@ Which activity answers each clause reference listed in the register. One activit
 | Safety-related control system (ISO 13849-1) | Safety-related control system engineer | Jherrod Thomas (acting); additional contributors TBD | G2 |
 | Cybersecurity (IEC 62443) | Cybersecurity manager | Jherrod Thomas (acting); permanent holder TBD | G1 |
 | Machine learning (ISO/IEC TR 5469) | ML safety lead | Jherrod Thomas (acting); permanent holder TBD | G1 |
-| Independent confirmation | External functional safety assessor | TBD; engaging one is DQ-009 (open, recommended: not for now, revisit at G1) | G1 (revisit) |
+| Independent confirmation | External functional safety assessor | TBD; engaging one is DQ-009 (answered A: not for now, revisit at G1) | G1 (revisit) |
 
 **Other roles WP-M-02 §3.1 needs by G5:** Electrical and mechanical engineer (TBD (likely external); needed by G2, still unassigned); Verification reviewer(s) (TBD (at least one person other than the author); needed by G0, still unassigned); Quality assurance (TBD (independent of the author); needed by G0, still unassigned); Test bench owner (TBD; needed by G3, still unassigned); Test operator(s) (TBD (trained per WP-M-04); needed by G1, still unassigned); External cybersecurity assessor (TBD); Notified body (TBD (none planned if Module A)).
 
@@ -155,4 +155,4 @@ Which activity answers each clause reference listed in the register. One activit
 
 **Work products with no confirmation measure at this gate** (verification review only): WP-O-01, WP-O-02, WP-O-03, WP-V-08, WP-P-10, WP-T-01.
 
-**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (DQ-005 (collaborative claim) is open; no force or pressure measurement exists (GAP-28); WP-C-10 OI-1 has to bound the estimator's floor before SF-02 and SF-04 claim PL d).
+**Open interfaces due by this gate** (from this or an earlier phase): IX-02 (DQ-005 (collaborative claim) is answered: no claim in the first case; no force or pressure measurement exists (GAP-28); WP-C-10 OI-1 has to bound the estimator's floor before SF-02 and SF-04 claim PL d).

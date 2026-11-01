@@ -341,7 +341,7 @@ Nothing is marked complete before its review, and every number below is computed
 
 <!-- BEGIN GENERATED: record-headline (docs/assets/rebot/make_assets.py) -->
 
-**P0 Governance** · no gate passed · 90 work products (14 draft, 76 skeleton, 0 approved) · 36 gap findings (19 high) · 10 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest `672e3b895766`
+**P0 Governance** · no gate passed · 90 work products (14 draft, 76 skeleton, 0 approved) · 36 gap findings (19 high) · 9 decisions open · 1 of 11 cross-domain interfaces open · 0 of 22 confirmation measures performed · records digest `1cddf738aa5b`
 
 <!-- END GENERATED: record-headline -->
 
@@ -362,7 +362,7 @@ Nothing is marked complete before its review, and every number below is computed
 
 <!-- BEGIN GENERATED: assurance-headline (assurance/case/tools/generate_dashboard.py) -->
 
-**Development** · baseline `BL-001` at `206ebda` · 21 claims (0 with accepted evidence) · 20 evidence items (0 accepted) · 36 open defeaters · records digest `70cc4d1dd1dc`
+**Development** · baseline `BL-001` at `206ebda` · 21 claims (0 with accepted evidence) · 20 evidence items (0 accepted) · 36 open defeaters · records digest `b6ab708350b6`
 
 <!-- END GENERATED: assurance-headline -->
 

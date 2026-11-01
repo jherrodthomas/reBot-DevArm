@@ -29,7 +29,7 @@ safeguard placed closer than S is too late, however reliable it is.
 ## Why it matters for a desktop arm
 
 The record's recommended position for the first safety case is separation: no contact with a person is claimed, so
-keeping people out of reach while the arm moves is what makes it safe (DQ-005, open). Where a person may stand
+keeping people out of reach while the arm moves is what makes it safe (DQ-005, answered). Where a person may stand
 follows from this formula, and the formula needs the arm's measured stopping time, which nobody has measured yet. No
 separation plan exists (GAP-06).
 
@@ -55,7 +55,7 @@ Any separation distance. The arm has no detection device today, and T is unknown
 
 ## Clauses to know
 
-No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is a queued question for the lead (DQ-011).
+No standard is held by the project, so every clause number on this page is **to be checked** against a licensed copy. Whether to buy the standards is an open question for the lead (DQ-011).
 
 | Clause | What it covers |
 |---|---|

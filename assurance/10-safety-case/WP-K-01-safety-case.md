@@ -6,7 +6,7 @@
 | Standard reference | ISO 13849-1:2023 §4.7, §10 (information); ISO 12100 §7 (documentation); ISO 10218-2:2025 §6 (verification and validation of the robot application); Regulation (EU) 2023/1230 Annex IV Part A (technical documentation); UL 4600 §5, §6 |
 | Version | 0.1 (2026-10-20): initial structure, 21 claims draft, 20 evidence items, 36 defeaters open, 10 open items; the package's GSN argument restructured onto the record's claims |
 | Status | Draft |
-| PL / scope | PL d target (DQ-004 open); CFG-001 B601-DM v1.1 on the supervised bench, OE-1 (DQ-003 open); CFG-002 tracked, unclaimed |
+| PL / scope | PL d target (DQ-004 answered A); CFG-001 B601-DM v1.1 on the supervised bench, OE-1 (DQ-003 answered A); CFG-002 tracked, unclaimed |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I2 for the safety case) |
 | Approver | Project lead |
@@ -67,7 +67,7 @@ AOU-01 to AOU-08 of WP-C-01 §8 apply to every claim. At BL-001 each holds only 
 ## 5. Safety functions and Performance Levels
 
 SF-32, SF-08, SF-24, SF-25, SF-03, SF-02, SF-04 and SF-23 at PLr d; SF-06, SF-11, SF-13, SF-14, SF-26, SF-28, SF-29 and SF-30 at
-PLr c; SF-15, SF-27 and SF-31 at PLr b (WP-C-03 §7, specified in WP-C-04; the target is DQ-004, open). SF-01 (power-and-force
+PLr c; SF-15, SF-27 and SF-31 at PLr b (WP-C-03 §7, specified in WP-C-04; the target is DQ-004, answered A). SF-01 (power-and-force
 limiting) is reserved and not claimed (DQ-005). None reaches any PL at BL-001: no safety function exists on the arm.
 
 ## 6. Evidence

@@ -2,7 +2,7 @@
 
 This repository holds three things: upstream's hardware record, merged and never edited here; the concept-phase
 engineering package the fork published first; and the assurance record the fork adds around them. The software that
-moves the arm lives in upstream repositories until the lead decides to fork it (DQ-007).
+moves the arm lives in upstream repositories until the fork the lead approved (DQ-007) is made.
 
 ![Repository map: upstream's hardware record and the software repositories on the left, classed by the safety-relevant file list; the assurance record folder by folder; and everything generated from it, with CI checking every one on every pull request.](../docs/assets/rebot/repo-map.svg)
 
@@ -14,7 +14,7 @@ safety-relevant file list. Middle: the record. Right: what is generated from it 
 | Source | What it is | How it is handled |
 |---|---|---|
 | [`hardware/`](../hardware/reBot_B601_DM/readme.md) | Upstream's hardware record: the v1.1 STEP assembly, the printed, machined and purchased-parts BOM, the thermal performance test | Updated only by merging from `Seeed-Projects/reBot-DevArm`, with an impact analysis; class SR-Q |
-| `motorbridge` SDK, ROS 2 driver, LeRobot and Pinocchio integrations, the web UI | The software, in upstream repositories and on the Seeed wiki | Described in the record, not changed, until DQ-007; afterwards forked, pinned and classed SR-Q, with the controller safety layer SR-A |
+| `motorbridge` SDK, ROS 2 driver, LeRobot and Pinocchio integrations, the web UI | The software, in upstream repositories and on the Seeed wiki | Described in the record, not changed, until the fork the lead approved (DQ-007) is made; afterwards forked, pinned and classed SR-Q, with the controller safety layer SR-A |
 | `reBot_DevArm_*.xlsx`, `.docx`, `.pdf` at the root | The concept-phase engineering package of 2026-05-04: safety case, DFMEA, requirements, architecture, test plan, trace memo | An input to the record, never edited; its identifiers are kept, its gaps re-stated in the [gap assessment](../assurance/00-assessment/gap-assessment.md) |
 
 The assessed baseline is named in the gap assessment header. Upstream's README stays at the top of the fork's

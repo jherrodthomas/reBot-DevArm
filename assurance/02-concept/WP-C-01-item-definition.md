@@ -6,7 +6,7 @@
 | Standard reference | ISO 12100:2010 §5.3 (determination of the limits of the machinery), §5.4 (hazard identification inputs); ISO 10218-1:2025 §4 (robot design, terms), ISO 10218-2:2025 §4 (robot application); ISO 13849-1:2023 §4.5; Regulation (EU) 2023/1230 Annex III §1.1.2, Annex IV Part A (technical documentation). Clause numbers are to be checked against licensed copies (WP-M-06 OI-1) |
 | Version | 0.1 (2026-10-20): initial draft from the concept-phase package (03_ItemDef, 13_Assumptions), the B601-DM v1.1 BOM and the gap assessment; CFG-001 and CFG-002; F-01…F-08; E-01…E-10; IF-01…IF-08; AOU-01…AOU-08 |
 | Status | Draft |
-| PL / scope | PL d target for the stop functions (open, DQ-004, recommended A); CFG-001 the B601-DM v1.1 on a fixtured bench in OE-1 (open, DQ-003, recommended A); CFG-002 the B601-RS, tracked, every value unverified (open, DQ-001, recommended A) |
+| PL / scope | PL d target for the stop functions (answered A, DQ-004); CFG-001 the B601-DM v1.1 on a fixtured bench in OE-1 (answered A, DQ-003); CFG-002 the B601-RS, tracked, every value unverified (answered A, DQ-001) |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I1) |
 | Approver | Project lead |
@@ -24,7 +24,7 @@
 |---|---|
 | Item | reBot-DevArm: a desktop six-axis robot arm with one actuated gripper, its motor harness and CAN bus, the external 24 V supply, the host computer running the control software, and (once they exist) the controller safety layer and the bench safety chain the fork adds. Two configurations: **CFG-001**, the B601-DM v1.1 (§1.1), the reference configuration; **CFG-002**, the B601-RS (§1.2), tracked and unverified |
 | Fork | `jherrodthomas/reBot-DevArm` from `Seeed-Projects/reBot-DevArm` at BL-001 |
-| Product class | An industrial robot arm in the sense of ISO 10218-1 (a manipulator with its controller), sold as a motor kit, a structural kit, a full kit or pre-assembled. On its own, without its supply, its host and a fixing, it is arguably partly completed machinery; fixtured to a bench with its supply and host it is machinery and a robot application (ISO 10218-2). The fork assesses the fixtured, powered arm. Collaborative operation (ISO/TS 15066) is a mode of application, not a property of the arm, and is claimed only where WP-C-06 §4 proves it (open, DQ-005, recommended A: not in the first case) |
+| Product class | An industrial robot arm in the sense of ISO 10218-1 (a manipulator with its controller), sold as a motor kit, a structural kit, a full kit or pre-assembled. On its own, without its supply, its host and a fixing, it is arguably partly completed machinery; fixtured to a bench with its supply and host it is machinery and a robot application (ISO 10218-2). The fork assesses the fixtured, powered arm. Collaborative operation (ISO/TS 15066) is a mode of application, not a property of the arm, and is claimed only where WP-C-06 §4 proves it (answered A, DQ-005: not in the first case) |
 | Upstream designation | "reBot Arm B601 DM" (Damiao actuators) and "reBot Arm B601 RS" (RobStride actuators); hardware v1.1 of 2026-04-25 |
 | Manufacturer of record | Seeed Studio (Shenzhen) for upstream; the kit builder for a built arm. The fork assigns no manufacturer and places no product on the market; the CC BY-NC-SA 4.0 licence forbids commercial use (gap assessment GAP-35) |
 
@@ -51,7 +51,7 @@ The B601-RS shares the mechanical envelope and assembly with the DM arm and repl
 RobStride units (models **(unknown)**) on a bus whose protocol and termination are **(unknown)**. Its BOM, assembly
 video, ROS 2 driver and LeRobot integration were "in progress" at the baseline. Every actuator-specific row of this
 record (limits, holding, thermal behaviour, fault reactions, reliability data) carries a CFG-002 placeholder until
-the BOM is released; whether the RS is tracked at all is open (DQ-001, recommended A; DQ-017 queued).
+the BOM is released; the lead chose to track the RS (DQ-001, answered A); how is open (DQ-017).
 
 ## 2. Intended use and functions
 
@@ -66,7 +66,7 @@ the BOM is released; whether the RS is tracked at all is open (DQ-001, recommend
 - **Level of training:** none assumed by upstream beyond its wiki; the fork assumes a trained operator present
   with a stop in reach for every powered run (AOU-01).
 - **Envelopes:** the four operating envelopes OE-1 to OE-4 of [WP-C-02 §2](WP-C-02-operating-environment-and-tasks.md);
-  the first safety case covers OE-1 only (open, DQ-003, recommended A).
+  the first safety case covers OE-1 only (answered A, DQ-003).
 
 ### 2.2 Functions
 
@@ -100,8 +100,8 @@ path. The record says so (gap assessment §4 and §5) and WP-C-04 specifies each
 | E-04 | Harness and bus: XT30 2+2 CAN daisy chain, cable restraints, termination (unknown) | power and command distribution to every joint |
 | E-05 | CAN-USB adapter | the single command path from the host to the bus |
 | E-06 | Host software as it touches the arm: the SDK, the ROS 2 driver, the policy runtime, the UI, assessed at their interface to the bus | command sources; functional only; no PL claim |
-| E-07 | Controller safety layer (to be built): watchdog and heartbeat, mode state machine, per-joint clamps, encoder plausibility, clamp on every learned output; where it runs is queued (DQ-020) | the checker between every command source and the bus |
-| E-08 | Bench safety chain (to be built): two-channel E-stop pendant, safety relay, contactor with mirror contact on the 24 V motor supply, fuse, lockable disconnect (open, DQ-006, recommended A) | the checker of last resort; removes motor power without software |
+| E-07 | Controller safety layer (to be built): watchdog and heartbeat, mode state machine, per-joint clamps, encoder plausibility, clamp on every learned output; where it runs is open (DQ-020) | the checker between every command source and the bus |
+| E-08 | Bench safety chain (to be built): two-channel E-stop pendant, safety relay, contactor with mirror contact on the 24 V motor supply, fuse, lockable disconnect (answered A, DQ-006) | the checker of last resort; removes motor power without software |
 | E-09 | 24 V supply as installed: the LRS-350-24 and its DC output pigtail; the mains side only as far as the supply's terminals | motor and logic power |
 | E-10 | Optional wrist camera and its mount; the leader arm's interface at the SDK | sensing and tele-operation inputs inside the boundary at their interface only |
 
@@ -134,7 +134,7 @@ The chain's I/O (E-08 → E-07) will be IF-09 once WP-S-05 defines it.
 | Limit | Value | Status | Source |
 |---|---|---|---|
 | Payload | 1.5 kg recommended at the tool centre point; continuous use below 1.5 kg within 70 % of reach | declared by upstream | README specifications; thermal test |
-| Reach and speed in the first case | 50 % of maximum joint speed and rated torque in RUN, 25 % in TEACH, until WP-V-02 measures stopping performance | proposed (queued, DQ-016, decider: claude) | package 05_OpEnv |
+| Reach and speed in the first case | 50 % of maximum joint speed and rated torque in RUN, 25 % in TEACH, until WP-V-02 measures stopping performance | proposed (assumed, DQ-016, decider: claude) | package 05_OpEnv |
 | Maximum joint speed and torque | actuator maxima **(unknown)** in the record; DM4310 and DM4340P datasheet values to be quoted in WP-W-09 | none | GAP-19 |
 | Stopping time and angle per joint | **(unknown)**; never measured | none | WP-V-02 |
 | Users | trained operator, builder; students and bystanders outside the first case | assumed | AOU-01, AOU-06 |
@@ -188,14 +188,14 @@ any state → ESTOP on an E-stop demand or power loss; ESTOP → IDLE on a manua
 
 | Instrument | Applies because | Status in the record |
 |---|---|---|
-| Regulation (EU) 2023/1230 (Machinery), from 20 January 2027; Directive 2006/42/EC until then | a robot arm put into service in the EU; the fork places nothing on the market and the frame is open (DQ-002, recommended A) | no conformity file; WP-M-13 plans it |
+| Regulation (EU) 2023/1230 (Machinery), from 20 January 2027; Directive 2006/42/EC until then | a robot arm put into service in the EU; the fork places nothing on the market and the frame is the EU one (DQ-002, answered A) | no conformity file; WP-M-13 plans it |
 | ISO 10218-1:2025, ISO 10218-2:2025 | an industrial robot and its application | cited by the package; no clause verified |
 | ISO/TS 15066:2016 | only if a collaborative mode is claimed (DQ-005) | no claim in the first case |
 | ISO 13849-1:2023, ISO 13849-2:2012 | safety-related parts of the control system | no PL claimed; no reliability data (GAP-14) |
 | EN 60204-1:2018, ISO 13850:2015 | electrical equipment and emergency stop | no E-stop, no disconnect (GAP-08, GAP-09) |
 | ISO 12100:2010, ISO 13854, ISO 13857 | risk assessment, gaps, safety distances | the package's assessment is the input to WP-C-03 |
 | IEC 62443-4-1/-4-2 | a networked controller with a motion path | not cited upstream; WP-M-08 |
-| Regulation (EU) 2024/1689 (AI Act) | only if a learned component becomes a safety component | none is (open, DQ-008, recommended A); WP-K-07 |
+| Regulation (EU) 2024/1689 (AI Act) | only if a learned component becomes a safety component | none is (answered A, DQ-008); WP-K-07 |
 | CC BY-NC-SA 4.0 | upstream's licence; non-commercial use only | the envelopes the licence allows are an open question (GAP-35) |
 
 ## 7. Known hazards and experience from similar items
@@ -232,8 +232,8 @@ any state → ESTOP on an E-stop demand or power loss; ESTOP → IDLE on a manua
 
 The B601-RS variant until DQ-001 and DQ-017 settle it; any mobile base the arm is mounted on (a second item);
 the leader arm as a machine of its own; the Isaac Sim model and any simulation result as evidence; a learned
-component as a safety function (open, DQ-008, recommended A: inside the item, outside every safety function);
-OE-2 to OE-4 (open, DQ-003); medical, patient-care or public-facing use; outdoor use.
+component as a safety function (answered A, DQ-008: inside the item, outside every safety function);
+OE-2 to OE-4 (answered A, DQ-003); medical, patient-care or public-facing use; outdoor use.
 
 ## 10. Open items
 
@@ -243,4 +243,4 @@ OE-2 to OE-4 (open, DQ-003); medical, patient-care or public-facing use; outdoor
 | OI-2 | Measure the joint gaps against ISO 13854 and record the mechanical end-stop angle of every joint and the gripper | Electrical and mechanical engineer | G1 |
 | OI-3 | Determine whether the gripper holds its grasp on power loss, by test; feeds DQ-015 | Test bench owner | G2 |
 | OI-4 | Confirm the actuator model fitted to each joint on a built arm and quote the DM4310 and DM4340P datasheet limits | Safety-related control system engineer | G1 |
-| OI-5 | Lead decisions on the RS variant (DQ-001, open; DQ-017, queued); until then §1.2 stays a placeholder | Project lead | G0 |
+| OI-5 | Lead decisions on the RS variant (DQ-001, answered A; DQ-017, open); until DQ-017 is answered §1.2 stays a placeholder | Project lead | G0 |

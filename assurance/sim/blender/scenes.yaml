@@ -59,7 +59,7 @@ scenes:
       elbow: {loc: [0.62, -0.55, 0.42], target: "joint:J3", lens: 70}
     window: [-1.0, 4.0]
     caption: >-
-      Kinematic: the elbow folds at 30 °/s (an assumed hand-guiding rate; DQ-016 is open) from 110° to 5° (the assumed software limit). The gap
+      Kinematic: the elbow folds at 30 °/s (an assumed hand-guiding rate; DQ-016 is assumed) from 110° to 5° (the assumed software limit). The gap
       is the smallest distance between the upper-arm and forearm bodies away from the actuator, from the CAD; the
       fingers are not modelled, the figure only shows where they are.
     change: >-
@@ -170,7 +170,7 @@ scenes:
       scene: {loc: [1.2, -1.2, 0.7], target: [-0.2, -0.1, 0.3], lens: 40}
     window: [-1.0, 2.5]
     caption: >-
-      Kinematic: the base sweeps at 90 °/s (assumed demo speed: half of a 180 °/s joint cap; DQ-016 is open) through
+      Kinematic: the base sweeps at 90 °/s (assumed demo speed: half of a 180 °/s joint cap; DQ-016 is assumed) through
       105°. The distance plotted is from the head point to the finger tips, from the CAD kinematics. The head point is placed by
       the scene; the figure shows the posture.
     change: >-

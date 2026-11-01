@@ -9,7 +9,7 @@
 | PL / scope | All. Planned to PL d until the safety functions are approved and DQ-004 is answered |
 | Author | Assurance team (AI-assisted draft, I0) |
 | Reviewer(s) | TBD (I1); confirmation review of this plan by the external assessor (I3 planned, CR-03) |
-| Approver | Project maintainer (acting safety manager). Self-approval at I0 is proposed as a recorded interim limitation; it is decision DQ-010 (open, recommended A) |
+| Approver | Project maintainer (acting safety manager). Self-approval at I0 is a recorded interim limitation; it is decision DQ-010 (answered A) |
 | Baseline | `206ebda` |
 
 > [!NOTE]
@@ -24,9 +24,9 @@ the independent cybersecurity and ML reviews and the regulatory conformity asses
 go.
 
 No confirmation measure has been performed at baseline `206ebda`. No assessor is engaged: whether to engage one is
-decision DQ-009 (open; the recommendation is not for now, revisited at G1), so every I2 and I3 measure in this plan
+decision DQ-009 (answered A: not for now, revisited at G1), so every I2 and I3 measure in this plan
 is **unscheduled** until that decision is answered, and no work product can leave Draft through a confirmation
-measure. The standards are not held either (DQ-011, queued), so every clause reference stays marked as to be checked.
+measure. The standards are not held either (DQ-011, open), so every clause reference stays marked as to be checked.
 
 The machinery standards do not define a confirmation review. ISO 13849-1 asks for verification (§8) and validation
 (§10) and recommends that validation is done by persons independent of the design; ISO 10218-2 asks for verification
@@ -43,7 +43,7 @@ standards and are adequate for the safety argument.
 ## 2. Planning assumptions
 
 - **Required PL.** The safety functions are not yet specified on the record's terms. For planning, the emergency
-  stop, the safe stop on watchdog and the manual reset are assumed to need PL d (decision DQ-004, recommended A) and
+  stop, the safe stop on watchdog and the manual reset need PL d (decision DQ-004, answered A) and
   every measure is planned at the independence IEC 61508-1 §8 would set for the corresponding consequence class.
   When WP-C-04 is approved, the safety manager re-plans (OI-2). Lowering independence needs a recorded rationale.
 - **Tailoring.** WP-M-01 T-09: verification reviews may be done by project members at I0/I1. Confirmation measures at
@@ -51,7 +51,7 @@ standards and are adequate for the safety argument.
 - **Scope.** Confirmation measures apply to the reference configuration ([WP-M-01 §3.1](WP-M-01-assurance-strategy.md#31-reference-configuration-the-only-scope-claims-apply-to)):
   CFG-001 on the supervised bench. The RS variant (CFG-002) adds no measure until it joins the claimed scope.
 - **Conformity assessment.** Whether a notified body examines the technical documentation depends on the module
-  chosen in DQ-012 (queued; Module A recommended) and on whether any safety component uses machine learning
+  chosen in DQ-012 (open; Module A recommended) and on whether any safety component uses machine learning
   (Machinery Regulation Annex I Part A; DQ-008). NB-1 below stays planned until DQ-012 is answered.
 - **The package.** The concept-phase package's workbooks are inputs to the work products under review, not objects
   of a confirmation measure in their own right; CR-02 and CR-04 cover what the record took from them.
@@ -148,7 +148,7 @@ each report.
 |---|---|---|---|
 | NB-1 | G5 | EU type-examination of the technical documentation ([WP-K-02](../10-safety-case/WP-K-02-technical-documentation-index.md)) and the declaration of conformity draft ([WP-K-06](../10-safety-case/WP-K-06-release-record.md)), if DQ-012 selects Module B or H or Annex I Part A applies | Notified body |
 
-If Module A (internal control) is selected (DQ-012, queued, recommended), NB-1 is withdrawn and the manufacturer's
+If Module A (internal control) is selected (DQ-012, open, recommended), NB-1 is withdrawn and the manufacturer's
 own assessment of the technical documentation is covered by FSA-F and CR-12. [WP-M-13](WP-M-13-regulatory-conformity-strategy.md)
 owns the route. The fork places nothing on the market today and its licence forbids commercial use (GAP-35), so the
 measure is planning, not an obligation.
@@ -176,9 +176,9 @@ declaration; date; method; findings with IDs; outcome. Findings are tracked as G
 
 | ID | Item | Owner | Due |
 |---|---|---|---|
-| OI-1 | Check every clause reference in this plan and in WP-M-00 against licensed copies of ISO 13849-1:2023, ISO 13849-2:2012, IEC 61508-1:2010, ISO 10218-1:2025, ISO 10218-2:2025 and ISO 12100:2010 once bought (DQ-011, queued) | SM | G0 |
+| OI-1 | Check every clause reference in this plan and in WP-M-00 against licensed copies of ISO 13849-1:2023, ISO 13849-2:2012, IEC 61508-1:2010, ISO 10218-1:2025, ISO 10218-2:2025 and ISO 12100:2010 once bought (DQ-011, open) | SM | G0 |
 | OI-2 | Re-plan independence after WP-C-04 is approved and DQ-004 is answered; record the rationale for any reduction from the PL d assumption | SM | G1 |
-| OI-3 | Record the assessor decision (DQ-009, open): if none is engaged, every I2 and I3 measure stays unscheduled and the item is revisited at G1 | SM | G0 |
+| OI-3 | Record the assessor decision (DQ-009, answered A): if none is engaged, every I2 and I3 measure stays unscheduled and the item is revisited at G1 | SM | G0 |
 | OI-4 | Identify a cybersecurity assessor and a penetration tester; agree the independence statement | CSM | G1 |
 | OI-5 | CR-01 and CR-03 are due at G0 but no assessor is engaged; decide whether G0 can pass with them scheduled rather than performed (ties to DQ-009) | SM | G0 |
 | OI-6 | Confirm or withdraw NB-1 once DQ-012 is answered | SM | G1 |

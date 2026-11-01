@@ -30,7 +30,12 @@
       title: "Assess the DM arm and exclude the RS variant from the fork entirely"
       detail: "Smallest scope. Cost: the fork no longer covers the product line upstream sells, and anyone with an RS arm has no record to use."
   sources: ["README roadmap (B601-RS: BOM, assembly, ROS 2 in progress)", "hardware/reBot_B601_DM/readme.md (v1.1 changelog)", "gap assessment GAP-34"]
-  status: open
+  answer:
+    choice: A
+    via: chat
+    at: 2026-11-01
+    note: "Accepted with the other nine recommendations of batch 1 (\"accept all recommendations\")."
+  status: answered
 
 - id: DQ-002
   ref: GAP-00
@@ -58,7 +63,12 @@
       title: "Both from the start"
       detail: "Covers either market. Cost: two sets of clause references in every document and two conformity files to keep aligned."
   sources: ["Regulation (EU) 2023/1230 Art. 54 (application date)", "ISO 10218-1:2025 scope", "ANSI/A3 R15.06-2025 scope", "package 04_StdMatrix"]
-  status: open
+  answer:
+    choice: A
+    via: chat
+    at: 2026-11-01
+    note: "Accepted with the other nine recommendations of batch 1 (\"accept all recommendations\")."
+  status: answered
 
 - id: DQ-003
   ref: GAP-06
@@ -87,7 +97,12 @@
       title: "OE-1 to OE-3 (industrial collaborative cell)"
       detail: "The full cobot claim. Cost: ISO/TS 15066 measurement, a category 3 chain on every contact function, and an integrator's cell design the fork does not control."
   sources: ["package 05_OpEnv", "package 07_HARA (OE column)", "gap assessment GAP-06, GAP-28"]
-  status: open
+  answer:
+    choice: A
+    via: chat
+    at: 2026-11-01
+    note: "Accepted with the other nine recommendations of batch 1 (\"accept all recommendations\")."
+  status: answered
 
 - id: DQ-004
   ref: GAP-08
@@ -116,7 +131,12 @@
       title: "Defer: set the PL after the risk assessment"
       detail: "Methodologically clean (the PLr comes from the risk graph). Cost: the graph for a person in reach lands on d anyway, so the hardware gap stays open a phase longer."
   sources: ["ISO 10218-1:2025 §5 (safety-related control, to be checked)", "ISO 13849-1:2023 Annex A", "package 09_FSC (PLr column)", "gap assessment GAP-08, GAP-31"]
-  status: open
+  answer:
+    choice: A
+    via: chat
+    at: 2026-11-01
+    note: "Accepted with the other nine recommendations of batch 1 (\"accept all recommendations\")."
+  status: answered
 
 - id: DQ-005
   ref: GAP-28
@@ -145,7 +165,12 @@
       title: "A hand-guiding (teach) claim only, with an enabling device, no PFL"
       detail: "Covers dataset collection by hand. Cost: a three-position enabling device and a safely-limited speed in teach mode, which is a smaller campaign than B but still new hardware."
   sources: ["ISO/TS 15066:2016 §5, Annex A", "package GAP-15066-01, GAP-15066-02, SF-01, SF-02", "gap assessment GAP-28"]
-  status: open
+  answer:
+    choice: A
+    via: chat
+    at: 2026-11-01
+    note: "Accepted with the other nine recommendations of batch 1 (\"accept all recommendations\")."
+  status: answered
 
 - id: DQ-006
   ref: GAP-08
@@ -173,7 +198,12 @@
       title: "No stop hardware; no powered test with anyone inside the 650 mm reach until the product chain exists"
       detail: "No purchase. Cost: every test is run with the arm caged or the operator outside reach; nothing in WP-V-02…V-04 can run."
   sources: ["gap assessment GAP-08, GAP-09", "package SYRS-005, SYRS-006, FM-16, FM-17, FM-25", "WP-V-07 §2"]
-  status: open
+  answer:
+    choice: A
+    via: chat
+    at: 2026-11-01
+    note: "Accepted with the other nine recommendations of batch 1 (\"accept all recommendations\")."
+  status: answered
 
 - id: DQ-007
   ref: GAP-16
@@ -201,7 +231,12 @@
       title: "Keep everything upstream; record only"
       detail: "No code to maintain. Cost: no software safety function can exist in the case; the arm stays bench-only with the chain as the only measure."
   sources: ["gap assessment GAP-16, GAP-17, GAP-18, GAP-19, GAP-24", "README roadmap (Python SDK, ROS 2)"]
-  status: open
+  answer:
+    choice: A
+    via: chat
+    at: 2026-11-01
+    note: "Accepted with the other nine recommendations of batch 1 (\"accept all recommendations\")."
+  status: answered
 
 - id: DQ-008
   ref: GAP-24
@@ -229,7 +264,12 @@
       title: "In the item with a safety function allocated to a learned component (a learned collision predictor, say)"
       detail: "Not recommended: it triggers the Machinery Regulation's Annex I Part A and the AI Act conformity path, and no evidence route exists for it in ISO 13849."
   sources: ["package HZ-C06, FM-21, GAP-LP-01, OI-06", "ISO/IEC TR 5469:2024", "WP-M-13 §5"]
-  status: open
+  answer:
+    choice: A
+    via: chat
+    at: 2026-11-01
+    note: "Accepted with the other nine recommendations of batch 1 (\"accept all recommendations\")."
+  status: answered
 
 - id: DQ-009
   ref: GAP-31
@@ -257,7 +297,12 @@
       title: "Use a peer reviewer from the community at I1, no assessor"
       detail: "Cheap and useful for verification reviews. Cost: I1 is not I3; confirmation measures stay unperformed."
   sources: ["WP-M-06 §3, §4.1", "IEC 61508-1 §8 (independence)", "gap assessment GAP-31, GAP-32"]
-  status: open
+  answer:
+    choice: A
+    via: chat
+    at: 2026-11-01
+    note: "Accepted with the other nine recommendations of batch 1 (\"accept all recommendations\")."
+  status: answered
 
 - id: DQ-010
   ref: GAP-32
@@ -282,7 +327,12 @@
       title: "Everything stays Draft until a second person reviews it"
       detail: "Cleaner independence. Cost: the status column never moves and the dashboard shows nothing approved for months."
   sources: ["WP-M-02 §3.1", "WP-P-05 §3", "WP-M-06 §3"]
-  status: open
+  answer:
+    choice: A
+    via: chat
+    at: 2026-11-01
+    note: "Accepted with the other nine recommendations of batch 1 (\"accept all recommendations\")."
+  status: answered
 
 - id: DQ-011
   ref: GAP-00
@@ -294,19 +344,22 @@
   reversibility: easy
   decider: lead
   blocks: "WP-M-06 OI-1 (clause check); the confidence of every clause reference"
+  gate: G1
+  asked: 2026-11-01
+  batch: 2
   options:
     - key: A
       recommended: true
       title: "Buy ISO 10218-1:2025, ISO 10218-2:2025 and ISO 13849-1:2023 now (roughly €600); the rest when an assessor is engaged"
       detail: "The three the risk assessment and the chain design rest on. Cost: the money."
     - key: B
-      title: "Buy nothing until an assessor is engaged (DQ-009)"
-      detail: "No cost now. Cost: every clause reference stays unverified through G1."
+      title: "Buy nothing until an assessor is engaged"
+      detail: "No cost now. Cost: every clause reference stays unverified through G1, where you chose to revisit the assessor."
     - key: C
       title: "Buy the full set now (roughly €1,500)"
       detail: "Every reference checkable. Cost: the money, most of it for standards not needed before G2."
   sources: ["WP-M-00 §3 note", "WP-M-06 OI-1"]
-  status: queued
+  status: open
   after: [DQ-009]
 
 - id: DQ-012
@@ -314,13 +367,16 @@
   question: "Which route to conformity do we plan for under the Machinery Regulation: self-declaration (Module A) or a notified body?"
   context: >-
     An industrial robot that is not in Annex I may be self-declared if the harmonised standards covering every
-    essential requirement are applied in full; otherwise a notified body examines the type. The fork allocates no
-    safety function to a learned component (DQ-008 A), so the Annex I Part A trigger does not apply. The route
+    essential requirement are applied in full; otherwise a notified body examines the type. You decided the learned
+    policies stay outside every safety function, so the Annex I Part A trigger does not apply. The route
     decides whether a notified body is a planned cost and who checks the technical file. The fork places nothing on
     the market today and the licence forbids commercial use (GAP-35), so this is planning, not an obligation.
   reversibility: revisit
   decider: lead
   blocks: "WP-M-13 §3; NB-1 in WP-M-06; WP-K-02 structure"
+  gate: G0
+  asked: 2026-11-01
+  batch: 2
   options:
     - key: A
       recommended: true
@@ -329,8 +385,8 @@
     - key: B
       title: "Plan for EU type-examination (Modules B and C)"
       detail: "A notified body checks the file. Cost: roughly €10,000 to €30,000 and a body to find; only sensible if a build is ever placed on the market."
-  sources: ["Regulation (EU) 2023/1230 Art. 25, Annex I, Annexes VI–X", "WP-M-13 §3", "gap assessment GAP-35"]
-  status: queued
+  sources: ["Regulation (EU) 2023/1230 Art. 25, Annex I, Annexes VI–X (to be checked)", "WP-M-13 §3", "gap assessment GAP-35"]
+  status: open
   after: [DQ-002, DQ-008]
 
 - id: DQ-013
@@ -343,16 +399,19 @@
   reversibility: revisit
   decider: lead
   blocks: "WP-C-08 §2; WP-S-07; WP-W-11"
+  gate: G1
+  asked: 2026-11-01
+  batch: 2
   options:
     - key: A
       recommended: true
       title: "SL 2 for identification and authentication, system integrity and data confidentiality (FR 1, 3, 4); SL 1 for the rest"
-      detail: "Authentication on every motion path and signed parameters; the rest proportionate to a bench. Cost: an authenticated SDK and bridge, which only exists after DQ-007."
+      detail: "Authentication on every motion path and signed parameters; the rest proportionate to a bench. Cost: an authenticated SDK and bridge, which the software fork you approved makes possible."
     - key: B
       title: "SL 1 throughout"
       detail: "Minimal. Cost: an unauthenticated network path to a moving arm stays inside the target."
-  sources: ["IEC 62443-4-2:2019 §4", "gap assessment GAP-22, GAP-23"]
-  status: queued
+  sources: ["IEC 62443-4-2:2019 §4 (to be checked)", "gap assessment GAP-22, GAP-23"]
+  status: open
   after: [DQ-007]
 
 - id: DQ-014
@@ -365,6 +424,9 @@
   reversibility: easy
   decider: lead
   blocks: "SF-31 in WP-C-04; WP-C-08 CSR on the camera; WP-O-03"
+  gate: G1
+  asked: 2026-11-01
+  batch: 2
   options:
     - key: A
       recommended: true
@@ -374,7 +436,7 @@
       title: "Default-on streaming, no recording; a manual note"
       detail: "Demos work unchanged. Cost: a bystander is captured by default."
   sources: ["package HZ-D01, FM-23, SYRS-026, GAP-PRIV-01"]
-  status: queued
+  status: open
   after: [DQ-003]
 
 - id: DQ-015
@@ -387,6 +449,9 @@
   reversibility: revisit
   decider: lead
   blocks: "SF-13 in WP-C-04; WP-H-01; WP-V-02 holding tests"
+  gate: G1
+  asked: 2026-11-01
+  batch: 2
   options:
     - key: A
       recommended: true
@@ -396,18 +461,22 @@
       title: "Accept the drop; limit payload to 1.5 kg and forbid people under the gripper"
       detail: "No hardware change. Cost: a dropped 1.5 kg object from 0.7 m is a hazard the manual must carry."
   sources: ["package HZ-M07, FM-06, SYRS-014", "gap assessment GAP-07"]
-  status: queued
+  status: open
   after: [DQ-003]
 
 - id: DQ-016
   ref: GAP-19
-  question: "Joint speed and torque ceilings for the bench envelope: 50 % of the actuator maximum in RUN and 25 % in TEACH until the stopping tests set a budget"
+  question: "What joint speed and torque ceilings apply on the bench until the stopping tests set a budget?"
   context: >-
     The package proposes 50 % demo speed for OE-1 and 25 % for teach; the record needs a ceiling before the first
     powered test. These are reversible constants that WP-V-02 will replace with measured values.
   reversibility: easy
   decider: claude
   blocks: "nothing; recorded so the first bench test knows what to check"
+  gate: G1
+  asked: 2026-11-01
+  batch: 2
+  proceed_after: 2026-11-01
   options:
     - key: A
       recommended: true
@@ -417,18 +486,26 @@
       title: "Actuator maximum in RUN"
       detail: "No behaviour change. Cost: a 1.5 kg payload at full speed is the untested worst case."
   sources: ["package 05_OpEnv (speed cap row)", "performance_testing/Performance_Testing.md"]
-  status: queued
+  answer:
+    choice: A
+    via: assumed
+    at: 2026-11-01
+    note: "A reversible technical choice (decider: claude): Claude goes ahead with the recommendation; the lead can change it."
+  status: assumed
   after: [DQ-003]
 
 - id: DQ-017
   ref: GAP-34
   question: "How is the B601-RS variant handled in the record: a second configuration with its own actuator rows, or out of scope until released?"
   context: >-
-    Depends on DQ-001. If the RS is tracked, every actuator-specific row (limits, holding, thermal, bus, reliability)
+    You chose to assess the B601-DM first and track the RS. If the RS is a second configuration, every actuator-specific row (limits, holding, thermal, bus, reliability)
     carries a second column; if excluded, the item definition says so and the fork's software refuses an RS arm.
   reversibility: revisit
   decider: lead
   blocks: "WP-C-01 §1; WP-W-09 variant table"
+  gate: G1
+  asked: 2026-11-01
+  batch: 2
   options:
     - key: A
       recommended: true
@@ -438,19 +515,22 @@
       title: "Out of scope; the fork's software refuses an RS actuator at boot"
       detail: "Smaller record. Cost: RS owners have nothing."
   sources: ["gap assessment GAP-34", "package GAP-VAR-01, FM-26"]
-  status: queued
+  status: open
   after: [DQ-001]
 
 - id: DQ-018
   ref: GAP-09
   question: "What is the supply disconnecting device: a lockable switch on the mains side of the PSU, a DC disconnect between the PSU and the arm, or both?"
   context: >-
-    EN 60204-1 asks for a lockable supply disconnect. The PSU is open-frame (GAP-11), so a mains-side switch needs
+    EN 60204-1 asks for a lockable supply disconnect (clause to be checked). The PSU is open-frame (GAP-11), so a mains-side switch needs
     an enclosure; a DC-side disconnect is a keyed connector or a switch rated for 15 A and is what the bench needs
     for lock-out during maintenance.
   reversibility: easy
   decider: lead
   blocks: "WP-H-05 §2; WP-H-02; the bench build BOM"
+  gate: G1
+  asked: 2026-11-01
+  batch: 2
   options:
     - key: A
       recommended: true
@@ -459,8 +539,8 @@
     - key: B
       title: "A DC-side disconnect only"
       detail: "Cheaper. Cost: the exposed mains terminals of the open-frame PSU stay (GAP-11)."
-  sources: ["EN 60204-1 §5.3", "gap assessment GAP-09, GAP-11"]
-  status: queued
+  sources: ["EN 60204-1 §5.3 (to be checked)", "gap assessment GAP-09, GAP-11"]
+  status: open
   after: [DQ-006]
 
 - id: DQ-019
@@ -473,6 +553,9 @@
   reversibility: easy
   decider: lead
   blocks: "WP-H-04; WP-H-07; WP-M-10 §2"
+  gate: G0
+  asked: 2026-11-01
+  batch: 2
   options:
     - key: A
       recommended: true
@@ -481,8 +564,8 @@
     - key: B
       title: "Generic values only; design the chain so the actuators are not a channel of any PL d function"
       detail: "Independent of the suppliers. Cost: every stop function must remove power by contactor, which the recommended chain does anyway."
-  sources: ["gap assessment GAP-14", "package OI-05", "ISO 13849-1 Annex C"]
-  status: queued
+  sources: ["gap assessment GAP-14", "package OI-05", "ISO 13849-1 Annex C (to be checked)"]
+  status: open
   after: [DQ-001]
 
 - id: DQ-020
@@ -495,6 +578,9 @@
   reversibility: revisit
   decider: lead
   blocks: "WP-S-03 allocation; WP-W-03; WP-A-05; the bench build BOM"
+  gate: G2
+  asked: 2026-11-01
+  batch: 2
   options:
     - key: A
       recommended: true
@@ -504,5 +590,5 @@
       title: "On the host, in the forked SDK, with process isolation"
       detail: "No hardware. Cost: the interference argument (WP-A-05) must be made for a general-purpose computer."
   sources: ["gap assessment GAP-17, GAP-18, GAP-19", "package architecture §4.2"]
-  status: queued
+  status: open
   after: [DQ-007]

@@ -11,7 +11,7 @@
 | Date | YYYY-MM-DD |
 | Baseline | <commit SHA or tag> |
 | Chair | Safety manager (Jherrod Thomas (acting)) |
-| Participants | Safety manager (Jherrod Thomas (acting)); Safety-related control system engineer (Jherrod Thomas (acting); additional contributors TBD); Electrical and mechanical engineer (TBD (likely external)); Cybersecurity manager (Jherrod Thomas (acting); permanent holder TBD); External functional safety assessor (TBD; engaging one is DQ-009 (open, recommended: not for now, revisit at G1)) |
+| Participants | Safety manager (Jherrod Thomas (acting)); Safety-related control system engineer (Jherrod Thomas (acting); additional contributors TBD); Electrical and mechanical engineer (TBD (likely external)); Cybersecurity manager (Jherrod Thomas (acting); permanent holder TBD); External functional safety assessor (TBD; engaging one is DQ-009 (answered A: not for now, revisit at G1)) |
 | Assessor informed | Yes / No (name) |
 
 ## Inputs (WP-M-02 §10)
@@ -62,7 +62,7 @@ From the [process model](../../../process/README.md). Each one is a condition on
 
 | Interface | Topic | Open item | Due | Closed? |
 |---|---|---|---|---|
-| IX-02 | The contact-force stop SF-02 and the collision detection SF-04 rest on torque estimation without a sensor; what the estimator cannot sense bounds the claim they can make | DQ-005 (collaborative claim) is open; no force or pressure measurement exists (GAP-28); WP-C-10 OI-1 has to bound the estimator's floor before SF-02 and SF-04 claim PL d | G1 | |
+| IX-02 | The contact-force stop SF-02 and the collision detection SF-04 rest on torque estimation without a sensor; what the estimator cannot sense bounds the claim they can make | DQ-005 (collaborative claim) is answered: no claim in the first case; no force or pressure measurement exists (GAP-28); WP-C-10 OI-1 has to bound the estimator's floor before SF-02 and SF-04 claim PL d | G1 | |
 
 ### Roles WP-M-02 §3.1 needs by this gate that are not assigned
 
@@ -72,7 +72,7 @@ From the [process model](../../../process/README.md). Each one is a condition on
 | Verification reviewer(s) | TBD (at least one person other than the author) | G0 |
 | Quality assurance | TBD (independent of the author) | G0 |
 | Test operator(s) | TBD (trained per WP-M-04) | G1 |
-| External functional safety assessor | TBD; engaging one is DQ-009 (open, recommended: not for now, revisit at G1) | G1 |
+| External functional safety assessor | TBD; engaging one is DQ-009 (answered A: not for now, revisit at G1) | G1 |
 
 ## Exit criteria (WP-M-00 §2)
 
